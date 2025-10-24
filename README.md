@@ -1,2 +1,1 @@
-# GitdoVini
-Aprendendo a transformando linhas de código em inovação
+[![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=SEU_USUARIO_AQUI&show_icons=true&theme=dark&include_all_commits=true&count_private=true)](https://github.com/Vlacerda93)
