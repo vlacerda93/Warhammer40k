@@ -1,0 +1,279 @@
+:root {
+    --accent: #c41e3a;
+    --dark: #181828;
+    --panel: #23213b;
+    --white: #e0e0e0;
+}
+
+body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(rgba(18,17,34,0.78),rgba(18,17,34,0.88)), url('mapadagalaxia.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Cabeçalho/navegação */
+header {
+    background: rgba(31, 28, 56, 0.93);
+    padding-bottom: 26px;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: rgba(10,10,19,0.8);
+    border-bottom: 2px solid var(--panel);
+}
+.logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--accent);
+    letter-spacing: 6px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+.nav-links a {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.12rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.22s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero do topo */
+.hero-content {
+    max-width: 700px;
+    margin: 48px auto 0;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.hero-title {
+    font-size: 2.7rem;
+    color: var(--accent);
+    margin-bottom: 1.3rem;
+    letter-spacing: 7px;
+}
+.hero-desc { font-size: 1.18rem; margin-bottom: 2.3rem; }
+.btn-explore {
+    display: inline-block;
+    padding: 0.95rem 2.1rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.22s;
+}
+.btn-explore:hover { background: #8b1232; }
+
+/* Título das Seções */
+.section-title {
+    text-align: center;
+    color: var(--accent);
+    font-size: 2.18rem;
+    margin: 56px 0 38px 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Destaque Humanos */
+.faction-human-highlight {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 28px auto;
+    display: flex;
+    justify-content: center;
+}
+.faction-card.highlight-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #181828e8;
+    padding: 32px 34px;
+    border-radius: 18px;
+    box-shadow: 0 8px 44px #2151c850;
+    border: 3px solid var(--accent);
+    width: 100%;
+    max-width: 1080px;
+    gap: 32px;
+    position: relative;
+    text-decoration: none;
+}
+.highlight-img img {
+    width: 210px;
+    height: 210px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 6px 32px #15286a69;
+}
+.highlight-info { flex: 2; }
+.highlight-title {
+    font-size: 2.3rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 0.5em;
+}
+.highlight-desc {
+    font-size: 1.18rem;
+    color: #e0eaff;
+    margin-bottom: 1.5em;
+}
+
+/* Grid facções */
+.factions-grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+.faction-card {
+    background: var(--panel);
+    border-radius: 13px;
+    box-shadow: 0 7px 22px rgba(25,25,59,0.55);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #2b2844;
+    overflow: hidden;
+    transition: transform .18s;
+    min-width: 0;
+    text-decoration: none;
+}
+.faction-card:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+.card-img-box {
+    width: 100%;
+    height: 170px;
+    background: #23213b;
+    overflow: hidden;
+}
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/* Ajuste só para a imagem do Chaos */
+.card-img-box img[alt="Chaos"] {
+    object-position: center top;
+}
+.card-title {
+    color: var(--accent);
+    font-weight: 700;
+    margin: 1rem 0 .4rem 0;
+    font-size: 1.15rem;
+    text-align: center;
+}
+.card-desc {
+    font-size: 1rem;
+    color: #f8d3d3;
+    padding: 0 0.8rem 1.1rem 0.8rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* SOBRE O PROJETO - LOGO E TEXTO AO LADO */
+.about-box.about-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    max-width: 740px;
+    margin: 0 auto 36px auto;
+    background: #23213bdd;
+    border-radius: 13px;
+    box-shadow: 0 4px 28px #1118;
+    padding: 2em 2em;
+}
+.about-logo {
+    max-width: 215px;
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+    background: #fff;
+    padding: 7px 9px;
+    box-shadow: 0 2px 22px #0006;
+    display: block;
+}
+.about-text {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+.about-text p {
+    font-size: 1.08rem;
+    color: #f0f0f0;
+    margin-bottom: 1em;
+}
+.about-text a {
+    color: #e6366c;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.about-text a:hover { color: #fff; text-decoration: underline; }
+
+@media (max-width: 900px) {
+    .factions-grid-row { grid-template-columns: repeat(2, 1fr);}
+    .faction-card.highlight-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 14px;
+    }
+    .highlight-img img { width: 160px; height: 160px; }
+    .about-box.about-side {
+        flex-direction: column;
+        gap: 18px;
+        padding: 1.3em 1em;
+        max-width: 97vw;
+    }
+    .about-logo { max-width: 160px; margin-bottom: 8px; }
+}
+@media (max-width: 600px) {
+    .navbar { flex-direction: column; gap: 1rem;}
+    .nav-links { gap: 1rem;}
+    .factions-grid-row { grid-template-columns: 1fr;}
+    .faction-human-highlight { padding: 0 0.5em;}
+    .faction-card.highlight-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px 4px;
+        max-width: 98vw;
+    }
+    .highlight-img img { width: 98vw; height: auto;}
+    .about-box.about-side { max-width: 98vw; }
+    .about-logo { max-width: 120px; }
+}
+footer {
+    background: #0c0c12;
+    color: #bbb;
+    text-align: center;
+    padding: 22px 0 10px 0;
+    font-size: 1.06rem;
+}
+.footer-info {
+    margin-bottom: 12px;
+}
+.footer-links {
+    margin-top: 10px;
+}
+.footer-links a {
+    color: var(--accent);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.18s;
+}
+.footer-links a:hover { color: #fff; }
