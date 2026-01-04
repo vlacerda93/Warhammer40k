@@ -13,10 +13,30 @@
             <div class="logo">WH40K</div>
             <ul class="nav-links">
                 <li><a href="../index.html">Início</a></li>
+                                <li class="dropdown"><a href="../index.html#faccao">Facções</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="indexhumans.html">Império do Homem</a></li>
+                        <li><a href="Aeldari.html">Aeldari</a></li>
+                        <li><a href="indextau.html">T'au</a></li>
+                        <li><a href="Orks.html">Orks</a></li>
+                        <li><a href="chaos.html">Chaos</a></li>
+                        <li><a href="indexnecrons.html">Necrons</a></li>
+                        <li><a href="indextyranides.html">Tyranides</a></li>
+                    </ul>
+                </li>
                 <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
+                <!-- Barra de Busca -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Buscar informações..." />
+            <button onclick="searchContent()" class="search-btn">Buscar</button>
+        </div>
     </header>
+        <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <a href="../index.html">Início</a> &gt; <span>Aeldari</span>
+    </nav>
     <main>
         <div class="fac-page-container">
 
@@ -65,6 +85,31 @@
         <p>Este é um site experimental e de fãs dedicado a explorar a vasta e sombria mitologia de Warhammer 40,000. Todos os direitos reservados a Games Workshop. | <a href="https://www.warhammer.com/en-WW/home" target="_blank">site oficial</a></p>
         <p>Feito por fã • &copy; 2025 | Pelo Imperador!</p>
     </footer>
+    <script>
+        function searchContent() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const sections = document.querySelectorAll('.fac-page-container, .gal-img-original');
+            let found = false;
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    section.style.display = 'block';
+                    found = true;
+                } else if (searchTerm) {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+            if (!found && searchTerm) {
+                alert('Nenhuma informação encontrada.');
+            }
+        }
+        document.getElementById('searchInput')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchContent();
+        });
+    </script>
 </body>
 </html>
+
 
