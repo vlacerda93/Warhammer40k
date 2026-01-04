@@ -12,10 +12,24 @@
             <div class="logo">WH40K</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#faccao">Facções</a></li>
+                <li class="dropdown"><a href="#faccao">Facções</a>                                    <ul class="dropdown-menu">
+                        <li><a href="indexhumans.html">Império do Homem</a></li>
+                        <li><a href="Aeldari.html">Aeldari</a></li>
+                        <li><a href="indextau.html">T'au</a></li>
+                        <li><a href="Orks.html">Orks</a></li>
+                        <li><a href="chaos.html">Chaos</a></li>
+                        <li><a href="indexnecrons.html">Necrons</a></li>
+                        <li><a href="indextyranides.html">Tyranides</a></li>
+                    </ul>
                 <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
+                
+        <!-- Barra de Busca -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Buscar facções, unidades..." />
+            <button onclick="searchContent()" class="search-btn">Buscar</button>
+        </div>
         <div class="hero-content" id="inicio">
             <h1 class="hero-title">WARHAMMER 40,000</h1>
             <p class="hero-desc">
@@ -79,6 +93,43 @@
             </div>
         </section>
 
+                <!-- SEÇÃO DE COMPARAÇÃO DE FACÇÕES -->
+        <section id="comparacao" class="comparison-section">
+            <h2 class="section-title">Compare as Facções</h2>
+            <p class="section-desc">Escolha duas facções para comparar suas características</p>
+            <div class="comparison-container">
+                <div class="faction-select">
+                    <label for="faction1">Facção 1:</label>
+                    <select id="faction1" class="faction-dropdown">
+                        <option value="">Selecione...</option>
+                        <option value="imperium">Império do Homem</option>
+                        <option value="aeldari">Aeldari</option>
+                        <option value="tau">T'au</option>
+                        <option value="orks">Orks</option>
+                        <option value="chaos">Chaos</option>
+                        <option value="necrons">Necrons</option>
+                        <option value="tyranides">Tyranides</option>
+                    </select>
+                </div>
+                <div class="vs-divider">VS</div>
+                <div class="faction-select">
+                    <label for="faction2">Facção 2:</label>
+                    <select id="faction2" class="faction-dropdown">
+                        <option value="">Selecione...</option>
+                        <option value="imperium">Império do Homem</option>
+                        <option value="aeldari">Aeldari</option>
+                        <option value="tau">T'au</option>
+                        <option value="orks">Orks</option>
+                        <option value="chaos">Chaos</option>
+                        <option value="necrons">Necrons</option>
+                        <option value="tyranides">Tyranides</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="compareFactions()" class="btn-compare">Comparar</button>
+            <div id="comparisonResult" class="comparison-result"></div>
+        </section>
+
         <!-- SOBRE O PROJETO COM LOGO AO LADO DO TEXTO -->
         <section id="sobre">
             <h2 class="section-title">Sobre o Projeto</h2>
@@ -105,7 +156,60 @@
             <a href="#sobre">Sobre</a>
         </div>
     </footer>
+    <script>
+        // Função de busca
+        function searchContent() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const factionCards = document.querySelectorAll('.faction-card');
+            let found = false;
+            
+            factionCards.forEach(card => {
+                const title = card.querySelector('.card-title')?.textContent.toLowerCase();
+                const desc = card.querySelector('.card-desc')?.textContent.toLowerCase();
+                
+                if (title?.includes(searchTerm) || desc?.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    found = true;
+                } else if (searchTerm) {
+                    card.style.display = 'none';
+                } else {
+                    card.style.display = 'block';
+                }
+            });
+            
+            if (!found && searchTerm) {
+                alert('Nenhuma facção encontrada com esse termo.');
+            }
+        }
+        
+        // Função de comparação (placeholder - será expandida na Fase 2)
+        function compareFactions() {
+            const faction1 = document.getElementById('faction1').value;
+            const faction2 = document.getElementById('faction2').value;
+            const resultDiv = document.getElementById('comparisonResult');
+            
+            if (!faction1 || !faction2) {
+                alert('Por favor, selecione duas facções para comparar.');
+                return;
+            }
+            
+            if (faction1 === faction2) {
+                alert('Por favor, selecione facções diferentes.');
+                return;
+            }
+            
+            resultDiv.innerHTML = `<p>Comparação entre ${faction1} e ${faction2} será expandida em breve!</p>`;
+        }
+        
+        // Busca com Enter
+        document.getElementById('searchInput')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchContent();
+            }
+        });
+    </script>
 </body>
 </html>
+
 
 
