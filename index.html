@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warhammer 40K - Codex Galáctico</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="galaxy-bg"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">WH40K BRASIL</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#faccao">Facções</a></li>
+                <li><a href="#personagens">Personagens</a></li>
+                <li><a href="#mapa">Mapa</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content" id="inicio">
+            <h1 class="hero-title">WARHAMMER 40,000</h1>
+           <p class="hero-tagline"> >"In the grim darkness of the far future, só tem TRETA!. < "</p>
+            <a href="#faccao" class="btn-explore">Conheça as Facções</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="faccao">
+    <h2 class="section-title">Facções da Galáxia</h2>
+    
+    <div class="main-panel metal-panel">
+        
+        <button class="nav-arrow prev-arrow" onclick="changePage(-1)">❮</button>
+        <button class="nav-arrow next-arrow" onclick="changePage(1)">❯</button>
+
+        <div class="factions-wrapper">
+            <div class="factions-display" id="factionsDisplay">
+                
+                <div class="faction-page">
+                    <a href="humans.html" class="faction-card imperio">
+                        <div class="card-img-box"><img src="imperiodohoemem.jpg"></div>
+                        <h3 class="card-title">Império</h3>
+                        <p class="card-desc">O domínio da humanidade e seus exércitos.</p>
+                    </a>
+                    <a href="tau.html" class="faction-card">
+                        <div class="card-img-box"><img src="tau.jpg"></div>
+                        <h3 class="card-title">T'au</h3>
+                        <p class="card-desc">Pelo Bem Maior e tecnologia de ponta.</p>
+                    </a>
+                    <a href="necrons.html" class="faction-card">
+                        <div class="card-img-box"><img src="necrons.jpg"></div>
+                        <h3 class="card-title">Necrons</h3>
+                        <p class="card-desc">Imortais de metal vivo despertando.</p>
+                    </a>
+                    <a href="orks.html" class="faction-card">
+                        <div class="card-img-box"><img src="orks.jpg"></div>
+                        <h3 class="card-title">Orks</h3>
+                        <p class="card-desc">A maré verde de guerra infinita.</p>
+                    </a>
+                </div>
+
+                <div class="faction-page">
+                    <a href="aeldari.html" class="faction-card">
+                        <div class="card-img-box"><img src="aeldari.jpg"></div>
+                        <h3 class="card-title">Aeldari</h3>
+                        <p class="card-desc">Mestres psíquicos de uma raça antiga.</p>
+                    </a>
+                    <a href="trynanides.html" class="faction-card">
+                        <div class="card-img-box"><img src="trynanides.jpg"></div>
+                        <h3 class="card-title">Tyranids</h3>
+                        <p class="card-desc">O pesadelo vindo do espaço profundo.</p>
+                    </a>
+                    <a href="chaos.html" class="faction-card">
+                        <div class="<card-img>-box"><img src="chaos.jpg"></div>
+                        <h3 class="card-title">Chaos</h3>
+                        <p class="card-desc">Servos corrompidos dos Deuses Sombrios.</p>
+                    </a>
+                    <a href="#sobre" class="faction-card">
+                        <div class="card-img-box"><img src="logo.jpg"></div>
+                        <h3 class="card-title">Em Breve</h3>
+                        <p class="card-desc">Novos arquivos do Codex sendo descriptografados.</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+        
+        <section id="sobre">
+            <div class="about-box metal-panel">
+                <img src="logo.jpg" alt="Logo Warhammer" class="about-logo">
+                <div class="about-text">
+                    <h2>Sobre o Projeto</h2>
+                    <p>Este é um site de fã dedicado à mitologia de Warhammer 40,000. Todos os direitos reservados à Games Workshop.</p>
+                    <a href="https://www.warhammer.com/" target="_blank">Site Oficial da GW</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Feito por fãs para fãs • 2026</p>
+    </footer>
+
+    <script>
+    let currentPage = 0;
+    const totalPages = 2;
+
+    function changePage(direction) {
+        const display = document.getElementById('factionsDisplay');
+        
+        // Atualiza o índice da página (0 ou 1)
+        currentPage += direction;
+
+        // Impede de ir abaixo de 0 ou acima do limite de páginas
+        if (currentPage < 0) currentPage = 0;
+        if (currentPage >= totalPages) currentPage = totalPages - 1;
+
+        // Move exatamente 50% (já que o container tem 200% de largura)
+        display.style.transform = `translateX(-${currentPage * 50}%)`;
+    }
+</script>
+</body>
+</html>

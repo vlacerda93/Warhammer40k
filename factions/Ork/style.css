@@ -1,0 +1,280 @@
+/* --- CONFIGURAÇÃO DE CORES E RESET --- */
+:root {
+    --accent: #c41e3a; /* Vermelho Escarlate do Império */
+    --dark: #181828;  /* Background Principal Escuro */
+    --panel: #23213b; /* Cor de Painel/Card */
+    --white: #e0e0e0; /* Texto Claro */
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO (Sem Alterações) --- */
+header {
+    background: rgba(31, 28, 56, 0.93);
+    padding-bottom: 26px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: rgba(10,10,19,0.8);
+    border-bottom: 2px solid var(--panel);
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--accent);
+    letter-spacing: 6px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.12rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.22s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.hero-content {
+    max-width:700px;
+    margin: 48px auto 0;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.hero-title {
+    font-size: 2.7rem;
+    color: var(--accent);
+    margin-bottom: 1.3rem;
+    letter-spacing: 7px;
+}
+
+.hero-desc { font-size: 1.18rem; margin-bottom: 2.3rem; }
+
+.btn-explore {
+    display: inline-block;
+    padding: 0.95rem 2.1rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration:none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.22s;
+}
+
+.btn-explore:hover { background: #8b1232; }
+
+.section-title {
+    text-align: center;
+    color: var(--accent);
+    font-size: 2.18rem;
+    margin: 56px 0 38px 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* --- GRID 3x3 DAS FACÇÕES (CORREÇÃO DE POSICIONAMENTO) --- */
+.factions-grid-3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 58px auto;
+    padding: 0 20px;
+}
+
+/* ESTILO PADRÃO DO CARD (Sem Alterações) */
+.faction-card {
+    background: var(--panel);
+    border-radius: 13px;
+    box-shadow: 0 7px 22px rgba(25,25,59,0.55);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #2b2844;
+    overflow: hidden;
+    transition: transform .18s;
+}
+
+.faction-card:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+.card-img-box {
+    width: 100%;
+    height: 170px; 
+    background: #23213b;
+    overflow: hidden;
+}
+
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-title {
+    color: var(--accent);
+    font-weight: 700;
+    margin: 1rem 0 .4rem 0;
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+.card-desc {
+    font-size: 1rem;
+    color: #f8d3d3;
+    padding: 0 0.8rem 1.1rem 0.8rem;
+    text-align: center;
+    flex-grow: 1; 
+}
+
+/* 1. DESTAQUE E POSICIONAMENTO DO IMPÉRIO DO HOMEM (L2, C2) */
+.fac-humanos-center {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    z-index: 10; 
+    border: 3.5px solid var(--accent);
+    box-shadow: 0 0 38px rgba(196,30,58,0.6);
+}
+
+/* 2. FORÇA POSIÇÃO DO CHAOS (L2, C3) */
+.fac-chaos-forced {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+}
+
+/* 3. FORÇA POSIÇÃO DO NECRONS (L3, C1) */
+.fac-necrons-forced {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+}
+
+/* 4. POSICIONA AS CÉLULAS VAZIAS (L3, C2 e L3, C3) */
+.empty-cell-1 {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+}
+
+.empty-cell-2 {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+}
+
+/* GARANTE QUE DIVS VAZIAS NÃO TENHAM ESTILO DE CARD */
+.empty-cell-1, .empty-cell-2 {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* --- OUTRAS SEÇÕES (Sem Alterações) --- */
+.about-box {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    padding: 0 20px 30px 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.about-img { 
+    max-width: 320px; 
+    border-radius: 8px; 
+    width: 100%; 
+    height: auto;
+}
+.about-text { 
+    flex: 2; 
+    min-width: 220px; 
+}
+.about-text p { 
+    font-size: 1.1rem; 
+    padding: 1.5em; 
+    background: #23213b; 
+    border-radius: 8px; 
+    line-height: 1.6;
+}
+
+footer {
+    background: #0c0c12;
+    color: #bbb;
+    text-align: center;
+    padding: 22px 0;
+    font-size: 1.06rem;
+}
+
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+/* Tablet (2 colunas) */
+@media (max-width: 900px) {
+    .factions-grid-3x3 { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    /* Reposiciona o card central para ocupar 2 colunas */
+    .fac-humanos-center { 
+        grid-column: 1 / -1; /* Ocupa todas as colunas (2) */
+        grid-row: auto; 
+        margin: 15px 0; 
+    }
+
+    /* Remove o posicionamento fixo para os outros cards */
+    .fac-chaos-forced, .fac-necrons-forced, .empty-cell-1, .empty-cell-2 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    /* Garante que divs vazias continuem invisíveis */
+    .empty-cell-1, .empty-cell-2 {
+        display: none;
+    }
+}
+
+/* Mobile (1 coluna) */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .factions-grid-3x3 { 
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Remove todo posicionamento fixo */
+    .fac-humanos-center, .fac-chaos-forced, .fac-necrons-forced { 
+        grid-column: auto;
+        grid-row: auto;
+        margin: 0;
+    }
+}

@@ -1,0 +1,64 @@
+Fase 1: Arquitetura e Navegação
+Criar uma estrutura de navegação mais robusta com menu dropdown para subfacções
+
+Adicionar breadcrumbs para facilitar navegação entre páginas
+
+Implementar sistema de busca interno para localizar facções/unidades específicas
+
+Criar página de glossário com termos do universo 40K
+
+Adicionar seção "Comparação de Facções" na página inicial
+
+Fase 2: Expansão de Conteúdo por Facção
+Para cada facção, estruturar as páginas com:
+
+História detalhada e cronologia
+
+Subfacções e variantes (ex: Legiões de Space Marines, Clãs Orks)
+
+Unidades principais com estatísticas e role no battlefield
+
+Heróis e personagens lendários
+
+Tecnologia e armamento característico
+
+Filosofia e cultura
+
+Galeria expandida de imagens
+
+Fase 3: Conteúdo Adicional
+Seção "Lore" com histórias do universo e eventos importantes
+
+Timeline do universo 40K (do 30º ao 41º milênio)
+
+Seção de pintura e hobby com técnicas básicas
+
+Página de recursos externos (links oficiais, canais YouTube, wikis)
+
+Blog/notícias sobre lançamentos da Games Workshop
+
+Seção FAQ para iniciantes
+
+Fase 4: Melhorias Visuais e UX
+Implementar parallax scrolling na página inicial
+
+Adicionar animações CSS sutis nos cards das facções
+
+Criar mode dark/light toggle
+
+Otimizar responsividade para todos os dispositivos
+
+Adicionar loading animations entre páginas
+
+Implementar galeria lightbox para as imagens
+
+Fase 5: Recursos Interativos
+Quiz "Qual facção combina com você?"
+
+Calculadora de pontos para army building
+
+Comparador de unidades entre facções
+
+Mapa galáctico interativo mostrando territórios das facções
+
+Seção de comentários ou fórum básico (opcional)
