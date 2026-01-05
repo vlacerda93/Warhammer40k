@@ -3,213 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warhammer 40K - Facções do 41º Milênio</title>
+    <title>Warhammer 40K - Codex Galáctico</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+    <div class="galaxy-bg"></div>
+
     <header>
         <nav class="navbar">
-            <div class="logo">WH40K</div>
+            <div class="logo">WH40K BRASIL</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
-                <li class="dropdown"><a href="#faccao">Facções</a>                                    <ul class="dropdown-menu">
-                        <li><a href="indexhumans.html">Império do Homem</a></li>
-                        <li><a href="Aeldari.html">Aeldari</a></li>
-                        <li><a href="indextau.html">T'au</a></li>
-                        <li><a href="Orks.html">Orks</a></li>
-                        <li><a href="chaos.html">Chaos</a></li>
-                        <li><a href="indexnecrons.html">Necrons</a></li>
-                        <li><a href="indextyranides.html">Tyranides</a></li>
-                    </ul>
+                <li><a href="#faccao">Facções</a></li>
+                <li><a href="#personagens">Personagens</a></li>
+                <li><a href="#mapa">Mapa</a></li>
                 <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
-                
-        <!-- Barra de Busca -->
-        <div class="search-container">
-            <input type="text" id="searchInput" class="search-bar" placeholder="Buscar facções, unidades..." />
-            <button onclick="searchContent()" class="search-btn">Buscar</button>
-        </div>
+
         <div class="hero-content" id="inicio">
             <h1 class="hero-title">WARHAMMER 40,000</h1>
-            <p class="hero-desc">
-                Explore as facções, batalhas e mistérios do universo mais sombrio da ficção científica.
-            </p>
+           <p class="hero-tagline"> >"In the grim darkness of the far future, só tem TRETA!. < "</p>
             <a href="#faccao" class="btn-explore">Conheça as Facções</a>
         </div>
     </header>
 
     <main>
         <section id="faccao">
-            <h2 class="section-title">Facções de Warhammer 40K</h2>
+    <h2 class="section-title">Facções da Galáxia</h2>
+    
+    <div class="main-panel metal-panel">
+        
+        <button class="nav-arrow prev-arrow" onclick="changePage(-1)">❮</button>
+        <button class="nav-arrow next-arrow" onclick="changePage(1)">❯</button>
 
-            <!-- DESTAQUE IMPÉRIO DO HOMEM -->
-            <div class="faction-human-highlight">
-                <a href="indexhumans.html" class="faction-card highlight-card">
-                    <div class="card-img-box highlight-img">
-                        <img src="imperiodohoemem.jpg" alt="Império do Homem">
-                    </div>
-                    <div class="highlight-info">
-                        <h3 class="card-title highlight-title">Império do Homem</h3>
-                        <p class="card-desc highlight-desc">
-                            O maior império galáctico do 41º milênio. Super-soldados, fé e domínio absoluto da humanidade.
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- OUTRAS FACÇÕES EM GRID ABAIXO -->
-            <div class="factions-grid-row">
-                <a href="Aeldari.html" class="faction-card">
-                    <div class="card-img-box"><img src="aeldari.jpg" alt="Aeldari"></div>
-                    <h3 class="card-title">Aeldari</h3>
-                    <p class="card-desc">Antiga raça de mestres psíquicos em declínio e busca pela sobrevivência.</p>
-                </a>
-                <a href="indextau.html" class="faction-card">
-                    <div class="card-img-box"><img src="tau.jpg" alt="T'au"></div>
-                    <h3 class="card-title">T'au</h3>
-                    <p class="card-desc">Jovem e tecnológica, defende o "Bem Maior" com poder de fogo avançado.</p>
-                </a>
-                <a href="Orks.html" class="faction-card">
-                    <div class="card-img-box"><img src="orks.jpg" alt="Orks"></div>
-                    <h3 class="card-title">Orks</h3>
-                    <p class="card-desc">Horda de selvageria e caos, motivada apenas pela guerra interminável.</p>
-                </a>
-                <a href="chaos.html" class="faction-card">
-                    <div class="card-img-box"><img src="chaos.jpg" alt="Chaos"></div>
-                    <h3 class="card-title">Forças do Caos</h3>
-                    <p class="card-desc">Marines corrompidos pelo warp, jurando lealdade aos Deuses Sombrios.</p>
-                </a>
-                <a href="indexnecrons.html" class="faction-card">
-                    <div class="card-img-box"><img src="necrons.jpg" alt="Necrons"></div>
-                    <h3 class="card-title">Necrons</h3>
-                    <p class="card-desc">Androides imortais de metal vivo despertando de milhões de anos de sono.</p>
-                </a>
-                <a href="indextyranides.html" class="faction-card">
-                    <div class="card-img-box"><img src="trynanides.jpg" alt="Tyranides"></div>
-                    <h3 class="card-title">Tyranides</h3>
-                    <p class="card-desc">Horda alienígena devoradora de mundos. O pesadelo da galáxia.</p>
-                </a>
-            </div>
-        </section>
-
-                <!-- SEÇÃO DE COMPARAÇÃO DE FACÇÕES -->
-        <section id="comparacao" class="comparison-section">
-            <h2 class="section-title">Compare as Facções</h2>
-            <p class="section-desc">Escolha duas facções para comparar suas características</p>
-            <div class="comparison-container">
-                <div class="faction-select">
-                    <label for="faction1">Facção 1:</label>
-                    <select id="faction1" class="faction-dropdown">
-                        <option value="">Selecione...</option>
-                        <option value="imperium">Império do Homem</option>
-                        <option value="aeldari">Aeldari</option>
-                        <option value="tau">T'au</option>
-                        <option value="orks">Orks</option>
-                        <option value="chaos">Chaos</option>
-                        <option value="necrons">Necrons</option>
-                        <option value="tyranides">Tyranides</option>
-                    </select>
+        <div class="factions-wrapper">
+            <div class="factions-display" id="factionsDisplay">
+                
+                <div class="faction-page">
+                    <a href="humans.html" class="faction-card imperio">
+                        <div class="card-img-box"><img src="imperiodohoemem.jpg"></div>
+                        <h3 class="card-title">Império</h3>
+                        <p class="card-desc">O domínio da humanidade e seus exércitos.</p>
+                    </a>
+                    <a href="tau.html" class="faction-card">
+                        <div class="card-img-box"><img src="tau.jpg"></div>
+                        <h3 class="card-title">T'au</h3>
+                        <p class="card-desc">Pelo Bem Maior e tecnologia de ponta.</p>
+                    </a>
+                    <a href="necrons.html" class="faction-card">
+                        <div class="card-img-box"><img src="necrons.jpg"></div>
+                        <h3 class="card-title">Necrons</h3>
+                        <p class="card-desc">Imortais de metal vivo despertando.</p>
+                    </a>
+                    <a href="orks.html" class="faction-card">
+                        <div class="card-img-box"><img src="orks.jpg"></div>
+                        <h3 class="card-title">Orks</h3>
+                        <p class="card-desc">A maré verde de guerra infinita.</p>
+                    </a>
                 </div>
-                <div class="vs-divider">VS</div>
-                <div class="faction-select">
-                    <label for="faction2">Facção 2:</label>
-                    <select id="faction2" class="faction-dropdown">
-                        <option value="">Selecione...</option>
-                        <option value="imperium">Império do Homem</option>
-                        <option value="aeldari">Aeldari</option>
-                        <option value="tau">T'au</option>
-                        <option value="orks">Orks</option>
-                        <option value="chaos">Chaos</option>
-                        <option value="necrons">Necrons</option>
-                        <option value="tyranides">Tyranides</option>
-                    </select>
-                </div>
-            </div>
-            <button onclick="compareFactions()" class="btn-compare">Comparar</button>
-            <div id="comparisonResult" class="comparison-result"></div>
-        </section>
 
-        <!-- SOBRE O PROJETO COM LOGO AO LADO DO TEXTO -->
+                <div class="faction-page">
+                    <a href="aeldari.html" class="faction-card">
+                        <div class="card-img-box"><img src="aeldari.jpg"></div>
+                        <h3 class="card-title">Aeldari</h3>
+                        <p class="card-desc">Mestres psíquicos de uma raça antiga.</p>
+                    </a>
+                    <a href="trynanides.html" class="faction-card">
+                        <div class="card-img-box"><img src="trynanides.jpg"></div>
+                        <h3 class="card-title">Tyranids</h3>
+                        <p class="card-desc">O pesadelo vindo do espaço profundo.</p>
+                    </a>
+                    <a href="chaos.html" class="faction-card">
+                        <div class="<card-img>-box"><img src="chaos.jpg"></div>
+                        <h3 class="card-title">Chaos</h3>
+                        <p class="card-desc">Servos corrompidos dos Deuses Sombrios.</p>
+                    </a>
+                    <a href="#sobre" class="faction-card">
+                        <div class="card-img-box"><img src="logo.jpg"></div>
+                        <h3 class="card-title">Em Breve</h3>
+                        <p class="card-desc">Novos arquivos do Codex sendo descriptografados.</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+        
         <section id="sobre">
-            <h2 class="section-title">Sobre o Projeto</h2>
-            <div class="about-box about-side">
-                <img src="logo.jpg" alt="Games Workshop" class="about-logo">
+            <div class="about-box metal-panel">
+                <img src="logo.jpg" alt="Logo Warhammer" class="about-logo">
                 <div class="about-text">
-                    <p>
-                        Este é um site experimental e de fãs dedicado a explorar a vasta e sombria mitologia de Warhammer 40,000.<br>
-                        Todos os direitos reservados a Games Workshop.
-                    </p>
-                    <a href="https://www.warhammer.com/en-WW/home" target="_blank">Visite o site oficial</a>
+                    <h2>Sobre o Projeto</h2>
+                    <p>Este é um site de fã dedicado à mitologia de Warhammer 40,000. Todos os direitos reservados à Games Workshop.</p>
+                    <a href="https://www.warhammer.com/" target="_blank">Site Oficial da GW</a>
                 </div>
             </div>
         </section>
     </main>
+
     <footer>
-        <div class="footer-info">
-            <p>Feito por um fã para os fãs do Brasil • &copy; 2025</p>
-            <p><h3>"Pela Glória do Imperador!"</h3></p>
-        </div>
-        <div class="footer-links">
-            <a href="#inicio">Voltar ao Topo</a>
-            <a href="#faccao">Facções</a>
-            <a href="#sobre">Sobre</a>
-        </div>
+        <p>Feito por fãs para fãs • 2026</p>
     </footer>
+
     <script>
-        // Função de busca
-        function searchContent() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const factionCards = document.querySelectorAll('.faction-card');
-            let found = false;
-            
-            factionCards.forEach(card => {
-                const title = card.querySelector('.card-title')?.textContent.toLowerCase();
-                const desc = card.querySelector('.card-desc')?.textContent.toLowerCase();
-                
-                if (title?.includes(searchTerm) || desc?.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    found = true;
-                } else if (searchTerm) {
-                    card.style.display = 'none';
-                } else {
-                    card.style.display = 'block';
-                }
-            });
-            
-            if (!found && searchTerm) {
-                alert('Nenhuma facção encontrada com esse termo.');
-            }
-        }
+    let currentPage = 0;
+    const totalPages = 2;
+
+    function changePage(direction) {
+        const display = document.getElementById('factionsDisplay');
         
-        // Função de comparação (placeholder - será expandida na Fase 2)
-        function compareFactions() {
-            const faction1 = document.getElementById('faction1').value;
-            const faction2 = document.getElementById('faction2').value;
-            const resultDiv = document.getElementById('comparisonResult');
-            
-            if (!faction1 || !faction2) {
-                alert('Por favor, selecione duas facções para comparar.');
-                return;
-            }
-            
-            if (faction1 === faction2) {
-                alert('Por favor, selecione facções diferentes.');
-                return;
-            }
-            
-            resultDiv.innerHTML = `<p>Comparação entre ${faction1} e ${faction2} será expandida em breve!</p>`;
-        }
-        
-        // Busca com Enter
-        document.getElementById('searchInput')?.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchContent();
-            }
-        });
-    </script>
+        // Atualiza o índice da página (0 ou 1)
+        currentPage += direction;
+
+        // Impede de ir abaixo de 0 ou acima do limite de páginas
+        if (currentPage < 0) currentPage = 0;
+        if (currentPage >= totalPages) currentPage = totalPages - 1;
+
+        // Move exatamente 50% (já que o container tem 200% de largura)
+        display.style.transform = `translateX(-${currentPage * 50}%)`;
+    }
+</script>
 </body>
 </html>
-
-
-
