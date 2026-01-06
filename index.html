@@ -31,11 +31,10 @@
     </header>
 
     <main>
-      <section id="faccao">
+       <section id="faccao">
     <h2 class="section-title">Codex Galáctico</h2>
     
     <div class="layout-container">
-        
         <div class="main-panel metal-panel">
             <button class="nav-arrow prev-arrow" onclick="changePage(-1)">❮</button>
             <button class="nav-arrow next-arrow" onclick="changePage(1)">❯</button>
@@ -48,48 +47,54 @@
                             <h3 class="card-title">Império</h3>
                             <p class="card-desc">O domínio da humanidade.</p>
                         </a>
-                        </div>
-                    
-                    <div class="faction-page">
-                        </div>
-                </div>
+                        <a href="indextau.html" class="faction-card">
+                            <div class="card-img-box"><img src="tau.jpg"></div>
+                            <h3 class="card-title">T'au</h3>
+                            <p class="card-desc">Pelo Bem Maior.</p>
+                        </a>
+                        <a href="indexnecrons.html" class="faction-card">
+                            <div class="card-img-box"><img src="necrons.jpg"></div>
+                            <h3 class="card-title">Necrons</h3>
+                            <p class="card-desc">Imortais de metal.</p>
+                        </a>
+                        <a href="Orks.html" class="faction-card">
+                            <div class="card-img-box"><img src="orks.jpg"></div>
+                            <h3 class="card-title">Orks</h3>
+                            <p class="card-desc">A maré verde.</p>
+                        </a>
+                    </div>
+                    </div>
             </div>
         </div>
 
         <aside class="sidebar-panel metal-panel">
-            <h3 class="sidebar-title">Personagens de Destaque</h3>
+            <h3 class="sidebar-title">Personagens</h3>
             
             <button class="side-arrow up-arrow" onclick="changeChar(-1)">▲</button>
-            <button class="side-arrow down-arrow" onclick="changeChar(1)">▼</button>
-
+            
             <div class="chars-wrapper">
                 <div class="chars-display" id="charsDisplay">
-                    
                     <div class="char-card">
-                        <div class="char-img-box">
-                            <img src="personagem1.jpg" alt="Nome do Personagem">
-                        </div>
+                        <div class="char-img-box"><img src="personagem1.jpg"></div>
                         <div class="char-info">
-                            <h4>Roboute Guilliman</h4>
-                            <p>O Primarca dos Ultramarines.</p>
+                            <h4>Guilliman</h4>
+                            <p>Primarca Ultramarine</p>
                         </div>
                     </div>
-
                     <div class="char-card">
-                        <div class="char-img-box">
-                            <img src="personagem2.jpg" alt="Nome do Personagem">
-                        </div>
+                        <div class="char-img-box"><img src="personagem2.jpg"></div>
                         <div class="char-info">
-                            <h4>Gazghkull Thraka</h4>
-                            <p>O Profeta do Waaagh!.</p>
+                            <h4>Thraka</h4>
+                            <p>Profeta do Waaagh!</p>
                         </div>
                     </div>
-                    
                     </div>
             </div>
-        </aside>
 
-    </div> </section>
+            <button class="side-arrow down-arrow" onclick="changeChar(1)">▼</button>
+        </aside>
+    </div>
+</section>
         
         <section id="sobre">
             <div class="about-box metal-panel">
