@@ -22,20 +22,32 @@
                 <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
+    </header>
 
-        <div class="hero-content" id="inicio">
-            <h1 class="hero-title">WARHAMMER 40,000</h1>
-            <p class="hero-tagline">"In the grim darkness of the far future, só tem TRETA!"</p>
-            
-            <div class="audio-player">
+    <!-- HERO SECTION -->
+    <section class="hero-content" id="inicio">
+        <div class="hero-logo">
+            <img src="wk.png" alt="Warhammer 40,000">
+        </div>
+        
+        <p class="hero-tagline">"In the grim darkness of the far future, só tem TRETA!"</p>
+                
+        <div class="audio-player">
             <audio id="heroAudio" src="warhammeraudio.mp3"></audio>
             <button class="audio-btn" onclick="toggleAudio()">
                 <span class="play-icon">▶</span>
                 <span class="audio-text">Ouça a Proclamação Imperial</span>
             </button>
         </div>
-    </div>
-   </header>
+    </section>
+
+    <!-- PAINEL DE HISTÓRIA -->
+    <div class="historia-panel">
+        <p>Warhammer é um universo de fantasia sombrio e ficção científica da Games Workshop, conhecido por seus jogos de estratégia com miniaturas
+            (wargames) onde os jogadores montam exércitos de diversas facções para batalhas épicas, seja no cenário de fantasia medieval ou na distopia futurista, 
+            com um rico lore de guerras, impérios e intrigas, também explorado em livros, videogames e RPG de mesa, onde a pintura e customização das miniaturas são partes importantes do hobby.</p>
+    </div> 
+
     <main>
         <section id="faccao">
             <h2 class="section-title">Codex Galáctico</h2>
@@ -55,28 +67,28 @@
                                         <img src="imperiodohoemem.jpg" alt="Império">
                                     </div>
                                     <h3 class="card-title">Império</h3>
-                                    <p class="card-desc">O domínio da humanidade.</p>
+                                   
                                 </a>
                                 <a href="tau.html" class="faction-card">
                                     <div class="card-img-box">
                                         <img src="tau.jpg" alt="T'au">
                                     </div>
                                     <h3 class="card-title">T'au</h3>
-                                    <p class="card-desc">Pelo Bem Maior.</p>
+                                   
                                 </a>
                                 <a href="necrons.html" class="faction-card">
                                     <div class="card-img-box">
                                         <img src="necrons.jpg" alt="Necrons">
                                     </div>
                                     <h3 class="card-title">Necrons</h3>
-                                    <p class="card-desc">Imortais de metal.</p>
+                                  
                                 </a>
                                 <a href="Orks.html" class="faction-card">
                                     <div class="card-img-box">
                                         <img src="orks.jpg" alt="Orks">
                                     </div>
                                     <h3 class="card-title">Orks</h3>
-                                    <p class="card-desc">A maré verde.</p>
+                                   
                                 </a>
                             </div>
 
@@ -87,28 +99,27 @@
                                         <img src="chaos.jpg" alt="Chaos">
                                     </div>
                                     <h3 class="card-title">Chaos</h3>
-                                    <p class="card-desc">Corrupção eterna.</p>
                                 </a>
                                 <a href="indextyranides.html" class="faction-card">
                                     <div class="card-img-box">
                                         <img src="tyranids.jpg" alt="Tyranids">
                                     </div>
                                     <h3 class="card-title">Tyranids</h3>
-                                    <p class="card-desc">A Grande Devoração.</p>
+                                    
                                 </a>
                                 <a href="aeldari.html" class="faction-card">
                                     <div class="card-img-box">
                                         <img src="aeldari.jpg" alt="Aeldari">
                                     </div>
                                     <h3 class="card-title">Aeldari</h3>
-                                    <p class="card-desc">Império em ruínas.</p>
+                                 
                                 </a>
                                 <a href="#" class="faction-card">
                                     <div class="card-img-box">
                                         <img src="codex.jpg" alt="Atualizações em breve">
                                     </div>
                                     <h3 class="card-title">Atualizações</h3>
-                                    <p class="card-desc">Novas Descobertas sendo descriptografadas.</p>
+                                    
                                 </a>
                             </div>
                         </div>
@@ -116,8 +127,9 @@
                 </div>
 
                 <!-- SIDEBAR DE PERSONAGENS -->
-                <aside class="sidebar-panel metal-panel">
-                    <h3 class="sidebar-title">Personagens</h3>
+               <aside id="personagens" class="sidebar-panel metal-panel">
+                <h3 class="sidebar-title">Personagens</h3>
+                  
                     
                     <button class="side-arrow up-arrow" onclick="changeChar(-1)">▲</button>
                     
@@ -250,10 +262,14 @@
                             </div>
                         </div>
                     </div>
-                    
                     <button class="side-arrow down-arrow" onclick="changeChar(1)">▼</button>
                 </aside>
             </div>
+        </section>
+
+        <!-- SEÇÃO MAPA -->
+        <section id="mapa" class="mapa-section">
+            <img src="fundo.jpg" class="mapa-imagem" alt="Mapa da Galáxia de Warhammer 40K">
         </section>
 
         <!-- SEÇÃO SOBRE -->
@@ -293,18 +309,4 @@
         const charHeight = 107;
         const visibleChars = 4;
 
-        function changeChar(direction) {
-            const display = document.getElementById('charsDisplay');
-            const totalChars = display.children.length;
-            const maxScroll = Math.max(0, totalChars - visibleChars);
-
-            currentChar += direction;
-
-            if (currentChar < 0) currentChar = 0;
-            if (currentChar > maxScroll) currentChar = maxScroll;
-
-            display.style.transform = `translateY(-${currentChar * charHeight}px)`;
-        }
-    </script>
-</body>
-</html>
+        function changeChar(

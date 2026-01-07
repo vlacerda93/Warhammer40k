@@ -1,4 +1,4 @@
-/* ========== RESET E CONFIGURAÇÕES GERAIS ========== */
+/* ========== CONFIGURAÇÕES GERAIS ========== */
 * { 
     margin: 0; 
     padding: 0; 
@@ -18,8 +18,8 @@ body {
     left: 0; 
     width: 100%; 
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
-                url('fundo.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+                url('fundo20.png') no-repeat center center;
     background-size: cover; 
     z-index: -5;
 }
@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 30px 50px;
     background: rgba(0,0,0,0.8);
     border-bottom: 2px solid #c41e3a;
 }
@@ -61,8 +61,45 @@ body {
 }
 
 /* ========== HERO SECTION ========== */
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 80px; /* aumentei o padding-top */
+    min-height: 60vh;
+}
+
+/* Logo */
+.hero-logo {
+    margin-top: 40px; /* espaço extra do header */
+    margin-bottom: 30px;
+}
+
+.hero-logo img {
+    width: 700px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Tagline */
+.hero-tagline {
+    font-size: 1.3rem;
+    color: #ddd;
+    margin: 0 0 30px 0; 
+    text-align: center;
+}
+
+/* Audio Player */
 .audio-player {
-    margin: 20px 0 30px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .audio-btn {
@@ -84,6 +121,7 @@ body {
 .audio-btn:hover {
     background: rgba(196, 30, 58, 0.4);
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(196, 30, 58, 0.5);
 }
 
 .play-icon {
@@ -92,28 +130,6 @@ body {
 
 .audio-text {
     letter-spacing: 0.5px;
-}
-
-.hero-content {
-    text-align: center;
-    padding: 100px 20px 80px;
-}
-
-.hero-title {
-    font-family: 'Cinzel', serif;
-    font-size: 4rem;
-    font-weight: 900;
-    color: #c41e3a;
-    text-shadow: 0 0 20px rgba(196, 30, 58, 0.8);
-    margin-bottom: 20px;
-    letter-spacing: 3px;
-}
-
-.hero-tagline {
-    font-size: 1.3rem;
-    color: #ddd;
-    margin-bottom: 40px;
-    font-style: italic;
 }
 
 .btn-explore {
@@ -133,18 +149,37 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(196, 30, 58, 0.8);
 }
+.historia-panel {
+    background: linear-gradient(180deg, rgba(26, 26, 36, 0.95), rgba(20, 20, 30, 0.98));
+    border: 3px solid #4a4a5a;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 30px 60px; /* menos altura (30px), mais largura (60px) */
+    margin: 60px auto 80px;
+    max-width: 1200px; /* aumentei de 900px para 1200px */
+}
 
+.historia-panel p {
+    color: #ddd;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.7rem; /* reduzi um pouco pois vai caber em menos linhas */
+    font-weight: 400;
+    line-height: 1.7; /* reduzi um pouco o espaçamento entre linhas */
+    text-align: justify;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
 /* ========== SEÇÃO DE FACÇÕES ========== */
 #faccao {
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
 
 .section-title {
     text-align: center;
     font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: #c41e3a;
-    margin-bottom: 40px;
+    margin-bottom: 120px;
     text-shadow: 0 0 10px rgba(196, 30, 58, 0.6);
 }
 
@@ -153,25 +188,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
+    gap:30px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .metal-panel {
-    background: linear-gradient(180deg, #2e2e3a, #1a1a24);
-    border: 3px solid #4a4a5a;
+    background: linear-gradient(180deg, #b6b6bb, #1a1a24);
+    border: 1px solid #4a4a5a;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 /* ========== PAINEL PRINCIPAL DAS FACÇÕES ========== */
 .main-panel {
-    flex: 0 0 750px;
+    max-width:2200px
+    flex: 150 30 0 %;
+   
     padding: 40px;
     position: relative;
-    height: 450px;
+    height: 500px;
 }
 
 .factions-wrapper { 
@@ -192,7 +229,7 @@ body {
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
+    gap: 25px;
     padding: 10px;
 }
 
@@ -207,34 +244,33 @@ body {
     flex-direction: column;
     text-decoration: none;
     transition: transform 0.3s, box-shadow 0.3s;
-    aspect-ratio: 18 / 13;
+    aspect-ratio: 16/10;
+    max-width: 400px;
 }
-
 .faction-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 0 20px rgba(196, 30, 58, 0.6);
 }
+
 
 .card-img-box { 
     width: 100%; 
     height: 100%;
-    overflow: hidden;
-    position: absolute; /* ADICIONE ESTA LINHA */
+    overflow: hidden; /* ← IMPORTANTE: esconde as bordas pretas */
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    background: #000; /* fundo preto caso sobre espaço */
 }
-
 .card-img-box img { 
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-   object-position: center top; /* Em vez de center 30% */
-    transition: transform 0.4s; 
-}
-.faction-card:hover .card-img-box img { 
-    transform: scale(1.1); 
+    object-position: center 35%; /* ← MUDE AQUI: mostra mais do topo */
+    transition: transform 1s;
+     transform: scale(0.95); /* leve zoom out inicial */
 }
 
 .card-title {
@@ -243,13 +279,13 @@ body {
     left: 0;
     width: 100%;
     padding: 10px 15px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+    background: transparent; /* ← SEM fundo */
     color: #c41e3a;
     font-family: 'Cinzel', serif;
     font-size: 1.1rem;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9); /* adiciona sombra no texto */
 }
-
 .card-desc {
     position: absolute;
     bottom: 8px;
@@ -433,6 +469,20 @@ body {
 .gw-link:hover {
     color: #fff;
 }
+/* ========== CONFIGURAÇÕES MAPA ========== */
+
+ .mapa-imagem {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    width: 75%; /* 25% menor que 100% = 75% */
+    max-width: 900px; /* 25% menor que 1200px = 900px */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 6px solid #4a4a5a;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 
 /* ========== FOOTER ========== */
 footer {
