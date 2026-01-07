@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necrons - Warhammer 40K</title>
+        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylenecrons.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">WH40K</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Breadcrumb -->
+    <p style="text-align: center; color: #0bff57; margin: 2em 0 1em; font-size: 0.95em;">
+        <a href="./index.html" style="color: #0bff57;">Início</a> &gt; Necrons
+    </p>
+
+    <main>
+        <div class="fac-page-container">
+            <h1 class="fac-title">Necrons</h1>
+
+            <nav style="text-align: right; margin-bottom: 2em;">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><a href="#sobre" style="color: #0bff57; text-decoration: none;">Sobre</a></li>
+                </ul>
+            </nav>
+
+            <!-- Bloco 1: O Despertar dos Antigos -->
+            <div class="necron-block">
+                <img src="necrons1.jpg" alt="Necrons despertar" class="necron-img-original">
+                <div>
+                    <h2>O Despertar dos Antigos</h2>
+                    <p>
+                        Milênios adormecidos sob a crosta de mundos mortos, os Necrons são uma raça de guerreiros imortais de metal, que retornam para tomar de volta a galáxia que um dia foi deles.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bloco 2: Tecnologia Ancestral -->
+            <div class="necron-block">
+                <img src="necrons2.jpg" alt="Tecnologia Necron" class="necron-img-original">
+                <div>
+                    <h2>Tecnologia Ancestral</h2>
+                    <p>
+                        Suas armas e naves desafiam as leis da física. Portais de teleporte, raios de energia pura e armaduras que se regeneram fazem dos Necrons uma ameaça quase invencível.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bloco 3: Curiosidades -->
+            <div class="necron-block solo">
+                <div>
+                    <h2>Curiosidades</h2>
+                    <ul>
+                        <li>Foram seres orgânicos, os Necrontyr, antes de se tornarem máquinas vivas. Agora se chamam Necrons.</li>
+                        <li>Sua liderança é formada por Faraós Eternos e Lordes sobre-humanos.</li>
+                        <li>Dormem em tumbas espalhadas pela galáxia, aguardando o momento certo para retornar.</li>
+                    </ul>
+                </div>
+                <img src="necron3.jpg" alt="Faraó Necron" class="necron-img-original">
+            </div>
+
+            <a href="./index.html" class="back-link">← Voltar para Facções</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Site experimental de fãs dedicado à mitologia de Warhammer 40,000. Direitos reservados a Games Workshop. | <a href="https://www.warhammer.com/en-WW/home" target="_blank" style="color: #0bff57;">site oficial</a></p>
+        <p>Feito por fã • &copy; 2025 | Pelo Imperador!</p>
+    </footer>
+
+    <script>
+        function searchContent() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const sections = document.querySelectorAll('.fac-page-container, .necron-block');
+            let found = false;
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    section.style.display = 'block';
+                    found = true;
+                } else if (searchTerm) {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+            
+            if (!found && searchTerm) {
+                alert('Nenhuma informação encontrada.');
+            }
+        }
+        
+        document.getElementById('searchInput')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchContent();
+        });
+    </script>
+</body>
+</html>
+
+
+
