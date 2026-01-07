@@ -61,6 +61,39 @@ body {
 }
 
 /* ========== HERO SECTION ========== */
+.audio-player {
+    margin: 20px 0 30px;
+}
+
+.audio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: rgba(196, 30, 58, 0.2);
+    border: 2px solid #c41e3a;
+    border-radius: 25px;
+    color: #c41e3a;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.audio-btn:hover {
+    background: rgba(196, 30, 58, 0.4);
+    transform: scale(1.05);
+}
+
+.play-icon {
+    font-size: 1rem;
+}
+
+.audio-text {
+    letter-spacing: 0.5px;
+}
+
 .hero-content {
     text-align: center;
     padding: 100px 20px 80px;

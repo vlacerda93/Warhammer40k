@@ -26,10 +26,16 @@
         <div class="hero-content" id="inicio">
             <h1 class="hero-title">WARHAMMER 40,000</h1>
             <p class="hero-tagline">"In the grim darkness of the far future, só tem TRETA!"</p>
-            <a href="#faccao" class="btn-explore">Conheça as Facções</a>
+            
+            <div class="audio-player">
+            <audio id="heroAudio" src="warhammeraudio.mp3"></audio>
+            <button class="audio-btn" onclick="toggleAudio()">
+                <span class="play-icon">▶</span>
+                <span class="audio-text">Ouça a Proclamação Imperial</span>
+            </button>
         </div>
-    </header>
-
+    </div>
+   </header>
     <main>
         <section id="faccao">
             <h2 class="section-title">Codex Galáctico</h2>
@@ -74,7 +80,7 @@
                                 </a>
                             </div>
 
-                            <!-- PÁGINA 2 (adicione mais facções aqui) -->
+                            <!-- PÁGINA 2 -->
                             <div class="faction-page">
                                 <a href="chaos.html" class="faction-card">
                                     <div class="card-img-box">
@@ -244,12 +250,8 @@
                             </div>
                         </div>
                     </div>
-                    <button class="side-arrow down-arrow" onclick="changeChar(1)">▼</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     
+                    <button class="side-arrow down-arrow" onclick="changeChar(1)">▼</button>
                 </aside>
             </div>
         </section>
@@ -270,10 +272,10 @@
     <footer>
         <p>Feito por fãs para fãs • 2026</p>
     </footer>
-
+    <script src="index.js"></script>
     <script>
         // CONTROLE DE PÁGINAS DAS FACÇÕES
-        let currentPage = 0; // ⬅️ MUDA PRA 0
+        let currentPage = 0;
         const totalPages = 2;
 
         function changePage(direction) {
@@ -287,9 +289,9 @@
         }
 
         // CONTROLE DE PERSONAGENS NA SIDEBAR
-        let currentChar = 0; // ⬅️ MUDA PRA 0
+        let currentChar = 0;
         const charHeight = 107;
-        const visibleChars = 4; // ⬅️ MUDA PRA 4 (não 6!)
+        const visibleChars = 4;
 
         function changeChar(direction) {
             const display = document.getElementById('charsDisplay');
@@ -303,6 +305,6 @@
 
             display.style.transform = `translateY(-${currentChar * charHeight}px)`;
         }
-</script>
+    </script>
 </body>
 </html>

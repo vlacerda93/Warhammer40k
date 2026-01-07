@@ -23,7 +23,7 @@
         });
     });
 
-    // CONTROLE DE PERSONAGENS NA SIDEBAR (ADICIONE ISSO!)
+    // CONTROLE DE PERSONAGENS NA SIDEBAR
     let currentChar = 0;
     const charHeight = 93;
     const visibleChars = 4;
@@ -40,4 +40,40 @@
 
         display.style.transform = `translateY(-${currentChar * charHeight}px)`;
     }
+
+    // ⬇️⬇️⬇️ ADICIONA ISSO AQUI ⬇️⬇️⬇️
+    // CONTROLE DO ÁUDIO
+   function toggleAudio() {
+    const audio = document.getElementById('heroAudio');
+    const icon = document.querySelector('.play-icon');
+    const btn = document.querySelector('.audio-btn');
+    
+    if (audio.paused) {
+        audio.play();
+        icon.textContent = '⏸';
+        btn.style.background = 'rgba(196, 30, 58, 0.5)';
+    } else {
+        audio.pause();
+        icon.textContent = '▶';
+        btn.style.background = 'rgba(196, 30, 58, 0.2)';
+    }
+}
+
+// AUTOPLAY após 2 segundos quando a página carregar
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const audio = document.getElementById('heroAudio');
+        const icon = document.querySelector('.play-icon');
+        const btn = document.querySelector('.audio-btn');
+        
+        audio.play().then(() => {
+            // Áudio começou a tocar
+            icon.textContent = '⏸';
+            btn.style.background = 'rgba(196, 30, 58, 0.5)';
+        }).catch((error) => {
+            // Navegador bloqueou o autoplay (política de segurança)
+            console.log('Autoplay bloqueado pelo navegador');
+        });
+    }, 2000); // 2000 = 2 segundos
+});
 </script>
