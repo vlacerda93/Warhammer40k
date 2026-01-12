@@ -1,0 +1,110 @@
+<div id="personagem-card">
+  <img id="personagem-img" class="card-img" src="" alt="">
+  <div class="card-info">
+    <h2 id="personagem-nome"></h2>
+    <p id="personagem-alcunha"></p>
+  </div>
+</div>
+
+<button id="btn-prev">▲</button>
+<span id="label-proximo"></span>
+<button id="btn-next">▼</button>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lictor - Warhammer 40K</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="personagens.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">WH40K BRASIL</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#inicio">Início</a></li>
+                <li><a href="../index.html#faccao">Facções</a></li>
+                <li><a href="../index.html#personagens">Personagens</a></li>
+                <li><a href="../index.html#mapa">Mapa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="personagem-page-container">
+            <h1 class="personagem-title">LICTOR</h1>
+            <p class="personagem-subtitle">Assassino Tyranida • Predador Silencioso • Olhos da Colmeia</p>
+
+            <!-- Bloco 1: Origem (imagem à esquerda) -->
+            <div class="personagem-block">
+                <img src="../lictor.jpg" alt="Lictor" class="personagem-img-original">
+                <div>
+                    <h2>Origem</h2>
+                    <p>
+                        O Lictor é uma das bio-formas mais especializadas e temidas dos Tyranidas, criado pela Mente Colmeia 
+                        especificamente para **infiltração, reconhecimento e assassinato**. Diferente das hordas de Termagants 
+                        e Hormagaunts que avançam em massa, o Lictor opera nas sombras, sozinho e em silêncio mortal.
+                    </p>
+                    <p>
+                        Cada Lictor é despachado antes das invasões em larga escala para mapear alvos estratégicos, 
+                        eliminar líderes inimigos e semear terror psicológico. Sua carapaça adaptativa permite camuflagem 
+                        perfeita, tornando-o praticamente invisível até o momento do ataque. Quando a invasão principal 
+                        começa, os Lictors já coletaram todas as informações necessárias para a Mente Colmeia orquestrar 
+                        o genocídio do planeta.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bloco 2: Credo de Guerra (imagem à direita) -->
+            <div class="personagem-block reverse">
+                <img src="../lictor.jpg" alt="Lictor em camuflagem" class="personagem-img-original">
+                <div>
+                    <h2>Credo de Guerra</h2>
+                    <blockquote class="credo-quote">
+                        "Você não verá. Você não ouvirá. Apenas sentirá as garras perfurando suas costas."
+                    </blockquote>
+                    <p>
+                        O Lictor não possui consciência individual ou motivação própria — é um **instrumento perfeito 
+                        da Mente Colmeia**. Sua função é infiltrar, caçar e matar alvos de alto valor antes que percebam 
+                        a ameaça Tyranida.
+                    </p>
+                    <p>
+                        Operando completamente isolado, o Lictor caça comandantes, psykers, engenheiros e qualquer um 
+                        que possa organizar uma defesa eficaz. Ele não busca glória ou troféus — apenas **eficiência letal**. 
+                        Ao eliminar líderes-chave, o Lictor garante que quando a invasão principal chegar, o planeta 
+                        estará em pânico, desorganizado e incapaz de resistir ao enxame.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bloco 3: Capacidade (texto à esquerda, imagem à direita) -->
+            <div class="personagem-block solo">
+                <div>
+                    <h2>Capacidade Bélica</h2>
+                    <ul>
+                        <li><strong>Camuflagem Camaleônica:</strong> Pele que muda de cor e textura, tornando-o quase invisível em qualquer terreno.</li>
+                        <li><strong>Garras Dilacerantes:</strong> Quatro braços equipados com garras ósseas capazes de perfurar armadura Terminator.</li>
+                        <li><strong>Feromônios de Caça:</strong> Marca alvos com feromônios que guiam outros Tyranidas diretamente aos pontos críticos.</li>
+                        <li><strong>Movimentação Silenciosa:</strong> Move-se sem fazer som, escalando paredes e tetos com ventosas especializadas.</li>
+                        <li><strong>Sentidos Aguçados:</strong> Detecta calor, movimento e sinais biológicos através de órgãos sensoriais avançados.</li>
+                        <li><strong>Assassinato Preciso:</strong> Treinado geneticamente para identificar e eliminar líderes, oficiais e unidades de elite.</li>
+                        <li><strong>Conexão com a Colmeia:</strong> Transmite informações táticas em tempo real para a Mente Colmeia coordenar invasões.</li>
+                    </ul>
+                    <p><strong>Localização Atual:</strong> Infiltrado em mundos imperiais antes de invasões Tyranidas</p>
+                    <p><strong>Status:</strong> Ativo, operando como vanguarda silenciosa das Frotas-Colmeia</p>
+                </div>
+                <img src="../lictor.jpg" alt="Lictor - Predador" class="personagem-img-original">
+            </div>
+
+            <a href="../index.html#personagens" class="back-link">← Voltar para Personagens</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Site experimental de fãs dedicado à mitologia de Warhammer 40,000. Direitos reservados à Games Workshop. | <a href="https://www.warhammer.com/" target="_blank">Site Oficial</a></p>
+        <p>Feito por fã • © 2026 | Pela Glória do Imperador!</p>
+    </footer>
+</body>
+</html>
