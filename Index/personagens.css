@@ -1,0 +1,369 @@
+/* ========================================
+   BACKGROUND E ESTRUTURA BASE
+   ======================================== */
+
+/* Garante que o body tem o background correto */
+body {
+    background-color: #020205;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Background da galáxia */
+.galaxy-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('fundo20.png') no-repeat center center;
+    background-size: cover;
+    z-index: -5;
+}
+
+/* Main precisa ter z-index maior que o background */
+main {
+    position: relative;
+    z-index: 1;
+    padding-top: 40px;
+}
+/* TÍTULOS */
+.personagem-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px currentColor;
+    color: #c41e3a; /* Padrão vermelho - será sobrescrito por facção */
+}
+
+.personagem-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 50px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* BLOCOS DE CONTEÚDO */
+.personagem-block {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #c41e3a;
+    border-radius: 8px;
+}
+
+/* Bloco reverso (imagem à direita) */
+.personagem-block.reverse {
+    flex-direction: row-reverse;
+    border-left: none;
+    border-right: 4px solid #c41e3a;
+}
+
+/* Bloco solo (layout especial) */
+.personagem-block.solo {
+    flex-direction: row;
+}
+
+/* IMAGENS - PADRONIZAÇÃO UNIVERSAL */
+.personagem-img-original {
+    width: 100%;
+    max-width: 450px;
+    min-width: 300px;
+    height: 400px; /* Altura fixa */
+    object-fit: cover; /* Corta proporcionalmente */
+    object-position: center; /* Foca no centro */
+    border-radius: 8px;
+    border: 3px solid #555;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.personagem-img-original:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(196, 30, 58, 0.5);
+}
+
+/* TEXTO */
+.personagem-block h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #c41e3a;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #c41e3a;
+    padding-bottom: 10px;
+}
+
+.personagem-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.personagem-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.personagem-block li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.personagem-block li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #c41e3a;
+    font-weight: bold;
+}
+
+/* CITAÇÕES */
+.credo-quote {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #c41e3a;
+    border-left: 5px solid #c41e3a;
+    padding-left: 20px;
+    margin: 25px 0;
+    background: rgba(196, 30, 58, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* BOTÃO VOLTAR */
+.back-link {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #c41e3a, #8b1527);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.back-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(196, 30, 58, 0.8);
+}
+
+/* ========================================
+   TEMAS POR FACÇÃO
+   ======================================== */
+
+/* CHAOS (Abaddon, Magnus) */
+.faction-chaos .personagem-title {
+    color: #8B0000; /* Vermelho sangue */
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 20px #8B0000;
+}
+
+.faction-chaos .personagem-block {
+    border-left-color: #8B0000;
+}
+
+.faction-chaos .personagem-block.reverse {
+    border-right-color: #8B0000;
+}
+
+.faction-chaos .personagem-block h2,
+.faction-chaos .credo-quote {
+    color: #8B0000;
+    border-color: #8B0000;
+}
+
+.faction-chaos .back-link {
+    background: linear-gradient(135deg, #8B0000, #5a0000);
+}
+
+/* IMPERIUM (Guilliman, Calgar) */
+.faction-imperium .personagem-title {
+    color: #D4AF37; /* Dourado imperial */
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 20px #D4AF37;
+}
+
+.faction-imperium .personagem-block {
+    border-left-color: #D4AF37;
+}
+
+.faction-imperium .personagem-block.reverse {
+    border-right-color: #D4AF37;
+}
+
+.faction-imperium .personagem-block h2,
+.faction-imperium .credo-quote {
+    color: #D4AF37;
+    border-color: #D4AF37;
+}
+
+.faction-imperium .back-link {
+    background: linear-gradient(135deg, #D4AF37, #8B7355);
+}
+
+/* NECRONS (Szarekh, Imotekh) */
+.faction-necrons .personagem-title {
+    color: #00FF00; /* Verde néon */
+    font-family: 'Exo 2', sans-serif;
+    text-shadow: 0 0 20px #00FF00;
+}
+
+.faction-necrons .personagem-block {
+    border-left-color: #00FF00;
+}
+
+.faction-necrons .personagem-block.reverse {
+    border-right-color: #00FF00;
+}
+
+.faction-necrons .personagem-block h2,
+.faction-necrons .credo-quote {
+    color: #00FF00;
+    border-color: #00FF00;
+}
+
+.faction-necrons .back-link {
+    background: linear-gradient(135deg, #00FF00, #008000);
+}
+
+/* ORKS (Ghazghkull, Zagstruk) */
+.faction-orks .personagem-title {
+    color: #228B22; /* Verde escuro */
+    font-family: 'Black Ops One', cursive;
+    text-shadow: 0 0 20px #228B22;
+}
+
+.faction-orks .personagem-block {
+    border-left-color: #228B22;
+}
+
+.faction-orks .personagem-block.reverse {
+    border-right-color: #228B22;
+}
+
+.faction-orks .personagem-block h2,
+.faction-orks .credo-quote {
+    color: #228B22;
+    border-color: #228B22;
+}
+
+.faction-orks .back-link {
+    background: linear-gradient(135deg, #228B22, #0f4d0f);
+}
+
+/* AELDARI (Eldrad, Yvraine) */
+.faction-aeldari .personagem-title {
+    color: #9370DB; /* Roxo místico */
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 20px #9370DB;
+}
+
+.faction-aeldari .personagem-block {
+    border-left-color: #9370DB;
+}
+
+.faction-aeldari .personagem-block.reverse {
+    border-right-color: #9370DB;
+}
+
+.faction-aeldari .personagem-block h2,
+.faction-aeldari .credo-quote {
+    color: #9370DB;
+    border-color: #9370DB;
+}
+
+.faction-aeldari .back-link {
+    background: linear-gradient(135deg, #9370DB, #6a4c9c);
+}
+
+/* TAU (Shadowsun, Farsight) */
+.faction-tau .personagem-title {
+    color: #00BFFF; /* Azul tech */
+    font-family: 'Exo 2', sans-serif;
+    text-shadow: 0 0 20px #00BFFF;
+}
+
+.faction-tau .personagem-block {
+    border-left-color: #00BFFF;
+}
+
+.faction-tau .personagem-block.reverse {
+    border-right-color: #00BFFF;
+}
+
+.faction-tau .personagem-block h2,
+.faction-tau .credo-quote {
+    color: #00BFFF;
+    border-color: #00BFFF;
+}
+
+.faction-tau .back-link {
+    background: linear-gradient(135deg, #00BFFF, #0080bf);
+}
+
+/* TYRANIDS (Swarmlord, Lictor) */
+.faction-tyranids .personagem-title {
+    color: #8B008B; /* Roxo orgânico */
+    font-family: 'Exo 2', sans-serif;
+    text-shadow: 0 0 20px #8B008B;
+}
+
+.faction-tyranids .personagem-block {
+    border-left-color: #8B008B;
+}
+
+.faction-tyranids .personagem-block.reverse {
+    border-right-color: #8B008B;
+}
+
+.faction-tyranids .personagem-block h2,
+.faction-tyranids .credo-quote {
+    color: #8B008B;
+    border-color: #8B008B;
+}
+
+.faction-tyranids .back-link {
+    background: linear-gradient(135deg, #8B008B, #5a005a);
+}
+
+/* ========================================
+   RESPONSIVIDADE MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .personagem-page-container {
+        padding: 30px 20px;
+    }
+    
+    .personagem-title {
+        font-size: 2.5rem;
+    }
+    
+    .personagem-block,
+    .personagem-block.reverse,
+    .personagem-block.solo {
+        flex-direction: column;
+        border-left: 4px solid #c41e3a;
+        border-right: none;
+    }
+    
+    .personagem-img-original {
+        max-width: 100%;
+        height: 300px;
+    }
+}
