@@ -422,7 +422,13 @@ body {
     margin-top: 10px; 
     border-radius: 0 0 5px 5px; 
 }
-
+#mapa-galaxia .mapa-comentario {
+  text-align: center;      /* centraliza o texto */
+  font-size: 0.9rem;       /* deixa a fonte menor */
+  color: #ccc;             /* cor mais clara, estilo comentário */
+  font-style: italic;      /* opcional: deixa em itálico */
+  margin: 0 auto;          /* garante centralização dentro do painel */
+}
 /* ========== SEÇÃO SOBRE ========== */
 #sobre {
     padding: 60px 20px;
@@ -497,3 +503,4 @@ footer p {
     color: #aaa;
     font-size: 0.9rem;
 }
+
