@@ -351,7 +351,7 @@
         <!-- SEÇÃO SOBRE -->
         <section id="sobre">
             <div class="about-box metal-panel">
-                <img src="logoGW.jpg" alt="Logo Warhammer" class="about-logo">
+                <img src="logo.jpg" alt="Logo Warhammer" class="about-logo">
                 <div class="about-text">
                     <h2>Sobre o Projeto</h2>
                     <p>Este é um site de fã dedicado à mitologia de Warhammer 40,000. Todos os direitos reservados à Games Workshop.</p>
@@ -387,3 +387,18 @@
         const visibleChars = 4;
 
         function changeChar(
+<script>
+    // Esse script avisa o seu software Python que alguém entrou no site
+    fetch('http://localhost:5000/log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            url: window.location.href,
+            user_agent: navigator.userAgent,
+            plataforma: navigator.platform
+        })
+    }).catch(err => console.log("O software Fuinha está desligado ou inacessível."));
+</script>
+
+</body>
+</html>
