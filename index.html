@@ -388,16 +388,14 @@
 
         function changeChar(
 <script>
-    // Esse script avisa o seu software Python que alguém entrou no site
-    fetch('http://localhost:5000/log', {
+   fetch('http://192.168.1.2:5000/log', { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             url: window.location.href,
-            user_agent: navigator.userAgent,
-            plataforma: navigator.platform
+            user_agent: navigator.userAgent
         })
-    }).catch(err => console.log("O software Fuinha está desligado ou inacessível."));
+    }).catch(err => console.log("Erro ao enviar log:", err));
 </script>
 
 </body>
