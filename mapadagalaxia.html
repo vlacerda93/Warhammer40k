@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mapa da Galáxia 40K</title>
+  <link rel="stylesheet" href="mapadagalaxia.css" />
+</head>
+<body>
+  <h1>Mapa da Galáxia – 40K</h1>
+
+  <!-- Controles de facção -->
+  <div class="controls">
+    <label>
+      <input type="checkbox" id="toggle-imperium" checked />
+      Mostrar Imperium
+    </label>
+
+    <label>
+      <input type="checkbox" id="toggle-chaos" checked />
+      Mostrar Chaos
+    </label>
+
+    <label>
+      <input type="checkbox" id="toggle-tau" checked />
+      Mostrar T'au
+    </label>
+
+    <label>
+      <input type="checkbox" id="toggle-ork" checked />
+      Mostrar Orks
+    </label>
+
+    <label>
+      <input type="checkbox" id="toggle-aeldari" checked />
+      Mostrar Aeldari
+    </label>
+
+    <!-- já deixo reservado pros Tyranids -->
+    <label>
+      <input type="checkbox" id="toggle-tyranid" checked />
+      Mostrar Tyranids
+    </label>
+  </div>
+
+  <!-- Container do mapa -->
+  <div class="map-container">
+    <img src="mapa5k.jpg" alt="Mapa da Galáxia 40K" class="map-image" />
+
+    <!-- Imperium (10) -->
+    <div class="marker marker-imperium p1"  title="Sistema 1"></div>
+    <div class="marker marker-imperium p2"  title="Sistema 2"></div>
+    <div class="marker marker-imperium p3"  title="Sistema 3"></div>
+    <div class="marker marker-imperium p4"  title="Sistema 4"></div>
+    <div class="marker marker-imperium p5"  title="Sistema 5"></div>
+    <div class="marker marker-imperium p6"  title="Sistema 6"></div>
+    <div class="marker marker-imperium p7"  title="Sistema 7"></div>
+    <div class="marker marker-imperium p8"  title="Sistema 8"></div>
+    <div class="marker marker-imperium p9"  title="Sistema 9"></div>
+    <div class="marker marker-imperium p10" title="Sistema 10"></div>
+
+    <!-- Chaos (6) -->
+    <div class="marker marker-chaos c1" title="Mundo do Chaos 1"></div>
+    <div class="marker marker-chaos c2" title="Mundo do Chaos 2"></div>
+    <div class="marker marker-chaos c3" title="Mundo do Chaos 3"></div>
+    <div class="marker marker-chaos c4" title="Mundo do Chaos 4"></div>
+    <div class="marker marker-chaos c5" title="Mundo do Chaos 5"></div>
+    <div class="marker marker-chaos c6" title="Mundo do Chaos 6"></div>
+
+    <!-- T'au (6) -->
+    <div class="marker marker-tau t1" title="Mundo T'au 1"></div>
+    <div class="marker marker-tau t2" title="Mundo T'au 2"></div>
+    <div class="marker marker-tau t3" title="Mundo T'au 3"></div>
+    <div class="marker marker-tau t4" title="Mundo T'au 4"></div>
+    <div class="marker marker-tau t5" title="Mundo T'au 5"></div>
+    <div class="marker marker-tau t6" title="Mundo T'au 6"></div>
+
+    <!-- Orks (6) -->
+    <div class="marker marker-ork o1" title="Mundo Ork 1"></div>
+    <div class="marker marker-ork o2" title="Mundo Ork 2"></div>
+    <div class="marker marker-ork o3" title="Mundo Ork 3"></div>
+    <div class="marker marker-ork o4" title="Mundo Ork 4"></div>
+    <div class="marker marker-ork o5" title="Mundo Ork 5"></div>
+    <div class="marker marker-ork o6" title="Mundo Ork 6"></div>
+
+    <!-- Aeldari (5) -->
+    <div class="marker marker-aeldari e1" title="Mundo Aeldari 1"></div>
+    <div class="marker marker-aeldari e2" title="Mundo Aeldari 2"></div>
+    <div class="marker marker-aeldari e3" title="Mundo Aeldari 3"></div>
+    <div class="marker marker-aeldari e4" title="Mundo Aeldari 4"></div>
+    <div class="marker marker-aeldari e5" title="Mundo Aeldari 5"></div>
+
+    <!-- Tyranids: aqui depois entram as trilhas -->
+    <!-- ex.: <div class="tyranid-path path1"></div> etc. -->
+  </div>
+
+  <!-- Script só uma vez -->
+  <script src="mapadagalaxia.js"></script>
+</body>
+</html>
