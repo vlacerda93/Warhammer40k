@@ -15,23 +15,21 @@ function changePage(direction) {
 }
 
 // ====================================
-// CONTROLE DE PERSONAGENS NA SIDEBAR
+// CONTROLE DE PERSONAGENS NA SIDEBAR (1 personagem por vez)
 // ====================================
 let currentChar = 0;
-const charHeight = 107;
-const visibleChars = 4;
 
 function changeChar(direction) {
     const display = document.getElementById('charsDisplay');
+    const wrapper = display.parentElement;
     const totalChars = display.children.length;
-    const maxScroll = Math.max(0, totalChars - visibleChars);
+    const slideHeight = wrapper.offsetHeight; // altura de 1 card = altura do painel
 
     currentChar += direction;
-
     if (currentChar < 0) currentChar = 0;
-    if (currentChar > maxScroll) currentChar = maxScroll;
+    if (currentChar >= totalChars) currentChar = totalChars - 1;
 
-    display.style.transform = `translateY(-${currentChar * charHeight}px)`;
+    display.style.transform = `translateY(-${currentChar * slideHeight}px)`;
 }
 
 // CONTROLE DO ÁUDIO

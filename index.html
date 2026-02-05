@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warhammer 40K - Codex Galáctico</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mapadagalaxia.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    
+
     <div class="galaxy-bg"></div>
 
     <header>
@@ -18,7 +22,7 @@
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#faccao">Facções</a></li>
                 <li><a href="#personagens">Personagens</a></li>
-                <li><a href="#mapa">Mapa</a></li>
+                <li><a href="#mapa-galaxia">Mapa</a></li>
                 <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
@@ -29,9 +33,9 @@
         <div class="hero-logo">
             <img src="wk.png" alt="Warhammer 40,000">
         </div>
-        
+
         <p class="hero-tagline">"In the grim darkness of the far future, só tem TRETA!"</p>
-                
+
         <div class="audio-player">
             <audio id="heroAudio" src="warhammeraudio.mp3"></audio>
             <button class="audio-btn" onclick="toggleAudio()">
@@ -43,86 +47,89 @@
 
     <!-- PAINEL DE HISTÓRIA -->
     <div class="historia-panel">
-        <p>Warhammer é um universo de fantasia sombrio e ficção científica da Games Workshop, conhecido por seus jogos de estratégia com miniaturas
-            (wargames) onde os jogadores montam exércitos de diversas facções para batalhas épicas, seja no cenário de fantasia medieval ou na distopia futurista, 
-            com um rico lore de guerras, impérios e intrigas, também explorado em livros, videogames e RPG de mesa, onde a pintura e customização das miniaturas são partes importantes do hobby.</p>
-    </div> 
+        <p>Warhammer é um universo de fantasia sombrio e ficção científica da Games Workshop, conhecido por seus jogos
+            de estratégia com miniaturas
+            (wargames) onde os jogadores montam exércitos de diversas facções para batalhas épicas, seja no cenário de
+            fantasia medieval ou na distopia futurista,
+            com um rico lore de guerras, impérios e intrigas, também explorado em livros, videogames e RPG de mesa, onde
+            a pintura e customização das miniaturas são partes importantes do hobby.</p>
+    </div>
 
-<main>
-  <section id="faccao">
-    <h2 class="section-title">Codex Galáctico</h2>
+    <main>
+        <section id="faccao">
+            <h2 class="section-title">Codex Galáctico</h2>
 
-    <div class="layout-container">
-      <!-- PAINEL PRINCIPAL DAS FACÇÕES -->
-      <div class="main-panel metal-panel">
-        <button class="nav-arrow prev-arrow" onclick="changePage(-1)">❮</button>
-        <button class="nav-arrow next-arrow" onclick="changePage(1)">❯</button>
+            <div class="layout-container">
+                <!-- PAINEL PRINCIPAL DAS FACÇÕES -->
+                <div class="main-panel metal-panel">
+                    <button class="nav-arrow prev-arrow" onclick="changePage(-1)">❮</button>
+                    <button class="nav-arrow next-arrow" onclick="changePage(1)">❯</button>
 
-        <div class="factions-wrapper">
-          <div class="factions-display" id="factionsDisplay">
-            <!-- PÁGINA 1 -->
-            <div class="faction-page">
-              <!-- IMPÉRIO -->
-              <a href="../Imperio/humans.html" class="faction-card">
-                <div class="card-img-box">
-                  <img src="../Imperio/imperiodohoemem.jpg" alt="Império">
-                </div>
-                <h3 class="card-title">Império</h3>
-              </a>
+                    <div class="factions-wrapper">
+                        <div class="factions-display" id="factionsDisplay">
+                            <!-- PÁGINA 1 -->
+                            <div class="faction-page">
+                                <!-- IMPÉRIO -->
+                                <a href="Imperio/humans.html" class="faction-card faction-card--imperio">
+                                    <div class="card-img-box">
+                                        <img src="Imperio/imperiodohoemem.jpg" alt="Império">
+                                    </div>
+                                    <h3 class="card-title">Império</h3>
+                                </a>
 
-              <!-- T'AU -->
-              <a href="../T'au/T'au.html" class="faction-card">
-                <div class="card-img-box">
-                  <img src="../T'au/t'au.jpg" alt="T'au">
-                </div>
-                <h3 class="card-title">T'au</h3>
-              </a>
+                                <!-- T'AU -->
+                                <a href="T'au/Farsight.html" class="faction-card">
+                                    <div class="card-img-box">
+                                        <img src="tau.jpg" alt="T'au">
+                                    </div>
+                                    <h3 class="card-title">T'au</h3>
+                                </a>
 
-              <!-- NECRONS -->
-              <a href="../Necrons/necrons.html" class="faction-card">
-                <div class="card-img-box">
-                  <img src="../Necrons/necrons.jpg" alt="Necrons">
-                </div>
-                <h3 class="card-title">Necrons</h3>
-              </a>
+                                <!-- NECRONS -->
+                                <a href="Necrons/necrons.html" class="faction-card">
+                                    <div class="card-img-box">
+                                        <img src="Necrons/necrons.jpg" alt="Necrons">
+                                    </div>
+                                    <h3 class="card-title">Necrons</h3>
+                                </a>
 
-              <!-- ORKS -->
-              <a href="../Orks/Orks.html" class="faction-card">
-                <div class="card-img-box">
-                  <img src="../Orks/orks.jpg" alt="Orks">
-                </div>
-                <h3 class="card-title">Orks</h3>
-              </a>
-            </div>
+                                <!-- ORKS -->
+                                <a href="Orks/Orks.html" class="faction-card">
+                                    <div class="card-img-box">
+                                        <img src="Orks/orks.jpg" alt="Orks">
+                                    </div>
+                                    <h3 class="card-title">Orks</h3>
+                                </a>
+                            </div>
 
                             <!-- PÁGINA 2 -->
                             <div class="faction-page">
-                                <a href="../Caos/chaos.html" class="faction-card">
+                                <a href="Caos/chaos.html" class="faction-card">
                                     <div class="card-img-box">
-                                        <img src="../Caos/chaos.jpg" alt="Chaos">
+                                        <img src="Caos/chaos.jpg" alt="Chaos">
                                     </div>
                                     <h3 class="card-title">Chaos</h3>
                                 </a>
-                                <a href="../Tyranides/tyranides.html" class="faction-card">
+                                <a href="Tyranides/Tyranides.html" class="faction-card">
                                     <div class="card-img-box">
-                                        <img src="../Tyranides/tyranids.jpg" alt="Tyranids">
+                                        <img src="Tyranides/tyranids.jpg" alt="Tyranids">
                                     </div>
                                     <h3 class="card-title">Tyranids</h3>
-                                    
+
                                 </a>
-                                <a href="../Aeldari/aeldari.html" class="faction-card">
+                                <a href="Aeldari/Aeldari.html" class="faction-card">
                                     <div class="card-img-box">
-                                        <img src="../Aeldari/Aeldaris.jpg" alt="Aeldari">
+                                        <img src="Aeldari/Aeldaris.jpg" alt="Aeldari">
                                     </div>
                                     <h3 class="card-title">Aeldari</h3>
-                                 
+
                                 </a>
                                 <a href="#" class="faction-card">
                                     <div class="card-img-box">
                                         <img src="codex.jpg" alt="Atualizações em breve">
                                     </div>
                                     <h3 class="card-title">Atualizações em breve†</h3>
-                                    
+
                                 </a>
                             </div>
                         </div>
@@ -130,152 +137,162 @@
                 </div>
 
                 <!-- SIDEBAR DE PERSONAGENS -->
-               <aside id="personagens" class="sidebar-panel metal-panel">
-                <h3 class="sidebar-title">Personagens</h3>
-                  
-                    
+                <aside id="personagens" class="sidebar-panel metal-panel">
+                    <h3 class="sidebar-title">Personagens</h3>
+
+
                     <button class="side-arrow up-arrow" onclick="changeChar(-1)">▲</button>
-                    
+
                     <div class="chars-wrapper">
                         <div class="chars-display" id="charsDisplay">
                             <!-- Card 1: Ultramarines -->
                             <div class="char-card">
-                                <div class="char-img-box" >
-                                    <a href="../Imperio/Guilliman.html">
-                                        <img src="../Imperio/guilliman.jpg" alt="Guilliman">
-                                   
-                                </div>
-                                
-                                <div class="char-info">
-                                    <h4>Guilliman</h4>
-                                    <p>Primarca Ultramarine</p> </a>
-                                </div>
+                                <a href="Imperio/Guilliman.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Imperio/guilliman.jpg" alt="Guilliman">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Guilliman</h4>
+                                        <p>Primarca Ultramarine</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="char-card">
-                                <div class="char-img-box">
-                                     <a href="../Imperio/Calgar.html">  
-                                    <img src="../Imperio/calgar.jpg" alt="Calgar">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Marneus Calgar</h4>
-                                    <p>Mestre do Capítulo</p></a>
-                                </div>
+                                <a href="Imperio/Calgar.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Imperio/calgar.jpg" alt="Calgar">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Marneus Calgar</h4>
+                                        <p>Mestre do Capítulo</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <!-- Card 2: Aeldari -->
                             <div class="char-card">
-                                <div class="char-img-box">
-                                     <a href="../Aeldari/Eldrad.html">
-                                    <img src="../Aeldari/Eldrad.jpg" alt="Eldrad">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Eldrad Ulthran</h4>
-                                    <p>Farseer</p></a>
-                                </div>
+                                <a href="Aeldari/Eldrad.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Aeldari/Eldrad.jpg" alt="Eldrad">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Eldrad Ulthran</h4>
+                                        <p>Farseer</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="char-card">
-                                <div class="char-img-box">
-                                     <a href="../Aeldari/Yvraine.html">
-                                    <img src="../Aeldari/Yvraine.jpg" alt="Yvraine">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Yvraine</h4>
-                                    <p>Emissária Ynnari</p></a>
-                                </div>
+                                <a href="Aeldari/Yvraine.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Aeldari/Yvraine.jpg" alt="Yvraine">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Yvraine</h4>
+                                        <p>Emissária Ynnari</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <!-- Card 3: Orks -->
                             <div class="char-card">
-                                <div class="char-img-box">
-                                     <a href="../Orks/ghazghkull.html">
-                                    <img src="../Orks/ghazghkull.jpg" alt="Ghazghkull">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Ghazghkull</h4>
-                                    <p>Senhor de Guerra</p></a>
-                                </div>
+                                <a href="Orks/Ghazghkull.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Orks/Ghazghkull.jpg" alt="Ghazghkull">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Ghazghkull</h4>
+                                        <p>Senhor de Guerra</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="char-card">
-                                <div class="char-img-box">
-                                    <a href="../Orks/Zagstruk.html">
-                                    <img src="../Orks/Zagstruk11.jpg" alt="Zagstruk">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Boss Zagstruk</h4>
-                                    <p>Líder Stormboyz</p></a>
-                                </div>
+                                <a href="Orks/Zagstruk.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Orks/zagstruk11.jpg" alt="Zagstruk">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Boss Zagstruk</h4>
+                                        <p>Líder Stormboyz</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <!-- Card 4: Chaos -->
                             <div class="char-card">
-                                <div class="char-img-box">
-                                    <a href="../Caos/Abaddon.html">
-                                    <img src="../Caos/abaddon.jpg" alt="Abaddon">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Abaddon</h4>
-                                    <p>O Saqueador</p></a>
-                                </div>
+                                <a href="Caos/Abaddon.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Caos/abaddon.jpg" alt="Abaddon">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Abaddon</h4>
+                                        <p>O Saqueador</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="char-card">
-                                <div class="char-img-box">
-                                    <a href="../Caos/Magnus.html">
-                                    <img src="../Caos/magnus.jpg" alt="Magnus">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Magnus</h4>
-                                    <p>O Vermelho</p></a>
-                                </div>
+                                <a href="Caos/Magnus.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Caos/magnus.jpg" alt="Magnus">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Magnus</h4>
+                                        <p>O Vermelho</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <!-- Card 5: Tyranids -->
                             <div class="char-card">
-                                <div class="char-img-box">
-                                    <a href="../Tyranides/Swarmlord.html">      
-                                    <img src="../Tyranides/swarmlord.jpg" alt="Swarmlord">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Tirano da Colmeia</h4>
-                                    <p>Lider das hordas Tyranicas</p></a>
-                                </div>
+                                <a href="Tyranides/Swarmlord.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Tyranides/swarmlord.jpg" alt="Swarmlord">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Tirano da Colmeia</h4>
+                                        <p>Líder das hordas Tyranidas</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="char-card">
-                                <div class="char-img-box">
-                                    <a href="../Tyranides/Lictor.html">
-                                    <img src="../Tyranides/lictor.jpg" alt="Lictor">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Lictor</h4>
-                                    <p>Furtivo e Mortal</p></a>
-                                </div>
+                                <a href="Tyranides/Lictor.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Tyranides/lictor.jpg" alt="Lictor">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Lictor</h4>
+                                        <p>Furtivo e Mortal</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <!-- Card 6: Necrons -->
                             <div class="char-card">
-                                <div class="char-img-box">
-                                        <a href="../Necrons/Szarekh.html">
-                                    <img src="../Necrons/szarekh.jpg" alt="Szarekh">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Szarekh</h4>
-                                    <p>O Rei Silencioso</p></a>
-                                </div>
+                                <a href="Necrons/Szarekh.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Necrons/szarekh.jpg" alt="Szarekh">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Szarekh</h4>
+                                        <p>O Rei Silencioso</p>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="char-card">
-                                <div class="char-img-box">
-                                        <a href="../Necrons/Imotekh.html">
-                                    <img src="../Necrons/imotekh.jpg" alt="Imotekh">
-                                </div>
-                                <div class="char-info">
-                                    <h4>Imotekh</h4>
-                                    <p>Senhor das Tempestades</p></a>
-                                </div>
+                                <a href="Necrons/Imotekh.html" class="char-card-link">
+                                    <div class="char-img-box">
+                                        <img src="Necrons/imotekh.jpg" alt="Imotekh">
+                                    </div>
+                                    <div class="char-info">
+                                        <h4>Imotekh</h4>
+                                        <p>Senhor das Tempestades</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -285,17 +302,76 @@
         </section>
 
         <!-- SEÇÃO MAPA -->
-        <section id="mapa" class="mapa-section">
-            <img src="../index/galaxia40k.jpg" class="mapa-imagem" alt="Mapa da Galáxia de Warhammer 40K">
+        <section id="mapa-galaxia">
+            <h2>Mapa da Galáxia – Warhammer 40K</h2>
+
+            <div class="controls">
+                <label><input type="checkbox" id="toggle-imperium" checked> Mostrar Imperium</label>
+                <label><input type="checkbox" id="toggle-chaos" checked> Mostrar Chaos</label>
+                <label><input type="checkbox" id="toggle-tau" checked> Mostrar T'au</label>
+                <label><input type="checkbox" id="toggle-ork" checked> Mostrar Orks</label>
+                <label><input type="checkbox" id="toggle-aeldari" checked> Mostrar Aeldari</label>
+                <label><input type="checkbox" id="toggle-tyranid" checked> Mostrar Tyranids</label>
+            </div>
+
+            <div class="map-container">
+                <img src="mapa5k.jpg" alt="Mapa da Galáxia 40K" class="map-image">
+
+                <!-- Imperium -->
+                <div class="marker marker-imperium p1" data-tooltip="Terra"></div>
+                <div class="marker marker-imperium p2" data-tooltip="Ultramar"></div>
+                <div class="marker marker-imperium p3" data-tooltip="Cadia"></div>
+                <div class="marker marker-imperium p4" data-tooltip="Fenris"></div>
+                <div class="marker marker-imperium p5" data-tooltip="Armageddon"></div>
+                <div class="marker marker-imperium p6" data-tooltip="Baal"></div>
+                <div class="marker marker-imperium p7" data-tooltip="Mars"></div>
+                <div class="marker marker-imperium p8"></div>
+                <div class="marker marker-imperium p9"></div>
+                <div class="marker marker-imperium p10"></div>
+
+                <!-- Chaos -->
+                <div class="marker marker-chaos c1" data-tooltip="Eye of Terror"></div>
+                <div class="marker marker-chaos c2" data-tooltip="Maelstrom"></div>
+                <div class="marker marker-chaos c3" data-tooltip="Prospero"></div>
+                <div class="marker marker-chaos c4"></div>
+                <div class="marker marker-chaos c5"></div>
+                <div class="marker marker-chaos c6"></div>
+
+                <!-- T'au -->
+                <div class="marker marker-tau t1"></div>
+                <div class="marker marker-tau t2"></div>
+                <div class="marker marker-tau t3"></div>
+                <div class="marker marker-tau t4"></div>
+                <div class="marker marker-tau t5"></div>
+                <div class="marker marker-tau t6"></div>
+
+                <!-- Orks -->
+                <div class="marker marker-ork o1"></div>
+                <div class="marker marker-ork o2"></div>
+                <div class="marker marker-ork o3"></div>
+                <div class="marker marker-ork o4"></div>
+                <div class="marker marker-ork o5"></div>
+                <div class="marker marker-ork o6"></div>
+
+                <!-- Aeldari -->
+                <div class="marker marker-aeldari e1"></div>
+                <div class="marker marker-aeldari e2"></div>
+                <div class="marker marker-aeldari e3"></div>
+                <div class="marker marker-aeldari e4"></div>
+                <div class="marker marker-aeldari e5"></div>
+
+                <!-- Tyranids virão aqui depois -->
+            </div>
         </section>
 
         <!-- SEÇÃO SOBRE -->
         <section id="sobre">
             <div class="about-box metal-panel">
-                <img src="logoGW.jpg" alt="Logo Warhammer" class="about-logo">
+                <img src="Index/logoGW.jpg" alt="Logo Warhammer" class="about-logo">
                 <div class="about-text">
                     <h2>Sobre o Projeto</h2>
-                    <p>Este é um site de fã dedicado à mitologia de Warhammer 40,000. Todos os direitos reservados à Games Workshop.</p>
+                    <p>Este é um site de fã dedicado à mitologia de Warhammer 40,000. Todos os direitos reservados à
+                        Games Workshop.</p>
                     <a href="https://www.warhammer.com/" target="_blank" class="gw-link">Site Oficial da GW</a>
                 </div>
             </div>
@@ -305,25 +381,8 @@
     <footer>
         <p>Feito por fãs para fãs • 2026</p>
     </footer>
+    <script src="mapadagalaxia.js"></script>
     <script src="index.js"></script>
-    <script>
-        // CONTROLE DE PÁGINAS DAS FACÇÕES
-        let currentPage = 0;
-        const totalPages = 2;
+</body>
 
-        function changePage(direction) {
-            const display = document.getElementById('factionsDisplay');
-            currentPage += direction;
-
-            if (currentPage < 0) currentPage = 0;
-            if (currentPage >= totalPages) currentPage = totalPages - 1;
-
-            display.style.transform = `translateX(-${currentPage * 50}%)`;
-        }
-
-        // CONTROLE DE PERSONAGENS NA SIDEBAR
-        let currentChar = 0;
-        const charHeight = 107;
-        const visibleChars = 4;
-
-        function changeChar(
+</html>

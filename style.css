@@ -1,26 +1,53 @@
-/* ========== CONFIGURAÇÕES GERAIS ========== */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+/* ========== DESIGN SYSTEM & VARIABLES ========== */
+:root {
+    --bg-deep: #020205;
+    --panel-hex: #1a1a24;
+    --panel-light: #b6b6bb;
+    --accent-imperium: #c41e3a;
+    /* Imperial Red */
+    --accent-chaos: #8a2be2;
+    /* Chaos Purple */
+    --accent-aeldari: #00ced1;
+    /* Aeldari Teal */
+    --accent-tau: #ffa500;
+    /* T'au Orange */
+    --accent-orks: #228b22;
+    /* Ork Green */
+    --accent-necrons: #32cd32;
+    /* Necron Green */
+    --accent-tyranids: #9400d3;
+    /* Tyranid Purple */
+
+    --text-primary: #ffffff;
+    --text-secondary: #aaaaaa;
+    --glow-strength: 0 0 10px rgba(196, 30, 58, 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body { 
-    background-color: #020205; 
-    color: white; 
-    font-family: 'Exo 2', sans-serif; 
-    overflow-x: hidden; 
+/* ========== CONFIGURAÇÕES GERAIS ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Exo 2', sans-serif;
+    overflow-x: hidden;
 }
 
 .galaxy-bg {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
-                url('fundo20.png') no-repeat center center;
-    background-size: cover; 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+        url('fundo20.png') no-repeat center center;
+    background-size: cover;
     z-index: -5;
 }
 
@@ -30,7 +57,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 50px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border-bottom: 2px solid #c41e3a;
 }
 
@@ -68,13 +95,15 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 20px 80px; /* aumentei o padding-top */
+    padding: 120px 20px 80px;
+    /* aumentei o padding-top */
     min-height: 60vh;
 }
 
 /* Logo */
 .hero-logo {
-    margin-top: 40px; /* espaço extra do header */
+    margin-top: 40px;
+    /* espaço extra do header */
     margin-bottom: 30px;
 }
 
@@ -90,7 +119,7 @@ body {
 .hero-tagline {
     font-size: 1.3rem;
     color: #ddd;
-    margin: 0 0 30px 0; 
+    margin: 0 0 30px 0;
     text-align: center;
 }
 
@@ -149,26 +178,32 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(196, 30, 58, 0.8);
 }
+
 .historia-panel {
     background: linear-gradient(180deg, rgba(26, 26, 36, 0.95), rgba(20, 20, 30, 0.98));
     border: 3px solid #4a4a5a;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    padding: 30px 60px; /* menos altura (30px), mais largura (60px) */
+    padding: 30px 60px;
+    /* menos altura (30px), mais largura (60px) */
     margin: 60px auto 80px;
-    max-width: 1200px; /* aumentei de 900px para 1200px */
+    max-width: 1200px;
+    /* aumentei de 900px para 1200px */
 }
 
 .historia-panel p {
     color: #ddd;
     font-family: 'Exo 2', sans-serif;
-    font-size: 1.7rem; /* reduzi um pouco pois vai caber em menos linhas */
+    font-size: 1.7rem;
+    /* reduzi um pouco pois vai caber em menos linhas */
     font-weight: 400;
-    line-height: 1.7; /* reduzi um pouco o espaçamento entre linhas */
+    line-height: 1.7;
+    /* reduzi um pouco o espaçamento entre linhas */
     text-align: justify;
     letter-spacing: 0.3px;
     margin: 0;
 }
+
 /* ========== SEÇÃO DE FACÇÕES ========== */
 #faccao {
     padding: 70px 20px;
@@ -188,49 +223,50 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap:30px;
+    gap: 30px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .metal-panel {
-    background: linear-gradient(180deg, #b6b6bb, #1a1a24);
+    background: linear-gradient(180deg, rgba(182, 182, 187, 0.1), rgba(26, 26, 36, 0.95));
     border: 1px solid #4a4a5a;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
 }
 
 /* ========== PAINEL PRINCIPAL DAS FACÇÕES ========== */
 .main-panel {
-    max-width:2200px
-    flex: 150 30 0 %;
-   
+    max-width: 2200px;
+    flex: 1 1 0%;
     padding: 40px;
     position: relative;
     height: 500px;
 }
 
-.factions-wrapper { 
-    width: 100%; 
+.factions-wrapper {
+    width: 100%;
     height: 100%;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-.factions-display { 
-    display: flex; 
-    width: 200%; 
+.factions-display {
+    display: flex;
+    width: 200%;
     height: 100%;
-    transition: transform 0.6s ease; 
+    transition: transform 0.6s ease;
 }
 
-.faction-page { 
-    width: 50%; 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
+.faction-page {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 25px;
     padding: 10px;
+    min-height: 0;
 }
 
 /* ========== CARDS DAS FACÇÕES ========== */
@@ -238,39 +274,50 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    border: 2px solid #333;
+    border: 1px solid #333;
     background: #000;
-    display: flex;
-    flex-direction: column;
+    display: block;
     text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-    aspect-ratio: 16/10;
-    max-width: 400px;
+    transition: var(--transition-smooth);
+    min-height: 0;
 }
+
 .faction-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(196, 30, 58, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(196, 30, 58, 0.4);
+    border-color: var(--accent-imperium);
 }
 
 
-.card-img-box { 
-    width: 100%; 
-    height: 100%;
-    overflow: hidden; /* ← IMPORTANTE: esconde as bordas pretas */
+.card-img-box {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000; /* fundo preto caso sobre espaço */
-}
-.card-img-box img { 
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    display: block;
     object-fit: cover;
-    object-position: center 35%; /* ← MUDE AQUI: mostra mais do topo */
-    transition: transform 1s;
-     transform: scale(0.95); /* leve zoom out inicial */
+    object-position: center center;
+    transition: transform 0.5s ease;
+}
+
+.faction-card:hover .card-img-box img {
+    transform: scale(1.05);
+}
+
+/* Card Império: enquadra mais para cima para mostrar a cabeça do Imperador (sem zoom = sem borda preta) */
+.faction-card--imperio .card-img-box img {
+    object-position: center 20%;
+}
+.faction-card--imperio:hover .card-img-box img {
+    transform: scale(1.05);
 }
 
 .card-title {
@@ -279,13 +326,16 @@ body {
     left: 0;
     width: 100%;
     padding: 10px 15px;
-    background: transparent; /* ← SEM fundo */
+    background: transparent;
+    /* ← SEM fundo */
     color: #c41e3a;
     font-family: 'Cinzel', serif;
     font-size: 1.1rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9); /* adiciona sombra no texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    /* adiciona sombra no texto */
 }
+
 .card-desc {
     position: absolute;
     bottom: 8px;
@@ -317,16 +367,21 @@ body {
     background: #8b1527;
 }
 
-.prev-arrow { left: 10px; }
-.next-arrow { right: 10px; }
+.prev-arrow {
+    left: 10px;
+}
 
-/* ========== SIDEBAR DE PERSONAGENS ========== */
+.next-arrow {
+    right: 10px;
+}
+
+/* ========== SIDEBAR DE PERSONAGENS (1 personagem por vez, imagem grande) ========== */
 .sidebar-panel {
-    flex: 0 0 280px;
-    height: 450px;
+    flex: 0 0 320px;
+    height: 500px;
     display: flex;
     flex-direction: column;
-    padding: 20px 15px;
+    padding: 16px 12px;
 }
 
 .sidebar-title {
@@ -334,11 +389,13 @@ body {
     font-size: 1.3rem;
     color: #c41e3a;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    flex-shrink: 0;
 }
 
 .chars-wrapper {
     flex: 1;
+    min-height: 0;
     overflow: hidden;
     position: relative;
 }
@@ -347,53 +404,81 @@ body {
     display: flex;
     flex-direction: column;
     transition: transform 0.5s ease;
+    height: 100%;
 }
 
-/* ========== CARDS DE PERSONAGENS ========== */
+/* ========== CARDS DE PERSONAGENS (1 por vez, imagem em destaque) ========== */
 .char-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 0;
+}
+
+.char-card-link {
     display: flex;
-    align-items: center;
-    background: rgba(0,0,0,0.6);
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.7);
     border: 1px solid #444;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 8px;
-    height: 85px;
-    flex-shrink: 0;
-    transition: background 0.3s;
-}
-
-.char-card:hover {
-    background: rgba(196, 30, 58, 0.2);
-    border-color: #c41e3a;
-}
-
-.char-img-box {
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
-    margin-right: 12px;
-    border-radius: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
     overflow: hidden;
-    border: 2px solid #555;
 }
 
-.char-img-box img {
+.char-card:hover .char-card-link {
+    background: rgba(0, 0, 0, 0.85);
+    border-color: var(--accent-imperium);
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.25);
+}
+
+/* Imagem grande no topo do card */
+.char-card .char-img-box {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    margin-right: 0;
+    border-radius: 8px 8px 0 0;
+    border: none;
+    overflow: hidden;
+}
+
+.char-card .char-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
-.char-info h4 { 
-    font-size: 0.95rem; 
-    color: #fff; 
+.char-card:hover .char-img-box img {
+    transform: scale(1.03);
+}
+
+/* Nome e descrição embaixo da imagem */
+.char-card .char-info {
+    flex-shrink: 0;
+    padding: 12px 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #333;
+}
+
+.char-info h4 {
+    font-size: 1rem;
+    color: #fff;
     font-family: 'Cinzel', serif;
     margin-bottom: 4px;
+    letter-spacing: 0.5px;
 }
 
-.char-info p { 
-    font-size: 0.75rem; 
-    color: #aaa; 
+.char-info p {
+    font-size: 0.8rem;
+    color: #aaa;
 }
 
 /* ========== SETAS DE NAVEGAÇÃO (PERSONAGENS) ========== */
@@ -413,14 +498,14 @@ body {
     background: #8b1527;
 }
 
-.up-arrow { 
-    margin-bottom: 10px; 
-    border-radius: 5px 5px 0 0; 
+.up-arrow {
+    margin-bottom: 10px;
+    border-radius: 5px 5px 0 0;
 }
 
-.down-arrow { 
-    margin-top: 10px; 
-    border-radius: 0 0 5px 5px; 
+.down-arrow {
+    margin-top: 10px;
+    border-radius: 0 0 5px 5px;
 }
 
 /* ========== SEÇÃO SOBRE ========== */
@@ -469,26 +554,28 @@ body {
 .gw-link:hover {
     color: #fff;
 }
+
 /* ========== CONFIGURAÇÕES MAPA ========== */
 
- .mapa-imagem {
+.mapa-imagem {
     margin-top: 40px;
     margin-bottom: 30px;
-    width: 75%; /* 25% menor que 100% = 75% */
-    max-width: 900px; /* 25% menor que 1200px = 900px */
+    width: 75%;
+    max-width: 900px;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
     border: 6px solid #4a4a5a;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
 
 /* ========== FOOTER ========== */
 footer {
     text-align: center;
     padding: 30px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border-top: 2px solid #c41e3a;
     margin-top: 60px;
 }
@@ -496,4 +583,82 @@ footer {
 footer p {
     color: #aaa;
     font-size: 0.9rem;
+}
+
+/* ========== AJUSTES PARA MOBILE ========== */
+@media (max-width: 768px) {
+
+    /* Navbar mais compacta e empilhada */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* Título de seção menor */
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    /* Layout geral: painel + sidebar em coluna */
+    .layout-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main-panel {
+        width: 100%;
+        height: auto;
+        /* deixa a altura crescer conforme o conteúdo */
+        padding: 20px;
+    }
+
+    /* Em mobile, cada página de facção vira 1 coluna só */
+    .faction-page {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 15px;
+    }
+
+    .faction-card {
+        max-width: 100%;
+        aspect-ratio: 16/9;
+        /* um pouco mais alto pra caber melhor */
+    }
+
+    /* Sidebar vem depois, largura total, altura fixa para o carrossel de 1 personagem */
+    .sidebar-panel {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 420px;
+        margin-top: 20px;
+    }
+
+    /* Caixa "Sobre o Projeto" empilhada */
+    .about-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .about-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .historia-panel {
+        padding: 20px;
+        margin: 40px 10px;
+    }
+
+    .historia-panel p {
+        font-size: 1.1rem;
+    }
 }
