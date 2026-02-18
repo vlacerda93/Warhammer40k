@@ -18,7 +18,7 @@ h1 {
 }
 
 .controls {
-   margin-top: 16px;
+  margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -88,21 +88,71 @@ h1 {
   animation: pulseImperium 1s ease-in-out infinite;
 }
 
-.marker-imperium.p1  { top: 49.2%; left: 26.1%; }
-.marker-imperium.p2  { top: 57.8%; left: 36.5%; }
-.marker-imperium.p3  { top: 37.9%; left: 31.4%; }
-.marker-imperium.p4  { top: 59.4%; left: 17.9%; }
-.marker-imperium.p5  { top: 45.4%; left: 61.3%; }
-.marker-imperium.p6  { top: 80.3%; left: 55.2%; }
-.marker-imperium.p7  { top: 36.6%; left: 41.4%; }
-.marker-imperium.p8  { top: 77.8%; left: 68.7%; }
-.marker-imperium.p9  { top: 79.0%; left: 41.3%; }
-.marker-imperium.p10 { top: 17.8%; left: 48.6%; }
+.marker-imperium.p1 {
+  top: 49.2%;
+  left: 26.1%;
+}
+
+.marker-imperium.p2 {
+  top: 57.8%;
+  left: 36.5%;
+}
+
+.marker-imperium.p3 {
+  top: 37.9%;
+  left: 31.4%;
+}
+
+.marker-imperium.p4 {
+  top: 59.4%;
+  left: 17.9%;
+}
+
+.marker-imperium.p5 {
+  top: 45.4%;
+  left: 61.3%;
+}
+
+.marker-imperium.p6 {
+  top: 80.3%;
+  left: 55.2%;
+}
+
+.marker-imperium.p7 {
+  top: 36.6%;
+  left: 41.4%;
+}
+
+.marker-imperium.p8 {
+  top: 77.8%;
+  left: 68.7%;
+}
+
+.marker-imperium.p9 {
+  top: 79.0%;
+  left: 41.3%;
+}
+
+.marker-imperium.p10 {
+  top: 17.8%;
+  left: 48.6%;
+}
 
 @keyframes pulseImperium {
-  0%   { transform: scale(1);   opacity: 1; }
-  50%  { transform: scale(2);   opacity: 0.4; }
-  100% { transform: scale(1);   opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(2);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ===================== */
@@ -119,17 +169,51 @@ h1 {
   animation: pulseChaos 1.3s ease-in-out infinite;
 }
 
-.marker-chaos.c1 { top: 32.9%; left: 19.0%; }
-.marker-chaos.c2 { top: 15.2%; left: 16.9%; }
-.marker-chaos.c3 { top: 21.3%; left: 37.1%; }
-.marker-chaos.c4 { top: 70.4%; left: 73.1%; }
-.marker-chaos.c5 { top: 10.8%; left: 65.1%; }
-.marker-chaos.c6 { top: 33.5%; left: 75.5%; }
+.marker-chaos.c1 {
+  top: 32.9%;
+  left: 19.0%;
+}
+
+.marker-chaos.c2 {
+  top: 15.2%;
+  left: 16.9%;
+}
+
+.marker-chaos.c3 {
+  top: 21.3%;
+  left: 37.1%;
+}
+
+.marker-chaos.c4 {
+  top: 70.4%;
+  left: 73.1%;
+}
+
+.marker-chaos.c5 {
+  top: 10.8%;
+  left: 65.1%;
+}
+
+.marker-chaos.c6 {
+  top: 33.5%;
+  left: 75.5%;
+}
 
 @keyframes pulseChaos {
-  0%   { transform: scale(1);   opacity: 1; }
-  50%  { transform: scale(1.7); opacity: 0.4; }
-  100% { transform: scale(1);   opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.7);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ===================== */
@@ -146,17 +230,51 @@ h1 {
   animation: pulseTau 1.4s ease-in-out infinite;
 }
 
-.marker-tau.t1 { top: 55.5%; left: 15.7%; }
-.marker-tau.t2 { top: 71.0%; left: 21.6%; }
-.marker-tau.t3 { top: 25.5%; left: 57.7%; }
-.marker-tau.t4 { top: 75.9%; left: 18.0%; }
-.marker-tau.t5 { top: 77.1%; left: 54.1%; }
-.marker-tau.t6 { top: 29.5%; left: 67.7%; }
+.marker-tau.t1 {
+  top: 55.5%;
+  left: 15.7%;
+}
+
+.marker-tau.t2 {
+  top: 71.0%;
+  left: 21.6%;
+}
+
+.marker-tau.t3 {
+  top: 25.5%;
+  left: 57.7%;
+}
+
+.marker-tau.t4 {
+  top: 75.9%;
+  left: 18.0%;
+}
+
+.marker-tau.t5 {
+  top: 77.1%;
+  left: 54.1%;
+}
+
+.marker-tau.t6 {
+  top: 29.5%;
+  left: 67.7%;
+}
 
 @keyframes pulseTau {
-  0%   { transform: scale(1);   opacity: 1; }
-  50%  { transform: scale(1.5); opacity: 0.4; }
-  100% { transform: scale(1);   opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ===================== */
@@ -173,17 +291,51 @@ h1 {
   animation: pulseOrk 1.2s ease-in-out infinite;
 }
 
-.marker-ork.o1 { top: 33.3%; left: 52.2%; }
-.marker-ork.o2 { top: 71.2%; left: 41.4%; }
-.marker-ork.o3 { top: 49.4%; left: 10.3%; }
-.marker-ork.o4 { top: 16.5%; left: 38.9%; }
-.marker-ork.o5 { top: 31.2%; left: 76.8%; }
-.marker-ork.o6 { top: 33.6%; left: 52.0%; }
+.marker-ork.o1 {
+  top: 33.3%;
+  left: 52.2%;
+}
+
+.marker-ork.o2 {
+  top: 71.2%;
+  left: 41.4%;
+}
+
+.marker-ork.o3 {
+  top: 49.4%;
+  left: 10.3%;
+}
+
+.marker-ork.o4 {
+  top: 16.5%;
+  left: 38.9%;
+}
+
+.marker-ork.o5 {
+  top: 31.2%;
+  left: 76.8%;
+}
+
+.marker-ork.o6 {
+  top: 33.6%;
+  left: 52.0%;
+}
 
 @keyframes pulseOrk {
-  0%   { transform: scale(1);   opacity: 1; }
-  50%  { transform: scale(1.6); opacity: 0.4; }
-  100% { transform: scale(1);   opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ===================== */
@@ -200,17 +352,48 @@ h1 {
   animation: pulseAeldari 1.5s ease-in-out infinite;
 }
 
-.marker-aeldari.e1 { top: 24.5%; left: 40.5%; }
-.marker-aeldari.e2 { top: 51.9%; left: 74.3%; }
-.marker-aeldari.e3 { top: 74.8%; left: 23.0%; }
-.marker-aeldari.e4 { top: 42.5%; left: 12.9%; }
-.marker-aeldari.e5 { top: 21.4%; left: 60.1%; }
+.marker-aeldari.e1 {
+  top: 24.5%;
+  left: 40.5%;
+}
+
+.marker-aeldari.e2 {
+  top: 51.9%;
+  left: 74.3%;
+}
+
+.marker-aeldari.e3 {
+  top: 74.8%;
+  left: 23.0%;
+}
+
+.marker-aeldari.e4 {
+  top: 42.5%;
+  left: 12.9%;
+}
+
+.marker-aeldari.e5 {
+  top: 21.4%;
+  left: 60.1%;
+}
 
 @keyframes pulseAeldari {
-  0%   { transform: scale(1);   opacity: 1; }
-  50%  { transform: scale(1.5); opacity: 0.4; }
-  100% { transform: scale(1);   opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+
 .map-base {
   width: 80%;
   max-width: 900px;
@@ -222,9 +405,10 @@ h1 {
 }
 
 /* Container da seção do mapa na página principal */
-#mapa-galaxia {
+#mapa {
   max-width: 1200px;
-  margin: 40px auto;           /* centraliza horizontalmente */
+  margin: 40px auto;
+  /* centraliza horizontalmente */
   padding: 16px 20px 24px;
   background: rgba(5, 8, 20, 0.95);
   border-radius: 8px;
@@ -234,14 +418,14 @@ h1 {
     0 0 40px rgba(0, 0, 0, 0.6);
 }
 
-#mapa-galaxia h2 {
+#mapa h2 {
   margin-bottom: 12px;
   font-size: 1.5rem;
   text-align: center;
 }
 
 /* alinhamento dos checkboxes */
-#mapa-galaxia .controls {
+#mapa .controls {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
@@ -249,12 +433,12 @@ h1 {
   margin-bottom: 12px;
 }
 
-#mapa-galaxia .controls label {
+#mapa .controls label {
   font-size: 0.9rem;
 }
 
 /* centra o mapa dentro da seção */
-#mapa-galaxia .map-container {
+#mapa .map-container {
   margin: 0 auto;
 }
 
@@ -265,6 +449,7 @@ h1 {
   color: #bbbbbb;
   text-align: center;
 }
+
 /* ===================== */
 /* Tyranids (gancho) */
 /* ===================== */
