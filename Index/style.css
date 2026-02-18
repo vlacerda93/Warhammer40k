@@ -1,26 +1,26 @@
 /* ========== CONFIGURAÇÕES GERAIS ========== */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body { 
-    background-color: #020205; 
-    color: white; 
-    font-family: 'Exo 2', sans-serif; 
-    overflow-x: hidden; 
+body {
+    background-color: #020205;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    overflow-x: hidden;
 }
 
 .galaxy-bg {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
-                url('fundo20.png') no-repeat center center;
-    background-size: cover; 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+        url('fundo20.png') no-repeat center center;
+    background-size: cover;
     z-index: -5;
 }
 
@@ -30,7 +30,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 50px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border-bottom: 2px solid #c41e3a;
 }
 
@@ -68,13 +68,15 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 20px 80px; /* aumentei o padding-top */
+    padding: 120px 20px 80px;
+    /* aumentei o padding-top */
     min-height: 60vh;
 }
 
 /* Logo */
 .hero-logo {
-    margin-top: 40px; /* espaço extra do header */
+    margin-top: 40px;
+    /* espaço extra do header */
     margin-bottom: 30px;
 }
 
@@ -90,7 +92,7 @@ body {
 .hero-tagline {
     font-size: 1.3rem;
     color: #ddd;
-    margin: 0 0 30px 0; 
+    margin: 0 0 30px 0;
     text-align: center;
 }
 
@@ -149,26 +151,32 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(196, 30, 58, 0.8);
 }
+
 .historia-panel {
     background: linear-gradient(180deg, rgba(26, 26, 36, 0.95), rgba(20, 20, 30, 0.98));
     border: 3px solid #4a4a5a;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    padding: 30px 60px; /* menos altura (30px), mais largura (60px) */
+    padding: 30px 60px;
+    /* menos altura (30px), mais largura (60px) */
     margin: 60px auto 80px;
-    max-width: 1200px; /* aumentei de 900px para 1200px */
+    max-width: 1200px;
+    /* aumentei de 900px para 1200px */
 }
 
 .historia-panel p {
     color: #ddd;
     font-family: 'Exo 2', sans-serif;
-    font-size: 1.7rem; /* reduzi um pouco pois vai caber em menos linhas */
+    font-size: 1.7rem;
+    /* reduzi um pouco pois vai caber em menos linhas */
     font-weight: 400;
-    line-height: 1.7; /* reduzi um pouco o espaçamento entre linhas */
+    line-height: 1.7;
+    /* reduzi um pouco o espaçamento entre linhas */
     text-align: justify;
     letter-spacing: 0.3px;
     margin: 0;
 }
+
 /* ========== SEÇÃO DE FACÇÕES ========== */
 #faccao {
     padding: 70px 20px;
@@ -188,7 +196,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap:30px;
+    gap: 30px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -198,36 +206,35 @@ body {
     background: linear-gradient(180deg, #b6b6bb, #1a1a24);
     border: 1px solid #4a4a5a;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 /* ========== PAINEL PRINCIPAL DAS FACÇÕES ========== */
 .main-panel {
-    max-width:2200px
-    flex: 150 30 0 %;
-   
+    max-width: 2200px;
+    flex: 1 1 0%;
     padding: 40px;
     position: relative;
     height: 500px;
 }
 
-.factions-wrapper { 
-    width: 100%; 
+.factions-wrapper {
+    width: 100%;
     height: 100%;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-.factions-display { 
-    display: flex; 
-    width: 200%; 
+.factions-display {
+    display: flex;
+    width: 200%;
     height: 100%;
-    transition: transform 0.6s ease; 
+    transition: transform 0.6s ease;
 }
 
-.faction-page { 
-    width: 50%; 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
+.faction-page {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 25px;
     padding: 10px;
@@ -247,30 +254,36 @@ body {
     aspect-ratio: 16/10;
     max-width: 400px;
 }
+
 .faction-card:hover {
     transform: scale(1.02);
     box-shadow: 0 0 20px rgba(196, 30, 58, 0.6);
 }
 
 
-.card-img-box { 
-    width: 100%; 
+.card-img-box {
+    width: 100%;
     height: 100%;
-    overflow: hidden; /* ← IMPORTANTE: esconde as bordas pretas */
+    overflow: hidden;
+    /* ← IMPORTANTE: esconde as bordas pretas */
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #000; /* fundo preto caso sobre espaço */
+    background: #000;
+    /* fundo preto caso sobre espaço */
 }
-.card-img-box img { 
+
+.card-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 35%; /* ← MUDE AQUI: mostra mais do topo */
+    object-position: center 35%;
+    /* ← MUDE AQUI: mostra mais do topo */
     transition: transform 1s;
-     transform: scale(0.95); /* leve zoom out inicial */
+    transform: scale(0.95);
+    /* leve zoom out inicial */
 }
 
 .card-title {
@@ -279,13 +292,16 @@ body {
     left: 0;
     width: 100%;
     padding: 10px 15px;
-    background: transparent; /* ← SEM fundo */
+    background: transparent;
+    /* ← SEM fundo */
     color: #c41e3a;
     font-family: 'Cinzel', serif;
     font-size: 1.1rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9); /* adiciona sombra no texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    /* adiciona sombra no texto */
 }
+
 .card-desc {
     position: absolute;
     bottom: 8px;
@@ -317,13 +333,18 @@ body {
     background: #8b1527;
 }
 
-.prev-arrow { left: 10px; }
-.next-arrow { right: 10px; }
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
 
 /* ========== SIDEBAR DE PERSONAGENS ========== */
 .sidebar-panel {
     flex: 0 0 280px;
-    height: 450px;
+    height: auto;
     display: flex;
     flex-direction: column;
     padding: 20px 15px;
@@ -338,62 +359,86 @@ body {
 }
 
 .chars-wrapper {
-    flex: 1;
+    height: 380px;
+    /* Aumentado para caber o card vertical grande */
     overflow: hidden;
     position: relative;
+    margin: 10px 0;
+    border-radius: 8px;
 }
 
 .chars-display {
     display: flex;
     flex-direction: column;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ========== CARDS DE PERSONAGENS ========== */
+/* ========== CARDS DE PERSONAGENS (MODO PORTRAIT) ========== */
 .char-card {
     display: flex;
+    flex-direction: column;
+    /* Vertical */
     align-items: center;
-    background: rgba(0,0,0,0.6);
-    border: 1px solid #444;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 8px;
-    height: 85px;
+    background: #0a0a0c;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 20px;
+    /* Espaço para o scroll */
+    height: 360px;
+    /* Altura do card grande */
+    width: 100%;
     flex-shrink: 0;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .char-card:hover {
-    background: rgba(196, 30, 58, 0.2);
+    background: #111;
     border-color: #c41e3a;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.4);
 }
 
 .char-img-box {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 270px;
+    /* Imagem ocupa a maior parte */
     flex-shrink: 0;
-    margin-right: 12px;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 2px solid #555;
+    margin-right: 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #222;
 }
 
 .char-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
 }
 
-.char-info h4 { 
-    font-size: 0.95rem; 
-    color: #fff; 
+.char-info {
+    padding: 15px 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.char-info h4 {
+    font-size: 1.2rem;
+    color: #fff;
     font-family: 'Cinzel', serif;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.char-info p { 
-    font-size: 0.75rem; 
-    color: #aaa; 
+.char-info p {
+    font-size: 0.85rem;
+    color: #999;
+    margin: 0;
 }
 
 /* ========== SETAS DE NAVEGAÇÃO (PERSONAGENS) ========== */
@@ -413,14 +458,16 @@ body {
     background: #8b1527;
 }
 
-.up-arrow { 
-    margin-bottom: 10px; 
-    border-radius: 5px 5px 0 0; 
+.up-arrow {
+    margin-bottom: 0px;
+    border-radius: 5px 5px 0 0;
+    height: 35px;
 }
 
-.down-arrow { 
-    margin-top: 10px; 
-    border-radius: 0 0 5px 5px; 
+.down-arrow {
+    margin-top: 0px;
+    border-radius: 0 0 5px 5px;
+    height: 35px;
 }
 
 /* ========== SEÇÃO SOBRE ========== */
@@ -469,26 +516,30 @@ body {
 .gw-link:hover {
     color: #fff;
 }
+
 /* ========== CONFIGURAÇÕES MAPA ========== */
 
- .mapa-imagem {
+.mapa-imagem {
     margin-top: 40px;
     margin-bottom: 30px;
-    width: 75%; /* 25% menor que 100% = 75% */
-    max-width: 900px; /* 25% menor que 1200px = 900px */
+    width: 75%;
+    /* 25% menor que 100% = 75% */
+    max-width: 900px;
+    /* 25% menor que 1200px = 900px */
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
     border: 6px solid #4a4a5a;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
 
 /* ========== FOOTER ========== */
 footer {
     text-align: center;
     padding: 30px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border-top: 2px solid #c41e3a;
     margin-top: 60px;
 }

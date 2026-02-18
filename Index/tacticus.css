@@ -1,0 +1,17 @@
+.chat-logo {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.chat-logo img {
+  max-width: 260px;
+  height: auto;
+}
+.chat-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

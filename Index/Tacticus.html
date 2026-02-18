@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tacticus Vox – Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fundo padrão do site -->
+    <div class="galaxy-bg"></div>
+
+    <!-- Navbar simples (opcional) -->
+    <header class="navbar">
+        <div class="logo">#40kBRASIL</div>
+    </header>
+
+    <main class="login-container">
+        <section class="login-panel metal-panel">
+            <div class="login-emblem">
+                <!-- Troque o src pelo nome real do emblema -->
+                <img src="tacticus.png" alt="Emblema Tacticus">
+            </div>
+
+            <h1 class="login-title">Tacticus Vox</h1>
+            <p class="login-subtitle">
+                Canal de comunicação seguro para os servos do Imperador.
+            </p>
+
+            <form class="login-form">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Digite seu identificador">
+
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Digite seu código de acesso">
+
+                <div class="login-remember">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn-explore login-btn">
+                    Entrar
+                </button>
+
+                <!-- Futuro login com Google (só visual por enquanto) -->
+                <button type="button" class="login-google" disabled>
+                    Entrar com conta tática (Google)
+                </button>
+
+                <a href="#" class="login-forgot">Forgot password?</a>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

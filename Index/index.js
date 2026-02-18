@@ -18,8 +18,8 @@ function changePage(direction) {
 // CONTROLE DE PERSONAGENS NA SIDEBAR
 // ====================================
 let currentChar = 0;
-const charHeight = 107;
-const visibleChars = 4;
+const charHeight = 380;
+const visibleChars = 1;
 
 function changeChar(direction) {
     const display = document.getElementById('charsDisplay');
@@ -39,7 +39,7 @@ function toggleAudio() {
     const audio = document.getElementById('heroAudio');
     const icon = document.querySelector('.play-icon');
     const btn = document.querySelector('.audio-btn');
-    
+
     if (audio.paused) {
         audio.play()
             .then(() => {
