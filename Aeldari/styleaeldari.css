@@ -1,0 +1,372 @@
+/* ========== DESIGN SISTEMA - AELDARI (DUAL STATE) ========== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Marcellus&family=Exo+2:wght@300;400;600&display=swap');
+
+:root {
+    /* Asuryani Palette */
+    --aeldari-gold: #d4af37;
+    --aeldari-white: #f5f5f0;
+    --aeldari-cyan: #00e5ff;
+    --asuryani-bg: #0a0a1a;
+
+    /* Drukhari Palette */
+    --drukhari-red: #c41e3a;
+    --drukhari-green: #39ff14;
+    --drukhari-purple: #4b0082;
+    --drukhari-bg: #050505;
+}
+
+body {
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    transition: background 0.8s ease, color 0.5s;
+    overflow-x: hidden;
+}
+
+body.theme-asuryani {
+    background-color: var(--asuryani-bg);
+    color: var(--aeldari-white);
+    background-image: radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.1), transparent 40%), url('../Index/fundo20.png');
+}
+
+body.theme-drukhari {
+    background-color: var(--drukhari-bg);
+    color: #cecece;
+    background-image: radial-gradient(circle at 80% 30%, rgba(57, 255, 20, 0.05), transparent 40%), url('../Index/fundo20.png');
+}
+
+/* ========== TOGGLE SWITCH ========== */
+.toggle-wrapper {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 2px solid var(--aeldari-gold);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.theme-drukhari .toggle-wrapper {
+    border-color: var(--drukhari-green);
+    box-shadow: 0 0 15px var(--drukhari-green);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--aeldari-cyan);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--drukhari-purple);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+/* ========== SECTIONS ========== */
+.faction-hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 3px solid var(--aeldari-gold);
+}
+
+.theme-drukhari .faction-hero {
+    border-color: var(--drukhari-green);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+}
+
+.section-wrapper {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.lore-card {
+    border: 2px solid var(--aeldari-gold);
+    padding: 40px;
+    background: rgba(10, 20, 30, 0.85);
+    position: relative;
+}
+
+.theme-drukhari .lore-card {
+    background: #080010;
+    border: 30px solid transparent;
+    border-image: url('bordadrukari.png') 100 stretch;
+    padding: 20px;
+    position: relative;
+    box-shadow: inset 0 0 40px rgba(50, 205, 50, 0.2);
+}
+
+.theme-drukhari .lore-card::before,
+.theme-drukhari .lore-card::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.theme-drukhari .lore-card::before {
+    left: -5px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #4b0082 transparent transparent;
+}
+
+.theme-drukhari .lore-card::after {
+    right: -5px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #4b0082;
+}
+
+/* Bordas de Cristal Inari/Asuryani */
+.theme-asuryani .lore-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 30px solid transparent;
+    border-image: url('bordaasuryani1.png') 100 stretch;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+}
+
+.theme-asuryani .lore-card::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #00ffff, #008080);
+    box-shadow: 0 0 8px #00ffff;
+    border: 1px solid #d4af37;
+    z-index: 5;
+}
+
+.lore-title {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.theme-asuryani .lore-title,
+.theme-asuryani .section-label,
+.theme-asuryani .card-label {
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.theme-drukhari .lore-title,
+.theme-drukhari .section-label,
+.theme-drukhari .card-label {
+    font-family: 'Marcellus', serif;
+    letter-spacing: 2px;
+}
+
+/* GALLERY (Fixed Grid) */
+.aeldari-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-card {
+    background: #000;
+    border: 15px solid transparent;
+    border-image: url('bordaasuryani2.png') 40 stretch;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.theme-drukhari .gallery-card {
+    border-image: url('bordadrukari2.png') 40 stretch;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-label {
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--aeldari-cyan);
+}
+
+.dru-label {
+    color: var(--drukhari-green);
+}
+
+/* ARSENAL & DEFENSE */
+.aeldari-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin: 100px 0;
+}
+
+.aeldari-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.aeldari-content {
+    flex: 1;
+}
+
+.aeldari-img {
+    flex: 1;
+    border: 2px solid var(--aeldari-gold);
+    padding: 5px;
+    background: #000;
+}
+
+.theme-drukhari .aeldari-img {
+    border-color: var(--drukhari-green);
+}
+
+.aeldari-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* LEGACY SECTION (Leader) */
+.legacy-chamber {
+    margin-top: 120px;
+}
+
+.legacy-card {
+    border: 2px solid var(--aeldari-gold);
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.theme-drukhari .legacy-card {
+    border-color: var(--drukhari-green);
+}
+
+.legacy-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 15px 50px;
+    background: transparent;
+    border: 2px solid var(--aeldari-gold);
+    color: var(--aeldari-gold);
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.2rem;
+}
+
+.theme-drukhari .back-btn {
+    border-color: var(--drukhari-green);
+    color: var(--drukhari-green);
+}
+
+.back-btn:hover {
+    background: var(--aeldari-gold);
+    color: #000;
+    box-shadow: 0 0 20px var(--aeldari-gold);
+}
+
+.theme-drukhari .back-btn:hover {
+    background: var(--drukhari-green);
+    color: #000;
+    box-shadow: 0 0 20px var(--drukhari-green);
+}
+
+footer {
+    text-align: center;
+    padding: 60px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .aeldari-section,
+    .legacy-content {
+        flex-direction: column !important;
+    }
+
+    .lore-title {
+        font-size: 2rem;
+    }
+}
+
+/* ========== DYNAMIC ASSETS (Visibility Fix) ========== */
+/* Esconder elementos que não pertencem ao tema atual sem forçar 'display: block' nos visíveis */
+
+/* No tema Asuryani (padrão), escondemos tudo que é Drukhari */
+body.theme-asuryani .drukhari-only {
+    display: none !important;
+}
+
+/* No tema Drukhari, escondemos tudo que é Asuryani */
+body.theme-drukhari .asuryani-only {
+    display: none !important;
+}

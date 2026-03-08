@@ -1,0 +1,26 @@
+﻿Asuryani (Aeldari "do Bem")
+1. The Lore: Os Herdeiros da Queda e o Destino de Ynnead
+"Após o cataclismo que quase extinguiu sua espécie, os Asuryani adotaram o Caminho da Disciplina para proteger suas almas da fome de Slaanesh. Eles são mestres da precognição e da guerra de precisão. Atualmente, sob a liderança de Yvraine, a Emissária de Ynnead, eles representam uma nova esperança: a crença de que os Aeldari podem ser salvos através do despertar do Deus dos Mortos. Deixaram de apenas fugir para se tornarem uma força de intervenção galáctica, manipulando o destino para garantir que a raça não desapareça nas trevas."
+2. The Arsenal: A Sinfonia de Cristal e Mente
+"O arsenal Asuryani é uma extensão da psique do guerreiro, composto por materiais que respondem ao comando mental. Como visto em sua mesa de armas:
+    • Tecnologia Shuriken: Dispara discos monomoleculares em velocidades hipersônicas, fatiando armaduras com a facilidade de um laser.
+    • Lanças de Luz e Canhões Estelares: Canalizam o poder das estrelas para desintegrar alvos no nível atômico.
+    • Lâminas Rúnicas: Espadas de cristal espiritual que cortam não apenas a carne, mas a própria essência da alma do inimigo."
+3. The Defense: A Armadura da Alma e a Muralha de Malha
+"A proteção dos Asuryani foca na agilidade sobrenatural. Sua Mesh Armour é composta por termocristais que endurecem ao impacto, permitindo mobilidade total. Os Capacetes de Aspecto em sua mesa de defesa integram sistemas de mira psíquica, permitindo que o guerreiro preveja o disparo inimigo antes dele ocorrer, transformando o combate em uma dança onde o Aeldari nunca está onde o golpe cai."
+4. O Legado: O Despertar de Ynnead (The Legacy)
+"O objetivo atual dos Asuryani sob o comando de Yvraine é a unificação dos fragmentos da raça Aeldari para enfrentar o caos. Na era da Cruzada Indomitus, eles buscam recuperar as 'Croneswords' (Espadas Ancestrais) e fortalecer o deus Ynnead. O foco é garantir a sobrevivência contra a Frota Colmeia Leviathan enquanto manipulam os eventos da galáxia para que a humanidade e outras raças sirvam de escudo contra o avanço das Trevas, garantindo que o futuro dos Aeldari seja escrito por suas próprias mãos e não pelo destino cruel."
+
+Versão B: Drukhari (Aeldari "do Mal")
+1. The Lore: Os Arcontes da Agonia e o Trono de Commorragh
+"Habitando a Cidade Sombria, os Drukhari são predadores sádicos que sobrevivem através da dor alheia. O soberano supremo é Asdrubael Vect, um gênio tático milenar que governa através do medo e de intrigas complexas. Para ele e seus súditos, o universo é um matadouro e todas as outras raças são apenas gado para serem colhidos em incursões brutais, garantindo que sua própria imortalidade seja mantida pelo sofrimento eterno de trilhões de almas capturadas."
+2. The Arsenal: A Ciência da Agonia Refinada
+"O arsenal Drukhari é projetado para torturar. Sua mesa de armas exibe ganchos e venenos cruéis:
+    • Armas de Estilhaços: Disparam cristais embebidos em neurotoxinas que mantêm a vítima consciente enquanto seus nervos entram em colapso.
+    • Garras e Chicotes de Tortura: Ferramentas de metais negros feitas para rasgar carne com precisão sádica.
+    • Venenos Exóticos: Fluidos neon que expandem a percepção de tempo da vítima, fazendo um segundo de agonia parecer uma eternidade."
+3. The Defense: A Armadura de Espinhos e o Êxtase da Dor
+"A armadura Drukhari é uma moldura para o sadismo. Feita de ligas leves e couros de feras, ela é segmentada com espinhos e ganchos externos, como visto em sua mesa de defesa. Utilizam drogas de combate que transformam a dor em adrenalina pura. Para um Drukhari, a defesa é uma mistura de velocidade acrobática e a crueldade de uma proteção que fere o atacante tanto quanto protege o usuário."
+4. O Legado: O Domínio de Commorragh (The Legacy)
+"Sob o punho de ferro de Asdrubael Vect, o legado dos Drukhari é a manutenção de sua supremacia e estilo de vida decadente. O objetivo atual é aproveitar o caos da Cicatriz Maligna para lançar incursões de escala sem precedentes em mundos imperiais vulneráveis. Enquanto as outras raças se desgastam em guerras de extermínio, Vect planeja expandir a influência de Commorragh pelas sombras da Teia, garantindo que a agonia da galáxia continue alimentando a eternidade de seu reinado sombrio."
+

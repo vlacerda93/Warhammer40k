@@ -1,0 +1,275 @@
+/* ========== DESIGN SISTEMA - NECRONS (THE UNDYING) ========== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap');
+
+:root {
+    --necron-green: #0bff01;
+    --necron-dark-green: #054d00;
+    --necron-silver: #c0c0c0;
+    --obsidian: #0a0a0a;
+    --green-glow: 0 0 15px rgba(11, 255, 1, 0.4);
+    --text-green: #a0ffa0;
+    --angle: 0deg;
+    /* Para a animação da borda */
+}
+
+@keyframes board-glow {
+    0% {
+        filter: hue-rotate(0deg) brightness(1);
+    }
+
+    50% {
+        filter: hue-rotate(10deg) brightness(1.3);
+    }
+
+    100% {
+        filter: hue-rotate(0deg) brightness(1);
+    }
+}
+
+body {
+    background-color: #020502;
+    color: var(--text-green);
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(11, 255, 1, 0.08) 0%, transparent 70%),
+        url('../Index/fundo20.png');
+    background-attachment: fixed;
+    background-size: cover;
+    cursor: url('../Index/necron.cur'), auto;
+}
+
+/* ========== HERO SECTION ========== */
+.faction-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 3px solid var(--necron-green);
+    box-shadow: 0 5px 30px rgba(0, 255, 0, 0.2);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(2, 5, 2, 0.9)), url('necrons.jpg') center/cover no-repeat;
+    z-index: -1;
+    filter: grayscale(0.5) contrast(1.2) brightness(0.6);
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 6rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    text-shadow: 0 0 25px var(--necron-green), 0 0 50px #000;
+}
+
+/* ========== LORE SECTION (TOMB) ========== */
+.section-wrapper {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.tomb-card {
+    background: #0d1110;
+    border: 40px solid transparent;
+    border-image: url('bordanecron.png') 120 stretch;
+    padding: 20px;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0, 255, 65, 0.1);
+}
+
+/* Pseudo-elementos de energia mantidos para efeito extra */
+.tomb-card::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10px;
+    width: 3px;
+    height: 80%;
+    background: #00ff41;
+    box-shadow: 0 0 15px #00ff41;
+    z-index: 5;
+}
+
+.section-label {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--necron-green);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+
+.lore-text {
+    font-size: 1.25rem;
+    line-height: 1.9;
+    text-align: justify;
+    color: #b0ffb0;
+    filter: blur(3px);
+    /* Efeito de poeira milenar */
+    transition: filter 0.8s ease;
+}
+
+.tomb-card:hover .lore-text {
+    filter: blur(0);
+    /* Limpa a poeira ao passar o mouse */
+}
+
+/* ========== LEGION GALLERY ========== */
+.legion-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.necron-card {
+    background: #0d1110;
+    border: 20px solid transparent;
+    border-image: url('bordasnecron2.png') 50 stretch;
+    padding: 10px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.necron-card::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 8px;
+    width: 2px;
+    height: 70%;
+    background: #00ff41;
+    box-shadow: 0 0 8px #00ff41;
+    opacity: 0.5;
+}
+
+.necron-card:hover::before {
+    opacity: 1;
+}
+
+.necron-card:hover {
+    border-color: var(--necron-green);
+    box-shadow: 0 0 20px var(--necron-green);
+    transform: translateY(-10px);
+}
+
+.necron-card img {
+    width: 100%;
+    height: 280px;
+    /* Reduzido de 300px para seguir o padrão das outras facções */
+    object-fit: cover;
+    filter: brightness(0.8) sepia(0.2) hue-rotate(80deg);
+}
+
+.necron-card:hover img {
+    filter: brightness(1.1);
+}
+
+.card-label {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--necron-green);
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* ========== ARSENAL & DEFENSE ========== */
+.gauss-section {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin: 150px 0;
+}
+
+.gauss-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.gauss-img-box {
+    flex: 1;
+    border: 2px solid var(--necron-green);
+    padding: 10px;
+    background: #000;
+    box-shadow: 0 0 30px rgba(11, 255, 1, 0.2);
+}
+
+.gauss-img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gauss-info {
+    flex: 1;
+}
+
+.gauss-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--necron-green);
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+/* ========== THE SILENT KING (LEGACY) ========== */
+.legacy-chamber {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('necronsfinal.jpg') center/cover fixed;
+    padding: 120px 20px;
+    text-align: center;
+    border-top: 2px solid var(--necron-green);
+}
+
+.chamber-box {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid var(--necron-green);
+    padding: 50px;
+    background: rgba(0, 10, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* ========== FOOTER & BACK ========== */
+.back-btn {
+    display: inline-block;
+    padding: 18px 50px;
+    background: transparent;
+    border: 1px solid var(--necron-green);
+    color: var(--necron-green);
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.4s;
+    margin-top: 40px;
+}
+
+.back-btn:hover {
+    background: var(--necron-green);
+    color: #000;
+    box-shadow: 0 0 30px var(--necron-green);
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 900px) {
+    .hero-title {
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+    }
+
+    .gauss-section {
+        flex-direction: column !important;
+    }
+}

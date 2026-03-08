@@ -4,84 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orks - Warhammer 40K</title>
-    <link rel="stylesheet" href="../Index/style.css">
-    <link rel="stylesheet" href="Orks.css">
+    <title>Orks - WAAAGH! Galáctico | Warhammer 40K</title>
+    <link rel="stylesheet" href="styleorks.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Exo+2:wght@300;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">WH40K</div>
-            <ul class="nav-links">
-                <li><a href="../Index/index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="fac-page-container">
-            <h1 class="fac-title orks-title">Orks</h1>
 
-            <div class="img-text">
-                <img src="ork1.jpg" alt="Líder Ork" class="ork-img-original">
-                <div class="ork-caption">
-                    <h2>Sociedade Ork</h2>
-                    <p>
-                        Os Orks são a personificação da brutalidade e do caos. Crescem, lutam e riem do perigo,
-                        acreditando que a guerra é o único propósito da vida. Suas sociedades tribais são governadas
-                        pelos mais fortes e mais "malucos".
-                    </p>
-                </div>
-            </div>
+    <!-- EMBERS EFFECT -->
+    <div class="embers-overlay">
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+    </div>
 
-            <div class="img-text">
-                <img src="ork2.jpg" alt="Orks no campo de batalha" class="ork-img-original">
-                <div class="ork-caption">
-                    <h2>Ajudantes: Gretchins (Grots)</h2>
-                    <p>
-                        Os Gretchins — ou Grots — são os ajudantes, escravos e “buchas de canhão” dos Orks. Pequenos,
-                        covardes e manhosos, fazem o trabalho sujo (e perigoso) das tribos verdes: consertar tanques,
-                        carregar munição, desarmar minas, testar armas novas (“se explodir, o Ork aprendeu algo”).
-                        Apesar de serem piada para os Orks, são essenciais para o exército funcionar.
-                    </p>
-                </div>
-            </div>
-
-            <div class="img-text">
-                <img src="ork3.jpg" alt="Guerra Ork" class="ork-img-original">
-                <div class="ork-caption">
-                    <h2>Tecnologia TOSCA E Mortal</h2>
-                    <p>
-                        Orcs confundem superstição com ciência — quanto mais barulho e tinta vermelha, melhor! Eles
-                        constroem engenhocas improváveis, que só funcionam porque sua crença coletiva faz literalmente a
-                        tecnologia dar certo.
-                    </p>
-                </div>
-            </div>
-
-            <div class="img-text">
-                <img src="ork4.jpg" alt="Warbike Ork" class="ork-img-original">
-                <div class="ork-caption">
-                    <h2>Curiosidades Ork</h2>
-                    <ul>
-                        <li>Orks crescem de esporos e podem brotar do solo mesmo depois de mortos!</li>
-                        <li>A cultura Ork se resume a uma palavra: <b>WAAAGH!</b> — guerra total, barulho e diversão.
-                        </li>
-                        <li>Adoram “tunar” veículos com placas, canos, buzinas e bandeiras.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <a href="../Index/index.html" class="back-link">← Voltar para Facções</a>
+    <!-- HERO SECTION -->
+    <header class="faction-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-title-box">
+            <h1 class="hero-title">ORKS</h1>
+            <p
+                style="text-align:center; font-family:'Permanent Marker'; color:var(--ork-red); font-size:2rem; letter-spacing:5px;">
+                VAMOS QUEBRAR TUDO!</p>
         </div>
-    </main>
+    </header>
+
+    <div class="section-wrapper">
+        <!-- LORE SECTION -->
+        <section class="scrap-card">
+            <h2 class="section-label">O GRITO DE GUERRA: LORE</h2>
+            <div class="lore-text">
+                <p>Os Orks são a raça mais belicosa da galáxia, uma praga biológica que vive apenas para a alegria da
+                    destruição. Eles não precisam de motivos complexos ou ideologias; para um Ork, a guerra é a sua
+                    própria recompensa. Nascidos de esporos e criados para o combate, eles se reúnem em massas colossais
+                    conhecidas como Waaagh!, uma mistura de cruzada religiosa e migração violenta.</p>
+                <p>Sob o comando de feras como Ghazghkull Thraka, os Orks provam que não importa quão avançada seja a
+                    sua tecnologia — nada resiste a uma montanha de músculos verdes e um machado enferrujado.</p>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION (UNITS) -->
+        <section>
+            <h2 class="section-label" style="margin-top: 100px;">A GALERIA DOS KABAS</h2>
+            <div class="units-gallery">
+                <div class="ork-card"><img src="ork1.jpg" alt="Ork Boy">
+                    <p class="card-label">Ork Boy</p>
+                </div>
+                <div class="ork-card"><img src="ork2.jpg" alt="Nobz">
+                    <p class="card-label">Nobz</p>
+                </div>
+                <div class="ork-card"><img src="ork3.jpg" alt="Warboss">
+                    <p class="card-label">Warboss</p>
+                </div>
+                <div class="ork-card"><img src="ork4.jpg" alt="Deff Dread">
+                    <p class="card-label">Deff Dread</p>
+                </div>
+                <div class="ork-card"><img src="ork5.jpg" alt="Stormboyz">
+                    <p class="card-label">Stormboyz</p>
+                </div>
+                <div class="ork-card"><img src="ork6.jpg" alt="Gretchins">
+                    <p class="card-label">Gretchins</p>
+                </div>
+                <div class="ork-card"><img src="ork7.jpg" alt="Flash Gitz">
+                    <p class="card-label">Flash Gitz</p>
+                </div>
+                <div class="ork-card"><img src="ork8.jpg" alt="Meganobz">
+                    <p class="card-label">Meganobz</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARSENAL SECTION -->
+        <section class="dakka-section">
+            <div class="dakka-info">
+                <h2 class="dakka-title">O ARSENAL: DAKA, CORTE E EXPLOSÃO</h2>
+                <div class="scrap-card">
+                    <p class="lore-text">O armamento Ork, conhecido como Kustom Mega-Tools, desafia as leis da física e
+                        da lógica. Construídas pelos 'Mekboyz' a partir de restos de tanques destruídos e metal
+                        retorcido, essas armas funcionam principalmente porque os Orks acreditam que deveriam funcionar.
+                        <br>• Shootas e Big Dakka: Cospem uma quantidade absurda de chumbo.
+                        <br>• Power Klaws: Capazes de partir um tanque Imperial ao meio.
+                        <br>• Tecnologia Instável: De canhões de energia a foguetes amarrados com fita adesiva.
+                    </p>
+                </div>
+            </div>
+            <div class="dakka-img-box">
+                <img src="mesaork.jpg" alt="Arsenal Ork">
+            </div>
+        </section>
+
+        <!-- DEFENSE SECTION -->
+        <section class="dakka-section reverse">
+            <div class="dakka-info">
+                <h2 class="dakka-title">A DEFESA: FERRO VELHO E SORTE</h2>
+                <div class="scrap-card">
+                    <p class="lore-text">A armadura de um Ork é uma colagem caótica de placas de aço rebitadas e grades
+                        de ventilação. Frequentemente pintadas de vermelho (porque 'os vermelhos correm mais') ou azul
+                        (para dar sorte), essas proteções são desengonçadas e pesadas.
+                        No entanto, a verdadeira defesa de um Ork é sua fisiologia incrivelmente resiliente; eles podem
+                        sobreviver a ferimentos que matariam qualquer outra raça.</p>
+                </div>
+            </div>
+            <div class="dakka-img-box">
+                <img src="armaduraork.png" alt="Defesa Ork">
+            </div>
+        </section>
+
+    </div>
+
+    <!-- LEGACY SECTION -->
+    <section class="waaagh-banner">
+        <div class="waaagh-box">
+            <h2 class="dakka-title">O LEGADO: O PROFETA DE GORK E MORK</h2>
+            <div style="display: flex; align-items: center; gap: 30px; text-align: left;">
+                <p class="lore-text" style="flex: 1;">Ghazghkull Mag Uruk Thraka quer unir todos os Orks em um Waaagh!
+                    eterno. Ele vê o conflito entre o Império, o Caos e os Tyranids como o banquete perfeito para testar
+                    a força de sua raça. Para Ghazghkull, a galáxia é um playground de guerra, e ele é o mestre de
+                    cerimônias do WAAAAAAAAAAAGH! em escala estelar.</p>
+                <img src="orksfinal.jpg" alt="Ghazghkull"
+                    style="width: 300px; border: 4px solid var(--ork-rust); box-shadow: 10px 10px 0 #000;">
+            </div>
+            <center>
+                <a href="../Index/index.html" class="back-btn">← SAIR DO QUEBRA-PAU / VOLTAR</a>
+            </center>
+        </div>
+    </section>
+
     <footer>
-        <p>Este é um site experimental e de fãs dedicado a explorar a vasta e sombria mitologia de Warhammer 40,000.
-            Todos os direitos reservados a Games Workshop. | <a href="https://www.warhammer.com/en-WW/home"
-                target="_blank">site oficial</a></p>
-        <p>Feito por fã • &copy; 2025 | Pelo Imperador!</p>
+        <p>WAAAGH! • 2026 • Warhammer 40k Fan Project</p>
     </footer>
+
+    <script src="../Index/lightbox.js"></script>
 </body>
 
 </html>

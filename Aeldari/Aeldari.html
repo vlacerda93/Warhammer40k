@@ -4,77 +4,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aeldari - Warhammer 40K</title>
-    <link rel="stylesheet" href="../Index/style.css">
-    <link rel="stylesheet" href="Aeldari.css">
+    <title>Aeldari - O Povo da Estrela | Warhammer 40K</title>
+    <link rel="stylesheet" href="styleaeldari.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">WH40K</div>
-            <ul class="nav-links">
-                <li><a href="../Index/index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="fac-page-container">
+<body class="theme-asuryani">
 
-            <h1 class="fac-title">Aeldari</h1>
+    <!-- TOGGLE SYSTEM -->
+    <div class="toggle-wrapper">
+        <span style="color:var(--aeldari-cyan); font-family:'Cinzel';">Asuryani</span>
+        <label class="switch">
+            <input type="checkbox" onchange="toggleTheme()">
+            <span class="slider"></span>
+        </label>
+        <span style="color:var(--drukhari-green); font-family:'Cinzel';">Drukhari</span>
+    </div>
 
-            <div class="gal-block">
-                <img src="Aeldaris1.jpg" alt="Aeldari Astra" class="gal-img-original">
-                <div>
-                    <h2>Arte e Aura dos Aeldari</h2>
-                    <p>Elegância e poder definem os Aeldari. Essa raça é conhecida por unir tradição marcial,
-                        arquitetura hipertecnológica e beleza ancestral. Seu domínio da energia psíquica é lendário — e
-                        nenhum outro povo luta com tanta graça e simbolismo no universo de Warhammer 40K.</p>
-                </div>
-            </div>
-
-            <div class="gal-block">
-                <img src="Aeldaris2.jpg" alt="Nobres Aeldari" class="gal-img-original">
-                <div>
-                    <h2>Sociedade e Cultura</h2>
-                    <p>Prepare-se para mundos-nave flutuantes, sociedades aristocráticas milenares e as melhores armas
-                        do setor galáctico. Os Aeldari lutam pela sobrevivência enquanto protegem segredos antigos, arte
-                        e magia — sempre ameaçados pela corrupção de Slaanesh e a inveja de todas as outras facções.</p>
-                </div>
-            </div>
-
-            <div class="gal-block">
-                <img src="Aeldaris3.jpg" alt="Batalha Aeldari vs Necron" class="gal-img-original">
-                <div>
-                    <h2>Batalha e Rivalidades</h2>
-                    <p>No front, os Aeldari enfrentam os Necrons (inimigos imortais) e os demônios do Caos. Suas lâminas
-                        energéticas e magias mentais são armas mortais — cada guerreiro é treinado desde cedo para agir
-                        em perfeita coordenação.</p>
-                </div>
-            </div>
-
-            <div class="gal-block solo">
-                <div>
-                    <h2>Curiosidades Rápidas</h2>
-                    <ul>
-                        <li>Ancoram suas almas em Pedras Espirituais, temendo Slaanesh.</li>
-                        <li>Diversas subfacções: Craftworlds, Dark Eldar (Drukhari), Harlequins, Exoditas.</li>
-                        <li>Naves mais rápidas do universo!</li>
-                    </ul>
-                </div>
-                <img src="Aeldaris4.jpg" alt="Arlequim Aeldari" class="gal-img-original">
-            </div>
-
-            <a href="../Index/index.html" class="back-link">← Voltar para Facções</a>
+    <!-- HERO SECTION -->
+    <header class="faction-hero">
+        <div class="hero-bg asuryani-only" style="background-image: url('aeldar.jpg');"></div>
+        <div class="hero-bg drukhari-only" style="background-image: url('drukari0.jpg');"></div>
+        <div style="z-index: 10; text-align: center;">
+            <h1 class="lore-title asuryani-only">Aeldari</h1>
+            <h1 class="lore-title drukhari-only" style="color:var(--drukhari-red);">Drukhari</h1>
+            <p class="asuryani-only" style="font-family:'Cinzel';">Os Mundos-Nave e a Glória Ancestral</p>
+            <p class="drukhari-only" style="font-family:'Cinzel'; color:var(--drukhari-green);">Os Kabalitos de
+                Commorragh</p>
         </div>
-    </main>
+    </header>
+
+    <div class="section-wrapper">
+        <!-- LORE SECTION -->
+        <section class="lore-card">
+            <h2 class="lore-title asuryani-only">O Arquivo: Lore Eldar</h2>
+            <h2 class="lore-title drukhari-only" style="color:var(--drukhari-purple);">Relatórios de Tortura</h2>
+
+            <div class="asuryani-only">
+                <p>Após o cataclismo que quase extinguiu sua espécie, os Asuryani adotaram o Caminho da Disciplina para
+                    proteger suas almas da fome de Slaanesh. Eles são mestres da precognição e da guerra de precisão.
+                    Atualmente, sob a liderança de Yvraine, a Emissária de Ynnead, eles representam uma nova esperança:
+                    a crença de que os Aeldari podem ser salvos através do despertar do Deus dos Mortos. Deixaram de
+                    apenas fugir para se tornarem uma força de intervenção galáctica, manipulando o destino para
+                    garantir que a raça não desapareça nas trevas.</p>
+            </div>
+            <div class="drukhari-only">
+                <p>Habitando a Cidade Sombria, os Drukhari são predadores sádicos que sobrevivem através da dor alheia.
+                    O soberano supremo é Asdrubael Vect, um gênio tático milenar que governa através do medo e de
+                    intrigas complexas. Para ele e seus súditos, o universo é um matadouro e todas as outras raças são
+                    apenas gado para serem colhidos em incursões brutais, garantindo que sua própria imortalidade seja
+                    mantida pelo sofrimento eterno de trilhões de almas capturadas.</p>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="gallery-section">
+            <h2 class="lore-title asuryani-only" style="margin-top: 60px;">Galeria dos Escolhidos</h2>
+            <h2 class="lore-title drukhari-only" style="color:var(--drukhari-red); margin-top: 60px;">Os Predadores de
+                Commorragh</h2>
+
+            <!-- ASURYANI GALLERY (8 IMGS) -->
+            <div class="aeldari-gallery asuryani-only">
+                <div class="gallery-card"><img src="eldar1.jpg" alt="Farseer">
+                    <p class="card-label">Farseer</p>
+                </div>
+                <div class="gallery-card"><img src="eldar2.jpg" alt="Dire Avenger">
+                    <p class="card-label">Dire Avenger</p>
+                </div>
+                <div class="gallery-card"><img src="eldar3.jpg" alt="Howling Banshee">
+                    <p class="card-label">Howling Banshee</p>
+                </div>
+                <div class="gallery-card"><img src="eldar4.jpg" alt="Striking Scorpion">
+                    <p class="card-label">Striking Scorpion</p>
+                </div>
+                <div class="gallery-card"><img src="eldar5.jpg" alt="Wraithlord">
+                    <p class="card-label">Wraithlord</p>
+                </div>
+                <div class="gallery-card"><img src="eldar6.jpg" alt="Windrider">
+                    <p class="card-label">Windrider</p>
+                </div>
+                <div class="gallery-card"><img src="eldar7.jpg" alt="War Walker">
+                    <p class="card-label">War Walker</p>
+                </div>
+                <div class="gallery-card"><img src="eldar8.jpg" alt="Wraithguard">
+                    <p class="card-label">Wraithguard</p>
+                </div>
+            </div>
+
+            <!-- DRUKHARI GALLERY (8 IMGS) -->
+            <div class="aeldari-gallery drukhari-only">
+                <div class="gallery-card"><img src="drukari1.jpg" alt="Archon">
+                    <p class="card-label dru-label">Archon</p>
+                </div>
+                <div class="gallery-card"><img src="drukari2.jpg" alt="Kabalite Warrior">
+                    <p class="card-label dru-label">Kabalite Warrior</p>
+                </div>
+                <div class="gallery-card"><img src="drukari3.jpg" alt="Succubus">
+                    <p class="card-label dru-label">Succubus</p>
+                </div>
+                <div class="gallery-card"><img src="drukari4.jpg" alt="Incubi">
+                    <p class="card-label dru-label">Incubi</p>
+                </div>
+                <div class="gallery-card"><img src="drukari5.jpg" alt="Grotesque">
+                    <p class="card-label dru-label">Grotesque</p>
+                </div>
+                <div class="gallery-card"><img src="drukari6.jpg" alt="Scourge">
+                    <p class="card-label dru-label">Scourge</p>
+                </div>
+                <div class="gallery-card"><img src="drukari7.jpg" alt="Wrack">
+                    <p class="card-label dru-label">Wrack</p>
+                </div>
+                <div class="gallery-card"><img src="drukari8.jpg" alt="Venom">
+                    <p class="card-label dru-label">Venom</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARSENAL SECTION -->
+        <section class="aeldari-section">
+            <div class="aeldari-content">
+                <h2 class="asuryani-only" style="font-family:'Cinzel'; font-size:2rem; color:var(--aeldari-gold);">
+                    Arsenal: A Sinfonia de Cristal e Mente</h2>
+                <h2 class="drukhari-only" style="font-family:'Cinzel'; font-size:2rem; color:var(--drukhari-red);">
+                    Arsenal: A Ciência da Agonia Refinada</h2>
+                <div class="lore-card">
+                    <p class="asuryani-only">O arsenal Asuryani é uma extensão da psique do guerreiro, composto por
+                        materiais que respondem ao comando mental. Como visto em sua mesa de armas:
+                        <br>• Tecnologia Shuriken: Dispara discos monomoleculares em velocidades hipersônicas.
+                        <br>• Lanças de Luz: Canalizam o poder das estrelas para desintegrar alvos.
+                        <br>• Lâminas Rúnicas: Espadas de cristal espiritual que cortam a própria essência da alma.
+                    </p>
+                    <p class="drukhari-only">O arsenal Drukhari é projetado para torturar. Sua mesa de armas exibe
+                        ganchos e venenos cruéis:
+                        <br>• Armas de Estilhaços: Disparam cristais embebidos em neurotoxinas.
+                        <br>• Chicotes de Tortura: Ferramentas de metais negros feitas para rasgar carne.
+                        <br>• Venenos Exóticos: Fluidos que fazem um segundo de agonia parecer uma eternidade.
+                    </p>
+                </div>
+            </div>
+            <div class="aeldari-img">
+                <img class="asuryani-only" src="mesaeldari1.png" style="width:100%;">
+                <img class="drukhari-only" src="mesadrukari.jpg" style="width:100%;">
+            </div>
+        </section>
+
+        <!-- DEFENSE SECTION -->
+        <section class="aeldari-section reverse">
+            <div class="aeldari-content">
+                <h2 class="asuryani-only" style="font-family:'Cinzel'; font-size:2rem; color:var(--aeldari-gold);">
+                    Defesa: A Armadura da Alma</h2>
+                <h2 class="drukhari-only" style="font-family:'Cinzel'; font-size:2rem; color:var(--drukhari-red);">
+                    Defesa: A Armadura de Espinhos</h2>
+                <div class="lore-card">
+                    <p class="asuryani-only">A proteção dos Asuryani foca na agilidade sobrenatural. Sua Mesh Armour
+                        endurece ao impacto, permitindo mobilidade total. Os Capacetes de Aspecto integram sistemas de
+                        mira psíquica, permitindo prever o disparo inimigo antes dele ocorrer.</p>
+                    <p class="drukhari-only">A armadura Drukhari é uma moldura para o sadismo. Segmentada com espinhos e
+                        ganchos, utiliza drogas de combate que transformam a dor em adrenalina pura. A defesa é uma
+                        mistura de velocidade acrobática e a crueldade que fere o atacante.</p>
+                </div>
+            </div>
+            <div class="aeldari-img">
+                <img class="asuryani-only" src="ArmaduraInari.png" style="width:100%;">
+                <img class="drukhari-only" src="armaduradrukari.png" style="width:100%;">
+            </div>
+        </section>
+
+        <!-- LEGACY SECTION -->
+        <section class="legacy-chamber">
+            <div class="legacy-card">
+                <h2 class="lore-title asuryani-only">O Legado: O Despertar de Ynnead</h2>
+                <h2 class="lore-title drukhari-only" style="color:var(--drukhari-green);">O Legado: O Domínio de
+                    Commorragh</h2>
+
+                <div class="legacy-content">
+                    <div class="aeldari-content">
+                        <p class="asuryani-only">Atualmente sob o comando de Yvraine, os Asuryani buscam a unificação
+                            para enfrentar o caos. Eles recuperam as 'Croneswords' e fortalecem Ynnead para garantir que
+                            o futuro dos Aeldari seja escrito por suas próprias mãos e não pelo destino cruel.</p>
+                        <p class="drukhari-only">Sob o punho de ferro de Asdrubael Vect, os Drukhari buscam manter sua
+                            supremacia decadente. O plano é expandir a influência de Commorragh pelas sombras da Teia,
+                            garantindo que a agonia da galáxia alimente seu reinado eterno.</p>
+                    </div>
+                    <div class="aeldari-img">
+                        <img class="asuryani-only" src="eldarfinal.jpg" alt="Yvraine">
+                        <img class="drukhari-only" src="drukarifinal.jpg" alt="Asdrubael Vect">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <center>
+            <a href="../Index/index.html" class="back-btn">← Retornar ao Vazio do Codex</a>
+        </center>
+    </div>
+
     <footer>
-        <p>Este é um site experimental e de fãs dedicado a explorar a vasta e sombria mitologia de Warhammer 40,000.
-            Todos os direitos reservados a Games Workshop. | <a href="https://www.warhammer.com/en-WW/home"
-                target="_blank">site oficial</a></p>
-        <p>Feito por fã • &copy; 2025 | Pelo Imperador!</p>
+        <p>A Estrela Nunca se Apaga • 2026 • Warhammer 40k Fan Project</p>
     </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('theme-drukhari');
+            document.body.classList.toggle('theme-asuryani');
+        }
+    </script>
+    <script src="../Index/lightbox.js"></script>
 </body>
 
 </html>

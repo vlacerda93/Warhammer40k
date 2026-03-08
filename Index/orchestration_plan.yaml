@@ -1,0 +1,118 @@
+
+
+
+Orchestration Plan: Project Warhammer 2026 Layout
+Objective: Automatically generate and style faction-specific subpages based on the "Sketch" reference images located in the /index folder. The final output must strictly follow the visual hierarchy defined in the sketches.
+
+1. Structural Hierarchy (Per Faction)
+For each faction (Humans, Chaos, Orks, Necrons, T'au, Aeldari, Tyranids), the orchestrator must follow this specific vertical flow:
+
+A. Header & Introduction (The Lore)
+Instruction: Place the Lore Text (Topic 1) at the top of the page.
+
+Asset: Use the faction sketch in /index as the layout reference for typography and alignment.
+
+B. The High-Fidelity Gallery
+Instruction: Create a grid gallery containing exactly 8 images.
+
+Naming Convention: Fetch images following the pattern {faction_name}{1-8}.webp/jpg (e.g., spacemarine1.jpg through spacemarine8.jpg or ork1.jpg through ork8.jpg).
+
+C. The War Table (The Arsenal)
+Instruction: Insert the Arsenal Text (Topic 2).
+
+Asset: Immediately follow the text with the image named mesa_{faction}.jpg (e.g., mesahumans.jpg, mesatau.jpg).
+
+Note: For Aeldari, this must dynamically switch based on the Toggle State (Asuryani vs. Drukhari).
+
+D. Protection & Resilience (The Defense)
+Instruction: Insert the Defense Text (Topic 3).
+
+Asset: Search for and place the image starting with armadura_{faction}.jpg.
+
+E. The Legacy (Current Objectives)
+Instruction: Place the Legacy Text (Topic 4).
+
+Asset: Use the "Hero" ending images.
+
+Standard Factions: Look for {faction}final.jpg.
+
+Aeldari Special Case:
+
+If Toggle = Asuryani: Use eldarfinal.jpg (Yvraine).
+
+If Toggle = Drukhari: Use drukarifinal.jpg (Asdrubael Vect).
+
+2. Special Instructions for Aeldari Toggle
+The Aeldari page is a dual-state layout. The orchestrator must implement a JS Toggle that swaps:
+
+All 4 text blocks.
+
+The Gallery (8 images for Eldar vs. 8 images for Drukhari).
+
+The specific "Mesa", "Armadura", and "Final" assets for each state.
+
+3. Layout & Styling Guidelines
+Reference Sketches: All visual styling (borders, glow effects, fonts) must be extracted from the sketches found in the /index folder.
+
+Colors: Use the signature colors defined in previous iterations (e.g., Necron Green, T'au Orange/Teal, Chaos Crimson).
+ 
+
+ -----------------------------------------------------------------------------
+
+  # Project: Warhammer 2026 - Galeria de Facções
+# Version: 3.0 (Layout Orchestration)
+# Target: Google Anti-Gravity Agent
+
+project_objective: "Orquestrar a criação das subpáginas de facções seguindo rigorosamente os esboços na pasta /index."
+
+global_rules:
+  - prioritize_layout: "O layout final deve espelhar visualmente o arquivo de esboço (sketch) correspondente em /index."
+  - asset_mapping: "Mapear imagens conforme o padrão de nomenclatura definido abaixo."
+
+faction_structure:
+  order_of_elements:
+    1_lore:
+      position: "Header / Início da página"
+      content: "Topic 1 (Lore Text)"
+      style: "Typography based on faction sketch"
+
+    2_gallery:
+      position: "Abaixo da introdução"
+      source: "/assets/{faction}/"
+      pattern: "{faction}{1-8}.jpg" # Ex: spacemarine1.jpg até spacemarine8.jpg
+      requirement: "Exibir exatamente 8 imagens em grid de alta fidelidade"
+
+    3_arsenal:
+      position: "Seção Central"
+      content: "Topic 2 (Arsenal Text)"
+      asset: "mesa{faction}.jpg" # Ex: mesahumans.jpg, mesatau.jpg
+      alignment: "Texto explicativo seguido da imagem da mesa de guerra"
+
+    4_defense:
+      position: "Seção de Proteção"
+      content: "Topic 3 (Defense Text)"
+      asset_pattern: "armadura{faction}.jpg" # Ex: armaduranecons.jpg
+
+    5_legacy:
+      position: "Rodapé / Fechamento"
+      content: "Topic 4 (Legacy Text)"
+      asset: "{faction}final.jpg" # Ex: orkfinal.jpg
+
+special_cases:
+  aeldari_toggle_system:
+    trigger: "JavaScript Toggle Switch (Asuryani vs Drukhari)"
+    states:
+      asuryani:
+        texts: "Aeldari (Clean) Set"
+        gallery: "eldar1.jpg to eldar8.jpg"
+        mesa: "mesaeldari.jpg"
+        final: "eldarfinal.jpg" (Yvraine)
+      drukhari:
+        texts: "Drukhari (Corrupted) Set"
+        gallery: "drukari1.jpg to drukari8.jpg"
+        mesa: "mesadrukari.jpg"
+        final: "drukarifinal.jpg" (Asdrubael Vect)
+
+technical_guidelines:
+  font_extraction: "Analisar fontes nos esboços para CSS (Gothic para Império, Sci-Fi para T'au, etc)"
+  glow_effects: "Aplicar box-shadow neon baseado na cor da facção (Verde para Necrons, Roxo para Drukhari)"

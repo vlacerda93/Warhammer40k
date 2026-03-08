@@ -4,73 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humanos - Warhammer 40K</title>
-
-    <!-- CSS global -->
-    <link rel="stylesheet" href="../Index/style.css">
-
-    <!-- CSS específico dos humanos -->
+    <title>Império do Homem - A Última Fortaleza | Warhammer 40K</title>
     <link rel="stylesheet" href="humans.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">WH40K</div>
-            <ul class="nav-links">
-                <li><a href="../Index/index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="fac-page-container">
-            <h1 class="fac-title">Humanos</h1>
+    <!-- IMPERIAL BEAMS (FULL SCREEN) -->
+    <div class="imperial-beams"></div>
 
-            <div class="human-block">
-                <img src="humans1.jpg" alt="Space Marine em batalha" class="human-img-original">
-                <div>
-                    <h2>O Império da Humanidade</h2>
-                    <p>
-                        A humanidade forma o maior império galáctico de Warhammer 40K. O Imperador da humanidade guia
-                        bilhões de almas, protegidas por exércitos, naves colossais e fé absoluta no imperium.
-                    </p>
-                </div>
-            </div>
-
-            <div class="human-block">
-                <img src="humans2.jpg" alt="Combate humano" class="human-img-original">
-                <div>
-                    <h2>Space Marines</h2>
-                    <p>
-                        Os Space Marines são guerreiros geneticamente aprimorados, armas vivas do Império. Seus feitos
-                        inspiram lendas e suas batalhas garantem a sobrevivência dos humanos diante das facções
-                        alienígenas.
-                    </p>
-                </div>
-            </div>
-
-            <div class="human-block solo">
-                <div>
-                    <h2>Curiosidades</h2>
-                    <ul>
-                        <li>O Imperium abrange milhares de sistemas estelares.</li>
-                        <li>As maiores ameaças aos humanos são o Caos, Xenos e a corrupção interna.</li>
-                        <li>Grandes subfacções: Astra Militarum (Guarda Imperial), Adeptus Mechanicus, Inquisition,
-                            Lembresse O Imperador Protegue mas uma Bolter ajuda.</li>
-                    </ul>
-                </div>
-                <img src="humans3.jpg" alt="Guarda Imperial" class="human-img-original">
-            </div>
-
-            <a href="../Index/index.html" class="back-link">← Voltar para Facções</a>
+    <!-- HERO SECTION -->
+    <header class="faction-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-title-box">
+            <h1 class="hero-title">IMPÉRIO</h1>
+            <p class="hero-subtitle">PELO IMPERADOR!</p>
         </div>
-    </main>
-    <footer>
-        <p>Site experimental de fãs dedicado à mitologia de Warhammer 40,000. Direitos reservados a Games Workshop. | <a
-                href="https://www.warhammer.com/en-WW/home" target="_blank">site oficial</a></p>
-        <p>Feito por fã • &copy; 2025 | Pelo Imperador!</p>
+    </header>
+
+    <div class="section-wrapper">
+        <!-- LORE SECTION -->
+        <section class="lore-container">
+            <div class="parchment-box">
+                <h2 class="section-label">O ÉDITO IMPERIAL: LORE</h2>
+                <div class="lore-text">
+                    <p>Há mais de dez milênios, o Imperador senta-se imóvel no Trono Dourado de Terra. Ele é o Mestre da
+                        Humanidade por vontade dos deuses e mestre de um milhão de mundos pelo poder de Seus exércitos
+                        inesgotáveis. O Império é um regime vasto e cruel, mantido pela fé fervorosa e pelo sacrifício
+                        de trilhões.</p>
+                    <p>Em uma galáxia consumida por horrores alienígenas e corrupção demoníaca, a humanidade não luta
+                        mais por progresso ou iluminação, mas pela pura e simples sobrevivência. Cada guerra travada,
+                        cada planeta purificado e cada gota de sangue derramada servem a um único propósito: adiar o
+                        inevitável fim da espécie humana perante as trevas do universo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION (UNITS) -->
+        <section style="margin-top: 100px;">
+            <h2 class="section-label">OS DEFENSORES DE TERRA</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="spacemarine1.jpg" alt="Intercessor">
+                    <p class="card-label">Intercessor</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="spacemarines2.jpg" alt="Hellblaster">
+                    <p class="card-label">Hellblaster</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="spacemarines3jpg" alt="Inceptor">
+                    <p class="card-label">Inceptor</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="spacemarines4.jpg" alt="Aggressor">
+                    <p class="card-label">Aggressor</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="spacemarine5.jpg" alt="Eliminator">
+                    <p class="card-label">Eliminator</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="spacemarine6.jpg" alt="Reiver">
+                    <p class="card-label">Reiver</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="spacemarine7.jpg" alt="Captain">
+                    <p class="card-label">Captain</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="spacemarine8.jpg" alt="Dreadnought">
+                    <p class="card-label">Dreadnought</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARSENAL SECTION -->
+        <section class="feature-section">
+            <div class="feature-content">
+                <h2 class="feature-title">O ARSENAL: DIVERSIDADE DE FOGO</h2>
+                <div class="parchment-box">
+                    <p class="lore-text">O arsenal de um Capítulo de Space Marines é uma coleção de relíquias
+                        tecnológicas e instrumentos de destruição em massa:
+                        <br>• <strong>Boltgun</strong>: Arma icônica que dispara granadas autopropelidas de 75mm.
+                        <br>• <strong>Chainswords</strong>: Espadas-serra cujos dentes rugem ao morder armaduras.
+                        <br>• <strong>Martelos de Trovão</strong>: Capazes de esmagar tanques com um único golpe.
+                    </p>
+                </div>
+            </div>
+            <div class="feature-img-box">
+                <img src="mesahumans.jpg" alt="Arsenal Imperial">
+            </div>
+        </section>
+
+        <!-- DEFENSE SECTION -->
+        <section class="feature-section reverse">
+            <div class="feature-content">
+                <h2 class="feature-title">A DEFESA: A MURALHA DE CERITE</h2>
+                <div class="parchment-box">
+                    <p class="lore-text">A Power Armor é um sistema de suporte à vida completo que transforma um Space
+                        Marine em um tanque andante. Conectada diretamente ao sistema nervoso através do 'Black
+                        Carapace', permite ignorar ferimentos mortais e mover-se com uma agilidade impossível para o seu
+                        tamanho.</p>
+                </div>
+            </div>
+            <div class="feature-img-box">
+                <img src="armaduraultramarine.jpg" alt="Imperial Armor">
+            </div>
+        </section>
+
+    </div>
+
+    <!-- LEGACY SECTION -->
+    <section class="legacy-section">
+        <div class="legacy-box">
+            <h2 class="feature-title">O LEGADO: A CRUZADA INDOMITUS</h2>
+            <div
+                style="display: flex; align-items: center; gap: 40px; text-align: left; flex-wrap: wrap; justify-content: center;">
+                <p class="lore-text" style="flex: 1; min-width: 300px;">Sob o comando do Primarca Roboute Guilliman e
+                    líderes como o Capitão Titus, o Império lançou a Cruzada Indomitus. O objetivo é reconquistar o que
+                    foi perdido e garantir que a luz do Astronomican continue a guiar a humanidade através da noite
+                    eterna.</p>
+                <img src="guilliman.jpg" alt="Roboute Guilliman"
+                    style="width: 300px; border: 2px solid var(--gold); box-shadow: 0 0 20px var(--gold); border-radius: 8px;">
+            </div>
+            <center>
+                <a href="../Index/index.html" class="back-btn">← SERVIR AO TRONO / VOLTAR</a>
+            </center>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; opacity: 0.6;">
+        <p>A Humanidade Prevalecerá • 2026 • Warhammer 40k Fan Project</p>
     </footer>
+
+    <script src="../Index/lightbox.js"></script>
 </body>
 
 </html>

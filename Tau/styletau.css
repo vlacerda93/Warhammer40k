@@ -1,149 +1,280 @@
-.fac-page-container {
-    max-width: 950px;
-    margin: 40px auto;
-    background: #e6e7e8;
-    /* Fundo claro/cinza tecnológico */
-    border-radius: 18px;
-    box-shadow: 0 4px 32px rgba(0, 195, 255, 0.3);
-    /* Sombra azul */
-    padding: 2.6em 2.1em;
-    border: 1px solid #ffffff;
+/* ========== DESIGN SISTEMA - T'AU EMPIRE ========== */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --tau-orange: #f38b21;
+    --tau-teal: #33ccff;
+    --tau-white: #e6e6e6;
+    --hud-bg: rgba(10, 30, 45, 0.85);
+    --hud-border: 1px solid rgba(51, 204, 255, 0.5);
+    --hud-glow: 0 0 15px rgba(51, 204, 255, 0.3);
 }
 
-.fac-title {
-    color: #0099cc;
-    /* Azul T'au Escuro */
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.7rem;
-    margin-bottom: 1.2em;
-    letter-spacing: 2.6px;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(0, 153, 204, 0.4);
-}
-
-/* Bloco flexível */
-.tau-block {
-    display: flex;
-    gap: 32px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 2.6em;
-    flex-wrap: wrap;
-    background: #f4f8fb;
-    /* Fundo levemente azulado */
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 4px solid #00c3ff;
-    /* Ciano T'au */
-}
-
-.tau-block.solo {
-    flex-direction: row-reverse;
-    border-left: none;
-    border-right: 4px solid #00c3ff;
-}
-
-/* Imagem centralizada e proporcional dentro do bloco */
-.tau-img-original {
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 160, 200, 0.25);
-    margin-bottom: 0;
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Texto organizado ao lado da imagem */
-.tau-block>div {
-    flex: 1;
-    min-width: 220px;
-}
-
-.tau-block h2 {
-    margin-top: 0;
-    color: #2b3a42;
-    /* Azul quase preto */
-    font-size: 1.5rem;
-    font-family: 'Orbitron', sans-serif;
-    margin-bottom: .6em;
-}
-
-.tau-block p,
-.tau-block ul {
-    color: #445566;
-    font-size: 1.1em;
-    line-height: 1.6;
+body {
+    background-color: #0c1218;
+    color: var(--tau-white);
     font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(circle at top right, rgba(243, 139, 33, 0.1), transparent 50%),
+        url('../Index/fundo20.png');
+    background-attachment: fixed;
+    cursor: url('../Index/tau.cur'), auto;
 }
 
-.tau-block ul {
-    margin-left: 1.2em;
-    margin-bottom: 0.6em;
+/* ========== HERO SECTION (CADRE BANNER) ========== */
+.faction-hero {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 4px solid var(--tau-orange);
 }
 
-.tau-block li {
-    margin-bottom: 8px;
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(12, 18, 24, 0.9)), url('tau.jpg') center/cover no-repeat;
+    z-index: -1;
+    filter: brightness(0.8);
 }
 
-.tau-block li strong {
-    color: #0099cc;
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    color: var(--tau-orange);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-shadow: 0 0 20px rgba(243, 139, 33, 0.5);
 }
 
-.back-link {
-    display: inline-block;
-    margin-top: 28px;
-    margin-bottom: 4px;
+/* ========== HUD LORE SECTION ========== */
+.section-wrapper {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.hud-container {
+    background: #1e272e;
+    border: 30px solid transparent;
+    border-image: url('bordatau1.png') 100 stretch;
+    padding: 20px;
+    position: relative;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+.hud-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(51, 204, 255, 0.3);
+    box-shadow: 0 0 10px var(--tau-teal);
+    animation: tau-scan 4s infinite linear;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.hud-container::after {
+    content: 'SYS.ON';
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    color: #3498db;
+    font-size: 10px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    z-index: 5;
+}
+
+@keyframes tau-scan {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.hud-header {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--tau-teal);
+    font-size: 2rem;
+    border-left: 5px solid var(--tau-orange);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.hud-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #b0d8f0;
+    text-align: justify;
+}
+
+/* ========== CADRE GALLERY GRID ========== */
+.cadre-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.cadre-card {
+    background: #1e272e;
+    border: 15px solid transparent;
+    border-image: url('bordatau2.png') 40 stretch;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.cadre-card::before {
+    content: 'LINK.ACTV';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: var(--tau-teal);
+    font-size: 8px;
+    font-family: 'Orbitron', sans-serif;
+    opacity: 0.6;
+    z-index: 5;
+}
+
+.cadre-card:hover {
+    background: rgba(243, 139, 33, 0.1);
+    border-color: var(--tau-orange);
+    transform: scale(1.05);
+}
+
+.cadre-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    mix-blend-mode: overlay;
+    transition: all 0.5s;
+}
+
+.cadre-card:hover img {
+    mix-blend-mode: normal;
+    filter: brightness(1.1);
+}
+
+.card-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(243, 139, 33, 0.8));
+    padding: 15px;
+    font-family: 'Orbitron', sans-serif;
     color: #fff;
-    background: #0099cc;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-    padding: 10px 30px;
-    box-shadow: 0 2px 10px rgba(0, 153, 204, 0.4);
-    transition: all .2s;
+    text-align: center;
+}
+
+/* ========== ARSENAL & DEFENSE ========== */
+.tech-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin: 120px 0;
+}
+
+.tech-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.tech-img-box {
+    flex: 1;
+    background: #000;
+    border: 1px solid var(--tau-teal);
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.tech-img-box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    border-top: 3px solid var(--tau-orange);
+    border-left: 3px solid var(--tau-orange);
+}
+
+.tech-info {
+    flex: 1;
+}
+
+.tech-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--tau-orange);
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+/* ========== THE GREATER GOOD (LEGACY) ========== */
+.legacy-banner {
+    background: linear-gradient(rgba(12, 18, 24, 0.7), rgba(12, 18, 24, 0.9)), url('taufinal.jpg') center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 2px solid var(--tau-teal);
+}
+
+.legacy-box {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 15px 45px;
+    background: transparent;
+    border: 2px solid var(--tau-teal);
+    color: var(--tau-teal);
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
-    font-size: 0.9em;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    margin-top: 50px;
 }
 
-.back-link:hover {
-    background: #007aabb;
-    transform: translateY(-2px);
+.back-btn:hover {
+    background: var(--tau-teal);
+    color: #000;
+    box-shadow: 0 0 20px var(--tau-teal);
 }
 
-@media (max-width: 700px) {
-
-    .tau-block,
-    .tau-block.solo {
-        flex-direction: column !important;
-        gap: 15px;
-        align-items: center;
-        text-align: center;
-    }
-
-    .fac-page-container {
-        padding: 1.1em 4vw;
-    }
-
-    .fac-title {
-        font-size: 1.8rem;
-    }
-
-    .tau-img-original {
-        max-width: 100% !important;
-        margin-bottom: 15px;
-    }
-
-    .tau-block {
-        border: none;
-        border-top: 4px solid #00c3ff;
-    }
-
-    .tau-block.solo {
-        border: none;
-        border-top: 4px solid #00c3ff;
-    }
+/* ========== FOOTER ========== */
+footer {
+    background: #080a0d;
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid #1a2a3a;
 }

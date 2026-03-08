@@ -1,74 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Necrons - Warhammer 40K</title>
-    <link rel="stylesheet" href="../Index/style.css">
-    <link rel="stylesheet" href="Necrons.css">
+    <title>Necrons - Dinastias Eternas | Warhammer 40K</title>
+    <link rel="stylesheet" href="stylenecrons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">WH40K</div>
-            <ul class="nav-links">
-                <li><a href="../Index/index.html">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="fac-page-container">
-            <h1 class="fac-title">Necrons</h1>
 
-            <nav style="text-align: right; margin-bottom: 2em;">
-                <ul style="list-style: none; margin: 0; padding: 0;">
-                    <li><a href="#sobre" style="color: #0bff57; text-decoration: none;"></a></li>
-                </ul>
-            </nav>
-
-            <!-- Bloco 1: O Despertar dos Antigos -->
-            <div class="necron-block">
-                <img src="necrons1.jpg" alt="Necrons despertar" class="necron-img-original">
-                <div>
-                    <h2>O Despertar dos Antigos</h2>
-                    <p>
-                        Milênios adormecidos sob a crosta de mundos mortos, os Necrons são uma raça de guerreiros imortais de metal, que retornam para tomar de volta a galáxia que um dia foi deles.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Bloco 2: Tecnologia Ancestral -->
-            <div class="necron-block">
-                <img src="necrons2.jpg" alt="Tecnologia Necron" class="necron-img-original">
-                <div>
-                    <h2>Tecnologia Ancestral</h2>
-                    <p>
-                        Suas armas e naves desafiam as leis da física. Portais de teleporte, raios de energia pura e armaduras que se regeneram fazem dos Necrons uma ameaça quase invencível.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Bloco 3: Curiosidades -->
-            <div class="necron-block solo">
-                <div>
-                    <h2>Curiosidades</h2>
-                    <ul>
-                        <li>Foram seres orgânicos, os Necrontyr, antes de se tornarem máquinas vivas. Agora se chamam Necrons.</li>
-                        <li>Sua liderança é formada por Faraós Eternos e Lordes sobre-humanos.</li>
-                        <li>Dormem em tumbas espalhadas pela galáxia, aguardando o momento certo para retornar.</li>
-                    </ul>
-                </div>
-                <img src="necron3.jpg" alt="Faraó Necron" class="necron-img-original">
-            </div>
-
-            <a href="../Index/index.html" class="back-link">← Voltar para Facções</a>
+    <!-- HERO SECTION -->
+    <header class="faction-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-title-box">
+            <h1 class="hero-title">NECRONS</h1>
         </div>
-    </main>
+    </header>
 
-    <footer>
-        <p>Site experimental de fãs dedicado à mitologia de Warhammer 40,000. Direitos reservados a Games Workshop. | <a href="https://www.warhammer.com/en-WW/home" target="_blank" style="color: #0bff57;">site oficial</a></p>
-        <p>Feito por fã • &copy; 2025 | Pelo Imperador!</p>
+    <div class="section-wrapper">
+        <!-- LORE SECTION -->
+        <section class="tomb-card">
+            <h2 class="section-label">O ARQUIVO MILENAR: LORE</h2>
+            <div class="lore-text">
+                <p>Milhões de anos antes da humanidade sequer existir, os Necrons governaram a galáxia. Para vencer uma
+                    guerra contra deuses, eles trocaram suas almas e corpos de carne por estruturas imortais de metal
+                    vivo através do processo de Biotransferência. Agora, após um sono de eras, as Dinastias Necron estão
+                    despertando para retomar seu império.</p>
+                <p>Eles não lutam por ódio ou fé, mas por um direito de propriedade ancestral. Para um Necron, as outras
+                    raças são apenas pragas que infestaram seus jardins enquanto eles dormiam, e a hora da colheita
+                    finalmente chegou.</p>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION (UNITS) -->
+        <section style="margin-top: 100px;">
+            <h2 class="section-label">A LEGIÃO IMORTAL</h2>
+            <div class="legion-gallery">
+                <div class="necron-card"><img src="necron1.jpg" alt="Necron Warrior">
+                    <p class="card-label">Necron Warrior</p>
+                </div>
+                <div class="necron-card"><img src="necron2.jpg" alt="Immortal">
+                    <p class="card-label">Immortal</p>
+                </div>
+                <div class="necron-card"><img src="necron3.jpg" alt="Overlord">
+                    <p class="card-label">Overlord</p>
+                </div>
+                <div class="necron-card"><img src="necron4.jpg" alt="Lychguard">
+                    <p class="card-label">Lychguard</p>
+                </div>
+                <div class="necron-card"><img src="necron5.jpg" alt="Canoptek Wraith">
+                    <p class="card-label">Canoptek Wraith</p>
+                </div>
+                <div class="necron-card"><img src="necron6.jpg" alt="Deathmark">
+                    <p class="card-label">Deathmark</p>
+                </div>
+                <div class="necron-card"><img src="necron7.jpg" alt="Skorpekh Destroyer">
+                    <p class="card-label">Skorpekh Destroyer</p>
+                </div>
+                <div class="necron-card"><img src="necron8.jpg" alt="Ghost Ark">
+                    <p class="card-label">Ghost Ark</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARSENAL SECTION -->
+        <section class="gauss-section">
+            <div class="gauss-info">
+                <h2 class="gauss-title">O ARSENAL: DESINTEGRAÇÃO ATÔMICA</h2>
+                <div class="tomb-card">
+                    <p class="lore-text">O armamento Necron utiliza a tecnologia Gauss, que projeta feixes de energia
+                        capazes de desintegrar as camadas moleculares do alvo, reduzindo tanques e soldados a átomos em
+                        segundos.
+                        <br>• Lâminas Hiperfásicas: Vibram entre dimensões, ignorando armaduras físicas.
+                        <br>• Cajados de Luz: Canalizam o poder bruto das estrelas com precisão matemática.
+                    </p>
+                </div>
+            </div>
+            <div class="gauss-img-box">
+                <img src="mesanecrons.png" alt="Arsenal Necron">
+            </div>
+        </section>
+
+        <!-- DEFENSE SECTION -->
+        <section class="gauss-section reverse">
+            <div class="gauss-info">
+                <h2 class="gauss-title">A DEFESA: METAL VIVO NECRODERMIS</h2>
+                <div class="tomb-card">
+                    <p class="lore-text">A maior defesa de um Necron é o seu próprio corpo feito de Necrodermis, um
+                        metal autorreparável que flui como líquido para fechar feridas instantaneamente. Mesmo danos
+                        catastróficos iniciam uma 'translocação de emergência', teletransportando os restos de volta
+                        para as tumbas para reconstrução.</p>
+                </div>
+            </div>
+            <div class="gauss-img-box">
+                <img src="armaduranecron.png" alt="Necron Armor">
+            </div>
+        </section>
+
+    </div>
+
+    <!-- LEGACY SECTION -->
+    <section class="legacy-chamber">
+        <div class="chamber-box tomb-card"> <!-- Adicionado tomb-card para herdar o comportamento de hover do blur -->
+            <h2 class="gauss-title">O LEGADO: O DESPERTAR DAS DINASTIAS</h2>
+            <div
+                style="display: flex; align-items: center; gap: 40px; text-align: left; flex-wrap: wrap; justify-content: center;">
+                <p class="lore-text" style="flex:1; min-width: 300px;">Com o surgimento de líderes niilistas como
+                    Nekrosor Ammentar, o objetivo Necron mudou de uma simples reconquista para uma purificação
+                    galáctica. Eles buscam silenciar o Warp e eliminar todas as formas de vida orgânica para restaurar a
+                    galáxia à sua ordem original: um silêncio eterno e metálico.</p>
+                <img src="necronsfinal.jpg" alt="Nekrosor Ammentar"
+                    style="width: 300px; border: 2px solid var(--necron-green); box-shadow: 0 0 20px var(--necron-green); border-radius: 8px;">
+            </div>
+            <center>
+                <a href="../Index/index.html" class="back-btn">← SAIR DA TUMBA / VOLTAR</a>
+            </center>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; opacity: 0.6;">
+        <p>A Eternidade nos Pertence • 2026 • Warhammer 40k Fan Project</p>
     </footer>
+
+    <script src="../Index/lightbox.js"></script>
 </body>
+
 </html>
