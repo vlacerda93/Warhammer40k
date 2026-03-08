@@ -77,12 +77,32 @@ body {
 }
 
 .lore-card {
-    background: #0a0000;
-    border: 30px solid transparent;
-    border-image: url('bordachaos1.png') 100 stretch;
+    background: transparent;
+    border: 45px solid transparent;
+    border-image: url('bordachaos1editada.png') 250 stretch;
+    border-image-repeat: round;
+    box-shadow: none;
     position: relative;
-    padding: 20px;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9);
+    margin: 50px auto;
+    max-width: 1000px;
+}
+
+.inner-content {
+    background: transparent;
+    padding: 60px 100px;
+    position: relative;
+}
+
+.lore-card .inner-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lore-card .inner-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.lore-card .inner-content::-webkit-scrollbar-thumb {
+    background: var(--chaos-crimson);
 }
 
 .lore-card::after {
@@ -103,7 +123,6 @@ body {
 .traitor-card,
 .warp-img-box {
     position: relative;
-    border-bottom: 2px solid #800000;
 }
 
 /* Camada Principal de Gotas */
@@ -204,89 +223,108 @@ body {
 }
 
 .traitor-card {
-    background: #0a0000;
-    border: 15px solid transparent;
-    border-image: url('bordachaos2.png') 30 stretch;
-    padding: 5px;
-    position: relative;
+    background: transparent;
+    border: 45px solid transparent;
+    border-image: url('bordachaos2editada.png') 200 stretch;
+    border-image-repeat: round;
+    box-shadow: none;
+    padding: 0;
+    /* Zera para a imagem sangrar */
     transition: 0.3s;
-}
-
-.traitor-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px var(--chaos-crimson);
-    border-color: #ff0000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .traitor-card img {
-    width: 100%;
-    height: 280px;
+    width: calc(100% + 90px);
+    /* Dobro da borda para compensar o margin negativo */
+    margin: -45px;
+    /* Puxa a imagem para baixo da moldura de 45px */
+    height: 350px;
+    /* Aumentado para cobrir a expansão vertical */
     object-fit: cover;
     filter: sepia(0.3) contrast(1.1);
+    display: block;
 }
 
 .card-label {
     font-family: 'New Rocker', system-ui;
     color: var(--chaos-crimson);
     text-align: center;
-    margin-top: 15px;
+    padding: 10px 5px;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
     font-size: 1.2rem;
 }
 
 /* ========== ARSENAL & DEFENSE ========== */
 .warp-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 60px;
-    margin: 120px 0;
+    gap: 50px;
+    margin: 150px auto;
+    max-width: 1000px;
 }
 
 .warp-section.reverse {
-    flex-direction: row-reverse;
+    flex-direction: column;
 }
 
 .warp-img-box {
-    flex: 0.8;
-    max-width: 450px;
-    background: #0a0000;
-    border: 20px solid transparent;
-    border-image: url('bordachaos2.png') 30 stretch;
-    padding: 10px;
+    width: 100%;
+    max-width: 900px;
+    background: transparent;
+    border: 45px solid transparent;
+    border-image: url('bordachaos2editada.png') 200 stretch;
+    border-image-repeat: round;
+    box-shadow: 0 0 40px rgba(139, 0, 0, 0.3);
+    padding: 0;
     position: relative;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .warp-img-box img {
-    width: 100%;
-    height: auto;
+    width: calc(100% + 90px);
+    margin: -45px;
     display: block;
+    object-fit: cover;
 }
 
 .warp-info {
-    flex: 1;
+    width: 100%;
 }
 
 .warp-title {
     font-family: 'New Rocker', system-ui;
     color: var(--chaos-crimson);
-    font-size: 2.2rem;
-    margin-bottom: 25px;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 0 20px var(--chaos-crimson);
 }
 
 /* ========== THE DESPOILER (LEGACY) ========== */
 .legacy-block {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('chaosfinal') center/cover fixed;
     padding: 100px 20px;
     text-align: center;
-    border-top: 4px solid var(--chaos-crimson);
+    background: transparent;
 }
 
 .legacy-content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    background: rgba(20, 0, 5, 0.7);
-    padding: 50px;
-    border: 1px solid var(--chaos-crimson);
+    background: transparent;
+    border: 45px solid transparent;
+    border-image: url('bordachaos1editada.png') 250 stretch;
+    border-image-repeat: round;
+    box-shadow: none;
+    position: relative;
 }
 
 /* ========== BUTTONS ========== */

@@ -81,12 +81,20 @@ body {
 }
 
 .tomb-card {
-    background: #0d1110;
-    border: 40px solid transparent;
-    border-image: url('bordanecron.png') 120 stretch;
-    padding: 20px;
+    background: transparent;
+    border: 55px solid transparent;
+    border-image: url('bordanecron1editada.png') 250 stretch;
+    border-image-repeat: round;
+    box-shadow: none;
     position: relative;
-    box-shadow: inset 0 0 50px rgba(0, 255, 65, 0.1);
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.inner-content {
+    background: transparent;
+    padding: 60px 100px;
+    position: relative;
 }
 
 /* Pseudo-elementos de energia mantidos para efeito extra */
@@ -112,19 +120,11 @@ body {
     letter-spacing: 6px;
 }
 
-.lore-text {
+.description-text {
     font-size: 1.25rem;
     line-height: 1.9;
     text-align: justify;
     color: #b0ffb0;
-    filter: blur(3px);
-    /* Efeito de poeira milenar */
-    transition: filter 0.8s ease;
-}
-
-.tomb-card:hover .lore-text {
-    filter: blur(0);
-    /* Limpa a poeira ao passar o mouse */
 }
 
 /* ========== LEGION GALLERY ========== */
@@ -136,12 +136,17 @@ body {
 }
 
 .necron-card {
-    background: #0d1110;
-    border: 20px solid transparent;
-    border-image: url('bordasnecron2.png') 50 stretch;
-    padding: 10px;
+    background: transparent;
+    border: 30px solid transparent;
+    border-image: url('bordasnecron2editada.png') 150 stretch;
+    border-image-repeat: round;
+    box-shadow: none;
+    padding: 0;
     position: relative;
     transition: 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .necron-card::before {
@@ -167,9 +172,9 @@ body {
 }
 
 .necron-card img {
-    width: 100%;
-    height: 280px;
-    /* Reduzido de 300px para seguir o padrão das outras facções */
+    width: calc(100% + 60px);
+    margin: -30px;
+    height: 350px;
     object-fit: cover;
     filter: brightness(0.8) sepia(0.2) hue-rotate(80deg);
 }
@@ -182,46 +187,80 @@ body {
     font-family: 'Orbitron', sans-serif;
     color: var(--necron-green);
     text-align: center;
-    margin-top: 15px;
+    padding: 10px;
+    margin: 0;
     font-size: 1.1rem;
-    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
 }
 
 /* ========== ARSENAL & DEFENSE ========== */
 .gauss-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 70px;
-    margin: 150px 0;
+    gap: 50px;
+    margin: 150px auto;
+    max-width: 1000px;
 }
 
 .gauss-section.reverse {
-    flex-direction: row-reverse;
+    flex-direction: column;
+    /* Mantemos coluna para ambos */
 }
 
 .gauss-img-box {
-    flex: 1;
-    border: 2px solid var(--necron-green);
-    padding: 10px;
+    width: 100%;
+    max-width: 900px;
+    border: 3px solid var(--necron-green);
+    padding: 15px;
     background: #000;
-    box-shadow: 0 0 30px rgba(11, 255, 1, 0.2);
+    box-shadow: 0 0 50px rgba(11, 255, 1, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.gauss-img-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 40%, rgba(11, 255, 1, 0.1) 50%, transparent 60%);
+    animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
 }
 
 .gauss-img-box img {
     width: 100%;
     height: auto;
     display: block;
+    filter: brightness(1.2) contrast(1.1);
 }
 
 .gauss-info {
-    flex: 1;
+    width: 100%;
 }
 
 .gauss-title {
     font-family: 'Orbitron', sans-serif;
     color: var(--necron-green);
-    font-size: 2.5rem;
-    margin-bottom: 25px;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px var(--necron-green);
 }
 
 /* ========== THE SILENT KING (LEGACY) ========== */
@@ -233,12 +272,9 @@ body {
 }
 
 .chamber-box {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    border: 1px solid var(--necron-green);
-    padding: 50px;
-    background: rgba(0, 10, 0, 0.5);
-    backdrop-filter: blur(10px);
+    background: transparent;
 }
 
 /* ========== FOOTER & BACK ========== */

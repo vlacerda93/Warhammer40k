@@ -66,10 +66,18 @@ body {
 }
 
 .scrap-card {
-    background: #1a1512;
-    border: 30px solid transparent;
-    border-image: url('bordaork1.png') 100 stretch;
-    padding: 20px;
+    background: transparent;
+    border: 55px solid transparent;
+    border-image: url('bordaork1editada.png') 250 stretch;
+    border-image-repeat: round;
+    padding: 0;
+    position: relative;
+    box-shadow: none;
+}
+
+.inner-content {
+    background: transparent;
+    padding: 60px 100px;
     position: relative;
 }
 
@@ -109,11 +117,15 @@ body {
 }
 
 .ork-card {
-    background: #1a0f0a;
-    border: 15px solid transparent;
-    border-image: url('bordaork2.png') 40 stretch;
-    padding: 5px;
+    background: transparent;
+    border: 30px solid transparent;
+    border-image: url('bordaork2editada.png') 150 stretch;
+    border-image-repeat: round;
+    padding: 0;
     transition: all 0.2s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .ork-card:hover {
@@ -123,55 +135,68 @@ body {
 }
 
 .ork-card img {
-    width: 100%;
-    height: 280px;
+    width: calc(100% + 60px);
+    margin: -30px;
+    height: 350px;
     object-fit: cover;
-    border-bottom: 2px solid var(--ork-metal);
 }
 
 .card-label {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
     font-family: 'Permanent Marker', cursive;
     color: var(--ork-yellow);
-    text-align: center;
-    margin-top: 15px;
-    font-size: 1.4rem;
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
 }
 
 /* ========== ARSENAL & DEFENSE ========== */
 .dakka-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 60px;
-    margin: 120px 0;
+    gap: 50px;
+    margin: 150px auto;
+    max-width: 1000px;
 }
 
 .dakka-section.reverse {
-    flex-direction: row-reverse;
+    flex-direction: column;
 }
 
 .dakka-img-box {
-    flex: 1;
-    border: 15px solid transparent;
-    border-image: url('bordaork2.png') 40 stretch;
-    padding: 5px;
-    background: #000;
+    width: 100%;
+    max-width: 900px;
+    border: 30px solid transparent;
+    border-image: url('bordaork2editada.png') 150 stretch;
+    border-image-repeat: round;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(139, 69, 19, 0.3);
 }
 
 .dakka-img-box img {
-    width: 100%;
+    width: calc(100% + 60px);
+    margin: -30px;
     height: auto;
     display: block;
 }
 
 .dakka-info {
-    flex: 1;
+    width: 100%;
 }
 
 .dakka-title {
     font-family: 'Permanent Marker', cursive;
     color: var(--ork-red);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 3px 3px 0 #000;
 }
 
 /* ========== THE VAAAGH! (LEGACY) ========== */
@@ -184,11 +209,9 @@ body {
 }
 
 .waaagh-box {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    background: rgba(45, 27, 20, 0.8);
-    padding: 60px;
-    border: 2px dashed var(--ork-yellow);
+    background: transparent;
 }
 
 /* ========== BUTTONS ========== */

@@ -145,22 +145,51 @@ body {
 }
 
 .lore-container {
-    background: #111;
-    border: 35px solid transparent;
-    border-image: url('bordaimperio.png') 100 stretch;
+    background: transparent;
+    border: 55px solid transparent;
+    border-image: url('bordaimperio1editada.png') 280 stretch;
+    border-image-repeat: round;
+    box-shadow: none;
+    /* No more black plate */
     position: relative;
-    padding: 10px;
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 1);
+    margin: 50px auto;
+    max-width: 1000px;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
+}
+
+.inner-content {
+    background: transparent;
+    padding: 60px 100px;
+    position: relative;
+}
+
+/* Custom scrollbar to keep aesthetics */
+.lore-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lore-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.lore-container::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
 }
 
 /* Cantoneiras removidas pois a imagem já contém a moldura */
 
 .parchment-box {
-    background: #111;
-    border: 25px solid transparent;
-    border-image: url('bordaimperio2.png') 80 stretch;
-    padding: 15px;
+    background: transparent;
+    border: 35px solid transparent;
+    border-image: url('bordaimperio2editada.png') 150 stretch;
+    border-image-repeat: round;
+    box-shadow: none;
     position: relative;
+}
+
+.parchment-box .inner-content {
+    padding: 30px 60px;
 }
 
 .section-label {
@@ -174,10 +203,13 @@ body {
 }
 
 .lore-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    /* Slightly smaller font to fit better */
+    line-height: 1.6;
     text-align: justify;
     color: #cbd5e0;
+    padding: 10px;
+    /* Extra breathing room inside the shadow zone */
 }
 
 /* ========== GALLERY GRID ========== */
@@ -189,68 +221,71 @@ body {
 }
 
 .gallery-card {
-    background: #0a0a15;
-    border: 15px solid transparent;
-    border-image: url('bordaimperio2.png') 80 stretch;
-    padding: 5px;
+    background: transparent;
+    border: 22px solid transparent;
+    border-image: url('bordaimperio2editada.png') 150 stretch;
+    border-image-repeat: round;
+    box-shadow: none;
+    padding: 0;
+    /* Clear padding so image can reach the border */
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
-}
-
-.gallery-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    border-color: var(--gold);
-    box-shadow: 0 10px 30px rgba(30, 75, 161, 0.4);
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery-card img {
-    width: 100%;
-    height: 250px;
+    width: calc(100% + 44px);
+    /* Compensate for the 22px borders on both sides */
+    margin: -22px;
+    /* Pull the image under the transparent border-image */
+    height: 300px;
     object-fit: cover;
-    border-radius: 3px;
+    border-radius: 0;
     filter: brightness(0.9);
+    display: block;
 }
 
 .card-label {
     font-family: 'Uncial Antiqua', serif;
     color: var(--gold);
     text-align: center;
-    margin-top: 15px;
-    font-size: 1.1rem;
+    padding: 10px 5px;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Subtle dark bar for legibility */
+    position: relative;
+    z-index: 2;
 }
 
 /* ========== ARSENAL & DEFENSE SECTIONS ========== */
 .feature-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 50px;
-    margin: 100px 0;
-}
-
-.feature-section.reverse {
-    flex-direction: row-reverse;
+    margin: 150px auto;
+    max-width: 1000px;
 }
 
 .feature-content {
-    flex: 1;
+    width: 100%;
 }
 
 .feature-img-box {
-    flex: 1;
-    border: 3px solid var(--gold);
-    padding: 10px;
+    width: 100%;
+    max-width: 900px;
     background: #000;
-    box-shadow: var(--gold-glow);
-    border-radius: 8px;
-    overflow: hidden;
+    border: 2px solid var(--gold);
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
 .feature-img-box img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s;
 }
 
 .feature-img-box:hover img {
@@ -258,10 +293,12 @@ body {
 }
 
 .feature-title {
-    font-family: 'Uncial Antiqua', serif;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
     color: var(--gold);
-    font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
 /* ========== LEGACY SECTION ========== */
@@ -274,12 +311,12 @@ body {
 }
 
 .legacy-box {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 40px;
-    background: rgba(10, 10, 30, 0.6);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--gold);
+    background: transparent;
+    border: 55px solid transparent;
+    border-image: url('bordaimperio1editada.png') 280 stretch;
+    border-image-repeat: round;
 }
 
 /* ========== DECORATIONS ========== */

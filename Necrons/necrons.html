@@ -23,15 +23,17 @@
     <div class="section-wrapper">
         <!-- LORE SECTION -->
         <section class="tomb-card">
-            <h2 class="section-label">O ARQUIVO MILENAR: LORE</h2>
-            <div class="lore-text">
-                <p>Milhões de anos antes da humanidade sequer existir, os Necrons governaram a galáxia. Para vencer uma
-                    guerra contra deuses, eles trocaram suas almas e corpos de carne por estruturas imortais de metal
-                    vivo através do processo de Biotransferência. Agora, após um sono de eras, as Dinastias Necron estão
-                    despertando para retomar seu império.</p>
-                <p>Eles não lutam por ódio ou fé, mas por um direito de propriedade ancestral. Para um Necron, as outras
-                    raças são apenas pragas que infestaram seus jardins enquanto eles dormiam, e a hora da colheita
-                    finalmente chegou.</p>
+            <div class="inner-content">
+                <h2 class="section-label">O ARQUIVO MILENAR: LORE</h2>
+                <div class="description-text">
+                    <!-- Mudado de lore-text para desc para evitar conflitos de estilo antigos -->
+                    <p>Milhões de anos antes da humanidade sequer existir, los Necrons governaram a galáxia. Para vencer
+                        uma guerra contra deuses, eles trocaram suas almas e corpos de carne por estruturas imortais de
+                        metal vivo através do processo de Biotransferência. Agora, após um sono de eras, as Dinastias
+                        Necron estão despertando para retomar seu império. Eles não lutam por ódio ou fé, mas por um
+                        direito de propriedade ancestral. Para um Necron, as outras raças são apenas pragas que
+                        infestaram seus jardins enquanto eles dormiam, e a hora da colheita finalmente chegou.</p>
+                </div>
             </div>
         </section>
 
@@ -68,35 +70,48 @@
 
         <!-- ARSENAL SECTION -->
         <section class="gauss-section">
-            <div class="gauss-info">
-                <h2 class="gauss-title">O ARSENAL: DESINTEGRAÇÃO ATÔMICA</h2>
-                <div class="tomb-card">
-                    <p class="lore-text">O armamento Necron utiliza a tecnologia Gauss, que projeta feixes de energia
-                        capazes de desintegrar as camadas moleculares do alvo, reduzindo tanques e soldados a átomos em
-                        segundos.
-                        <br>• Lâminas Hiperfásicas: Vibram entre dimensões, ignorando armaduras físicas.
-                        <br>• Cajados de Luz: Canalizam o poder bruto das estrelas com precisão matemática.
-                    </p>
-                </div>
-            </div>
+            <h2 class="gauss-title">O ARSENAL: DESINTEGRAÇÃO ATÔMICA</h2>
+
             <div class="gauss-img-box">
                 <img src="mesanecrons.png" alt="Arsenal Necron">
+            </div>
+
+            <div class="tomb-card" style="margin: 0; width: 100%;">
+                <div class="inner-content">
+                    <p class="description-text">
+                        O armamento Necron é incompreensível até para os maiores gênios do Império. Enquanto as outras
+                        raças disparam projéteis físicos, os Necrons utilizam a tecnologia Gauss, que projeta feixes de
+                        energia capazes de desintegrar as camadas moleculares do alvo, reduzindo tanques e soldados a
+                        átomos em segundos.
+                        <br><br>
+                        • <strong>Lâminas Hiperfásicas</strong>: Espadas e foices que vibram entre dimensões, ignorando
+                        armaduras físicas como se elas não existissem.
+                        <br>• <strong>Cajados de Luz e Canhões de Partículas</strong>: Dispositivos que canalizam o
+                        poder bruto das estrelas ou manipulam o tempo e o espaço para obliterar qualquer oposição com
+                        uma precisão matemática e impiedosa.
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- DEFENSE SECTION -->
-        <section class="gauss-section reverse">
-            <div class="gauss-info">
-                <h2 class="gauss-title">A DEFESA: METAL VIVO NECRODERMIS</h2>
-                <div class="tomb-card">
-                    <p class="lore-text">A maior defesa de um Necron é o seu próprio corpo feito de Necrodermis, um
-                        metal autorreparável que flui como líquido para fechar feridas instantaneamente. Mesmo danos
-                        catastróficos iniciam uma 'translocação de emergência', teletransportando os restos de volta
-                        para as tumbas para reconstrução.</p>
-                </div>
-            </div>
+        <section class="gauss-section">
+            <h2 class="gauss-title">A DEFESA: METAL VIVO NECRODERMIS</h2>
+
             <div class="gauss-img-box">
                 <img src="armaduranecron.png" alt="Necron Armor">
+            </div>
+
+            <div class="tomb-card" style="margin: 0; width: 100%;">
+                <div class="inner-content">
+                    <p class="description-text">A maior defesa de um Necron é o seu próprio corpo feito de
+                        Necrodermis, um metal autorreparável que flui como líquido para fechar feridas de batalha
+                        instantaneamente. Mesmo quando um guerreiro sofre danos catastróficos, ele não morre; seu
+                        sistema inicia uma 'translocação de emergência', teletransportando os restos de volta para
+                        as tumbas estelares para reconstrução. As armaduras dos Lordes Necrons são reforçadas com
+                        campos de fase que os tornam parcialmente intangíveis, garantindo que eles permaneçam como
+                        sentinelas inabaláveis contra as quais as ondas do tempo e da guerra se quebram em vão.</p>
+                </div>
             </div>
         </section>
 
@@ -104,16 +119,21 @@
 
     <!-- LEGACY SECTION -->
     <section class="legacy-chamber">
-        <div class="chamber-box tomb-card"> <!-- Adicionado tomb-card para herdar o comportamento de hover do blur -->
-            <h2 class="gauss-title">O LEGADO: O DESPERTAR DAS DINASTIAS</h2>
-            <div
-                style="display: flex; align-items: center; gap: 40px; text-align: left; flex-wrap: wrap; justify-content: center;">
-                <p class="lore-text" style="flex:1; min-width: 300px;">Com o surgimento de líderes niilistas como
-                    Nekrosor Ammentar, o objetivo Necron mudou de uma simples reconquista para uma purificação
-                    galáctica. Eles buscam silenciar o Warp e eliminar todas as formas de vida orgânica para restaurar a
-                    galáxia à sua ordem original: um silêncio eterno e metálico.</p>
-                <img src="necronsfinal.jpg" alt="Nekrosor Ammentar"
-                    style="width: 300px; border: 2px solid var(--necron-green); box-shadow: 0 0 20px var(--necron-green); border-radius: 8px;">
+        <div class="chamber-box tomb-card">
+            <div class="inner-content">
+                <h2 class="gauss-title">O LEGADO: DESPERTAR</h2>
+                <div
+                    style="display: flex; align-items: center; gap: 40px; text-align: left; flex-wrap: wrap; justify-content: center;">
+                    <p class="description-text" style="flex:1; min-width: 300px;">Com o surgimento de líderes niilistas
+                        como Nekrosor Ammentar, o objetivo dos Necrons mudou de uma simples reconquista para uma
+                        purificação galáctica. Eles buscam silenciar o Warp e eliminar todas as formas de vida orgânica
+                        que possam servir de alimento para as entidades do Caos. Através de protocolos de aniquilação
+                        total e o uso de fragmentos de C'tan (deuses escravizados), os Necrons planejam restaurar a
+                        galáxia à sua ordem original: um silêncio eterno e metálico sob o domínio absoluto das Dinastias
+                        Eternas.</p>
+                    <img src="necronsfinal.jpg" alt="Necrons"
+                        style="width: 300px; border: 2px solid var(--necron-green); box-shadow: 0 0 20px var(--necron-green); border-radius: 8px;">
+                </div>
             </div>
             <center>
                 <a href="../Index/index.html" class="back-btn">← SAIR DA TUMBA / VOLTAR</a>
