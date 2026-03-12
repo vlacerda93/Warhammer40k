@@ -20,7 +20,7 @@ body {
         url('../Index/fundo20.png');
     background-attachment: fixed;
     background-size: cover;
-    cursor: url('../Index/chaos.cur'), auto;
+    cursor: url('../Index/mousechaos.cur'), auto;
 }
 
 /* ========== HERO SECTION ========== */

@@ -227,7 +227,6 @@ body {
     border-image-repeat: round;
     box-shadow: none;
     padding: 0;
-    /* Clear padding so image can reach the border */
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
@@ -242,9 +241,17 @@ body {
     /* Pull the image under the transparent border-image */
     height: 300px;
     object-fit: cover;
+    /* Centraliza por padrão, mas prioriza o topo se a imagem for alta */
+    object-position: center 20%; 
     border-radius: 0;
     filter: brightness(0.9);
     display: block;
+}
+
+/* AJUSTE ESPECÍFICO PARA O INCEPTOR */
+.gallery-card.inceptor-fix img {
+    /* Força a imagem a alinhar pelo topo absoluto */
+    object-position: top center; 
 }
 
 .card-label {
@@ -254,7 +261,6 @@ body {
     padding: 10px 5px;
     margin: 0;
     background: rgba(0, 0, 0, 0.7);
-    /* Subtle dark bar for legibility */
     position: relative;
     z-index: 2;
 }
