@@ -324,6 +324,11 @@ input:checked+.slider:before {
     margin-bottom: 0; /* Remove gap inferior */
 }
 
+/* Ajuste específico para o Dire Avenger (img 5) */
+.gallery-card.dire-avenger-fix img {
+    object-position: top center;
+}
+
 .card-label {
     text-align: center;
     padding: 8px;
