@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
     background-image:
         radial-gradient(circle at top right, rgba(243, 139, 33, 0.1), transparent 50%),
-        url('../Index/fundo20.png');
+        url('fundotau.png');
     background-attachment: fixed;
     cursor: url('../Index/tau.cur'), auto;
 }

@@ -17,7 +17,7 @@ body {
     overflow-x: hidden;
     background-image:
         radial-gradient(circle at 50% 50%, rgba(224, 17, 95, 0.1) 0%, transparent 80%),
-        url('../Index/fundo20.png');
+        url('fundotyranids.png');
     background-attachment: fixed;
     cursor: url('../Index/tyranide.cur'), auto;
 }

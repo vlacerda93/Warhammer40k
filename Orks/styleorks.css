@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
     background-image:
         radial-gradient(circle at 50% 50%, rgba(139, 69, 19, 0.1) 0%, transparent 80%),
-        url('../Index/fundo20.png');
+        url('fundoorks.png');
     background-attachment: fixed;
     background-size: cover;
     cursor: url('../Index/orks.cur'), auto;

@@ -34,7 +34,7 @@ body {
     overflow-x: hidden;
     background-image:
         radial-gradient(circle at 50% 50%, rgba(11, 255, 1, 0.08) 0%, transparent 70%),
-        url('../Index/fundo20.png');
+        url('fundonecrons.png');
     background-attachment: fixed;
     background-size: cover;
     cursor: url('../Index/necron.cur'), auto;
