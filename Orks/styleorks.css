@@ -1,5 +1,5 @@
 /* ========== DESIGN SISTEMA - ORKS (THE WAAAGH!) ========== */
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Exo+2:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Gochi+Hand&family=Exo+2:wght@300;400;600&display=swap');
 
 :root {
     --ork-green: #44ad44;
@@ -67,18 +67,28 @@ body {
 
 .scrap-card {
     background: transparent;
-    border: 55px solid transparent;
-    border-image: url('bordaork1editada.png') 250 stretch;
-    border-image-repeat: round;
     padding: 0;
     position: relative;
     box-shadow: none;
+    margin: 40px auto;
+    max-width: 1100px;
 }
 
 .inner-content {
-    background: transparent;
-    padding: 60px 100px;
+    background: rgba(30, 20, 15, 0.7);
+    backdrop-filter: blur(4px);
+    border: 55px solid transparent;
+    border-image: url('bordaork1editada.png') 150 stretch;
+    border-image-repeat: round;
+    padding: 60px 80px; /* Mais espaço pra "Dakka" do texto */
     position: relative;
+    border-radius: 4px;
+    background-clip: padding-box; /* O fundo agora respeita os limites da moldura */
+    /* Textura de metal industrial / ferrugem */
+    background-image: 
+        linear-gradient(rgba(40, 25, 20, 0.8), rgba(20, 10, 5, 0.9)),
+        url('https://www.transparenttextures.com/patterns/brushed-alum.png'); 
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
 }
 
 /* Parafusos/Engrenagens mantidos para detalhe extra */
@@ -102,10 +112,29 @@ body {
 }
 
 .lore-text {
-    font-size: 1.3rem;
-    line-height: 1.7;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 1.45rem; /* Orks falam ALTO, mas precisam caber na moldura */
+    line-height: 1.5;
     text-align: justify;
-    color: #e0c0a0;
+    color: #f5deb3;
+    letter-spacing: 0.5px;
+}
+
+/* Letra Capitular Ork (Bruta e Vermelha) */
+.lore-text::first-letter {
+    float: left;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5rem;
+    line-height: 0.8;
+    padding: 10px 15px 0 0;
+    color: var(--ork-red);
+    transform: rotate(-10deg);
+    filter: drop-shadow(3px 3px 0px #000);
+}
+
+.lore-text strong {
+    color: var(--ork-yellow);
+    text-shadow: 1px 1px 2px #000;
 }
 
 /* ========== UNITS GALLERY ========== */
@@ -170,18 +199,18 @@ body {
 .dakka-img-box {
     width: 100%;
     max-width: 900px;
-    border: 30px solid transparent;
+    border: 35px solid transparent;
     border-image: url('bordaork2editada.png') 150 stretch;
     border-image-repeat: round;
     padding: 0;
     background: transparent;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 0 40px rgba(139, 69, 19, 0.5);
 }
 
 .dakka-img-box img {
-    width: calc(100% + 60px);
-    margin: -30px;
+    width: calc(100% + 70px);
+    margin: -35px;
     height: auto;
     display: block;
 }

@@ -1,5 +1,5 @@
 /* ========== DESIGN SISTEMA - CHAOS (THE TRAITORS) ========== */
-@import url('https://fonts.googleapis.com/css2?family=New+Rocker&family=Exo+2:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&family=Metal+Mania&family=Exo+2:wght@300;400;600&display=swap');
 
 :root {
     --chaos-crimson: #8b0000;
@@ -20,7 +20,8 @@ body {
         url('../Index/fundo20.png');
     background-attachment: fixed;
     background-size: cover;
-    cursor: url('../Index/mousechaos.cur'), auto;
+    /* Cursor corrigido para compatibilidade (Usando a imagem como origem) */
+    cursor: url('../Index/mousechaos.png') 16 16, auto;
 }
 
 /* ========== HERO SECTION ========== */
@@ -78,19 +79,27 @@ body {
 
 .lore-card {
     background: transparent;
-    border: 45px solid transparent;
-    border-image: url('bordachaos1editada.png') 250 stretch;
-    border-image-repeat: round;
-    box-shadow: none;
+    padding: 0;
     position: relative;
     margin: 50px auto;
-    max-width: 1000px;
+    max-width: 1100px;
 }
 
 .inner-content {
-    background: transparent;
-    padding: 60px 100px;
+    background: rgba(15, 0, 15, 0.6);
+    backdrop-filter: blur(8px);
+    border: 45px solid transparent;
+    border-image: url('bordachaos1editada.png') 150 stretch;
+    border-image-repeat: round;
+    padding: 60px 80px; /* Espaço para o texto não ficar asfixiado */
     position: relative;
+    border-radius: 5px;
+    background-clip: padding-box; /* O fundo respeita os limites da moldura caótica */
+    /* Textura de Warp / Energia Caótica */
+    background-image: 
+        linear-gradient(rgba(20, 0, 20, 0.8), rgba(40, 0, 0, 0.9)),
+        url('https://www.transparenttextures.com/patterns/p6.png');
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.9);
 }
 
 .lore-card .inner-content::-webkit-scrollbar {
@@ -208,10 +217,34 @@ body {
 }
 
 .lore-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-family: 'Metal Mania', cursive;
+    font-size: 1.2rem; /* Reduzido para dar espaço à imagem do líder */
+    line-height: 1.6;
     text-align: justify;
-    color: #e0d0e0;
+    color: #f1e1f1;
+    letter-spacing: 0.8px;
+}
+
+/* Letra Capitular Chaos (Sangrenta e Profana) */
+.lore-text::first-letter {
+    float: left;
+    font-family: 'New Rocker', cursive;
+    font-size: 5.5rem;
+    line-height: 0.8;
+    padding: 10px 15px 5px 0;
+    color: var(--chaos-crimson);
+    text-shadow: 0 0 15px #ff0000;
+    animation: bleed-glow 4s infinite alternate;
+}
+
+@keyframes bleed-glow {
+    from { text-shadow: 0 0 10px #ff0000; filter: brightness(1); }
+    to { text-shadow: 0 0 25px #ff0000, 0 0 5px #fff; filter: brightness(1.3); }
+}
+
+.lore-text strong {
+    color: var(--chaos-crimson);
+    text-shadow: 1px 1px 2px #000;
 }
 
 /* ========== TRAITOR GALLERY ========== */
@@ -279,19 +312,19 @@ body {
     width: 100%;
     max-width: 900px;
     background: transparent;
-    border: 45px solid transparent;
-    border-image: url('bordachaos2editada.png') 200 stretch;
+    border: 55px solid transparent;
+    border-image: url('bordachaos2editada.png') 150 stretch;
     border-image-repeat: round;
-    box-shadow: 0 0 40px rgba(139, 0, 0, 0.3);
     padding: 0;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
+    box-shadow: 0 0 50px rgba(139, 0, 0, 0.6);
 }
 
 .warp-img-box img {
-    width: calc(100% + 90px);
-    margin: -45px;
+    width: calc(100% + 110px);
+    margin: -55px;
     display: block;
     object-fit: cover;
 }
@@ -318,13 +351,19 @@ body {
 
 .legacy-content {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 50px auto;
     background: transparent;
-    border: 45px solid transparent;
-    border-image: url('bordachaos1editada.png') 250 stretch;
+    padding: 0;
+}
+
+.legacy-content img {
+    border: 35px solid transparent;
+    border-image: url('bordachaos2editada.png') 150 stretch;
     border-image-repeat: round;
-    box-shadow: none;
-    position: relative;
+    width: 380px;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+    display: block;
+    object-fit: cover;
 }
 
 /* ========== BUTTONS ========== */

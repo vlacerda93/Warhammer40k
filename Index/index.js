@@ -58,6 +58,32 @@ function toggleAudio() {
     }
 }
 
+// ====================================
+// SCROLL REVEAL (VISÃO 2026)
+// ====================================
+document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => observer.observe(el));
+    
+    // Pequeno delay para a Hero section se revelar no topo
+    setTimeout(() => {
+        const hero = document.getElementById('inicio');
+        if (hero) hero.classList.add('active');
+    }, 500);
+});
+
 // AUTOPLAY (opcional - descomente se quiser testar)
 /*
 window.addEventListener('load', () => {

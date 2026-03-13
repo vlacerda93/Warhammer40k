@@ -23,6 +23,50 @@ body {
         url('fundo20.png') no-repeat center center;
     background-size: cover;
     z-index: -5;
+    animation: galaxyPulse 20s infinite alternate ease-in-out;
+}
+
+@keyframes galaxyPulse {
+    0% { transform: scale(1); filter: brightness(1); }
+    100% { transform: scale(1.05); filter: brightness(1.2); }
+}
+
+/* ========== HUD OVERLAY (VISÃO 2026) ========== */
+.hud-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    background: 
+        repeating-linear-gradient(
+            rgba(0,0,0,0) 0px,
+            rgba(0,0,0,0) 2px,
+            rgba(255,255,255,0.02) 3px,
+            rgba(255,255,255,0) 4px
+        );
+    opacity: 0.5;
+}
+
+.hud-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.4) 100%);
+}
+
+/* ========== REVEAL SYSTEM ========== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.17, 0.55, 0.55, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ========== EFFECTS: IMPERIAL BEAMS (SCREEN-WIDE) ========== */
@@ -68,9 +112,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 50px;
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid #c41e3a;
+    padding: 20px 50px;
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid rgba(196, 30, 58, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
 .logo {
@@ -125,6 +175,13 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
+    filter: drop-shadow(0 0 20px rgba(196, 30, 58, 0.4));
+    animation: logoGlow 4s infinite alternate ease-in-out;
+}
+
+@keyframes logoGlow {
+    0% { filter: drop-shadow(0 0 15px rgba(196, 30, 58, 0.3)); transform: scale(1); }
+    100% { filter: drop-shadow(0 0 35px rgba(196, 30, 58, 0.6)); transform: scale(1.02); }
 }
 
 /* Tagline */
@@ -192,15 +249,15 @@ body {
 }
 
 .historia-panel {
-    background: linear-gradient(180deg, rgba(26, 26, 36, 0.95), rgba(20, 20, 30, 0.98));
-    border: 3px solid #4a4a5a;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    padding: 30px 60px;
-    /* menos altura (30px), mais largura (60px) */
+    background: rgba(20, 20, 30, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #c41e3a;
+    border-radius: 5px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    padding: 40px 60px;
     margin: 60px auto 80px;
     max-width: 1200px;
-    /* aumentei de 900px para 1200px */
 }
 
 .historia-panel p {
@@ -242,11 +299,25 @@ body {
 }
 
 .metal-panel {
-    background: linear-gradient(180deg, #b6b6bb, #1a1a24);
-    border: 1px solid #4a4a5a;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    background: rgba(30, 30, 45, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
+
+/* Cantoneiras de HUD */
+.metal-panel::before, .metal-panel::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(196, 30, 58, 0.6);
+}
+
+.metal-panel::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.metal-panel::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
 /* ========== PAINEL PRINCIPAL DAS FACÇÕES ========== */
 .main-panel {
@@ -295,8 +366,17 @@ body {
 }
 
 .faction-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(196, 30, 58, 0.6);
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 0 30px rgba(196, 30, 58, 0.8);
+    border-color: #c41e3a;
+}
+
+.faction-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 
@@ -521,6 +601,10 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
+    background: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
 }
 
 .about-logo {

@@ -1,5 +1,5 @@
 /* ========== DESIGN SISTEMA - AELDARI (DUAL STATE) ========== */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Marcellus&family=Exo+2:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Spectral:wght@400;700&family=Metamorphous&family=Marcellus&family=Exo+2:wght@300;400;600&display=swap');
 
 :root {
     /* Asuryani Palette */
@@ -33,7 +33,7 @@ body.theme-drukhari {
     background-color: var(--drukhari-bg);
     color: #cecece;
     background-image: radial-gradient(circle at 80% 30%, rgba(57, 255, 20, 0.05), transparent 40%), url('../Index/fundo20.png');
-    cursor: url('../Index/mousedrukari.cur'), auto;
+    cursor: url('../Index/mousedrukari.cur') 16 16, auto;
 }
 
 /* ========== TOGGLE SWITCH ========== */
@@ -143,9 +143,6 @@ input:checked+.slider:before {
 
 .theme-drukhari .lore-card {
     background: transparent;
-    border: 55px solid transparent;
-    border-image: url('bordadrukari1editada.png') 250 stretch;
-    border-image-repeat: round;
     padding: 0;
     position: relative;
     box-shadow: none;
@@ -177,9 +174,6 @@ input:checked+.slider:before {
 /* Bordas de Cristal Inari/Asuryani */
 .theme-asuryani .lore-card {
     background: transparent;
-    border: 55px solid transparent;
-    border-image: url('bordaasuryani1editada.png') 250 stretch;
-    border-image-repeat: round;
     padding: 0;
     position: relative;
     box-shadow: none;
@@ -211,6 +205,76 @@ input:checked+.slider:before {
     background: transparent;
     padding: 60px 100px;
     position: relative;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+/* Fundo Asuryani (Luz/Mármore) */
+.theme-asuryani .inner-content {
+    background: rgba(245, 245, 240, 0.7); /* Branco pérola */
+    backdrop-filter: blur(10px);
+    border: 55px solid transparent;
+    border-image: url('bordaasuryani1editada.png') 150 stretch;
+    border-image-repeat: round;
+    padding: 60px 80px; /* Aumentado para o texto não bater na borda */
+    background-clip: padding-box; /* Evita que o fundo vaze para fora da moldura */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.4), rgba(212, 175, 55, 0.1)),
+        url('https://www.transparenttextures.com/patterns/p6.png');
+    box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+/* Fundo Drukhari (Sombra/Veneno) */
+.theme-drukhari .inner-content {
+    background: rgba(10, 0, 15, 0.7); /* Roxo obsidiana */
+    backdrop-filter: blur(10px);
+    border: 55px solid transparent;
+    border-image: url('bordadrukari1editada.png') 150 stretch;
+    border-image-repeat: round;
+    padding: 60px 80px; /* Aumentado para o texto não bater na borda */
+    background-clip: padding-box; /* Evita que o fundo vaze para fora da moldura */
+    background-image: 
+        linear-gradient(rgba(30, 0, 45, 0.8), rgba(0, 5, 0, 0.95)),
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    box-shadow: inset 0 0 40px rgba(57, 255, 20, 0.2);
+}
+
+.lore-text {
+    font-size: 1.2rem; /* Diminuído para dar espaço às imagens e evitar quebras */
+    line-height: 1.6;
+    text-align: justify;
+    transition: all 0.5s ease;
+}
+
+/* Texto Asuryani */
+.theme-asuryani .lore-text {
+    font-family: 'Spectral', serif;
+    color: #0c1a2c; /* Azul cobalto escuro para leitura perfeita no claro */
+}
+
+/* Texto Drukhari */
+.theme-drukhari .lore-text {
+    font-family: 'Metamorphous', serif;
+    color: #e0f2e0; /* Verde ácido creme para leitura no escuro */
+}
+
+/* Capitulares Aeldari */
+.lore-text::first-letter {
+    float: left;
+    font-size: 5rem;
+    line-height: 0.8;
+    padding: 10px 15px 5px 0;
+}
+
+.theme-asuryani .lore-text::first-letter {
+    font-family: 'Cinzel Decorative', serif;
+    color: var(--aeldari-gold);
+}
+
+.theme-drukhari .lore-text::first-letter {
+    font-family: 'Metamorphous', serif;
+    color: var(--drukhari-green);
+    text-shadow: 0 0 10px var(--drukhari-green);
 }
 
 .theme-asuryani .lore-title,
@@ -257,6 +321,7 @@ input:checked+.slider:before {
     height: 350px;
     object-fit: cover;
     display: block;
+    margin-bottom: 0; /* Remove gap inferior */
 }
 
 .card-label {
@@ -294,23 +359,41 @@ input:checked+.slider:before {
 }
 
 .aeldari-img {
-    width: 100%;
-    max-width: 900px;
-    border: 3px solid var(--aeldari-gold);
-    padding: 10px;
-    background: #000;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    width: auto;
+    max-width: 100%;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Garante que a imagem não escape da moldura */
 }
 
+/* Moldura Asuryani */
+.theme-asuryani .aeldari-img {
+    border: 35px solid transparent;
+    border-image: url('bordaasuryani1editada.png') 150 stretch;
+    border-image-repeat: round;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+}
+
+/* Moldura Drukhari (Aumentando a visibilidade) */
 .theme-drukhari .aeldari-img {
-    border-color: var(--drukhari-green);
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+    border: 35px solid transparent;
+    border-image: url('bordadrukari2editada.png') 150 stretch;
+    border-image-repeat: round;
+    /* Drop shadow para destacar a borda negra no fundo escuro */
+    filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.7));
+    box-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
 }
 
 .aeldari-img img {
-    width: 100%;
+    width: calc(100% + 70px); 
+    margin: -35px;
     height: auto;
     display: block;
+    mix-blend-mode: normal;
+    border-radius: 2px; /* Pequeno arredondamento interno */
 }
 
 /* LEGACY SECTION (Leader) */
@@ -320,18 +403,13 @@ input:checked+.slider:before {
 
 .legacy-card {
     background: transparent;
-    border: 55px solid transparent;
-    border-image: url('bordaasuryani1editada.png') 250 stretch;
-    border-image-repeat: round;
     padding: 0;
+    border: none;
 }
 
 .theme-drukhari .legacy-card {
-    border-image: url('bordadrukari1editada.png') 250 stretch;
-}
-
-.theme-drukhari .legacy-card {
-    border-color: var(--drukhari-green);
+    border: none;
+    padding: 0;
 }
 
 .legacy-content {
@@ -339,6 +417,19 @@ input:checked+.slider:before {
     align-items: center;
     gap: 60px;
     margin-top: 30px;
+}
+
+.legacy-content img {
+    border: 35px solid transparent;
+    border-image: url('bordaasuryani1editada.png') 150 stretch;
+    border-image-repeat: round;
+    width: 380px;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+}
+
+.theme-drukhari .legacy-content img {
+    border-image: url('bordadrukari2editada.png') 150 stretch;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.4);
 }
 
 /* BACK BUTTON */
