@@ -175,8 +175,14 @@ body {
     margin: -30px;
     height: 350px;
     object-fit: cover;
+    object-position: center; /* Garantia de centralização padrão */
     filter: brightness(0.9);
-    margin-bottom: 0; /* Remove gap inferior */
+    margin-bottom: 0;
+}
+
+/* Ajuste específico para o Warrior (img 3) */
+.organism-card.warrior-fix img {
+    object-position: 80% center; /* Empurra da direita para a esquerda */
 }
 
 /* Moldura Biológica para Blocos de Texto (Legado) */
