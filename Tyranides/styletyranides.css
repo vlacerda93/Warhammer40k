@@ -71,19 +71,20 @@ body {
 }
 
 .inner-content {
-    background: rgba(20, 0, 30, 0.7);
+    background: rgba(20, 0, 30, 0.6);
     backdrop-filter: blur(8px);
     border: 55px solid transparent;
     border-image: url('bordatyranids1editada.png') 150 stretch;
     border-image-repeat: round;
-    padding: 60px 80px; /* Espaço para o texto respirar */
+    padding: 60px 80px;
     position: relative;
     border-radius: 10px;
-    background-clip: padding-box; /* Evita vazamento orgânico sob a borda */
-    /* Textura de matéria orgânica / pele alienígena */
+    background-clip: padding-box;
     background-image: 
-        linear-gradient(rgba(30, 0, 40, 0.85), rgba(15, 0, 20, 0.95)),
-        url('https://www.transparenttextures.com/patterns/p6.png'); /* Textura sutil */
+        linear-gradient(rgba(10, 0, 15, 0.4), rgba(10, 0, 15, 0.4)),
+        url('fundotyranids.png');
+    background-size: cover;
+    background-position: center;
     box-shadow: inset 0 0 50px rgba(0,0,0,0.9);
 }
 

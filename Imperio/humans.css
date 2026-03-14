@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
     background-image:
         radial-gradient(circle at 50% 50%, rgba(30, 75, 161, 0.1) 0%, transparent 70%),
-        url('../Index/fundo20.png');
+        url('fundoimperio.png');
     background-attachment: fixed;
     background-size: cover;
     cursor: url('../Index/humans.cur'), auto;
@@ -154,7 +154,7 @@ body {
 }
 
 .inner-content {
-    background: rgba(10, 10, 15, 0.6); /* Levemente mais opaco para legibilidade */
+    background: rgba(10, 10, 15, 0.4);
     backdrop-filter: blur(8px);
     border: 55px solid transparent;
     border-image: url('bordaimperio1editada.png') 150 stretch;
@@ -164,8 +164,10 @@ body {
     border-radius: 5px;
     background-clip: padding-box; 
     background-image: 
-        linear-gradient(rgba(10, 10, 20, 0.85), rgba(5, 5, 10, 0.95)),
-        url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+        linear-gradient(rgba(10, 10, 20, 0.6), rgba(5, 5, 10, 0.6)),
+        url('fundoimperio.png');
+    background-size: cover;
+    background-position: center;
     box-shadow: inset 0 0 50px rgba(212, 175, 55, 0.1);
 }
 
