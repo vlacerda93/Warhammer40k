@@ -226,15 +226,15 @@ input:checked+.slider:before {
     background: rgba(245, 245, 240, 0.98); 
     backdrop-filter: blur(5px);
     border: 55px solid transparent; 
-    border-image: url('bordaasuryani1editada.png') 160 stretch; 
+    border-image: url('bordaasuryani1editada.png') 100 stretch; /* Slice mais equilibrado */
     border-image-repeat: round;
-    padding: 60px 90px;
-    background-clip: padding-box; /* Garante que o fundo não vaze para fora da área útil */
-    box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.05);
+    padding: 70px 100px;
+    background-clip: border-box; /* Preenche tudo sob a borda */
+    box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.1);
     width: auto;
     color: #0c1a2c;
-    border-radius: 40px; /* Arredondamento que acompanha a moldura curva */
-    overflow: hidden; /* Faz o fundo 'tangenciar' as curvas da moldura */
+    border-radius: 40px; /* Arredondamento real que corta a moldura */
+    overflow: hidden; /* O segredo para o fundo e a borda casarem nas curvas */
     position: relative;
     z-index: 1;
 }
@@ -331,23 +331,24 @@ input:checked+.slider:before {
 }
 
 .gallery-card {
-    background: transparent !important; /* Removendo qualquer base branca */
+    background: transparent !important;
     border: 25px solid transparent;
-    border-image: url('bordaasuryani2.png') 160 stretch;
+    border-image: url('bordaasuryani2.png') 100 stretch; /* Restaurada a visibilidade da borda */
     border-image-repeat: round;
     padding: 0;
     transition: 0.3s;
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Clipping total do card */
+    border-radius: 20px;
 }
 
 .gallery-card-img-wrapper {
     width: 100%;
     height: 350px;
     overflow: hidden; 
-    border-radius: 20px; /* Arredondamento maior para a foto da galeria */
-    background: #000;
+    background: transparent !important; /* Fim das bases brancas */
 }
 
 .theme-drukhari .gallery-card {
@@ -361,8 +362,9 @@ input:checked+.slider:before {
     height: 100%;
     object-fit: cover;
     display: block;
-    transform: scale(1.1); /* Mergulha a foto sob a moldura interna */
-    filter: brightness(0.9);
+    transform: scale(1.02);
+    filter: brightness(0.95);
+    transition: 0.5s transform ease;
 }
 
 .gallery-card:hover img {
@@ -425,9 +427,10 @@ input:checked+.slider:before {
 /* Moldura Asuryani */
 .theme-asuryani .aeldari-img {
     border: 35px solid transparent;
-    border-image: url('bordaasuryani1editada.png') 150 stretch;
+    border-image: url('bordaasuryani1editada.png') 100 stretch;
     border-image-repeat: round;
     box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+    background: transparent !important;
 }
 
 /* Moldura Drukhari (Aumentando a visibilidade) */
