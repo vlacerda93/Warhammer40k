@@ -399,8 +399,8 @@ input:checked+.slider:before {
     margin: 0;
     font-family: 'Cinzel', serif;
     font-size: 1rem;
-    color: var(--aeldari-cyan);
-    background: transparent; /* Erradicação total do branco */
+    color: #ff1493; /* Rosa vibrante para legibilidade conforme pedido */
+    background: transparent; 
     position: relative;
     z-index: 2;
 }
