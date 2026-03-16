@@ -37,7 +37,7 @@ body.theme-drukhari {
     background-color: var(--drukhari-bg);
     color: #cecece;
     background-image: radial-gradient(circle at 80% 30%, rgba(57, 255, 20, 0.05), transparent 40%), url('fundodrukari.png');
-    cursor: url('mousedrukari.cur'), auto;
+    cursor: url('mousedrukari2.cur'), auto;
 }
 
 /* ========== TOGGLE SWITCH ========== */
