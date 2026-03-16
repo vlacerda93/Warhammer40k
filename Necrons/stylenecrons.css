@@ -277,10 +277,14 @@ body {
     border-image: url('bordasnecron2editada.png') 150 stretch;
     border-image-repeat: round;
     padding: 0;
-    background: transparent;
+    background: #000;
     box-shadow: 0 0 50px rgba(11, 255, 1, 0.4);
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
+    border-radius: 15px; /* Arredondamento para seguir a moldura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gauss-img-box::after {
@@ -305,11 +309,12 @@ body {
 }
 
 .gauss-img-box img {
-    width: calc(100% + 70px);
-    margin: -35px;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenchimento total sem distorção */
     display: block;
     filter: brightness(1.2) contrast(1.1);
+    transform: scale(1.05); /* "Mergulha" a imagem sob a moldura interna */
 }
 
 .gauss-info {
