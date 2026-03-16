@@ -339,14 +339,14 @@ input:checked+.slider:before {
 /* GALLERY (Fixed Grid) */
 .aeldari-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cards maiores */
+    gap: 25px;
     margin-top: 40px;
 }
 
 .gallery-card {
-    background: none !important; /* Morte definitiva ao retângulo branco */
-    border: 45px solid transparent; /* Bordas de cristal maiores e mais visíveis */
+    background: none !important; 
+    border: 65px solid transparent; /* Bordas muito mais grossas e imponentes */
     border-image: url('bordaasuryani2editada.png') 160 stretch;
     border-image-repeat: round;
     padding: 0; 
@@ -355,13 +355,13 @@ input:checked+.slider:before {
     display: flex;
     flex-direction: column;
     overflow: hidden; 
-    border-radius: 30px; 
+    border-radius: 40px; /* Arredondamento maior para acompanhar a borda */
     box-shadow: none !important;
 }
 
 .gallery-card-img-wrapper {
     width: 100%;
-    height: 400px; /* Fotos maiores */
+    height: 450px; /* Altura aumentada para cards maiores */
     overflow: hidden; 
     background: none !important;
 }
@@ -378,8 +378,8 @@ input:checked+.slider:before {
     height: 100%;
     object-fit: cover;
     display: block;
-    transform: scale(1.1); 
-    filter: brightness(1); /* Cores vibrantes originais */
+    transform: scale(1.15); /* Zoom aumentado para cobrir sob a borda grossa */
+    filter: brightness(1); 
     transition: 0.5s transform ease;
 }
 
