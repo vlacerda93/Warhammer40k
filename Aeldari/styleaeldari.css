@@ -395,11 +395,14 @@ input:checked+.slider:before {
 
 .card-label {
     text-align: center;
-    padding: 8px;
+    padding: 10px 5px;
     margin: 0;
     font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    color: #ff1493; /* Rosa vibrante para legibilidade conforme pedido */
+    font-size: 1.1rem;
+    color: #d4af37; /* Dourado Nobre Asuryani */
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Sombra para legibilidade total */
     background: transparent; 
     position: relative;
     z-index: 2;
@@ -407,6 +410,7 @@ input:checked+.slider:before {
 
 .dru-label {
     color: var(--drukhari-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 /* ARSENAL & DEFENSE */
