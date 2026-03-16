@@ -27,8 +27,15 @@ body {
 }
 
 @keyframes galaxyPulse {
-    0% { transform: scale(1); filter: brightness(1); }
-    100% { transform: scale(1.05); filter: brightness(1.2); }
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
 }
 
 /* ========== HUD OVERLAY (VISÃO 2026) ========== */
@@ -40,21 +47,22 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 1000;
-    background: 
-        repeating-linear-gradient(
-            rgba(0,0,0,0) 0px,
-            rgba(0,0,0,0) 2px,
-            rgba(255,255,255,0.02) 3px,
-            rgba(255,255,255,0) 4px
-        );
+    background:
+        repeating-linear-gradient(rgba(0, 0, 0, 0) 0px,
+            rgba(0, 0, 0, 0) 2px,
+            rgba(255, 255, 255, 0.02) 3px,
+            rgba(255, 255, 255, 0) 4px);
     opacity: 0.5;
 }
 
 .hud-overlay::after {
     content: "";
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.4) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 /* ========== REVEAL SYSTEM ========== */
@@ -120,7 +128,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 100;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -180,8 +188,15 @@ body {
 }
 
 @keyframes logoGlow {
-    0% { filter: drop-shadow(0 0 15px rgba(196, 30, 58, 0.3)); transform: scale(1); }
-    100% { filter: drop-shadow(0 0 35px rgba(196, 30, 58, 0.6)); transform: scale(1.02); }
+    0% {
+        filter: drop-shadow(0 0 15px rgba(196, 30, 58, 0.3));
+        transform: scale(1);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 35px rgba(196, 30, 58, 0.6));
+        transform: scale(1.02);
+    }
 }
 
 /* Tagline */
@@ -292,9 +307,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 40px; /* Aumentado gap para afastar mais a sidebar do painel */
+    gap: 40px;
+    /* Aumentado gap para afastar mais a sidebar do painel */
     width: 100%;
-    max-width: 1700px; /* Aumentado de 1200px para 1700px para caber os cards gigantes + sidebar */
+    max-width: 1700px;
+    /* Aumentado de 1200px para 1700px para caber os cards gigantes + sidebar */
     margin: 0 auto;
 }
 
@@ -308,7 +325,8 @@ body {
 }
 
 /* Cantoneiras de HUD */
-.metal-panel::before, .metal-panel::after {
+.metal-panel::before,
+.metal-panel::after {
     content: "";
     position: absolute;
     width: 20px;
@@ -316,16 +334,42 @@ body {
     border: 2px solid rgba(196, 30, 58, 0.6);
 }
 
-.metal-panel::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
-.metal-panel::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+.metal-panel::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.metal-panel::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Esconder cantoneiras antigas nos painéis principais para não conflitar com a nova borda */
+.main-panel.metal-panel::before,
+.main-panel.metal-panel::after,
+.sidebar-panel.metal-panel::before,
+.sidebar-panel.metal-panel::after {
+    display: none;
+}
 
 /* ========== PAINEL PRINCIPAL DAS FACÇÕES ========== */
 .main-panel {
-    width: 900px; /* Largura ajustada exata para abraçar o grid sem folgas */
+    width: 990px;
+    /* Aumentado 10% de 900px */
     max-width: 100%;
     padding: 20px;
     position: relative;
-    height: 580px; /* Reduzido para encaixar na tela em zoom 100% */
+    height: 660px;
+    /* Aumentado 10% de 600px */
+
+    /* Bordas Imperiais Personalizadas */
+    border: 30px solid transparent;
+    border-image: url('bordaimperio3editada.png') 100 round;
+    border-image-outset: 10px;
 }
 
 .factions-wrapper {
@@ -344,7 +388,8 @@ body {
 .faction-page {
     width: 50%;
     display: grid;
-    grid-template-columns: repeat(2, 400px); /* 400px para equilibrar o tamanho na tela */
+    grid-template-columns: repeat(2, 400px);
+    /* 400px para equilibrar o tamanho na tela */
     grid-template-rows: repeat(2, auto);
     gap: 20px;
     padding: 10px;
@@ -355,29 +400,85 @@ body {
 /* ========== CARDS DAS FACÇÕES ========== */
 .faction-card {
     position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 2px solid #333;
+    /* overflow: hidden; REMOVIDO para permitir que a borda "pule" para fora */
+    border-radius: 4px;
     background: #000;
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
     aspect-ratio: 16/10;
-    width: 400px; /* Ajustado para 400px */
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Uma linha bem fina apenas para o fundo */
+}
+
+/* MOLDURA IMPERIAL FLUTUANTE */
+.faction-card::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 18px solid transparent;
+    border-image: url('bordaimperio3editada.png') 100 round;
+    pointer-events: none;
+    /* Garante que o clique passe pela moldura para o card */
+    z-index: 10;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
 }
 
 .faction-card:hover {
     transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 0 30px rgba(196, 30, 58, 0.8);
-    border-color: #c41e3a;
+    filter: brightness(1.2);
 }
+
+/* Brilhos Específicos por Facção */
+.card-imperio:hover {
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.7);
+}
+
+/* Dourado */
+.card-tau:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.6);
+}
+
+/* Ciano/Turquesa */
+.card-necrons:hover {
+    box-shadow: 0 0 35px rgba(0, 100, 0, 0.9);
+}
+
+/* Verde Escuro */
+.card-orks:hover {
+    box-shadow: 0 0 35px rgba(235, 126, 2, 0.8);
+}
+
+/* Verde Claro */
+.card-chaos:hover {
+    box-shadow: 0 0 35px rgba(255, 0, 0, 0.8);
+}
+
+/* Vermelho */
+.card-tyranids:hover {
+    box-shadow: 0 0 35px rgba(138, 43, 226, 0.8);
+}
+
+/* Roxo */
+.card-aeldari:hover {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.7);
+}
+
+/* Branco Spectral */
 
 .faction-card::after {
     content: "";
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -430,6 +531,7 @@ body {
     padding: 0 15px;
     font-size: 0.8rem;
     color: #aaa;
+    z-index: 5;
 }
 
 /* ========== SETAS DE NAVEGAÇÃO (FACÇÕES) ========== */
@@ -454,20 +556,26 @@ body {
 }
 
 .prev-arrow {
-    left: 10px;
+    left: 15px;
 }
 
 .next-arrow {
-    right: 10px;
+    right: 15px;
 }
 
 /* ========== SIDEBAR DE PERSONAGENS ========== */
 .sidebar-panel {
-    flex: 0 0 280px; /* Reduzido de 300px para 280px para sobrar mais espaço na tela */
+    flex: 0 0 280px;
+    /* Reduzido de 300px para 280px para sobrar mais espaço na tela */
     height: auto;
     display: flex;
     flex-direction: column;
     padding: 20px 15px;
+
+    /* Bordas Imperiais Personalizadas (Igual ao Main Panel) */
+    border: 30px solid transparent;
+    border-image: url('bordaimperio3editada.png') 100 round;
+    border-image-outset: 10px;
 }
 
 .sidebar-title {
@@ -479,7 +587,8 @@ body {
 }
 
 .chars-wrapper {
-    height: 420px; /* Altura de 1 card (400px) + margem (20px) */
+    height: 420px;
+    /* Altura de 1 card (400px) + margem (20px) */
     overflow: hidden;
     position: relative;
     margin: 10px 0;
@@ -498,29 +607,46 @@ body {
     flex-direction: column;
     align-items: center;
     background: #0a0a0c;
-    border: 2px solid #333;
-    border-radius: 10px;
+    /* border e overflow removidos para a borda flutuante */
+    border-radius: 4px;
     padding: 0;
-    margin-bottom: 20px;
-    height: 400px; /* Ajustado para 400px */
+    margin-bottom: 25px;
+    /* Espaço extra para a borda não bater no vizinho */
+    height: 400px;
     width: 100%;
     flex-shrink: 0;
     transition: all 0.3s ease;
-    overflow: hidden;
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* MOLDURA PERSONAGEM FLUTUANTE */
+.char-card::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 18px solid transparent;
+    border-image: url('bordaimperio3editada.png') 100 round;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
 }
 
 .char-card:hover {
     background: #111;
-    border-color: #c41e3a;
+    filter: brightness(1.2);
     transform: translateY(-2px);
     box-shadow: 0 0 20px rgba(196, 30, 58, 0.4);
 }
 
 .char-img-box {
     width: 100%;
-    height: 300px; /* Ajustado proporcionalmente */
+    height: 300px;
+    /* Ajustado proporcionalmente */
     flex-shrink: 0;
     margin-right: 0;
     border-radius: 0;

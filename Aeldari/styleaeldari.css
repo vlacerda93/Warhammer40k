@@ -23,9 +23,13 @@ body {
 }
 
 body.theme-asuryani {
-    background-color: var(--asuryani-bg);
+    background-color: #000;
     color: var(--aeldari-white);
-    background-image: radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.1), transparent 40%), url('fundoasuryani.png');
+    background-image: url('fundoasuryani.png') !important;
+    background-size: 100vw 100vh !important; /* Força a imagem a preencher toda a tela visível */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     cursor: url('../Index/mouseasuryani.cur'), auto;
 }
 
@@ -130,15 +134,16 @@ input:checked+.slider:before {
 
 .section-wrapper {
     max-width: 1200px;
-    margin: 80px auto;
+    margin: 60px auto;
     padding: 0 20px;
 }
 
 .lore-card {
-    border: 2px solid var(--aeldari-gold);
-    padding: 40px;
-    background: rgba(10, 20, 30, 0.85);
+    background: transparent;
+    padding: 0;
     position: relative;
+    box-shadow: none;
+    margin: 40px auto;
 }
 
 .theme-drukhari .lore-card {
@@ -211,7 +216,7 @@ input:checked+.slider:before {
 
 /* Fundo Asuryani (Luz/Mármore) */
 .theme-asuryani .inner-content {
-    background: rgba(245, 245, 240, 0.5); /* Mais transparente para ver o fundo */
+    background: rgba(245, 245, 240, 0.7); /* Mármore leve */
     backdrop-filter: blur(8px);
     border: 55px solid transparent;
     border-image: url('bordaasuryani1editada.png') 150 stretch;
@@ -219,11 +224,20 @@ input:checked+.slider:before {
     padding: 60px 80px;
     background-clip: padding-box;
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-        url('fundoasuryani.png');
+        linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+        url('fundoasuryani.png'); /* Reutilizando a textura para o efeito de mármore */
     background-size: cover;
     background-position: center;
     box-shadow: inset 0 0 50px rgba(212, 175, 55, 0.3);
+    width: auto;
+    color: #0c1a2c;
+}
+
+.theme-asuryani .lore-text, 
+.theme-asuryani .lore-text p,
+.theme-asuryani .lore-text strong,
+.theme-asuryani .section-label {
+    color: #000 !important; 
 }
 
 /* Variante para testar o segundo fundo Asuryani */
@@ -235,7 +249,7 @@ input:checked+.slider:before {
 
 /* Fundo Drukhari (Sombra/Veneno) */
 .theme-drukhari .inner-content {
-    background: rgba(10, 0, 15, 0.6);
+    background: rgba(10, 0, 15, 0.7);
     backdrop-filter: blur(10px);
     border: 55px solid transparent;
     border-image: url('bordadrukari1editada.png') 150 stretch;
@@ -243,11 +257,12 @@ input:checked+.slider:before {
     padding: 60px 80px;
     background-clip: padding-box;
     background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('fundodrukari.png');
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0 0 60px rgba(57, 255, 20, 0.2);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9);
+    width: auto;
 }
 
 .lore-text {
@@ -363,7 +378,7 @@ input:checked+.slider:before {
     align-items: center;
     gap: 50px;
     margin: 150px auto;
-    max-width: 1000px;
+    max-width: 1000px; /* Restaurado */
 }
 
 .aeldari-section.reverse {
@@ -510,3 +525,76 @@ body.theme-asuryani .drukhari-only {
 body.theme-drukhari .asuryani-only {
     display: none !important;
 }
+
+/* ========== EFFECTS: AELDARI PARTICLES (ADAPTIVE) ========== */
+.embers-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    background: transparent;
+    overflow: hidden;
+}
+
+.ember {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: background 1s, box-shadow 1s, border-radius 1s;
+}
+
+/* --- ASURYANI: GOLWIGN SOUL GEMS --- */
+.theme-asuryani .ember {
+    bottom: -10px;
+    background: var(--aeldari-cyan);
+    box-shadow: 0 0 10px var(--aeldari-cyan), 0 0 5px #fff;
+    animation: rise-asuryani infinite ease-in-out;
+}
+
+@keyframes rise-asuryani {
+    0% { transform: translateY(0); opacity: 0; }
+    30% { opacity: 0.6; }
+    70% { opacity: 0.6; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* --- DRUKHARI: SHADOW SPLINTERS --- */
+.theme-drukhari .ember {
+    top: -10px;
+    width: 2px;
+    height: 12px; /* Agulhas afiadas */
+    background: var(--drukhari-purple);
+    border-radius: 0;
+    transform: skewX(-20deg);
+    box-shadow: 0 0 8px var(--drukhari-purple), 0 0 4px var(--drukhari-magenta);
+    animation: fall-drukhari infinite linear;
+}
+
+@keyframes fall-drukhari {
+    0% { transform: translateY(0) skewX(-20deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(110vh) skewX(-20deg); opacity: 0; }
+}
+
+/* Distribuição das Partículas */
+.ember:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
+.ember:nth-child(2) { left: 25%; animation-duration: 12s; animation-delay: 2s; }
+.ember:nth-child(3) { left: 40%; animation-duration: 10s; animation-delay: 5s; }
+.ember:nth-child(4) { left: 55%; animation-duration: 15s; animation-delay: 1s; }
+.ember:nth-child(5) { left: 70%; animation-duration: 9s; animation-delay: 4s; }
+.ember:nth-child(6) { left: 85%; animation-duration: 11s; animation-delay: 7s; }
+.ember:nth-child(7) { left: 15%; animation-duration: 13s; animation-delay: 3s; }
+.ember:nth-child(8) { left: 95%; animation-duration: 10s; animation-delay: 6s; }
+.ember:nth-child(9) { left: 33%; animation-duration: 14s; animation-delay: 2s; }
+.ember:nth-child(10) { left: 66%; animation-duration: 9s; animation-delay: 4s; }
+.ember:nth-child(11) { left: 5%; animation-duration: 11s; animation-delay: 1s; }
+.ember:nth-child(12) { left: 18%; animation-duration: 15s; animation-delay: 8s; }
+.ember:nth-child(13) { left: 45%; animation-duration: 10s; animation-delay: 2s; }
+.ember:nth-child(14) { left: 60%; animation-duration: 13s; animation-delay: 5s; }
+.ember:nth-child(15) { left: 80%; animation-duration: 12s; animation-delay: 0s; }

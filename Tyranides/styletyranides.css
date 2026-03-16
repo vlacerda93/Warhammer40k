@@ -297,3 +297,73 @@ body {
         flex-direction: column !important;
     }
 }
+
+/* ========== EFFECTS: HIVE SPORES (BIOLOGICAL PARTICLES) ========== */
+.embers-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    background: transparent;
+    overflow: hidden;
+}
+
+.ember {
+    position: absolute;
+    bottom: -20px;
+    width: 6px;
+    height: 6px;
+    background: #7cfc00; /* Verde Tóxico */
+    /* Forma irregular biológica */
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    opacity: 0;
+    animation: drift-hive infinite ease-in-out;
+    filter: blur(1px);
+    box-shadow: 0 0 10px #7cfc00, 0 0 5px var(--hive-magenta);
+}
+
+@keyframes drift-hive {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-50vh) translateX(30px) rotate(180deg);
+    }
+    80% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) translateX(-20px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Distribuição do Enxame */
+.ember:nth-child(3n) { background: #9400d3; box-shadow: 0 0 10px #9400d3; }
+.ember:nth-child(1) { left: 5%; width: 8px; height: 8px; animation-duration: 8s; }
+.ember:nth-child(2) { left: 15%; width: 5px; height: 5px; animation-duration: 12s; animation-delay: 1s; }
+.ember:nth-child(3) { left: 25%; width: 10px; height: 10px; animation-duration: 10s; animation-delay: 3s; }
+.ember:nth-child(4) { left: 35%; width: 6px; height: 6px; animation-duration: 15s; animation-delay: 2s; }
+.ember:nth-child(5) { left: 45%; width: 9px; height: 9px; animation-duration: 9s; animation-delay: 4s; }
+.ember:nth-child(6) { left: 55%; width: 5px; height: 5px; animation-duration: 11s; animation-delay: 1s; }
+.ember:nth-child(7) { left: 65%; width: 7px; height: 7px; animation-duration: 13s; animation-delay: 5s; }
+.ember:nth-child(8) { left: 75%; width: 11px; height: 11px; animation-duration: 10s; animation-delay: 0s; }
+.ember:nth-child(9) { left: 85%; width: 6px; height: 6px; animation-duration: 14s; animation-delay: 2s; }
+.ember:nth-child(10) { left: 95%; width: 8px; height: 8px; animation-duration: 8s; animation-delay: 4s; }
+.ember:nth-child(11) { left: 10%; width: 7px; height: 7px; animation-duration: 16s; animation-delay: 1s; }
+.ember:nth-child(12) { left: 20%; width: 5px; height: 5px; animation-duration: 11s; animation-delay: 6s; }
+.ember:nth-child(13) { left: 30%; width: 12px; height: 12px; animation-duration: 14s; animation-delay: 3s; }
+.ember:nth-child(14) { left: 40%; width: 6px; height: 6px; animation-duration: 10s; animation-delay: 7s; }
+.ember:nth-child(15) { left: 50%; width: 9px; height: 9px; animation-duration: 12s; animation-delay: 2s; }
+.ember:nth-child(16) { left: 60%; width: 5px; height: 5px; animation-duration: 15s; animation-delay: 8s; }
+.ember:nth-child(17) { left: 70%; width: 8px; height: 8px; animation-duration: 9s; animation-delay: 4s; }
+.ember:nth-child(18) { left: 80%; width: 10px; height: 10px; animation-duration: 13s; animation-delay: 1s; }
+.ember:nth-child(19) { left: 90%; width: 6px; height: 6px; animation-duration: 11s; animation-delay: 5s; }
+.ember:nth-child(20) { left: 2%; width: 7px; height: 7px; animation-duration: 14s; animation-delay: 10s; }

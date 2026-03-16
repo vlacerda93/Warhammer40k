@@ -27,7 +27,7 @@ body {
 .faction-hero {
     position: relative;
     width: 100%;
-    height: 55vh;
+    height: 85vh; /* Aumentado para mostrar mais da imagem verticalmente */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +41,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(12, 18, 24, 0.9)), url('tau.jpg') center/cover no-repeat;
+    background: linear-gradient(to bottom, transparent, rgba(12, 18, 24, 0.9)), url('tau.jpg') center 30%/cover no-repeat;
     z-index: -1;
     filter: brightness(0.8);
 }

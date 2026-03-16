@@ -404,6 +404,83 @@ body {
     transition: all 0.3s;
 }
 
+/* ========== EFFECTS: DIVINE EMBERS (GOLDEN PARTICLES) ========== */
+.embers-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    background: transparent;
+    overflow: hidden;
+}
+
+.ember {
+    position: absolute;
+    bottom: -10px;
+    width: 7px; /* Aumentado um pouco mais */
+    height: 7px; /* Aumentado um pouco mais */
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: rise-imperial infinite linear;
+    filter: blur(1px);
+    box-shadow: 0 0 12px var(--gold), 0 0 20px #fff; /* Brilho DIVINO */
+}
+
+@keyframes rise-imperial {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1; /* Opacidade Total */
+    }
+    80% {
+        opacity: 1; /* Opacidade Total */
+    }
+    100% {
+        transform: translateY(-120vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Distribuição Imperial - DENSIDADE MÁXIMA */
+.ember:nth-child(1) { left: 10%; width: 5px; animation-duration: 7s; animation-delay: 0s; }
+.ember:nth-child(2) { left: 25%; width: 8px; animation-duration: 9s; animation-delay: 2s; }
+.ember:nth-child(3) { left: 40%; width: 6px; animation-duration: 11s; animation-delay: 5s; }
+.ember:nth-child(4) { left: 55%; width: 5px; animation-duration: 8s; animation-delay: 1s; }
+.ember:nth-child(5) { left: 70%; width: 9px; animation-duration: 10s; animation-delay: 4s; }
+.ember:nth-child(6) { left: 85%; width: 6px; animation-duration: 9s; animation-delay: 7s; }
+.ember:nth-child(7) { left: 15%; width: 5px; animation-duration: 7s; animation-delay: 3s; }
+.ember:nth-child(8) { left: 95%; width: 7px; animation-duration: 11s; animation-delay: 2s; }
+.ember:nth-child(9) { left: 33%; width: 5px; animation-duration: 8s; animation-delay: 6s; }
+.ember:nth-child(10) { left: 66%; width: 8px; animation-duration: 10s; animation-delay: 1s; }
+.ember:nth-child(11) { left: 5%; width: 6px; animation-duration: 9s; animation-delay: 4s; }
+.ember:nth-child(12) { left: 18%; width: 8px; animation-duration: 8s; animation-delay: 8s; }
+.ember:nth-child(13) { left: 45%; width: 5px; animation-duration: 11s; animation-delay: 2s; }
+.ember:nth-child(14) { left: 60%; width: 9px; animation-duration: 7s; animation-delay: 5s; }
+.ember:nth-child(15) { left: 80%; width: 6px; animation-duration: 10s; animation-delay: 0s; }
+.ember:nth-child(16) { left: 90%; width: 5px; animation-duration: 9s; animation-delay: 3s; }
+.ember:nth-child(17) { left: 50%; width: 8px; animation-duration: 11s; animation-delay: 7s; }
+.ember:nth-child(18) { left: 30%; width: 6px; animation-duration: 8s; animation-delay: 4s; }
+.ember:nth-child(19) { left: 75%; width: 5px; animation-duration: 10s; animation-delay: 2s; }
+.ember:nth-child(20) { left: 22%; width: 9px; animation-duration: 9s; animation-delay: 6s; }
+
+/* Novas partículas (Total 30) */
+.ember:nth-child(21) { left: 12%; width: 6px; animation-duration: 8s; animation-delay: 1s; }
+.ember:nth-child(22) { left: 38%; width: 8px; animation-duration: 10s; animation-delay: 3s; }
+.ember:nth-child(23) { left: 52%; width: 5px; animation-duration: 7s; animation-delay: 6s; }
+.ember:nth-child(24) { left: 68%; width: 9px; animation-duration: 9s; animation-delay: 2s; }
+.ember:nth-child(25) { left: 82%; width: 6px; animation-duration: 11s; animation-delay: 4s; }
+.ember:nth-child(26) { left: 3%; width: 7px; animation-duration: 9s; animation-delay: 2.5s; }
+.ember:nth-child(27) { left: 47%; width: 5px; animation-duration: 8.5s; animation-delay: 5.5s; }
+.ember:nth-child(28) { left: 97%; width: 8px; animation-duration: 10.5s; animation-delay: 1.5s; }
+.ember:nth-child(29) { left: 57%; width: 6px; animation-duration: 7.5s; animation-delay: 4.5s; }
+.ember:nth-child(30) { left: 15%; width: 9px; animation-duration: 9.5s; animation-delay: 0.5s; }
+
 .back-btn:hover {
     background: var(--gold);
     color: #000;
