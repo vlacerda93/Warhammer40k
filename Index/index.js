@@ -18,7 +18,7 @@ function changePage(direction) {
 // CONTROLE DE PERSONAGENS NA SIDEBAR
 // ====================================
 let currentChar = 0;
-const charHeight = 420; // Atualizado para o novo card de 400px + 20px de margem
+const charHeight = 480; // Atualizado para o novo card de 450px + 30px de margem
 const visibleChars = 1;
 
 function changeChar(direction) {
