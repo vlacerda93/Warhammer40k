@@ -26,11 +26,18 @@ body.theme-asuryani {
     background-color: #000;
     color: var(--aeldari-white);
     background-image: url('fundoasuryani.png') !important;
-    background-size: 100vw 100vh !important; /* Força a imagem a preencher toda a tela visível */
+    background-size: 100vw 100vh !important;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     cursor: url('../Index/mouseasuryani.cur'), auto;
+}
+
+/* Cor verde para os títulos Asuryani na Hero Section conforme pedido */
+.theme-asuryani .faction-hero .lore-title.asuryani-only,
+.theme-asuryani .faction-hero p.asuryani-only {
+    color: var(--drukhari-green) !important;
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
 }
 
 body.theme-drukhari {
@@ -216,18 +223,20 @@ input:checked+.slider:before {
 
 /* Fundo Asuryani (Luz/Mármore) */
 .theme-asuryani .inner-content {
-    background: rgba(245, 245, 240, 0.98); /* Fundo mármore limpo */
-    backdrop-filter: blur(8px);
-    border: 45px solid transparent; 
-    border-image: url('bordaasuryani1editada.png') 80 stretch; /* Reduzido para 80 para remover as barras internas que invadem o texto */
+    background: rgba(245, 245, 240, 0.98); 
+    backdrop-filter: blur(5px);
+    border: 55px solid transparent; 
+    border-image: url('bordaasuryani1editada.png') 160 stretch; 
     border-image-repeat: round;
-    padding: 60px 80px;
-    background-clip: padding-box;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(212, 175, 55, 0.1);
+    padding: 60px 90px;
+    background-clip: padding-box; /* Garante que o fundo não vaze para fora da área útil */
+    box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.05);
     width: auto;
     color: #0c1a2c;
-    border-radius: 20px;
-    overflow: hidden;
+    border-radius: 40px; /* Arredondamento que acompanha a moldura curva */
+    overflow: hidden; /* Faz o fundo 'tangenciar' as curvas da moldura */
+    position: relative;
+    z-index: 1;
 }
 
 .theme-asuryani .lore-text, 
@@ -322,17 +331,23 @@ input:checked+.slider:before {
 }
 
 .gallery-card {
-    background: transparent;
+    background: transparent !important; /* Removendo qualquer base branca */
     border: 25px solid transparent;
-    border-image: url('bordaasuryani2.png') 150 stretch;
+    border-image: url('bordaasuryani2.png') 160 stretch;
     border-image-repeat: round;
     padding: 0;
     transition: 0.3s;
-    overflow: hidden; /* Corta as quinas da foto */
-    border-radius: 15px; /* Arredondamento conforme plano de ação */
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.gallery-card-img-wrapper {
+    width: 100%;
+    height: 350px;
+    overflow: hidden; 
+    border-radius: 20px; /* Arredondamento maior para a foto da galeria */
+    background: #000;
 }
 
 .theme-drukhari .gallery-card {
@@ -343,10 +358,16 @@ input:checked+.slider:before {
 
 .gallery-card img {
     width: 100%;
-    height: 350px;
+    height: 100%;
     object-fit: cover;
     display: block;
-    transform: scale(1.05); /* Pulo do gato: escala para mergulhar sob a moldura */
+    transform: scale(1.1); /* Mergulha a foto sob a moldura interna */
+    filter: brightness(0.9);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.15); /* Efeito dinâmico ao passar o mouse */
+    filter: brightness(1.1);
 }
 
 /* Ajuste específico para o Dire Avenger (img 5) */
@@ -390,14 +411,14 @@ input:checked+.slider:before {
 
 .aeldari-img {
     width: 100%;
-    height: 450px; /* Altura fixa para manter proporção do Arsenal */
+    height: 450px;
     padding: 0;
-    background: #000;
+    background: transparent !important; /* Eradicando fundo branco */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Essential para o corte profissional */
-    border-radius: 15px; /* Arredondamento conforme plano de ação */
+    overflow: hidden; /* Vital para o corte das fotos */
+    border-radius: 40px; /* Curva que segue os ornamentos */
     position: relative;
 }
 
@@ -424,8 +445,7 @@ input:checked+.slider:before {
     height: 100%;
     object-fit: cover;
     display: block;
-    transform: scale(1.03); /* Garante que a imagem "preencha" por baixo da moldura */
-    border-radius: 4px;
+    transform: scale(1.1); /* Faz a imagem mergulhar sob o arredondamento da borda */
 }
 
 /* LEGACY SECTION (Leader) */
