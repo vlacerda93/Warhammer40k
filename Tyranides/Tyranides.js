@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.id = 'shadow-warp-overlay';
     document.body.appendChild(overlay);
 
-    // Suavizando a frequência (Mais misterioso e menos caótico)
-    const MAX_SHADOWS = 4; 
+    // Aumentando a presença (O enxame está próximo)
+    const MAX_SHADOWS = 6; 
 
     function createShadowPatch() {
         if (document.querySelectorAll('.shadow-patch').length >= MAX_SHADOWS) return;
@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const patch = document.createElement('div');
         patch.className = 'shadow-patch';
         
-        // Atributos aleatórios (Tamanhos mais contidos)
-        const size = Math.random() * 30 + 15; // 15vw a 45vw
-        const posX = Math.random() * 100 - 10;
-        const posY = Math.random() * 100 - 10;
+        // Atributos aleatórios (Tamanhos maiores novamente)
+        const size = Math.random() * 50 + 25; // 25vw a 75vw
+        const posX = Math.random() * 100 - 20;
+        const posY = Math.random() * 100 - 20;
         
         patch.style.width = size + 'vw';
         patch.style.height = size + 'vw';
@@ -33,6 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => patch.remove(), 7000);
     }
 
-    // Intervalo de geração mais espaçado
-    setInterval(createShadowPatch, 2500);
+    // Intervalo de geração mais rápido (1,8s)
+    setInterval(createShadowPatch, 1800);
 });
