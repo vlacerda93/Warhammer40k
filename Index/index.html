@@ -53,13 +53,24 @@
     </section>
 
     <!-- PAINEL DE HISTÓRIA -->
-    <div class="historia-panel reveal">
-        <p>Warhammer é um universo de fantasia sombrio e ficção científica da Games Workshop, conhecido por seus jogos
-            de estratégia com miniaturas
-            (wargames) onde os jogadores montam exércitos de diversas facções para batalhas épicas, seja no cenário de
-            fantasia medieval ou na distopia futurista,
-            com um rico lore de guerras, impérios e intrigas, também explorado em livros, videogames e RPG de mesa, onde
-            a pintura e customização das miniaturas são partes importantes do hobby.</p>
+    <div class="historia-panel reveal" id="historia">
+        <h2 class="section-title">O 41º Milênio: Só Existe a Guerra</h2>
+
+        <p class="hist-intro"><strong>Warhammer 40,000</strong> é uma distopia futurista onde a esperança é uma relíquia do passado. Há dez milênios, a galáxia queima sob o domínio de deuses sombrios, invasores alienígenas e impérios em decadência. Neste universo, a sobrevivência não é um direito, mas uma batalha constante e brutal.</p>
+
+        <h3 class="subsection-title">As Forças em Conflito</h3>
+
+        <p class="hist-block"><strong>O Império da Humanidade:</strong> Uma teocracia estagnada que luta para proteger o que restou da civilização com o sacrifício de bilhões e o poder dos sobre-humanos Space Marines.</p>
+
+        <p class="hist-block"><strong>As Forças do Caos:</strong> Traidores e entidades demoníacas que habitam o Warp, buscando corromper a realidade e derrubar o Trono Dourado em nome de deuses famintos.</p>
+
+        <p class="hist-block"><strong>A Ameaça Xenos:</strong> Antigos impérios de metal vivo como os Necrons, a brutalidade incontrolável dos Orks e a tecnologia em ascensão do império T'au.</p>
+
+        <p class="hist-block"><strong>O Legado Aeldari:</strong> Uma raça outrora dominante, agora dividida entre a busca pela salvação em mundos-ofício e a sobrevivência através da depravação em Commorragh.</p>
+
+        <h3 class="subsection-title">Um Destino Traçado no Sangue</h3>
+
+        <p class="hist-intro">Enquanto a sombra faminta dos Tyranids avança pelo vazio para consumir toda a biomassa existente, as outras raças da galáxia encontram-se presas em um ciclo eterno de violência. Divididas por ódio ancestral e ambição, elas lutam desesperadamente entre si e contra ameaças externas. No 41º milênio, não há espaço para a paz; apenas a vontade de prevalecer em uma galáxia em chamas.</p>
     </div>
 
     <main>
@@ -286,62 +297,77 @@
             </div>
         </section>
 
-        <!-- SEÇÃO MAPA -->
-        <section id="mapa" class="mapa-section reveal">
-            <h2 class="section-title">Mapa da Galáxia</h2>
-
-            <!-- Controles de facção -->
-            <div class="controls">
-                <label><input type="checkbox" id="toggle-imperium" checked> Mostrar Imperium</label>
-                <label><input type="checkbox" id="toggle-chaos" checked> Mostrar Chaos</label>
-                <label><input type="checkbox" id="toggle-tau" checked> Mostrar T'au</label>
-                <label><input type="checkbox" id="toggle-ork" checked> Mostrar Orks</label>
-                <label><input type="checkbox" id="toggle-aeldari" checked> Mostrar Aeldari</label>
-                <label><input type="checkbox" id="toggle-tyranid" checked> Mostrar Tyranids</label>
+        <section id="mapa" class="metal-panel reveal">
+            <h2 class="section-title">O Mapping Cogitator: Segmentum Obscurus</h2>
+            
+            <div class="map-intro">
+                <p>"A galáxia é vasta e perversa. O que você vê aqui não é apenas um mapa; é o registro sanguinário de dez mil anos de guerra. Cada ponto de luz representa um mundo que sangra, uma fortaleza devastada ou uma anomalia psíquica que desafia a sanidade. O Império do Homem tenta, em vão, manter a ordem enquanto as sombras Xenos se expandem e o Caos rasga o próprio tecido do espaço."</p>
+                <p><strong>Acesse os Registros Galácticos para visualizar os teatros de guerra:</strong></p>
             </div>
 
-            <!-- Container do mapa -->
-            <div class="map-container">
-                <img src="mapa5k.jpg" alt="Mapa da Galáxia 40K" class="map-image">
+            <button id="btn-toggle-map" class="audio-btn" style="margin: 0 auto 20px; display: block;">
+                <span id="map-btn-text">DESBLOQUEAR MAPA TÁTICO</span>
+            </button>
 
-                <!-- Marcadores das Facções -->
-                <div class="marker marker-imperium p1" title="Terra / Solar"></div>
-                <div class="marker marker-imperium p2" title="Macragge / Ultramar"></div>
-                <div class="marker marker-imperium p3" title="Armageddon"></div>
-                <div class="marker marker-imperium p4" title="Baal"></div>
-                <div class="marker marker-imperium p5" title="Fenris"></div>
-                <div class="marker marker-imperium p6" title="Mars"></div>
-                <div class="marker marker-imperium p7" title="Cadia"></div>
-                <div class="marker marker-imperium p8" title="Catachan"></div>
-                <div class="marker marker-imperium p9" title="Tallarn"></div>
-                <div class="marker marker-imperium p10" title="Titan"></div>
+            <div id="collapsible-map-area" class="collapsed">
+                <div class="controls">
+                    <label class="control-label imperium"><input type="checkbox" id="toggle-imperium" checked> 🟡 Imperium</label>
+                    <label class="control-label chaos"><input type="checkbox" id="toggle-chaos" checked> 🔴 Caos</label>
+                    <label class="control-label tau"><input type="checkbox" id="toggle-tau" checked> 🔵 T'au</label>
+                    <label class="control-label ork"><input type="checkbox" id="toggle-ork" checked> 🟢 Orks</label>
+                    <label class="control-label aeldari"><input type="checkbox" id="toggle-aeldari" checked> 🟣 Aeldari</label>
+                    <label class="control-label tyranid"><input type="checkbox" id="toggle-tyranid" checked> ⚪ Tyranids</label>
+                </div>
 
-                <div class="marker marker-chaos c1" title="Eye of Terror"></div>
-                <div class="marker marker-chaos c2" title="Maelstrom"></div>
-                <div class="marker marker-chaos c3" title="Great Rift"></div>
-                <div class="marker marker-chaos c4" title="Planet of the Sorcerers"></div>
-                <div class="marker marker-chaos c5" title="Medrengard"></div>
-                <div class="marker marker-chaos c6" title="Ghadshana"></div>
+                <div class="map-container">
+                    <img src="mapa5k.jpg" alt="Mapa da Galáxia 40K" class="map-image">
 
-                <div class="marker marker-tau t1" title="T'au Sept"></div>
-                <div class="marker marker-tau t2" title="Vior'la"></div>
-                <div class="marker marker-tau t3" title="Sa'ceu"></div>
-                <div class="marker marker-tau t4" title="Dal'yth"></div>
-                <div class="marker marker-tau t5" title="Fal'shia"></div>
-                <div class="marker marker-tau t6" title="T'au'n"></div>
+                    <!-- Marcadores -->
+                    <div class="marker marker-imperium p1" data-tooltip="Terra"></div>
+                    <div class="marker marker-imperium p2" data-tooltip="Ultramar"></div>
+                    <div class="marker marker-imperium p3" data-tooltip="Cadia"></div>
+                    <div class="marker marker-imperium p4" data-tooltip="Fenris"></div>
+                    <div class="marker marker-imperium p5" data-tooltip="Armageddon"></div>
+                    <div class="marker marker-imperium p6" data-tooltip="Baal"></div>
+                    <div class="marker marker-imperium p7" data-tooltip="Mars"></div>
+                    <div class="marker marker-imperium p8"></div>
+                    <div class="marker marker-imperium p9"></div>
+                    <div class="marker marker-imperium p10"></div>
 
-                <div class="marker marker-ork o1" title="Octarius"></div>
-                <div class="marker marker-ork o2" title="Charadon"></div>
-                <div class="marker marker-ork o3" title="Gorkamorka"></div>
-                <div class="marker marker-ork o4" title="Bork"></div>
-                <div class="marker marker-ork o5" title="Dregruk"></div>
-                <div class="marker marker-ork o6" title="The Beast's World"></div>
+                    <div class="marker marker-chaos c1" data-tooltip="Eye of Terror"></div>
+                    <div class="marker marker-chaos c2" data-tooltip="Maelstrom"></div>
+                    <div class="marker marker-chaos c3" data-tooltip="Prospero"></div>
+                    <div class="marker marker-chaos c4"></div>
+                    <div class="marker marker-chaos c5"></div>
+                    <div class="marker marker-chaos c6"></div>
 
-                <div class="marker marker-aeldari e1" title="Ulthwé"></div>
-                <div class="marker marker-aeldari e2" title="Iyanden"></div>
-                <div class="marker marker-aeldari e3" title="Biel-Tan"></div>
-                <div class="marker marker-aeldari e4" title="Saim-Hann"></div>
-                <div class="marker marker-aeldari e5" title="Alaitoc"></div>
+                    <div class="marker marker-tau t1"></div>
+                    <div class="marker marker-tau t2"></div>
+                    <div class="marker marker-tau t3"></div>
+                    <div class="marker marker-tau t4"></div>
+                    <div class="marker marker-tau t5"></div>
+                    <div class="marker marker-tau t6"></div>
+
+                    <div class="marker marker-ork o1"></div>
+                    <div class="marker marker-ork o2"></div>
+                    <div class="marker marker-ork o3"></div>
+                    <div class="marker marker-ork o4"></div>
+                    <div class="marker marker-ork o5"></div>
+                    <div class="marker marker-ork o6"></div>
+
+                    <div class="marker marker-aeldari e1"></div>
+                    <div class="marker marker-aeldari e2"></div>
+                    <div class="marker marker-aeldari e3"></div>
+                    <div class="marker marker-aeldari e4"></div>
+                    <div class="marker marker-aeldari e5"></div>
+
+                    <!-- Trilhas Tyranids: linhas vindo de fora para dentro -->
+                    <div class="marker marker-tyranid tn"></div>
+                    <div class="marker marker-tyranid ts"></div>
+                    <div class="marker marker-tyranid tw"></div>
+                    <div class="marker marker-tyranid te"></div>
+                </div>
+                <p class="map-note">"Para o Imperador, um sistema solar é apenas um estatística."</p>
             </div>
         </section>
 

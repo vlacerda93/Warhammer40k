@@ -71,4 +71,23 @@ document.addEventListener("DOMContentLoaded", () => {
   updateVisibility(checkboxOrks,     orkMarkers);
   updateVisibility(checkboxAeldari,  aeldariMarkers);
   updateVisibility(checkboxTyranid,  tyranidMarkers);
+
+  // === TOGGLE MAP AREA ===
+  const btnToggleMap = document.querySelector("#btn-toggle-map");
+  const collapsibleArea = document.querySelector("#collapsible-map-area");
+  const btnText = document.querySelector("#map-btn-text");
+
+  if (btnToggleMap && collapsibleArea) {
+    btnToggleMap.addEventListener("click", () => {
+      const isCollapsed = collapsibleArea.classList.toggle("collapsed");
+      
+      if (isCollapsed) {
+        btnText.textContent = "DESBLOQUEAR MAPA TÁTICO";
+        btnToggleMap.style.backgroundColor = ""; // Reset to CSS default
+      } else {
+        btnText.textContent = "OCULTAR DADOS TÁTICOS";
+        btnToggleMap.style.backgroundColor = "#c41e3a"; // Highlight when open
+      }
+    });
+  }
 });

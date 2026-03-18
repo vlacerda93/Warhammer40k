@@ -82,6 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const hero = document.getElementById('inicio');
         if (hero) hero.classList.add('active');
     }, 500);
+
+    // Toggle do mapa tático (mostrar/esconder)
+    const mapToggleBtn  = document.getElementById('btn-toggle-map');
+    const mapArea       = document.getElementById('collapsible-map-area');
+    const mapBtnTextEl  = document.getElementById('map-btn-text');
+
+    if (mapToggleBtn && mapArea && mapBtnTextEl) {
+        mapToggleBtn.addEventListener('click', () => {
+            const isCollapsed = mapArea.classList.toggle('collapsed');
+            mapBtnTextEl.textContent = isCollapsed
+                ? 'DESBLOQUEAR MAPA TÁTICO'
+                : 'RECOLHER MAPA TÁTICO';
+        });
+    }
 });
 
 // AUTOPLAY (opcional - descomente se quiser testar)

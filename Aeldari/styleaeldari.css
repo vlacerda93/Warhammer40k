@@ -43,7 +43,11 @@ body.theme-asuryani {
 body.theme-drukhari {
     background-color: var(--drukhari-bg);
     color: #cecece;
-    background-image: radial-gradient(circle at 80% 30%, rgba(57, 255, 20, 0.05), transparent 40%), url('fundodrukari.png');
+    background-image: url('fundodrukari.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     cursor: url('mousedrukari2.cur'), auto;
 }
 
@@ -121,11 +125,10 @@ input:checked+.slider:before {
     align-items: center;
     justify-content: center;
     position: relative;
-    border-bottom: 3px solid var(--aeldari-gold);
 }
 
 .theme-drukhari .faction-hero {
-    border-color: var(--drukhari-green);
+    border-bottom: none;
 }
 
 .hero-bg {
@@ -228,7 +231,7 @@ input:checked+.slider:before {
     border: 55px solid transparent; 
     border-image: url('bordaasuryani3editada.png') 160 stretch; 
     border-image-repeat: round;
-    padding: 90px 120px; /* Padding extra para fugir dos spikes internos */
+    padding: 70px 90px;
     width: auto;
     color: #0c1a2c;
     position: relative;
@@ -239,12 +242,12 @@ input:checked+.slider:before {
 .theme-asuryani .inner-content::before {
     content: '';
     position: absolute;
-    top: 45px; /* Aumentado para limpar as jades */
-    left: 45px;
-    right: 45px;
-    bottom: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(245, 245, 240, 0.98);
-    border-radius: 40px;
+    border-radius: 0;
     z-index: -1;
     box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.1);
 }
@@ -261,10 +264,10 @@ input:checked+.slider:before {
 /* Garantindo que Arsenal e Defesa usem o mesmo fundo limpo */
 .theme-asuryani .bg-variant-2 .inner-content::before {
     background: rgba(245, 245, 240, 0.98);
-    top: 45px;
-    left: 45px;
-    right: 45px;
-    bottom: 45px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 /* Fundo Drukhari (Sombra/Veneno) */
@@ -286,7 +289,7 @@ input:checked+.slider:before {
 }
 
 .lore-text {
-    font-size: 1.2rem; /* Diminuído para dar espaço às imagens e evitar quebras */
+    font-size: 1.2rem; /* Base */
     line-height: 1.6;
     text-align: justify;
     transition: all 0.5s ease;
@@ -433,7 +436,7 @@ input:checked+.slider:before {
 
 .aeldari-img {
     width: 100%;
-    height: 450px;
+    height: 500px;
     padding: 0;
     background: transparent !important; /* Eradicando fundo branco */
     display: flex;
@@ -449,7 +452,7 @@ input:checked+.slider:before {
     border: 35px solid transparent;
     border-image: url('bordaasuryani3editada.png') 160 stretch;
     border-image-repeat: round;
-    padding: 45px; /* AFUDA as jades: A foto não passa por cima mais */
+    padding: 20px;
     background: transparent !important;
     box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
 }
@@ -470,6 +473,15 @@ input:checked+.slider:before {
     object-fit: cover;
     display: block;
     transform: scale(1.1); /* Faz a imagem mergulhar sob o arredondamento da borda */
+}
+
+/* Textos específicos maiores: Arsenal/Defesa e Legado */
+.bg-variant-2 .lore-text {
+    font-size: 1.3rem;
+}
+
+.legacy-chamber .lore-text {
+    font-size: 1.3rem;
 }
 
 /* LEGACY SECTION (Leader) */
@@ -516,20 +528,24 @@ input:checked+.slider:before {
 /* BACK BUTTON */
 .back-btn {
     display: inline-block;
-    margin-top: 50px;
+    margin: 60px auto;
     padding: 15px 50px;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.85); /* Fundo sólido para legibilidade */
     border: 2px solid var(--aeldari-gold);
     color: var(--aeldari-gold);
     font-family: 'Cinzel', serif;
     text-decoration: none;
-    transition: 0.3s;
+    transition: 0.4s;
     font-size: 1.2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .theme-drukhari .back-btn {
+    background: rgba(10, 0, 20, 0.9); /* Roxo preto Drukhari */
     border-color: var(--drukhari-green);
     color: var(--drukhari-green);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
 }
 
 .back-btn:hover {
@@ -576,75 +592,67 @@ body.theme-drukhari .asuryani-only {
     display: none !important;
 }
 
-/* ========== EFFECTS: AELDARI PARTICLES (ADAPTIVE) ========== */
-.embers-overlay {
+/* ========== AELDARI EFFECTS: DIVINE & PROFANE ========== */
+
+/* 1. Asuryani: Brilho Celestial Intenso no Topo */
+body.theme-asuryani::after {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 500px;
+    background: radial-gradient(circle at top, rgba(0, 255, 238, 0.3) 0%, rgba(212, 175, 55, 0.1) 40%, transparent 80%);
     pointer-events: none;
-    z-index: 5;
-    background: transparent;
-    overflow: hidden;
+    z-index: 999; /* Garante que fica no topo de tudo */
+    animation: divine-glow 4s infinite alternate ease-in-out;
 }
 
-.ember {
-    position: absolute;
-    width: 4px;
-    height: 4px;
+@keyframes divine-glow {
+    from { opacity: 0.5; filter: blur(5px); }
+    to { opacity: 1; filter: blur(15px); }
+}
+
+/* 2. Asuryani: Penas (Mais densas e brilhantes) */
+.feather {
+    position: fixed;
+    top: -50px;
+    background: radial-gradient(ellipse at center, #fff 20%, #e0f2f2 100%);
+    width: 25px;
+    height: 8px;
+    border-radius: 50% 50% 20% 20%;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1000;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
+    animation: feather-fall linear forwards;
+}
+
+@keyframes feather-fall {
+    0% { transform: translateY(0) rotate(0deg) translateX(0); }
+    25% { transform: translateY(25vh) rotate(90deg) translateX(var(--drift)); }
+    50% { transform: translateY(50vh) rotate(180deg) translateX(0); }
+    75% { transform: translateY(75vh) rotate(270deg) translateX(calc(var(--drift) * -1)); }
+    100% { transform: translateY(110vh) rotate(360deg) translateX(var(--drift)); }
+}
+
+/* 3. Drukhari: Fumaça Venenosa Densa */
+.smoke-particle {
+    position: fixed;
+    bottom: -100px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
+    filter: blur(80px); /* Aumentei o blur para parecer fumaça real */
+    pointer-events: none;
+    z-index: 10; /* Subi o index para garantir que apareça sobre o fundo */
     opacity: 0;
-    transition: background 1s, box-shadow 1s, border-radius 1s;
+    animation: smoke-rise linear forwards;
 }
 
-/* --- ASURYANI: GOLWIGN SOUL GEMS --- */
-.theme-asuryani .ember {
-    bottom: -10px;
-    background: var(--aeldari-cyan);
-    box-shadow: 0 0 10px var(--aeldari-cyan), 0 0 5px #fff;
-    animation: rise-asuryani infinite ease-in-out;
+@keyframes smoke-rise {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.7; } /* Fumaça mais opaca */
+    80% { opacity: 0.5; }
+    100% { transform: translateY(-700px) scale(3) rotate(90deg); opacity: 0; }
 }
-
-@keyframes rise-asuryani {
-    0% { transform: translateY(0); opacity: 0; }
-    30% { opacity: 0.6; }
-    70% { opacity: 0.6; }
-    100% { transform: translateY(-110vh); opacity: 0; }
-}
-
-/* --- DRUKHARI: SHADOW SPLINTERS --- */
-.theme-drukhari .ember {
-    top: -10px;
-    width: 2px;
-    height: 12px; /* Agulhas afiadas */
-    background: var(--drukhari-purple);
-    border-radius: 0;
-    transform: skewX(-20deg);
-    box-shadow: 0 0 8px var(--drukhari-purple), 0 0 4px var(--drukhari-magenta);
-    animation: fall-drukhari infinite linear;
-}
-
-@keyframes fall-drukhari {
-    0% { transform: translateY(0) skewX(-20deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(110vh) skewX(-20deg); opacity: 0; }
-}
-
-/* Distribuição das Partículas */
-.ember:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; }
-.ember:nth-child(2) { left: 25%; animation-duration: 12s; animation-delay: 2s; }
-.ember:nth-child(3) { left: 40%; animation-duration: 10s; animation-delay: 5s; }
-.ember:nth-child(4) { left: 55%; animation-duration: 15s; animation-delay: 1s; }
-.ember:nth-child(5) { left: 70%; animation-duration: 9s; animation-delay: 4s; }
-.ember:nth-child(6) { left: 85%; animation-duration: 11s; animation-delay: 7s; }
-.ember:nth-child(7) { left: 15%; animation-duration: 13s; animation-delay: 3s; }
-.ember:nth-child(8) { left: 95%; animation-duration: 10s; animation-delay: 6s; }
-.ember:nth-child(9) { left: 33%; animation-duration: 14s; animation-delay: 2s; }
-.ember:nth-child(10) { left: 66%; animation-duration: 9s; animation-delay: 4s; }
-.ember:nth-child(11) { left: 5%; animation-duration: 11s; animation-delay: 1s; }
-.ember:nth-child(12) { left: 18%; animation-duration: 15s; animation-delay: 8s; }
-.ember:nth-child(13) { left: 45%; animation-duration: 10s; animation-delay: 2s; }
-.ember:nth-child(14) { left: 60%; animation-duration: 13s; animation-delay: 5s; }
-.ember:nth-child(15) { left: 80%; animation-duration: 12s; animation-delay: 0s; }

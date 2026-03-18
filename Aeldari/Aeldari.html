@@ -11,11 +11,7 @@
 </head>
 
 <body class="theme-asuryani">
-    <div class="embers-overlay">
-        <div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div>
-        <div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div>
-        <div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div>
-    </div>
+    <!-- Efeitos Visuais (Gerados via JS) -->
 
     <!-- TOGGLE SYSTEM -->
     <div class="toggle-wrapper">
@@ -30,7 +26,6 @@
     <!-- HERO SECTION -->
     <header class="faction-hero">
         <div class="hero-bg asuryani-only" style="background-image: url('aeldar.jpg');"></div>
-        <div class="hero-bg drukhari-only" style="background-image: url('drukari0.jpg');"></div>
         <div style="z-index: 10; text-align: center;">
             <h1 class="lore-title asuryani-only">Aeldari</h1>
             <h1 class="lore-title drukhari-only" style="color:var(--drukhari-red);">Drukhari</h1>
@@ -127,7 +122,7 @@
                     <p class="card-label dru-label">Archon</p>
                 </div>
                 <div class="gallery-card">
-                    <div class="gallery-card-img-wrapper"><img src="drukari4.jpg" alt="Incubus (Arte Vermelha)"></div>
+                    <div class="gallery-card-img-wrapper incubus-fix"><img src="drukari4.jpg" alt="Incubus (Arte Vermelha)"></div>
                     <p class="card-label dru-label">Incubus (Arte Vermelha)</p>
                 </div>
                 <div class="gallery-card">
@@ -249,7 +244,7 @@
                                 expandir a influência de Commorragh pelas sombras da Teia, garantindo que a agonia da
                                 galáxia continue alimentando a eternidade de seu reinado sombrio.</p>
                         </div>
-                        <div style="text-align: center;">
+                        <div class="legacy-img-wrapper" style="text-align: center;">
                             <img class="asuryani-only" src="eldarfinal.jpg" alt="Yvraine">
                             <img class="drukhari-only" src="drukarifinal.jpg" alt="Asdrubael Vect">
                         </div>
@@ -273,6 +268,7 @@
             document.body.classList.toggle('theme-asuryani');
         }
     </script>
+    <script src="Aeldari.js"></script>
     <script src="../Index/lightbox.js"></script>
 </body>
 

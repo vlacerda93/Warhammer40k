@@ -270,22 +270,28 @@ body {
     border-left: 5px solid #c41e3a;
     border-radius: 5px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    padding: 40px 60px;
+    padding: 40px 40px;
     margin: 60px auto 80px;
-    max-width: 1200px;
+    max-width: 900px;
+    text-align: center;
 }
 
 .historia-panel p {
     color: #ddd;
     font-family: 'Exo 2', sans-serif;
-    font-size: 1.7rem;
-    /* reduzi um pouco pois vai caber em menos linhas */
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.7;
-    /* reduzi um pouco o espaçamento entre linhas */
-    text-align: justify;
     letter-spacing: 0.3px;
-    margin: 0;
+    margin: 10px 0;
+}
+
+.hist-intro {
+    text-align: center;
+}
+
+.hist-block {
+    text-align: left;
 }
 
 /* ========== SEÇÃO DE FACÇÕES ========== */

@@ -272,12 +272,9 @@ body {
 }
 
 .traitor-card img {
-    width: calc(100% + 90px);
-    /* Dobro da borda para compensar o margin negativo */
-    margin: -45px;
-    /* Puxa a imagem para baixo da moldura de 45px */
+    width: 100%;
+    margin: 0;
     height: 350px;
-    /* Aumentado para cobrir a expansão vertical */
     object-fit: cover;
     filter: sepia(0.3) contrast(1.1);
     display: block;
@@ -324,8 +321,8 @@ body {
 }
 
 .warp-img-box img {
-    width: calc(100% + 110px);
-    margin: -55px;
+    width: 100%;
+    margin: 0;
     display: block;
     object-fit: cover;
 }
