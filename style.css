@@ -195,13 +195,32 @@ body {
     color: #ddd;
     font-family: 'Exo 2', sans-serif;
     font-size: 1.7rem;
-    /* reduzi um pouco pois vai caber em menos linhas */
     font-weight: 400;
     line-height: 1.7;
-    /* reduzi um pouco o espaçamento entre linhas */
     text-align: justify;
     letter-spacing: 0.3px;
     margin: 0;
+}
+
+.intro-arte-box {
+    width: 100%;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(196, 30, 58, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.intro-arte-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.intro-arte-img:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
 }
 
 /* ========== SEÇÃO DE FACÇÕES ========== */
