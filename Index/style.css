@@ -274,10 +274,10 @@ body {
        Top (~220px) para ignorar o sangue e o título vermelho estampado "No 41º...".
        Laterais (~320px) para fugir do Space Marine e Ork (esq) e Necron e Tyranid (dir).
        Bottom (~200px) para fugir dos crânios e armas no rodapé. */
-    /* ATUALIZAÇÃO: Image foi aumentada, paddings escalados. */
-    padding: 300px 420px 250px 420px;
+    /* PADDINGS RECALIBRADOS P/ 100% ZOOM */
+    padding: 230px 330px 200px 330px;
     margin: 60px auto 80px;
-    max-width: 1750px;
+    max-width: 1400px;
     text-align: center;
     border: none;
 }
@@ -285,7 +285,7 @@ body {
 .historia-panel p {
     color: #f0f0f0;
     font-family: 'Exo 2', sans-serif;
-    font-size: 1.25rem; /* Fonte aumentada de volta ao clássico */
+    font-size: 1.15rem; /* Fonte média e confortável para o monitor a 100% */
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0.3px;
