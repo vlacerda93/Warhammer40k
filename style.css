@@ -180,15 +180,17 @@ body {
 }
 
 .historia-panel {
-    background: linear-gradient(180deg, rgba(26, 26, 36, 0.95), rgba(20, 20, 30, 0.98));
-    border: 3px solid #4a4a5a;
+    background-image: url('Index/fundotextoindex.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    padding: 30px 60px;
-    /* menos altura (30px), mais largura (60px) */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    padding: 140px 100px 120px 100px;
     margin: 60px auto 80px;
-    max-width: 1200px;
-    /* aumentei de 900px para 1200px */
+    max-width: 1400px;
+    text-align: center;
+    border: none;
 }
 
 .historia-panel p {
@@ -202,45 +204,7 @@ body {
     margin: 0;
 }
 
-.intro-arte-box {
-    width: 100%;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(0, 0, 0, 0.8);
-    border: 3px solid #2a2a2a;
-    background-image: url('Index/fundotextoindex.png');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 120px 80px 100px 80px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 500px; 
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
 
-.intro-arte-box:hover {
-    transform: scale(1.02);
-    filter: brightness(1.1);
-}
-
-.intro-arte-title {
-    margin-top: 0;
-    margin-bottom: 25px !important;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 10px rgba(196, 30, 58, 0.8) !important;
-}
-
-.intro-arte-text {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.8) !important;
-    font-size: 1.3rem !important;
-    font-weight: 600 !important;
-    color: #e0e0e0 !important;
-    max-width: 800px;
-    text-align: center;
-}
 
 /* ========== SEÇÃO DE FACÇÕES ========== */
 #faccao {
