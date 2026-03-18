@@ -270,22 +270,26 @@ body {
     background-position: center;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
-    /* O padding é a margem interna que protege o texto de tocar na arte das bordas */
-    padding: 140px 100px 120px 100px;
+    /* PADDINGS MASSIVOS:
+       Top (~220px) para ignorar o sangue e o título vermelho estampado "No 41º...".
+       Laterais (~320px) para fugir do Space Marine e Ork (esq) e Necron e Tyranid (dir).
+       Bottom (~200px) para fugir dos crânios e armas no rodapé. */
+    padding: 230px 330px 200px 330px;
     margin: 60px auto 80px;
-    max-width: 1300px; /* Largura grande suficiente para caber tudo bem */
+    max-width: 1400px;
     text-align: center;
-    border: none; /* A arte já tem borda de metal envelhecida */
+    border: none;
 }
 
 .historia-panel p {
-    color: #ddd;
+    color: #f0f0f0;
     font-family: 'Exo 2', sans-serif;
-    font-size: 1.2rem;
+    font-size: 0.95rem; /* Fonte diminuída para caber tranquilamente */
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.5;
     letter-spacing: 0.3px;
-    margin: 10px 0;
+    margin: 12px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1); /* Sombreamento escuro para legibilidade na pedra */
 }
 
 
