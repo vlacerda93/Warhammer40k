@@ -226,7 +226,7 @@ input:checked+.slider:before {
     background: transparent !important;
     backdrop-filter: none;
     border: 55px solid transparent; 
-    border-image: url('bordaasuryani1editada.png') 160 stretch; 
+    border-image: url('bordaasuryani3editada.png') 160 stretch; 
     border-image-repeat: round;
     padding: 90px 120px; /* Padding extra para fugir dos spikes internos */
     width: auto;
@@ -347,7 +347,7 @@ input:checked+.slider:before {
 .gallery-card {
     background: none !important; 
     border: 65px solid transparent; /* Bordas muito mais grossas e imponentes */
-    border-image: url('bordaasuryani2editada.png') 160 stretch;
+    border-image: url('bordaasuryani3editada.png') 160 stretch;
     border-image-repeat: round;
     padding: 0; 
     transition: 0.3s;
@@ -447,7 +447,7 @@ input:checked+.slider:before {
 /* Moldura Asuryani */
 .theme-asuryani .aeldari-img {
     border: 35px solid transparent;
-    border-image: url('bordaasuryani1editada.png') 160 stretch;
+    border-image: url('bordaasuryani3editada.png') 160 stretch;
     border-image-repeat: round;
     padding: 45px; /* AFUDA as jades: A foto não passa por cima mais */
     background: transparent !important;
@@ -497,7 +497,7 @@ input:checked+.slider:before {
 
 .legacy-content img {
     border: 45px solid transparent; /* Moldura de legado maior */
-    border-image: url('bordaasuryani1editada.png') 160 stretch;
+    border-image: url('bordaasuryani3editada.png') 160 stretch;
     border-image-repeat: round;
     width: 420px; /* Foto maior no legado */
     padding: 0;
