@@ -274,9 +274,10 @@ body {
        Top (~220px) para ignorar o sangue e o título vermelho estampado "No 41º...".
        Laterais (~320px) para fugir do Space Marine e Ork (esq) e Necron e Tyranid (dir).
        Bottom (~200px) para fugir dos crânios e armas no rodapé. */
-    padding: 230px 330px 200px 330px;
+    /* ATUALIZAÇÃO: Image foi aumentada, paddings escalados. */
+    padding: 300px 420px 250px 420px;
     margin: 60px auto 80px;
-    max-width: 1400px;
+    max-width: 1750px;
     text-align: center;
     border: none;
 }
@@ -284,18 +285,18 @@ body {
 .historia-panel p {
     color: #f0f0f0;
     font-family: 'Exo 2', sans-serif;
-    font-size: 0.95rem; /* Fonte diminuída para caber tranquilamente */
-    font-weight: 400;
-    line-height: 1.5;
+    font-size: 1.25rem; /* Fonte aumentada de volta ao clássico */
+    font-weight: 500;
+    line-height: 1.6;
     letter-spacing: 0.3px;
-    margin: 12px 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,1); /* Sombreamento escuro para legibilidade na pedra */
+    margin: 15px 0;
+    text-shadow: 2px 2px 6px rgba(0,0,0,1);
 }
 
 /* Adições Visuais - Facções no Painel de História */
 .text-destaque {
-    font-size: 1.05rem !important;
-    font-weight: 700 !important;
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
     color: #f5f5f5 !important;
 }
 
