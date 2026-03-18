@@ -1,11 +1,6 @@
-/**
- * AELDARI EFFECTS SYSTEM
- * Divino (Asuryani) & Profano (Drukhari)
- */
-
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.createElement('div');
-    container.id = 'aeldari-effects-overlay';
+    container.id = 'aeldari-effects-container';
     document.body.appendChild(container);
 
     // Limitador de partículas (Aumentado para maior visibilidade)

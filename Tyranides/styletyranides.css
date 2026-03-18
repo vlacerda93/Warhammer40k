@@ -315,10 +315,10 @@ body {
 
 .shadow-patch {
     position: absolute;
-    /* Escuridão quase total no centro */
-    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(10, 0, 5, 0.95) 30%, transparent 80%);
+    /* Blackout Quase Total */
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(5, 0, 2, 0.98) 40%, transparent 85%);
     border-radius: 50%;
-    filter: blur(70px); /* Menos blur = mais escuridão concentrada */
+    filter: blur(50px); /* Ainda mais denso */
     pointer-events: none;
     z-index: 10000;
     opacity: 0;
@@ -328,8 +328,8 @@ body {
 
 @keyframes warp-shadow-pulse {
     0% { transform: scale(0.1); opacity: 0; }
-    30% { opacity: 0.85; transform: scale(1.1); } /* Opacidade aumentada para 0.85 */
-    70% { opacity: 0.85; transform: scale(1.2); }
+    30% { opacity: 0.95; transform: scale(1.1); } /* Quase apagão total */
+    70% { opacity: 0.95; transform: scale(1.2); }
     100% { transform: scale(1.5); opacity: 0; }
 }
 
