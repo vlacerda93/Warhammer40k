@@ -205,22 +205,41 @@ body {
 .intro-arte-box {
     width: 100%;
     margin-bottom: 40px;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(196, 30, 58, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.05);
-}
-
-.intro-arte-img {
-    width: 100%;
-    height: auto;
-    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(0, 0, 0, 0.8);
+    border: 3px solid #2a2a2a;
+    background-image: url('Index/fundotextoindex.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 120px 80px 100px 80px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; 
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-.intro-arte-img:hover {
+.intro-arte-box:hover {
     transform: scale(1.02);
     filter: brightness(1.1);
+}
+
+.intro-arte-title {
+    margin-top: 0;
+    margin-bottom: 25px !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 10px rgba(196, 30, 58, 0.8) !important;
+}
+
+.intro-arte-text {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.8) !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    color: #e0e0e0 !important;
+    max-width: 800px;
+    text-align: center;
 }
 
 /* ========== SEÇÃO DE FACÇÕES ========== */
