@@ -274,9 +274,8 @@ body {
        Top (~220px) para ignorar o sangue e o título vermelho estampado "No 41º...".
        Laterais (~320px) para fugir do Space Marine e Ork (esq) e Necron e Tyranid (dir).
        Bottom (~200px) para fugir dos crânios e armas no rodapé. */
-    /* PADDINGS RECALIBRADOS P/ 100% ZOOM */
-    /* PADDINGS RECALIBRADOS P/ 100% ZOOM + REFINO VERTICAL */
-    padding: 280px 340px 250px 340px;
+    /* PADDINGS RECALIBRADOS P/ 100% ZOOM + REFINO VERTICAL EXTREMO */
+    padding: 480px 340px 380px 340px;
     margin: 60px auto 80px;
     max-width: 1450px;
     text-align: center;
@@ -286,20 +285,20 @@ body {
 .historia-panel p {
     color: #f0f0f0;
     font-family: 'Exo 2', sans-serif;
-    font-size: 1.2rem; /* Aumento para melhor leitura */
-    font-weight: 700; /* Texto geral mais grosso/negrito */
-    line-height: 1.6;
+    font-size: 1.1rem; /* Fonte reduzida para caber melhor */
+    font-weight: 700;
+    line-height: 1.5;
     letter-spacing: 0.3px;
-    margin: 15px 0;
-    text-shadow: 2px 2px 6px rgba(0,0,0,1);
+    margin: 18px 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,1);
 }
 
 .subsection-title {
     font-family: 'Cinzel', serif;
-    font-size: 1.6rem !important; /* Maior destaque */
+    font-size: 1.5rem !important; /* Ajuste sutil */
     font-weight: 900 !important;
-    color: #c41e3a; /* Vermelho padrão para subtítulos */
-    margin: 40px 0 20px 0;
+    color: #c41e3a;
+    margin: 50px 0 25px 0;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(196, 30, 58, 0.4);
@@ -307,7 +306,7 @@ body {
 
 /* Adições Visuais - Facções no Painel de História */
 .text-destaque {
-    font-size: 1.45rem !important; /* Escalado conforme texto base */
+    font-size: 1.25rem !important;
     font-weight: 900 !important;
     color: #f5f5f5 !important;
 }
@@ -359,12 +358,21 @@ body {
     text-shadow: 0 0 8px #9370db;
 }
 
-/* Um Destino Traçado por Sangue - Prateado Destacado */
+/* Um Destino Traçado por Sangue - Tema Tyranid (Verde/Roxo Escuro) */
 .title-silver {
-    color: #e0e0e0 !important;
-    text-shadow: 2px 2px 4px #000, 0 0 15px #c0c0c0, 0 0 30px #ffffff !important;
+    color: #32cd32 !important; /* Verde Neon */
+    text-shadow: 2px 2px 4px #000, 0 0 10px #4b0082, 0 0 20px #8a2be2 !important; /* Profundidade Roxo Escura */
+    font-size: 1.4rem !important; /* Título menor */
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+}
+
+/* Parágrafo final Tyranid específico */
+.tyranid-text {
+    font-size: 1.0rem !important; /* Texto menor especificamente aqui */
+    color: #b0fbac !important; /* Verde pálido/alien */
+    font-style: italic;
+    text-shadow: 1px 1px 3px #441166 !important;
 }
 
 .hist-intro {

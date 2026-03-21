@@ -186,7 +186,7 @@ body {
     background-position: center;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
-    padding: 280px 340px 250px 340px;
+    padding: 330px 340px 250px 340px;
     margin: 60px auto 80px;
     max-width: 1450px;
     text-align: center;
@@ -196,21 +196,21 @@ body {
 .historia-panel p {
     color: #f0f0f0;
     font-family: 'Exo 2', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    line-height: 1.6;
+    line-height: 1.5;
     text-align: justify;
     letter-spacing: 0.3px;
-    margin: 15px 0;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
+    margin: 12px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
 }
 
 .subsection-title {
     font-family: 'Cinzel', serif;
-    font-size: 1.6rem !important;
+    font-size: 1.5rem !important;
     font-weight: 900 !important;
     color: #c41e3a;
-    margin: 40px 0 20px 0;
+    margin: 35px 0 15px 0;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(196, 30, 58, 0.4);
@@ -218,7 +218,7 @@ body {
 
 /* Adições Visuais - Facções no Painel de História */
 .text-destaque {
-    font-size: 1.45rem !important;
+    font-size: 1.25rem !important;
     font-weight: 900 !important;
     color: #f5f5f5 !important;
 }
@@ -308,12 +308,21 @@ body {
     text-shadow: 0 0 8px #9370db;
 }
 
-/* Um Destino Traçado por Sangue - Prateado Destacado */
+/* Um Destino Traçado por Sangue - Tema Tyranid (Verde/Roxo Escuro) */
 .title-silver {
-    color: #e0e0e0 !important;
-    text-shadow: 2px 2px 4px #000, 0 0 15px #c0c0c0, 0 0 30px #ffffff !important;
+    color: #32cd32 !important; /* Verde Neon */
+    text-shadow: 2px 2px 4px #000, 0 0 10px #4b0082, 0 0 20px #8a2be2 !important; /* Profundidade Roxo Escura */
+    font-size: 1.4rem !important;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+}
+
+/* Parágrafo final Tyranid específico */
+.tyranid-text {
+    font-size: 1.0rem !important;
+    color: #b0fbac !important;
+    font-style: italic;
+    text-shadow: 1px 1px 3px #441166 !important;
 }
 
 /* ========== SEÇÃO DE FACÇÕES ========== */
