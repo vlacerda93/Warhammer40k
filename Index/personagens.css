@@ -25,7 +25,7 @@ body {
 main {
     position: relative;
     z-index: 1;
-    padding-top: 40px;
+    padding-top: 140px; /* Aumentado para limpar o header fixo */
 }
 /* TÍTULOS */
 .personagem-title {
