@@ -366,14 +366,72 @@ body {
     box-shadow: 0 0 30px var(--necron-green);
 }
 
-/* ========== RESPONSIVIDADE ========== */
+/* ========== MOBILE OVERRIDE: THE PROTOCOL OF ADAPTATION ========== */
 @media (max-width: 900px) {
+    .section-wrapper {
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
         letter-spacing: 5px;
     }
 
+    /* FIX: Coluna Estreita (Necrons) */
+    .inner-content {
+        border-width: 20px; /* Reduzido de 55px */
+        padding: 30px 15px; /* Padding interno menor */
+    }
+
+    .description-text {
+        font-size: 1.1rem; /* Mais legível em tela pequena */
+        line-height: 1.5;
+    }
+
+    .description-text::first-letter {
+        font-size: 3.5rem; /* Reduzido de 5rem */
+        padding: 5px 10px 0 0;
+    }
+
+    /* Borders Sections */
+    .necron-card {
+        border-width: 15px; /* Reduzido de 30px */
+    }
+
+    .necron-card img {
+        width: calc(100% + 30px);
+        margin: -15px;
+        height: 250px;
+    }
+
+    .legion-gallery {
+        grid-template-columns: 1fr; /* Coluna única */
+    }
+
+    .gauss-img-box {
+        border-width: 15px; /* Reduzido de 35px */
+    }
+
+    .gauss-title {
+        font-size: 2rem;
+    }
+
     .gauss-section {
-        flex-direction: column !important;
+        margin: 60px auto;
+        gap: 30px;
+    }
+
+    .chamber-box img {
+        width: 100%;
+        max-width: 250px;
+        border-width: 15px;
+    }
+
+    /* Back Button */
+    .back-btn {
+        width: 90%;
+        padding: 15px;
+        font-size: 0.9rem;
     }
 }

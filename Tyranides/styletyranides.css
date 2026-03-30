@@ -287,14 +287,78 @@ body {
     box-shadow: 0 0 25px var(--hive-magenta);
 }
 
-/* ========== RESPONSIVIDADE ========== */
+/* ========== MOBILE ADAPTATION: THE HIVE MIND PERSPECTIVE ========== */
 @media (max-width: 900px) {
+    .section-wrapper {
+        margin: 30px auto;
+        padding: 0 10px;
+    }
+
     .hero-title {
         font-size: 3rem;
+        letter-spacing: 5px;
+    }
+
+    /* FIX: Coluna Estreita (Tyranids) */
+    .inner-content {
+        border-width: 20px; /* Reduzido de 55px */
+        padding: 30px 15px; /* Padding interno menor */
+    }
+
+    .lore-text {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .lore-text::first-letter {
+        font-size: 3rem; /* Reduzido de 5.5rem */
+        padding: 5px 10px 0 0;
+    }
+
+    /* Borders Sections */
+    .organism-card {
+        border-width: 15px; /* Reduzido de 30px */
+    }
+
+    .organism-card img {
+        width: calc(100% + 30px);
+        margin: -15px;
+        height: 250px;
+    }
+
+    .hive-gallery {
+        grid-template-columns: 1fr; /* Coluna única */
+    }
+
+    .bio-img-box {
+        border-width: 20px; /* Reduzido de 40px */
+    }
+
+    .bio-img-box img {
+        width: calc(100% + 40px);
+        margin: -20px;
+    }
+
+    .bio-title {
+        font-size: 2.2rem;
     }
 
     .bio-section {
-        flex-direction: column !important;
+        margin: 60px auto;
+        gap: 30px;
+    }
+
+    .devourer-box img {
+        width: 100%;
+        max-width: 250px;
+        border-width: 15px;
+    }
+
+    /* Back Button */
+    .back-btn {
+        width: 90%;
+        padding: 15px;
+        font-size: 0.9rem;
     }
 }
 

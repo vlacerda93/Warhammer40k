@@ -566,16 +566,76 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* RESPONSIVE */
+/* ========== MOBILE ADAPTATION: THE AELDARI PATH ========== */
 @media (max-width: 900px) {
+    .toggle-wrapper {
+        padding: 5px 15px;
+        font-size: 0.8rem;
+        gap: 10px;
+    }
 
     .aeldari-section,
     .legacy-content {
         flex-direction: column !important;
+        gap: 30px;
     }
 
     .lore-title {
         font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    /* FIX: Coluna Estreita (Aeldari) */
+    .theme-asuryani .inner-content,
+    .theme-drukhari .inner-content {
+        border-width: 20px; /* Reduzido de 55px */
+        padding: 30px 15px;
+    }
+
+    .lore-text {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .lore-text::first-letter {
+        font-size: 3rem; /* Reduzido de 5rem */
+        padding: 5px 10px 0 0;
+    }
+
+    /* Borders Sections */
+    .gallery-card {
+        border-width: 20px; /* Reduzido de 65px */
+        border-radius: 20px;
+    }
+
+    .gallery-card-img-wrapper {
+        height: 300px;
+    }
+
+    .aeldari-gallery {
+        grid-template-columns: 1fr; /* Coluna única */
+    }
+
+    .aeldari-img {
+        border-width: 15px; /* Reduzido de 35px */
+        height: 350px;
+    }
+
+    .legacy-content img {
+        width: 100%;
+        max-width: 300px;
+        border-width: 15px; /* Reduzido de 45px */
+    }
+
+    /* Back Button */
+    .back-btn {
+        width: 90%;
+        padding: 15px;
+        font-size: 0.9rem;
     }
 }
 

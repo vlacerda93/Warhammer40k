@@ -385,13 +385,74 @@ body {
     box-shadow: 0 0 20px var(--chaos-crimson);
 }
 
-/* ========== RESPONSIVIDADE ========== */
+/* ========== MOBILE RULES: WARP ADAPTATION ========== */
 @media (max-width: 900px) {
+    .faction-hero {
+        height: 50vh;
+    }
+
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+
+    .section-wrapper {
+        margin: 30px auto;
+        padding: 0 10px;
+    }
+
+    /* FIX: Coluna Estreita */
+    .inner-content {
+        border-width: 20px; /* Reduzido de 45px */
+        padding: 30px 15px; /* Padding interno menor */
+    }
+
+    .lore-text {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .lore-text::first-letter {
+        font-size: 3.5rem; /* Reduzido drasticamente */
+        padding: 5px 10px 0 0;
+    }
+
+    /* Borders Sections */
+    .traitor-card {
+        border-width: 15px; /* Reduzido de 45px */
+    }
+
+    .traitor-card img {
+        height: 300px;
+    }
+
+    .traitor-gallery {
+        grid-template-columns: 1fr; /* Coluna única */
+    }
+
+    .warp-img-box {
+        border-width: 20px; /* Reduzido de 55px */
+    }
+
+    .warp-title {
+        font-size: 2rem;
     }
 
     .warp-section {
-        flex-direction: column !important;
+        margin: 50px auto;
+        gap: 30px;
+    }
+
+    .legacy-content img {
+        width: 100%;
+        max-width: 300px;
+        border-width: 20px;
+    }
+
+    /* Buttons */
+    .back-btn {
+        width: 90%;
+        padding: 15px;
+        font-size: 0.9rem;
     }
 }

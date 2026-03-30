@@ -270,14 +270,78 @@ body {
     transform: scale(1.1);
 }
 
-/* ========== RESPONSIVIDADE ========== */
+/* ========== MOBILE RULES: ORK ADAPTATION ========== */
 @media (max-width: 900px) {
     .hero-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+    }
+
+    .section-wrapper {
+        margin: 30px auto;
+        padding: 0 10px;
+    }
+
+    /* FIX: Coluna Estreita (Orks) */
+    .inner-content {
+        border-width: 20px; /* Reduzido de 55px */
+        padding: 30px 15px; /* Padding interno menor */
+    }
+
+    .lore-text {
+        font-size: 1.1rem; /* Mais legível */
+        line-height: 1.4;
+    }
+
+    .lore-text::first-letter {
+        font-size: 3rem; /* Reduzido de 5rem */
+        padding: 5px 10px 0 0;
+    }
+
+    /* Borders Sections */
+    .ork-card {
+        border-width: 15px; /* Reduzido de 30px */
+    }
+
+    .ork-card img {
+        width: calc(100% + 30px);
+        margin: -15px;
+        height: 250px;
+    }
+
+    .units-gallery {
+        grid-template-columns: 1fr; /* Coluna única */
+    }
+
+    .dakka-img-box {
+        border-width: 20px; /* Reduzido de 35px */
+    }
+
+    .dakka-img-box img {
+        width: calc(100% + 40px);
+        margin: -20px;
+    }
+
+    .dakka-title {
+        font-size: 2rem;
     }
 
     .dakka-section {
-        flex-direction: column !important;
+        margin: 60px auto;
+        gap: 30px;
+    }
+
+    .waaagh-box img {
+        width: 100%;
+        max-width: 250px;
+        border-width: 15px;
+    }
+
+    /* Back Button */
+    .back-btn {
+        width: 90%;
+        padding: 15px;
+        font-size: 1.1rem;
     }
 }
 
