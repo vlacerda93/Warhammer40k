@@ -515,9 +515,14 @@ body {
     transform: scale(1.05);
 }
 
-/* Card Império: enquadra mais para cima para mostrar a cabeça do Imperador (sem zoom = sem borda preta) */
-.faction-card--imperio .card-img-box img {
-    object-position: center 20%;
+/* Card Império: enquadra mais para cima para mostrar a cabeça do Imperador */
+.card-imperio .card-img-box img {
+    object-position: center 10% !important;
+}
+
+/* Card Necrons: enquadra mais para cima para mostrar o Silent King */
+.card-necrons .card-img-box img {
+    object-position: center 10% !important;
 }
 
 .faction-card--imperio:hover .card-img-box img {
