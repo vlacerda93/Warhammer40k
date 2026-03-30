@@ -10,7 +10,7 @@ body {
     color: white;
     font-family: 'Exo 2', sans-serif;
     overflow-x: hidden;
-    cursor: url('humans.cur'), auto;
+    cursor: url('../humans.cur'), auto;
 }
 
 .galaxy-bg {
@@ -20,7 +20,7 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-        url('fundo20.png') no-repeat center center;
+        url('../fundo20.png') no-repeat center center;
     background-size: cover;
     z-index: -5;
     animation: galaxyPulse 20s infinite alternate ease-in-out;
@@ -264,22 +264,25 @@ body {
 }
 
 .historia-panel {
-    background-image: url('fundotextoindex2.png');
+    background-image: url('../fundotextoindex2.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
-    /* PADDINGS MASSIVOS:
-       Top (~220px) para ignorar o sangue e o título vermelho estampado "No 41º...".
-       Laterais (~320px) para fugir do Space Marine e Ork (esq) e Necron e Tyranid (dir).
-       Bottom (~200px) para fugir dos crânios e armas no rodapé. */
-    /* PADDINGS RECALIBRADOS P/ 100% ZOOM + REFINO VERTICAL EXTREMO */
-    padding: 480px 340px 380px 340px;
+    /* PADDINGS CORRIGIDOS: Removendo os 340px que espremiam o texto */
+    padding: 60px 40px;
     margin: 60px auto 80px;
     max-width: 1450px;
     text-align: center;
     border: none;
+}
+
+@media (max-width: 900px) {
+    .historia-panel {
+        padding: 40px 15px;
+        background-size: cover; /* Melhora encaixe no celular */
+    }
 }
 
 .historia-panel p {
@@ -463,7 +466,7 @@ body {
 
     /* Bordas Imperiais Personalizadas */
     border: 30px solid transparent;
-    border-image: url('bordaimperio3editada.png') 100 round;
+    border-image: url('../bordaimperio3editada.png') 100 round;
     border-image-outset: 10px;
 }
 
@@ -517,7 +520,7 @@ body {
     right: -12px;
     bottom: -12px;
     border: 18px solid transparent;
-    border-image: url('bordaimperio3editada.png') 100 round;
+    border-image: url('../bordaimperio3editada.png') 100 round;
     pointer-events: none;
     /* Garante que o clique passe pela moldura para o card */
     z-index: 10;
@@ -668,7 +671,7 @@ body {
 
     /* Bordas Imperiais Personalizadas (Igual ao Main Panel) */
     border: 30px solid transparent;
-    border-image: url('bordaimperio3editada.png') 100 round;
+    border-image: url('../bordaimperio3editada.png') 100 round;
     border-image-outset: 10px;
 }
 
@@ -721,7 +724,7 @@ body {
     right: -12px;
     bottom: -12px;
     border: 22px solid transparent; /* Aumentado para acompanhar o card maior */
-    border-image: url('bordaimperio3editada.png') 100 round;
+    border-image: url('../bordaimperio3editada.png') 100 round;
     pointer-events: none;
     z-index: 10;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
