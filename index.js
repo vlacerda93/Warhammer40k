@@ -18,20 +18,23 @@ function changePage(direction) {
 // CONTROLE DE PERSONAGENS NA SIDEBAR
 // ====================================
 let currentChar = 0;
-const charHeight = 480; // Atualizado para o novo card de 450px + 30px de margem
-const visibleChars = 1;
-
 function changeChar(direction) {
     const display = document.getElementById('charsDisplay');
     const totalChars = display.children.length;
-    const maxScroll = Math.max(0, totalChars - visibleChars);
+    const visibleChars = 1;
+    
+    // Calcula a altura dinâmica (altura do card + margem inferior)
+    const firstCard = display.children[0];
+    const cardStyle = window.getComputedStyle(firstCard);
+    const cardHeightWithMargin = firstCard.offsetHeight + parseInt(cardStyle.marginBottom);
 
     currentChar += direction;
 
+    const maxScroll = Math.max(0, totalChars - visibleChars);
     if (currentChar < 0) currentChar = 0;
     if (currentChar > maxScroll) currentChar = maxScroll;
 
-    display.style.transform = `translateY(-${currentChar * charHeight}px)`;
+    display.style.transform = `translateY(-${currentChar * cardHeightWithMargin}px)`;
 }
 
 // CONTROLE DO ÁUDIO
