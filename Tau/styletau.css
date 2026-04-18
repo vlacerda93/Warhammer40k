@@ -17,9 +17,12 @@ body {
     margin: 0;
     overflow-x: hidden;
     background-image:
-        radial-gradient(circle at top right, rgba(243, 139, 33, 0.1), transparent 50%),
+        radial-gradient(circle at top right, rgba(243, 139, 33, 0.15), transparent 50%),
         url('fundotau.png');
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1.5s ease-in-out;
     cursor: url('../Index/tau.cur'), auto;
 }
 
@@ -82,10 +85,7 @@ body {
     border-radius: 4px;
     background-clip: padding-box;
     background-image: 
-        linear-gradient(rgba(12, 18, 24, 0.4), rgba(12, 18, 24, 0.4)),
-        url('fundotau.png');
-    background-size: cover;
-    background-position: center;
+        linear-gradient(rgba(12, 18, 24, 0.45), rgba(12, 18, 24, 0.45));
     box-shadow: inset 0 0 40px rgba(51, 204, 255, 0.2);
 }
 

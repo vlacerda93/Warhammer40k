@@ -156,6 +156,37 @@
     </footer>
 
     <script src="../Index/lightbox.js"></script>
+    <script>
+        // BACKGROUND ROTATION SYSTEM
+        const backgrounds = [
+            'backgrounds/tau_bg1.jpg',
+            'backgrounds/tau_bg2.jpg',
+            'backgrounds/tau_bg3.jpg',
+            'backgrounds/tau_bg4.png'
+        ];
+        let currentBgIndex = 0;
+
+        // Preload images to avoid flickering
+        backgrounds.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        function rotateBackground() {
+            const newBg = backgrounds[currentBgIndex];
+            
+            // Apply the new background while keeping the HUD-style radial gradient overlay
+            document.body.style.backgroundImage = `radial-gradient(circle at top right, rgba(243, 139, 33, 0.15), transparent 50%), url('${newBg}')`;
+            
+            currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+        }
+
+        // Initialize immediately
+        rotateBackground();
+
+        // Rotate every 1 minute (60000 ms)
+        setInterval(rotateBackground, 60000);
+    </script>
 </body>
 
 </html>
