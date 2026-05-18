@@ -32,6 +32,16 @@ h1 {
   margin-bottom: 24px;
 }
 
+#canvas-3d {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  max-height: 700px;
+  display: none;
+  background: #02030a;
+  border-radius: inherit;
+}
+
 .map-image {
   display: block;
   width: 100%;

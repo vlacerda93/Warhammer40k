@@ -315,11 +315,13 @@
                     <label class="control-label tau"><input type="checkbox" id="toggle-tau" checked> 🔵 T'au</label>
                     <label class="control-label ork"><input type="checkbox" id="toggle-ork" checked> 🟢 Orks</label>
                     <label class="control-label aeldari"><input type="checkbox" id="toggle-aeldari" checked> 🟣 Aeldari</label>
+                    <label class="control-label necron"><input type="checkbox" id="toggle-necron" checked> 🟩 Necrons</label>
                     <label class="control-label tyranid"><input type="checkbox" id="toggle-tyranid" checked> ⚪ Tyranids</label>
                 </div>
 
                 <div class="map-container">
-                    <img src="mapa5k.jpg" alt="Mapa da Galáxia 40K" class="map-image">
+                    <div id="canvas-3d"></div>
+                    <img src="mapa5k.jpg" alt="Mapa da Galáxia 40K" class="map-image" id="static-map-image">
 
                     <!-- Marcadores -->
                     <!-- IMPERIUM -->
@@ -394,7 +396,7 @@
                     <div class="marker-tyranid ts" data-tooltip="Frota Colmeia Leviathan (Sul)"></div>
                     <div class="marker-tyranid tw" data-tooltip="Frota Colmeia Behemoth"></div>
                 </div>
-                <p class="map-note">"Para o Imperador, um sistema solar é apenas um estatística."</p>
+                <p class="map-note">"Para o Imperador, um sistema solar é apenas uma estatística."</p>
             </div>
         </section>
 
@@ -416,8 +418,11 @@
         <p>Feito por fãs para fãs • 2026</p>
         <p>Agradecimento especial ao <a href="https://40k.gallery/" target="_blank" style="color: #c41e3a; text-decoration: none;">40k.gallery</a> pelas incríveis imagens da galeria.</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="index.js"></script>
     <script src="mapadagalaxia.js"></script>
+    <script src="mapa3d.js"></script>
 </body>
 
 </html>

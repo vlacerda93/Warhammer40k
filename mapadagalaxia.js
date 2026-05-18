@@ -84,9 +84,20 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isCollapsed) {
         btnText.textContent = "DESBLOQUEAR MAPA TÁTICO";
         btnToggleMap.style.backgroundColor = ""; // Reset to CSS default
+        btnToggleMap.style.color = ""; // Reset text color
       } else {
         btnText.textContent = "OCULTAR DADOS TÁTICOS";
         btnToggleMap.style.backgroundColor = "#c41e3a"; // Highlight when open
+        btnToggleMap.style.color = "#fff"; // Make text readable against red background
+        
+        // Inicializa o mapa 3D se existir a função e oculta o 2D
+        if (window.initMapa3D && !window.mapa3dInitialized) {
+            document.getElementById('static-map-image').style.display = 'none';
+            document.querySelectorAll('.marker, .marker-tyranid').forEach(el => el.style.display = 'none');
+            document.getElementById('canvas-3d').style.display = 'block';
+            window.initMapa3D();
+            window.mapa3dInitialized = true;
+        }
       }
     });
   }
