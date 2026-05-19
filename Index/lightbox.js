@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Seleciona todas as imagens que devem ser ampliáveis
     // Galeria, Armas (tech/warp info), Armaduras e Final Leader
     const targetSelectors = [
-        '.traitor-card img', '.cadre-card img', '.necron-card img', '.organism-card img', '.gallery-card img', '.eldar-card img',
-        '.warp-img-box img', '.tech-img-box img', '.gauss-img-box img', '.feature-img-box img',
-        '.legacy-block img', '.legacy-chamber img', '.legacy-banner img', '.legacy-container img',
+        '.traitor-card img', '.cadre-card img', '.necron-card img', '.organism-card img', '.gallery-card img', '.eldar-card img', '.ork-card img',
+        '.warp-img-box img', '.tech-img-box img', '.gauss-img-box img', '.feature-img-box img', '.dakka-img-box img',
+        '.legacy-block img', '.legacy-chamber img', '.legacy-banner img', '.legacy-container img', '.waaagh-box img',
         'img[alt="Commander Shadowsun"]', 'img[alt="Huron Blackheart"]', 'img[alt="Szarekh"]', 'img[alt="Guilliman"]'
     ];
 

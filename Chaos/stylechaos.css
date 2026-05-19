@@ -43,7 +43,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(5, 0, 5, 0.9)), url('chaos.jpg') center/cover no-repeat;
+    background: linear-gradient(to bottom, transparent, rgba(5, 0, 5, 0.9)), url('chaos.jpg') top center/cover no-repeat;
     z-index: -1;
     filter: saturate(1.2) contrast(1.2) brightness(0.7);
 }
@@ -88,8 +88,8 @@ body {
 .inner-content {
     background: rgba(15, 0, 15, 0.4);
     backdrop-filter: blur(8px);
-    border: 45px solid transparent;
-    border-image: url('bordachaos1editada.png') 150 stretch;
+    border: 30px solid transparent;
+    border-image: url('bordachaos1editada.png') 100 stretch;
     border-image-repeat: round;
     padding: 60px 80px;
     position: relative;
@@ -258,8 +258,8 @@ body {
 
 .traitor-card {
     background: transparent;
-    border: 45px solid transparent;
-    border-image: url('bordachaos2editada.png') 200 stretch;
+    border: 25px solid transparent;
+    border-image: url('bordachaos2editada.png') 100 stretch;
     border-image-repeat: round;
     box-shadow: none;
     padding: 0;
@@ -310,8 +310,8 @@ body {
     width: 100%;
     max-width: 900px;
     background: transparent;
-    border: 55px solid transparent;
-    border-image: url('bordachaos2editada.png') 150 stretch;
+    border: 30px solid transparent;
+    border-image: url('bordachaos2editada.png') 100 stretch;
     border-image-repeat: round;
     padding: 0;
     position: relative;
@@ -355,10 +355,9 @@ body {
 }
 
 .legacy-content img {
-    border: 35px solid transparent;
-    border-image: url('bordachaos2editada.png') 150 stretch;
+    border: 25px solid transparent;
+    border-image: url('bordachaos2editada.png') 100 stretch;
     border-image-repeat: round;
-    width: 380px;
     box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
     display: block;
     object-fit: cover;
