@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.traitor-card img', '.cadre-card img', '.necron-card img', '.organism-card img', '.gallery-card img', '.eldar-card img', '.ork-card img',
         '.warp-img-box img', '.tech-img-box img', '.gauss-img-box img', '.feature-img-box img', '.dakka-img-box img',
         '.legacy-block img', '.legacy-chamber img', '.legacy-banner img', '.legacy-container img', '.waaagh-box img',
-        'img[alt="Commander Shadowsun"]', 'img[alt="Huron Blackheart"]', 'img[alt="Szarekh"]', 'img[alt="Guilliman"]'
+        'img[alt="Commander Shadowsun"]', 'img[alt="Huron Blackheart"]', 'img[alt="Szarekh"]', 'img[alt="Guilliman"]', '.personagem-img-original'
     ];
 
     document.addEventListener('click', (e) => {
