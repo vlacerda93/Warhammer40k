@@ -185,6 +185,18 @@
         // Rotate every 1 minute (60000 ms)
         setInterval(rotateBackground, 60000);
     </script>
+
+    <!-- EFEITOS TOGGLE -->
+    <button id="toggleEffectsBtn" style="position: fixed; top: 20px; right: 20px; z-index: 10000; background: rgba(0,0,0,0.7); border: 1px solid #c41e3a; color: #fff; padding: 10px 15px; cursor: pointer; border-radius: 5px; font-family: 'Exo 2', sans-serif;">Desligar Efeitos</button>
+    <script>
+        document.getElementById('toggleEffectsBtn').addEventListener('click', function() {
+            const isOff = document.body.classList.toggle('no-effects');
+            this.textContent = isOff ? 'Ligar Efeitos' : 'Desligar Efeitos';
+            const overlays = document.querySelectorAll('.embers-overlay, .imperial-beams, .dust-overlay, .chaos-storm, .warp-sparkles, .hud-overlay, #shadow-warp-overlay, .hex-grid');
+            overlays.forEach(el => el.style.display = isOff ? 'none' : 'block');
+        });
+    </script>
 </body>
+
 
 </html>
