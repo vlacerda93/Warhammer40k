@@ -1,3 +1,20 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, push, onValue, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAQybI6CkLgTKWjePtl9brADqgT6wvXe_w",
+  authDomain: "warhammer-vox.firebaseapp.com",
+  databaseURL: "https://warhammer-vox-default-rtdb.firebaseio.com",
+  projectId: "warhammer-vox",
+  storageBucket: "warhammer-vox.firebasestorage.app",
+  messagingSenderId: "195415547013",
+  appId: "1:195415547013:web:2134b7721218c1953e9dec",
+  measurementId: "G-LKED38YVTP"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
 document.addEventListener('DOMContentLoaded', () => {
     const loginSection = document.getElementById('login-section');
     const chatSection = document.getElementById('chat-section');
@@ -13,33 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatForm = document.getElementById('chat-form');
     const messageInput = document.getElementById('message-input');
 
-    // Inicializa banco de dados fraco (localStorage)
-    let usersDB = JSON.parse(localStorage.getItem('wh40k_users')) || {};
-    let messagesDB = JSON.parse(localStorage.getItem('wh40k_messages')) || [
-        { type: 'system', text: 'Conexão Astropática Estabelecida. Bem-vindo ao Canal Vox.', time: new Date().toLocaleTimeString() }
-    ];
     let currentUser = localStorage.getItem('wh40k_currentUser');
 
-    function renderMessages() {
-        chatMessages.innerHTML = '';
-        messagesDB.forEach(msg => {
-            const msgEl = document.createElement('div');
-            
-            if (msg.type === 'system') {
-                msgEl.className = 'message system';
-                msgEl.innerHTML = `<span class="msg-text">${msg.text}</span>`;
-            } else {
-                const isSelf = msg.author === currentUser;
-                msgEl.className = `message ${isSelf ? 'self' : 'other'}`;
-                msgEl.innerHTML = `
-                    <span class="msg-author">${msg.author}</span>
-                    <span class="msg-text">${msg.text}</span>
-                    <span class="msg-time">${msg.time}</span>
-                `;
-            }
-            
-            chatMessages.appendChild(msgEl);
-        });
+    const usersRef = ref(db, 'users');
+    const messagesRef = ref(db, 'messages');
+
+    function renderMessage(msg) {
+        const msgEl = document.createElement('div');
+        
+        if (msg.type === 'system') {
+            msgEl.className = 'message system';
+            msgEl.innerHTML = `<span class="msg-text">${msg.text}</span>`;
+        } else {
+            const isSelf = msg.author === currentUser;
+            msgEl.className = `message ${isSelf ? 'self' : 'other'}`;
+            msgEl.innerHTML = `
+                <span class="msg-author">${msg.author}</span>
+                <span class="msg-text">${msg.text}</span>
+                <span class="msg-time">${msg.time}</span>
+            `;
+        }
+        
+        chatMessages.appendChild(msgEl);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
@@ -48,40 +60,54 @@ document.addEventListener('DOMContentLoaded', () => {
             loginSection.classList.add('hidden');
             chatSection.classList.remove('hidden');
             currentUserDisplay.textContent = `Identidade Confirmada: ${currentUser}`;
-            renderMessages();
+            
+            // Listen to real-time messages from Firebase
+            onValue(messagesRef, (snapshot) => {
+                chatMessages.innerHTML = ''; // Limpa antes de renderizar
+                const data = snapshot.val();
+                if (data) {
+                    const msgsArray = Object.values(data);
+                    msgsArray.forEach(msg => renderMessage(msg));
+                }
+            });
         } else {
             loginSection.classList.remove('hidden');
             chatSection.classList.add('hidden');
         }
     }
 
-    loginForm.addEventListener('submit', (e) => {
+    loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const user = usernameInput.value.trim();
         const pass = passwordInput.value.trim();
 
         if (user && pass) {
-            // Se o usuário não existe, a gente cadastra. Se existe, checa a senha.
-            if (!usersDB[user]) {
-                usersDB[user] = pass;
-                localStorage.setItem('wh40k_users', JSON.stringify(usersDB));
-            } else if (usersDB[user] !== pass) {
-                loginError.textContent = 'Código de autorização inválido. A Inquisição foi alertada.';
-                return;
+            // Evita caracteres inválidos no Firebase path
+            const safeUser = user.replace(/[.#$[\]]/g, '_');
+            const userRef = child(usersRef, safeUser);
+            const snapshot = await get(userRef);
+            
+            if (snapshot.exists()) {
+                const dbPass = snapshot.val().password;
+                if (dbPass !== pass) {
+                    loginError.textContent = 'Código de autorização inválido. A Inquisição foi alertada.';
+                    return;
+                }
+            } else {
+                // Cadastra novo usuário
+                await set(userRef, { password: pass });
             }
 
             // Login com sucesso
             loginError.textContent = '';
-            currentUser = user;
+            currentUser = safeUser;
             localStorage.setItem('wh40k_currentUser', currentUser);
             
-            // Adiciona mensagem de sistema sobre entrada
-            messagesDB.push({
+            push(messagesRef, {
                 type: 'system',
                 text: `O usuário [${currentUser}] adentrou a rede Vox.`,
                 time: new Date().toLocaleTimeString()
             });
-            localStorage.setItem('wh40k_messages', JSON.stringify(messagesDB));
 
             usernameInput.value = '';
             passwordInput.value = '';
@@ -90,45 +116,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     logoutBtn.addEventListener('click', () => {
-        messagesDB.push({
-            type: 'system',
-            text: `O usuário [${currentUser}] encerrou sua transmissão.`,
-            time: new Date().toLocaleTimeString()
-        });
-        localStorage.setItem('wh40k_messages', JSON.stringify(messagesDB));
+        if (currentUser) {
+            push(messagesRef, {
+                type: 'system',
+                text: `O usuário [${currentUser}] encerrou sua transmissão.`,
+                time: new Date().toLocaleTimeString()
+            });
+        }
         
         currentUser = null;
         localStorage.removeItem('wh40k_currentUser');
         checkLoginStatus();
+        window.location.reload(); // Recarrega para limpar as conexões do Firebase
     });
 
     chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const text = messageInput.value.trim();
         if (text) {
-            messagesDB.push({
+            push(messagesRef, {
                 type: 'user',
                 author: currentUser,
                 text: text,
                 time: new Date().toLocaleTimeString()
             });
-            localStorage.setItem('wh40k_messages', JSON.stringify(messagesDB));
             messageInput.value = '';
-            renderMessages();
         }
     });
 
-    // Check status on load
+    // Ao iniciar
     checkLoginStatus();
-    
-    // Atualiza a cada 2 segundos para ver mensagens de outras abas (opcional)
-    setInterval(() => {
-        if (currentUser) {
-            const newMsgs = JSON.parse(localStorage.getItem('wh40k_messages')) || [];
-            if (newMsgs.length !== messagesDB.length) {
-                messagesDB = newMsgs;
-                renderMessages();
-            }
-        }
-    }, 2000);
 });
