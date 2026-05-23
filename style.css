@@ -999,22 +999,22 @@ footer p {
 
     /* AJUSTE CRÍTICO: Painel de História no Mobile */
     .historia-panel {
-        padding: 280px 14% 180px; /* Paddings laterais em % e topo/fundo maiores para compensar o estiramento da imagem */
-        min-height: auto; /* Deixa a altura se ajustar ao conteúdo */
+        padding: 380px 10% 120px; /* Aumentado o topo e reduzido as laterais para o texto caber melhor */
+        min-height: auto; 
         margin: 40px 10px;
         background-size: 100% 100%;
     }
 
     .historia-panel p {
-        font-size: 13px; 
-        line-height: 1.5;
-        margin: 12px 0;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+        font-size: 14px; /* Aumentado 1px para legibilidade */
+        line-height: 1.6;
+        margin: 15px 0;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 0, 0, 0.8); /* Sombra mais forte para leitura */
     }
 
     .subsection-title {
-        font-size: 15px !important;
-        margin: 25px 0 10px 0;
+        font-size: 16px !important;
+        margin: 30px 0 15px 0;
     }
 
     /* Redução das Bordas Imperiais (senão elas ocupam a tela toda) */
