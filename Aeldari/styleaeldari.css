@@ -48,7 +48,7 @@ body.theme-drukhari {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    cursor: url('mousedrukari2.cur'), auto;
+    cursor: url('../Index/mousedrukari2.cur'), auto;
 }
 
 /* ========== TOGGLE SWITCH ========== */

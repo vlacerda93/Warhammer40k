@@ -435,3 +435,14 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* Efeitos visuais desligados */
+body.no-effects .description-text::after {
+    display: none !important;
+}
+
+body.no-effects .inner-content {
+    background: rgba(5, 15, 5, 0.95) !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+}

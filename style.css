@@ -999,10 +999,14 @@ footer p {
 
     /* AJUSTE CRÍTICO: Painel de História no Mobile */
     .historia-panel {
-        padding: 380px 10% 120px; /* Aumentado o topo e reduzido as laterais para o texto caber melhor */
+        background-image: none !important;
+        background-color: rgba(10, 10, 15, 0.9);
+        border: 2px solid #c41e3a;
+        border-radius: 8px;
+        padding: 40px 20px;
         min-height: auto; 
         margin: 40px 10px;
-        background-size: 100% 100%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     }
 
     .historia-panel p {
