@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canal Vox - Warhammer 40K</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/chat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hud-overlay"></div>
+    <div class="imperial-beams"></div>
+    <video autoplay muted loop class="bg-video" id="bg-video" poster="Images/fundo20.png">
+        <source src="../Images/fundogalaxianimado2.mp4" type="video/mp4">
+    </video>
+    <div class="galaxy-bg"></div>
+    <div class="beams-overlay"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">WH40K BRASIL</div>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="index.html#faccao">Facções</a></li>
+                <li><a href="index.html#personagens">Personagens</a></li>
+                <li><a href="index.html#mapa">Mapa</a></li>
+                <li><a href="chat.html" class="active-nav">Canal Vox</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="chat-main">
+        <div class="metal-panel chat-container" id="login-section">
+            <h2 class="section-title">Terminal de Acesso Vox</h2>
+            <p class="login-desc">Identifique-se para acessar a rede de comunicação astropática. O Império observa.</p>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Nome de Usuário" required class="vox-input">
+                <input type="password" id="password" placeholder="Código de Autorização" required class="vox-input">
+                <button type="submit" class="btn-explore btn-login">Estabelecer Conexão</button>
+            </form>
+            <p id="login-error" class="error-msg"></p>
+        </div>
+
+        <div class="metal-panel chat-container hidden" id="chat-section">
+            <h2 class="section-title">Canal Vox Ativo</h2>
+            <div class="chat-header">
+                <span id="current-user-display" class="user-badge"></span>
+                <button id="logout-btn" class="btn-explore btn-logout">Desconectar</button>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be injected here -->
+            </div>
+            
+            <form id="chat-form" class="chat-input-area">
+                <input type="text" id="message-input" placeholder="Transmitir mensagem..." required class="vox-input" autocomplete="off">
+                <button type="submit" class="btn-explore btn-send">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="../Scripts/chat.js"></script>
+</body>
+</html>
