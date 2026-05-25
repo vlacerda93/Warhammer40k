@@ -18,7 +18,9 @@ __pycache__/
 *.pyc
 
 # Scripts and Automation
-Scripts/
+Scripts/*.py
+Scripts/*.log
+Scripts/*.sh
 *.log
 
 # Environments
