@@ -48,7 +48,8 @@ body.theme-drukhari {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    cursor: url('mousedrukari2.png') 16 16, auto;
+    /* Tema Drukhari (Dark/Toxic) */
+    cursor: url('mousedrukari2.cur'), auto;
 }
 
 /* ========== TOGGLE SWITCH ========== */

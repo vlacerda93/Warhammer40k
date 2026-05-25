@@ -525,7 +525,7 @@ body {
 
     /* Bordas Imperiais Personalizadas */
     border: 30px solid transparent;
-    border-image: url('Index/bordaimperio3editada.png') 100 round;
+    border-image: url('../Index/bordaimperio3editada.png') 100 round;
     border-image-outset: 10px;
 }
 
@@ -579,7 +579,7 @@ body {
     right: -12px;
     bottom: -12px;
     border: 18px solid transparent;
-    border-image: url('Index/bordaimperio3editada.png') 100 round;
+    border-image: url('../Index/bordaimperio3editada.png') 100 round;
     pointer-events: none;
     /* Garante que o clique passe pela moldura para o card */
     z-index: 10;
@@ -730,7 +730,7 @@ body {
 
     /* Bordas Imperiais Personalizadas (Igual ao Main Panel) */
     border: 30px solid transparent;
-    border-image: url('Index/bordaimperio3editada.png') 100 round;
+    border-image: url('../Index/bordaimperio3editada.png') 100 round;
     border-image-outset: 10px;
 }
 
@@ -783,7 +783,7 @@ body {
     right: -12px;
     bottom: -12px;
     border: 22px solid transparent; /* Aumentado para acompanhar o card maior */
-    border-image: url('Index/bordaimperio3editada.png') 100 round;
+    border-image: url('../Index/bordaimperio3editada.png') 100 round;
     pointer-events: none;
     z-index: 10;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
