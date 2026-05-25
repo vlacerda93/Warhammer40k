@@ -25,28 +25,40 @@ document.addEventListener("DOMContentLoaded", () => {
         feather.addEventListener('animationend', () => feather.remove());
     }
 
-    function createSmoke() {
+    function createSplinter() {
         if (!document.body.classList.contains('theme-drukhari')) return;
-        if (document.querySelectorAll('.smoke-particle').length >= MAX_SMOKE) return;
+        if (document.querySelectorAll('.splinter-particle').length >= 20) return;
 
-        const smoke = document.createElement('div');
-        smoke.className = 'smoke-particle';
+        const splinter = document.createElement('div');
+        splinter.className = 'splinter-particle';
         
-        const startX = Math.random() * 100;
-        smoke.style.left = startX + 'vw';
-        smoke.style.animationDuration = (Math.random() * 6 + 6) + 's';
+        // Random start position (either left or right side)
+        const isFromLeft = Math.random() > 0.5;
+        const startY = Math.random() * 100;
         
-        // CORES MAIS ESCURAS E PROFUNDAS (Drukhari Dark Style)
-        const isGreen = Math.random() > 0.5;
-        smoke.style.background = isGreen 
-            ? 'radial-gradient(circle, rgba(0, 50, 20, 0.8) 0%, rgba(0, 20, 5, 0.4) 60%, transparent 85%)' 
-            : 'radial-gradient(circle, rgba(30, 0, 50, 0.8) 0%, rgba(10, 0, 20, 0.4) 60%, transparent 85%)';
+        splinter.style.top = startY + 'vh';
+        splinter.style.left = isFromLeft ? '-5vw' : '105vw';
+        
+        // Direction and speed
+        const duration = Math.random() * 0.5 + 0.3; // Very fast (0.3s to 0.8s)
+        const angle = isFromLeft ? (Math.random() * 20 - 10) : (Math.random() * 20 + 170); // Shoot across
+        
+        splinter.style.transform = `rotate(${angle}deg)`;
+        
+        // Dark green / purple poison color
+        const isPoison = Math.random() > 0.5;
+        splinter.style.background = isPoison ? '#00ff44' : '#b000ff';
+        splinter.style.boxShadow = `0 0 8px ${isPoison ? '#00ff44' : '#b000ff'}`;
+        
+        // Animation using CSS variables to pass distance
+        splinter.style.setProperty('--travel-dist', isFromLeft ? '110vw' : '-110vw');
+        splinter.style.animation = `shootSplinter ${duration}s linear forwards`;
 
-        container.appendChild(smoke);
-        smoke.addEventListener('animationend', () => smoke.remove());
+        container.appendChild(splinter);
+        splinter.addEventListener('animationend', () => splinter.remove());
     }
 
     // Geração dinâmica
     setInterval(createFeather, 700);
-    setInterval(createSmoke, 800); // Mais rápido!
+    setInterval(createSplinter, 200); // Tiros rápidos constantes
 });

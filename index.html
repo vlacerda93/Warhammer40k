@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warhammer 40K - Codex Galáctico</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mapadagalaxia.css">
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/mapadagalaxia.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600&display=swap"
         rel="stylesheet">
 </head>
@@ -19,8 +19,8 @@
     <!-- IMPERIAL BEAMS (FULL SCREEN) -->
     <div class="imperial-beams"></div>
 
-    <video autoplay muted class="bg-video" id="bg-video" poster="fundo20.png">
-        <source src="fundogalaxianimado2.mp4" type="video/mp4">
+    <video autoplay muted class="bg-video" id="bg-video" poster="Images/fundo20.png">
+        <source src="Images/fundogalaxianimado2.mp4" type="video/mp4">
     </video>
     <div class="galaxy-bg"></div>
     <!-- IMPERIAL BEAMS EFFECT (SCREEN-WIDE) -->
@@ -34,8 +34,8 @@
                 <li><a href="#faccao">Facções</a></li>
                 <li><a href="#personagens">Personagens</a></li>
                 <li><a href="#mapa">Mapa</a></li>
-                <li><a href="chat.html">Canal Vox</a></li>
-                <li><a href="tacticus.html">Área Tacticus</a></li>
+                <li><a href="Pages/chat.html">Canal Vox</a></li>
+                <li><a href="Tacticus/tacticus.html">Área Tacticus</a></li>
                 <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
@@ -134,7 +134,7 @@
                                 </a>
                                 <a href="Tyranides/Tyranides.html" class="faction-card card-tyranids">
                                     <div class="card-img-box">
-                                        <img src="tyranids.jpg" alt="Tyranids">
+                                        <img src="Images/tyranids.jpg" alt="Tyranids">
                                     </div>
                                     <h3 class="card-title">Tyranids</h3>
                                 </a>
@@ -444,7 +444,7 @@
 
                 <div class="map-container">
                     <div id="canvas-3d"></div>
-                    <img src="mapa5k.jpg" alt="Mapa da Galáxia 40K" class="map-image" id="static-map-image">
+                    <img src="Images/mapa5k.jpg" alt="Mapa da Galáxia 40K" class="map-image" id="static-map-image">
 
                     <!-- Marcadores -->
                     <!-- IMPERIUM -->
@@ -543,9 +543,9 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="index.js"></script>
-    <script src="mapadagalaxia.js"></script>
-    <script src="mapa3d.js"></script>
+    <script src="Scripts/index.js"></script>
+    <script src="Scripts/mapadagalaxia.js"></script>
+    <script src="Scripts/mapa3d.js"></script>
 </body>
 
 </html>

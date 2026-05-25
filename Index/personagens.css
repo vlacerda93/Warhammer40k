@@ -367,3 +367,32 @@ main {
         height: 300px;
     }
 }
+/* FUNDOS DAS FACÇÕES */
+body.faction-chaos {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../Chaos/fundochaos.png') no-repeat center center fixed;
+    background-size: cover;
+}
+body.faction-imperium {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../Imperio/fundoimperio.png') no-repeat center center fixed;
+    background-size: cover;
+}
+body.faction-necrons {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../Necrons/fundonecrons.png') no-repeat center center fixed;
+    background-size: cover;
+}
+body.faction-orks {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../Orks/fundoorks.png') no-repeat center center fixed;
+    background-size: cover;
+}
+body.faction-aeldari {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../Aeldari/fundoasuryani.png') no-repeat center center fixed;
+    background-size: cover;
+}
+body.faction-tau {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../Tau/fundotau.png') no-repeat center center fixed;
+    background-size: cover;
+}
+body.faction-tyranids {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../Tyranides/fundotyranids.png') no-repeat center center fixed;
+    background-size: cover;
+}

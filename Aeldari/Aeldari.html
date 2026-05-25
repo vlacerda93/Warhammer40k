@@ -272,8 +272,8 @@
         document.getElementById('toggleEffectsBtn').addEventListener('click', function() {
             const isOff = document.body.classList.toggle('no-effects');
             this.textContent = isOff ? 'Ligar Efeitos' : 'Desligar Efeitos';
-            const overlays = document.querySelectorAll('.embers-overlay, .imperial-beams, .dust-overlay, .chaos-storm, .warp-sparkles, .hud-overlay, #shadow-warp-overlay, .hex-grid');
-            overlays.forEach(el => el.style.display = isOff ? 'none' : 'block');
+            const fxContainer = document.getElementById('aeldari-effects-container');
+            if (fxContainer) fxContainer.style.display = isOff ? 'none' : 'block';
         });
     </script>
 </body>

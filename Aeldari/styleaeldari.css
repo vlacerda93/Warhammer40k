@@ -30,7 +30,7 @@ body.theme-asuryani {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    cursor: url('../Index/mouseasuryani.cur'), auto;
+    cursor: url('../Index/mouseasuryani.png') 16 16, auto;
 }
 
 /* Cor verde para os títulos Asuryani na Hero Section conforme pedido */
@@ -48,7 +48,7 @@ body.theme-drukhari {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    cursor: url('../Index/mousedrukari2.cur'), auto;
+    cursor: url('mousedrukari2.png') 16 16, auto;
 }
 
 /* ========== TOGGLE SWITCH ========== */
@@ -715,4 +715,19 @@ body.theme-asuryani::after {
     20% { opacity: 0.7; } /* Fumaça mais opaca */
     80% { opacity: 0.5; }
     100% { transform: translateY(-700px) scale(3) rotate(90deg); opacity: 0; }
+}
+/* DRUKHARI SPLINTER PARTICLES */
+.splinter-particle {
+    position: fixed;
+    width: 30px;
+    height: 2px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+@keyframes shootSplinter {
+    0% { transform: translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(var(--travel-dist)); opacity: 0; }
 }
