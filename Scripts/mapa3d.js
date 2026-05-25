@@ -135,7 +135,7 @@ window.initMapa3D = function() {
             { color: 0xff1a1a, pos: [115, 35, -100], size: 1.6, speed: 0.005 } // Sicarius
         ],
         aeldari: [
-            { color: 0xe54bff, pos: [0, 25, 0], size: 2.0, speed: 0.001, isCraftworld: true } // Craftworld gigante
+            { color: 0xe54bff, pos: [-60, 15, -40], size: 2.0, speed: 0.001, isCraftworld: true } // Craftworld gigante
         ],
         drukhari: [
             { color: 0x6a0dad, pos: [80, -20, -50], size: 1.4, speed: 0.008, hasSpikes: true } // Planeta Dominado em Commorragh

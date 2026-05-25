@@ -1,0 +1,122 @@
+{
+    "Nome": "Titus",
+    "Faction": [
+        "Imperial",
+        "Ultramarines"
+    ],
+    "Image": "https://tacticus.wiki.gg/images/Titus_Icon_Large.png?d910f7",
+    "Base Health": "95",
+    "Base Armour": "23",
+    "Base Damage": "25",
+    "Melee Attack": "Chain/4 hits",
+    "Ranged Attack": "",
+    "Movement": "3",
+    "Traits": "Beast Slayer, Final Vengeance",
+    "Rarity": "Epic",
+    "Active Ability": {
+        "Name": "Tactical Precision",
+        "Image": "https://tacticus.wiki.gg/images/Titus_Ability_1_Icon.png?52c051",
+        "Text": "Attacks a targeted adjacent enemy. If Titus has charged that enemy this turn, he deal 1x X Bolter Damage to it. This attack is always a Crit and deals an additional +Y Crit Damage.\nIf Titus did not charge the targeted enemy this turn, he instead deals 3x Z Chain Damage to all adjacent enemies.\nWhen Titus gets revived or resurrected and Tactical Precision has already been used, then Tactical Precision can be use again in battle.",
+        "Table": [
+            [
+                "Rarity",
+                "Level",
+                "1x Bolter",
+                "Crit Damage",
+                "3x Chain"
+            ],
+            [
+                "Common",
+                "8",
+                "100-125",
+                "25",
+                "62-90"
+            ],
+            [
+                "Uncommon",
+                "17",
+                "218-274",
+                "55",
+                "137-197"
+            ],
+            [
+                "Rare",
+                "26",
+                "539-675",
+                "134",
+                "337-486"
+            ],
+            [
+                "Epic",
+                "35",
+                "1141-1426",
+                "285",
+                "714-1027"
+            ],
+            [
+                "Legendary",
+                "50",
+                "3989-4986",
+                "997",
+                "2493-3589"
+            ],
+            [
+                "Mythic",
+                "60",
+                "5220-6526",
+                "1306",
+                "3262-4698"
+            ]
+        ]
+    },
+    "Passive Ability": {
+        "Name": "Fuelled by Fury",
+        "Image": "https://tacticus.wiki.gg/images/Titus_Ability_2_Icon.png?cc9614",
+        "Text": "Deals +X Damage with all attacks for each time a friendly Character has used an active ability this battle. The first time each turn that Titus is defeated he cannot be Overkilled. The first time each turn he defeats an enemy with an attack triggered by Final Vengeance he is immediately revived with Y Health.",
+        "Table": [
+            [
+                "Rarity",
+                "Level",
+                "Bonus Damage",
+                "Health"
+            ],
+            [
+                "Common",
+                "8",
+                "9",
+                "187"
+            ],
+            [
+                "Uncommon",
+                "17",
+                "22",
+                "410"
+            ],
+            [
+                "Rare",
+                "26",
+                "38",
+                "1011"
+            ],
+            [
+                "Epic",
+                "35",
+                "72",
+                "2139"
+            ],
+            [
+                "Legendary",
+                "50",
+                "248",
+                "7477"
+            ],
+            [
+                "Mythic",
+                "60",
+                "296",
+                "9788"
+            ]
+        ]
+    },
+    "Lore": "Lieutenant Demetrian Titus is a character of the Ultramarines faction."
+}

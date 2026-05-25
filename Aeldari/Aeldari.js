@@ -25,40 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
         feather.addEventListener('animationend', () => feather.remove());
     }
 
-    function createSplinter() {
+    function createJumpscare() {
         if (!document.body.classList.contains('theme-drukhari')) return;
-        if (document.querySelectorAll('.splinter-particle').length >= 20) return;
+        if (document.querySelectorAll('.drukhari-jumpscare').length > 0) return;
 
-        const splinter = document.createElement('div');
-        splinter.className = 'splinter-particle';
+        const skull = document.createElement('div');
+        skull.className = 'drukhari-jumpscare';
         
-        // Random start position (either left or right side)
-        const isFromLeft = Math.random() > 0.5;
-        const startY = Math.random() * 100;
+        // Pode usar um emoji ou uma imagem de caveira assustadora
+        skull.innerHTML = '💀';
         
-        splinter.style.top = startY + 'vh';
-        splinter.style.left = isFromLeft ? '-5vw' : '105vw';
+        // Posição aleatória na tela
+        const startX = Math.random() * 80 + 10;
+        const startY = Math.random() * 80 + 10;
         
-        // Direction and speed
-        const duration = Math.random() * 0.5 + 0.3; // Very fast (0.3s to 0.8s)
-        const angle = isFromLeft ? (Math.random() * 20 - 10) : (Math.random() * 20 + 170); // Shoot across
+        skull.style.left = startX + 'vw';
+        skull.style.top = startY + 'vh';
         
-        splinter.style.transform = `rotate(${angle}deg)`;
+        container.appendChild(skull);
         
-        // Dark green / purple poison color
-        const isPoison = Math.random() > 0.5;
-        splinter.style.background = isPoison ? '#00ff44' : '#b000ff';
-        splinter.style.boxShadow = `0 0 8px ${isPoison ? '#00ff44' : '#b000ff'}`;
-        
-        // Animation using CSS variables to pass distance
-        splinter.style.setProperty('--travel-dist', isFromLeft ? '110vw' : '-110vw');
-        splinter.style.animation = `shootSplinter ${duration}s linear forwards`;
-
-        container.appendChild(splinter);
-        splinter.addEventListener('animationend', () => splinter.remove());
+        // Remove após a animação
+        skull.addEventListener('animationend', () => skull.remove());
     }
 
     // Geração dinâmica
     setInterval(createFeather, 700);
-    setInterval(createSplinter, 200); // Tiros rápidos constantes
+    // Jumpscare não pode ser tão frequente, senão fica chato. Vamos pôr a cada 4 a 8 segundos aleatoriamente
+    setInterval(() => {
+        if (Math.random() > 0.5) createJumpscare();
+    }, 4000);
 });

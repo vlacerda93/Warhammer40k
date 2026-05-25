@@ -731,3 +731,24 @@ body.theme-asuryani::after {
     80% { opacity: 1; }
     100% { transform: translateX(var(--travel-dist)); opacity: 0; }
 }
+
+/* DRUKHARI JUMPSCARE */
+.drukhari-jumpscare {
+    position: fixed;
+    font-size: 5rem;
+    color: #6a0dad;
+    text-shadow: 0 0 30px #b000ff, 0 0 50px #00ff44;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transform: scale(0);
+    animation: jumpscareAnim 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes jumpscareAnim {
+    0% { opacity: 0; transform: scale(0); }
+    20% { opacity: 1; transform: scale(3) rotate(-10deg); }
+    50% { opacity: 1; transform: scale(8) rotate(15deg); }
+    80% { opacity: 0.5; transform: scale(15) rotate(-5deg); }
+    100% { opacity: 0; transform: scale(20); }
+}

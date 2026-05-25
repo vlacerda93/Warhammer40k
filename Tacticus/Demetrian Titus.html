@@ -199,18 +199,18 @@
     <div class="char-layout">
         <!-- Coluna Esquerda -->
         <div class="char-left">
-            <div class="char-portrait"></div>
+            <div class="char-portrait" style="background: url('https://tacticus.wiki.gg/images/Titus_Icon_Large.png?d910f7') center/cover;"></div>
             
             <div class="char-tags">
-                <span class="tag">Adepta Sororitas</span>
                 <span class="tag">Imperial</span>
-                <span class="tag">Act of Faith</span>
-                <span class="tag">Heavy Weapon</span>
+                <span class="tag">Ultramarines</span>
+                <span class="tag">Beast Slayer</span>
+                <span class="tag">Final Vengeance</span>
             </div>
 
             <div class="char-stats-basic">
-                <p><strong>Ataque Corpo-a-Corpo:</strong> Physical</p>
-                <p><strong>Ataque à Distância:</strong> Flame</p>
+                <p><strong>Ataque Corpo-a-Corpo:</strong> Chain / 4 hits</p>
+                <p><strong>Ataque à Distância:</strong> N/A</p>
                 <p><strong>Movimento:</strong> 3 Hexes</p>
             </div>
         </div>
@@ -219,11 +219,11 @@
         <div class="char-right">
             <div class="char-header">
                 <h1>Demetrian Titus</h1>
-                <h3>Purificadora - Fogo Sagrado</h3>
+                <h3>Epic • Ultramarines</h3>
             </div>
 
             <div class="char-lore">
-                "Celestians are the finest and noblest warriors of the Order, inspirational figures who punish the faithless with relentless barrages of bolter fire and gouts of sacred flame."
+                "Lieutenant Demetrian Titus is a character of the Ultramarines faction."
             </div>
 
             <!-- Habilidades -->
@@ -231,64 +231,70 @@
                 <h2>Habilidades</h2>
                 
                 <div class="ability-card">
-                    <h4>🔥 Habilidade Ativa: Armorium Cherub</h4>
-                    <p>Causa 4x X Dano de Chama a um alvo dentro do alcance 2 e é capaz de atacar imediatamente novamente.</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Titus_Ability_1_Icon.png?52c051" alt="Tactical Precision" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #4facfe; box-shadow: 0 0 10px rgba(0,150,255,0.5);">
+                        ⚔️ Ativa: Tactical Precision
+                    </h4>
+                    <p>Attacks a targeted adjacent enemy. If Titus has charged that enemy this turn, he deal 1x X Bolter Damage to it. This attack is always a Crit and deals an additional +Y Crit Damage.<br><br>If Titus did not charge the targeted enemy this turn, he instead deals 3x Z Chain Damage to all adjacent enemies.<br><br>When Titus gets revived or resurrected and Tactical Precision has already been used, then Tactical Precision can be use again in battle.</p>
                 </div>
 
                 <div class="ability-card">
-                    <h4>🛡️ Habilidade Passiva: Fire of Absolution</h4>
-                    <p>Ao realizar um ataque à distância, também causa 3x X Dano de Chama a todas as unidades adjacentes ao alvo. Tem 30% de chance de incendiar cada hexágono adjacente também.</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Titus_Ability_2_Icon.png?cc9614" alt="Fuelled by Fury" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #ff3232; box-shadow: 0 0 10px rgba(255,50,50,0.5);">
+                        🛡️ Passiva: Fuelled by Fury
+                    </h4>
+                    <p>Deals +X Damage with all attacks for each time a friendly Character has used an active ability this battle. The first time each turn that Titus is defeated he cannot be Overkilled. The first time each turn he defeats an enemy with an attack triggered by Final Vengeance he is immediately revived with Y Health.</p>
                 </div>
             </div>
 
             <!-- Progressão de Status -->
             <div class="progression-section">
-                <h2>Evolução de Status (Nível 1 ao 50)</h2>
+                <h2>Evolução de Vida (Baseada na Habilidade Passiva)</h2>
                 <table class="stats-table">
                     <thead>
                         <tr>
+                            <th>Raridade</th>
                             <th>Nível</th>
-                            <th>Vida (HP)</th>
-                            <th>Dano Base</th>
-                            <th>Armadura</th>
+                            <th>Vida de Reviver (HP)</th>
+                            <th>Dano Bônus</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nvl 1</td>
-                            <td>120</td>
-                            <td>45</td>
-                            <td>15</td>
+                            <td>Common</td>
+                            <td>8</td>
+                            <td>187</td>
+                            <td>9</td>
                         </tr>
                         <tr>
-                            <td>Nvl 10</td>
-                            <td>450</td>
-                            <td>120</td>
-                            <td>45</td>
+                            <td>Uncommon</td>
+                            <td>17</td>
+                            <td>410</td>
+                            <td>22</td>
                         </tr>
                         <tr>
-                            <td>Nvl 20</td>
-                            <td>1,200</td>
-                            <td>350</td>
-                            <td>110</td>
+                            <td>Rare</td>
+                            <td>26</td>
+                            <td>1011</td>
+                            <td>38</td>
                         </tr>
                         <tr>
-                            <td>Nvl 30</td>
-                            <td>2,800</td>
-                            <td>850</td>
-                            <td>250</td>
+                            <td>Epic</td>
+                            <td>35</td>
+                            <td>2139</td>
+                            <td>72</td>
                         </tr>
                         <tr>
-                            <td>Nvl 40</td>
-                            <td>5,500</td>
-                            <td>1,800</td>
-                            <td>450</td>
+                            <td>Legendary</td>
+                            <td>50</td>
+                            <td>7477</td>
+                            <td>248</td>
                         </tr>
                         <tr>
-                            <td>Nvl 50 (Max)</td>
-                            <td>10,200</td>
-                            <td>3,500</td>
-                            <td>800</td>
+                            <td>Mythic</td>
+                            <td>60 (Max)</td>
+                            <td>9788</td>
+                            <td>296</td>
                         </tr>
                     </tbody>
                 </table>

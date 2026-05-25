@@ -20,7 +20,7 @@ body {
 
 /* Ajustes Hero */
 .tacticus-bg {
-    background: linear-gradient(to bottom, transparent, rgba(2, 5, 2, 0.9)), url('Index/fundotextoindex2.png') center/cover no-repeat !important;
+    background: linear-gradient(to bottom, transparent, rgba(2, 5, 2, 0.9)), url('../Index/fundotextoindex2.png') center/cover no-repeat !important;
     filter: brightness(0.6) sepia(0.5) hue-rotate(-20deg); /* Tom mais alaranjado */
 }
 
