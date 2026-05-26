@@ -16,7 +16,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../Images/fundo20.png') no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../Index/fundo20.png') no-repeat center center;
     background-size: cover;
     z-index: -5;
 }
@@ -191,6 +191,11 @@ main {
     background: linear-gradient(135deg, #8B0000, #5a0000);
 }
 
+.faction-chaos .galaxy-bg {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('../Chaos/fundochaos.png') no-repeat center center;
+    background-size: cover;
+}
+
 /* IMPERIUM (Guilliman, Calgar) */
 .faction-imperium .personagem-title {
     color: #D4AF37; /* Dourado imperial */
@@ -214,6 +219,11 @@ main {
 
 .faction-imperium .back-link {
     background: linear-gradient(135deg, #D4AF37, #8B7355);
+}
+
+.faction-imperium .galaxy-bg {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('../Index/fundo20.png') no-repeat center center;
+    background-size: cover;
 }
 
 /* NECRONS (Szarekh, Imotekh) */
@@ -241,6 +251,11 @@ main {
     background: linear-gradient(135deg, #00FF00, #008000);
 }
 
+.faction-necrons .galaxy-bg {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../Necrons/fundonecrons.png') no-repeat center center;
+    background-size: cover;
+}
+
 /* ORKS (Ghazghkull, Zagstruk) */
 .faction-orks .personagem-title {
     color: #228B22; /* Verde escuro */
@@ -264,6 +279,11 @@ main {
 
 .faction-orks .back-link {
     background: linear-gradient(135deg, #228B22, #0f4d0f);
+}
+
+.faction-orks .galaxy-bg {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../Orks/fundoorks.png') no-repeat center center;
+    background-size: cover;
 }
 
 /* AELDARI (Eldrad, Yvraine) */
@@ -291,6 +311,41 @@ main {
     background: linear-gradient(135deg, #9370DB, #6a4c9c);
 }
 
+.faction-aeldari .galaxy-bg {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../Aeldari/fundoasuryani.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* DRUKHARI (Asdrubael Vect, Lelith Hesperax, Urien Rakarth) */
+.faction-drukhari .personagem-title {
+    color: #39ff14; /* Verde tóxico Drukhari */
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 20px #39ff14;
+}
+
+.faction-drukhari .personagem-block {
+    border-left-color: #39ff14;
+}
+
+.faction-drukhari .personagem-block.reverse {
+    border-right-color: #39ff14;
+}
+
+.faction-drukhari .personagem-block h2,
+.faction-drukhari .credo-quote {
+    color: #39ff14;
+    border-color: #39ff14;
+}
+
+.faction-drukhari .back-link {
+    background: linear-gradient(135deg, #39ff14, #1b8c0a);
+}
+
+.faction-drukhari .galaxy-bg {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../Aeldari/fundodrukari.png') no-repeat center center;
+    background-size: cover;
+}
+
 /* TAU (Shadowsun, Farsight) */
 .faction-tau .personagem-title {
     color: #00BFFF; /* Azul tech */
@@ -316,6 +371,16 @@ main {
     background: linear-gradient(135deg, #00BFFF, #0080bf);
 }
 
+.faction-tau .galaxy-bg {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../Tau/backgrounds/fundotauNOVO.png') no-repeat center center;
+    background-size: cover;
+    transition: background-image 1.5s ease-in-out;
+}
+
+.faction-tau {
+    cursor: url('../Index/tau.cur'), auto;
+}
+
 /* TYRANIDS (Swarmlord, Lictor) */
 .faction-tyranids .personagem-title {
     color: #8B008B; /* Roxo orgânico */
@@ -339,6 +404,11 @@ main {
 
 .faction-tyranids .back-link {
     background: linear-gradient(135deg, #8B008B, #5a005a);
+}
+
+.faction-tyranids .galaxy-bg {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../Tyranides/fundotyranids.png') no-repeat center center;
+    background-size: cover;
 }
 
 /* ========================================

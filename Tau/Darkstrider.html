@@ -12,6 +12,8 @@
 </head>
 
 <body class="faction-tau">
+    <!-- Background da galáxia -->
+    <div class="galaxy-bg"></div>
     <header>
         <nav class="navbar">
             <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">WH40K
@@ -82,6 +84,32 @@
         </p>
         <p>Feito por fã • 2026 • Pela Glória do Bem Maior!<br><span style="font-size: 0.8rem; opacity: 0.7;">Agradecimento especial ao <a href="https://40k.gallery/" target="_blank" style="color: inherit;">40k.gallery</a> pelas imagens.</span></p>
     </footer>
+    <script>
+        // BACKGROUND ROTATION SYSTEM FOR T'AU CHARACTERS
+        const tauBackgrounds = [
+            "../Tau/backgrounds/fundotauNOVO.png",
+            "../Tau/backgrounds/fundotau2NOVO.png",
+            "../Tau/backgrounds/fundo3NOVO.png",
+            "../Tau/backgrounds/fundotau4NOVO.png"
+        ];
+        let tauCurrentBgIndex = 1;
+
+        tauBackgrounds.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        function rotateTauBackground() {
+            const newBg = tauBackgrounds[tauCurrentBgIndex];
+            const bgElement = document.querySelector(".galaxy-bg");
+            if (bgElement) {
+                bgElement.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("${newBg}")`;
+            }
+            tauCurrentBgIndex = (tauCurrentBgIndex + 1) % tauBackgrounds.length;
+        }
+
+        setInterval(rotateTauBackground, 60000);
+    </script>
 </body>
 
 </html>
