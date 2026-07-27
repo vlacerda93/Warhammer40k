@@ -25,3 +25,7 @@ Scripts/*.sh
 
 # Environments
 .env
+
+# Scratch JSON files
+Tacticus/char_images.json
+Tacticus/wiki_found_images.json

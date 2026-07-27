@@ -3,7 +3,7 @@ body {
     background-color: #020205; /* Cor do style principal */
 }
 
-/* Fundo Hexagonal para remeter ao jogo */
+/* Fundo Hexagonal & Imagem de Espaço Tacticus */
 .hex-grid-bg {
     position: fixed;
     top: 0;
@@ -12,16 +12,21 @@ body {
     height: 100%;
     z-index: -2;
     background-image: 
-        radial-gradient(circle at center, rgba(255, 165, 0, 0.05) 0%, transparent 60%),
-        repeating-linear-gradient(60deg, rgba(255, 165, 0, 0.03) 0, rgba(255, 165, 0, 0.03) 1px, transparent 1px, transparent 40px),
-        repeating-linear-gradient(-60deg, rgba(255, 165, 0, 0.03) 0, rgba(255, 165, 0, 0.03) 1px, transparent 1px, transparent 40px);
-    background-color: #050508;
+        radial-gradient(circle at center, rgba(15, 20, 35, 0.4) 0%, rgba(2, 4, 10, 0.85) 100%),
+        repeating-linear-gradient(60deg, rgba(0, 200, 255, 0.02) 0, rgba(0, 200, 255, 0.02) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(-60deg, rgba(0, 200, 255, 0.02) 0, rgba(0, 200, 255, 0.02) 1px, transparent 1px, transparent 40px),
+        url('../Images/fundotacticus_clean.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #03050a;
 }
 
 /* Ajustes Hero */
 .tacticus-bg {
-    background: linear-gradient(to bottom, transparent, rgba(2, 5, 2, 0.9)), url('../Index/fundotextoindex2.png') center/cover no-repeat !important;
-    filter: brightness(0.6) sepia(0.5) hue-rotate(-20deg); /* Tom mais alaranjado */
+    background: linear-gradient(to bottom, rgba(2, 4, 10, 0.3), rgba(2, 4, 10, 0.95)), url('../Images/fundotacticus_clean.jpg') center top / cover no-repeat !important;
+    filter: brightness(0.9);
 }
 
 /* Card Principal (Reutilizando a ideia da Tomb Card mas com cores Tacticus) */
@@ -69,56 +74,80 @@ body {
 /* Galeria de Personagens (Até 6 por linha) */
 .chars-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 16px;
+    margin-top: 25px;
 }
 
 .char-card {
-    background: rgba(10, 10, 15, 0.8) !important;
+    background: radial-gradient(circle at top, rgba(20, 25, 38, 0.95), rgba(8, 10, 16, 0.98)) !important;
     border: 2px solid #ffa500 !important;
-    border-radius: 8px !important;
-    padding: 8px !important;
-    transition: transform 0.3s, box-shadow 0.3s !important;
+    border-radius: 10px !important;
+    padding: 10px 8px 12px 8px !important;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
     cursor: pointer !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(0, 0, 0, 0.5) !important;
     display: flex !important;
     flex-direction: column !important;
-    height: 120px !important; /* Tamanho muito menor (60% menor que antes) */
-    margin-bottom: 10px !important;
+    align-items: center !important;
+    height: auto !important;
+    min-height: 210px !important;
+    margin-bottom: 12px !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 
 .char-card::before {
-    display: none !important; /* Remove a borda gigante do style.css principal */
+    display: none !important;
 }
 
 .char-card:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 10px 25px rgba(255, 165, 0, 0.4) !important;
-    background: rgba(15, 10, 5, 0.9) !important;
+    transform: translateY(-6px) scale(1.03) !important;
+    box-shadow: 0 12px 30px rgba(255, 165, 0, 0.4), inset 0 0 15px rgba(255, 165, 0, 0.2) !important;
+    border-color: #ffd700 !important;
 }
 
 .char-img {
-    height: 45px; /* espaço suficiente só para o avatar */
-    background: #222;
-    border-radius: 4px;
-    margin-bottom: 5px;
-    background-image: repeating-linear-gradient(45deg, #111 0, #111 10px, #222 10px, #222 20px);
+    width: 100% !important;
+    height: 105px !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    margin-bottom: 8px !important;
+    background: radial-gradient(circle, rgba(25, 35, 55, 0.9) 0%, rgba(5, 8, 15, 0.95) 100%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8) !important;
+}
+
+.char-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+    transition: transform 0.3s ease;
+}
+
+.char-card:hover .char-avatar-img {
+    transform: scale(1.08);
 }
 
 .char-title {
-    font-family: 'Cinzel', serif;
+    font-family: 'Orbitron', 'Cinzel', serif;
     color: #fff;
-    font-size: 0.8rem;
-    margin-bottom: 2px;
-    text-shadow: 0 0 5px #ffa500;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
     text-align: center;
+    letter-spacing: 0.5px;
 }
 
 .char-desc {
-    color: #aaa;
-    font-size: 0.65rem;
-    line-height: 1.1;
+    color: #b0b8c4;
+    font-size: 0.7rem;
+    line-height: 1.25;
     text-align: center;
     flex-grow: 1;
 }
