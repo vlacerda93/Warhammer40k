@@ -30,7 +30,7 @@
         .char-portrait {
             width: 100%;
             height: 400px;
-            background: url('../Images/fundo.png') center/cover; /* Placeholder */
+            background: url('https://tacticus.wiki.gg/images/Abraxas_Icon_Large.png?df9c9b') center/cover;
             border: 2px solid #fff;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.8);
@@ -199,18 +199,18 @@
     <div class="char-layout">
         <!-- Coluna Esquerda -->
         <div class="char-left">
-            <div class="char-portrait"></div>
+            <div class="char-portrait" style="background: url('https://tacticus.wiki.gg/images/Abraxas_Icon_Large.png?df9c9b') center/cover;"></div>
             
             <div class="char-tags">
-                <span class="tag">Thousand Sons</span>
                 <span class="tag">Chaos</span>
-                <span class="tag">Act of Faith</span>
-                <span class="tag">Heavy Weapon</span>
+                <span class="tag">Thousand Sons</span>
+                <span class="tag">Psyker</span>
+                <span class="tag">Weaver of Fates</span>
             </div>
 
             <div class="char-stats-basic">
-                <p><strong>Ataque Corpo-a-Corpo:</strong> Physical</p>
-                <p><strong>Ataque à Distância:</strong> Flame</p>
+                <p><strong>Ataque Corpo-a-Corpo:</strong> Flame / 2 hits</p>
+                <p><strong>Ataque à Distância:</strong> Psychic / 1 hit / Range 2</p>
                 <p><strong>Movimento:</strong> 3 Hexes</p>
             </div>
         </div>
@@ -219,11 +219,11 @@
         <div class="char-right">
             <div class="char-header">
                 <h1>Abraxas</h1>
-                <h3>Purificadora - Fogo Sagrado</h3>
+                <h3>Rare • Thousand Sons</h3>
             </div>
 
             <div class="char-lore">
-                "Infernal Masters forge pacts with daemonic entities, called tutelaries. They can unleash the powers of these malign familiars to engulf their foes in swarms of momentarily corporeal terrors or to master the currents of the empyrean itself."
+                "Arkarzar Abraxas, Infernal Master, é um personagem da facção Thousand Sons. Os Infernal Masters forjam pactos com entidades demoníacas conhecidas como tutelares, liberando poderes para envolver seus inimigos em enxames de terrores corpóreos ou dominar as correntes do próprio empyrean."
             </div>
 
             <!-- Habilidades -->
@@ -231,23 +231,29 @@
                 <h2>Habilidades</h2>
                 
                 <div class="ability-card">
-                    <h4>🔥 Habilidade Ativa: Passive Ability</h4>
-                    <p>Pactos Infernais</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Abraxas_Ability_1_Icon.png?2676eb" alt="Malefic Maelstrom" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #4facfe; box-shadow: 0 0 10px rgba(0,150,255,0.5);">
+                        ⚔️ Ativa: Malefic Maelstrom
+                    </h4>
+                    <p>Invoca um Pink Horror em um Hex livre adjacente a Abraxas. Até o final deste turno, sempre que uma unidade inimiga receber Dano Psíquico (Psychic), invoca um Screamer of Tzeentch em um Hex livre adjacente a Abraxas, dando preferência a hexes adjacentes a unidades inimigas. As unidades recém-invocadas podem atacar imediatamente um inimigo ao alcance, mas não podem se mover.</p>
                 </div>
 
                 <div class="ability-card">
-                    <h4>🛡️ Habilidade Passiva: Upgrades</h4>
-                    <p>Upgrades marked with C are crafted. See the individual items for details.</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Abraxas_Ability_2_Icon.png?9b9799" alt="Infernal Pacts" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #ff3232; box-shadow: 0 0 10px rgba(255,50,50,0.5);">
+                        🛡️ Passiva: Infernal Pacts
+                    </h4>
+                    <p>Unidades amigáveis do Chaos adjacentes a Abraxas causam Dano Psíquico adicional com seus ataques normais à distância. Demônios afetados também ganham um Hit bônus em seu ataque normal corpo a corpo.</p>
                 </div>
             </div>
 
             <!-- Progressão de Status -->
             <div class="progression-section">
-                <h2>Evolução de Status (Nível 1 ao 50)</h2>
+                <h2>Evolução de Status (Base ao Lendário)</h2>
                 <table class="stats-table">
                     <thead>
                         <tr>
-                            <th>Nível</th>
+                            <th>Nível / Raridade</th>
                             <th>Vida (HP)</th>
                             <th>Dano Base</th>
                             <th>Armadura</th>
@@ -255,40 +261,34 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nvl 1</td>
-                            <td>120</td>
-                            <td>45</td>
-                            <td>15</td>
+                            <td>Nvl 1 (Base)</td>
+                            <td>70</td>
+                            <td>18</td>
+                            <td>20</td>
                         </tr>
                         <tr>
-                            <td>Nvl 10</td>
-                            <td>450</td>
-                            <td>120</td>
-                            <td>45</td>
+                            <td>Nvl 17 (Incomum)</td>
+                            <td>197</td>
+                            <td>49</td>
+                            <td>55</td>
                         </tr>
                         <tr>
-                            <td>Nvl 20</td>
-                            <td>1,200</td>
-                            <td>350</td>
-                            <td>110</td>
+                            <td>Nvl 26 (Raro)</td>
+                            <td>486</td>
+                            <td>122</td>
+                            <td>134</td>
                         </tr>
                         <tr>
-                            <td>Nvl 30</td>
-                            <td>2,800</td>
-                            <td>850</td>
-                            <td>250</td>
+                            <td>Nvl 35 (Épico)</td>
+                            <td>1,027</td>
+                            <td>256</td>
+                            <td>285</td>
                         </tr>
                         <tr>
-                            <td>Nvl 40</td>
-                            <td>5,500</td>
-                            <td>1,800</td>
-                            <td>450</td>
-                        </tr>
-                        <tr>
-                            <td>Nvl 50 (Max)</td>
-                            <td>10,200</td>
-                            <td>3,500</td>
-                            <td>800</td>
+                            <td>Nvl 50 (Lendário)</td>
+                            <td>3,589</td>
+                            <td>898</td>
+                            <td>998</td>
                         </tr>
                     </tbody>
                 </table>
@@ -300,5 +300,3 @@
 
 </body>
 </html>
-
-<!-- TRADUZIDO -->

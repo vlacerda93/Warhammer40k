@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template de Personagem - Warhammer 40k</title>
+    <title>Khârn - Tacticus Wiki</title>
     <link rel="stylesheet" href="../Styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -20,7 +20,6 @@
             box-shadow: 0 0 30px rgba(255, 165, 0, 0.2);
         }
 
-        /* Coluna Esquerda: Imagem e Atributos Básicos */
         .char-left {
             display: flex;
             flex-direction: column;
@@ -30,7 +29,7 @@
         .char-portrait {
             width: 100%;
             height: 400px;
-            background: url('../Images/fundo.png') center/cover; /* Placeholder */
+            background: url('https://tacticus.wiki.gg/images/Kharn_Icon_Large.png?c055be') center/cover;
             border: 2px solid #fff;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.8);
@@ -67,7 +66,6 @@
         }
         .char-stats-basic strong { color: #fff; }
 
-        /* Coluna Direita: Lore, Habilidades e Tabela de Evolução */
         .char-right {
             display: flex;
             flex-direction: column;
@@ -131,7 +129,6 @@
             font-size: 0.95rem;
         }
 
-        /* Tabela de Progressão */
         .stats-table {
             width: 100%;
             border-collapse: collapse;
@@ -202,15 +199,12 @@
             <div class="char-portrait"></div>
             
             <div class="char-tags">
-                <span class="tag">Adepta Sororitas</span>
-                <span class="tag">Imperial</span>
-                <span class="tag">Act of Faith</span>
-                <span class="tag">Heavy Weapon</span>
+                <span class="tag">Tacticus</span>
             </div>
 
             <div class="char-stats-basic">
-                <p><strong>Ataque Corpo-a-Corpo:</strong> Physical</p>
-                <p><strong>Ataque à Distância:</strong> Flame</p>
+                <p><strong>Ataque Corpo-a-Corpo:</strong> Eviscerating / 4 hits</p>
+                <p><strong>Ataque à Distância:</strong> N/A</p>
                 <p><strong>Movimento:</strong> 3 Hexes</p>
             </div>
         </div>
@@ -219,11 +213,11 @@
         <div class="char-right">
             <div class="char-header">
                 <h1>Khârn</h1>
-                <h3>Purificadora - Fogo Sagrado</h3>
+                <h3>Legendary • Tacticus</h3>
             </div>
 
             <div class="char-lore">
-                "Celestians are the finest and noblest warriors of the Order, inspirational figures who punish the faithless with relentless barrages of bolter fire and gouts of sacred flame."
+                "Khârn, the Betrayer, Champion of Khorne, is a character of the World Eaters faction.&#10;Kill! Maim! Burn! This is Khârn&#039;s mantra, and it has become infamous across the Imperium as a harbinger of carnage to follow. Khârn embodies the eightfold path of Khorne; friend and foe alike are left broken, twitching..."
             </div>
 
             <!-- Habilidades -->
@@ -231,23 +225,29 @@
                 <h2>Habilidades</h2>
                 
                 <div class="ability-card">
-                    <h4>🔥 Habilidade Ativa: Armorium Cherub</h4>
-                    <p>Causa 4x X Dano de Chama a um alvo dentro do alcance 2 e é capaz de atacar imediatamente novamente.</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Kharn_Ability_1_Icon.png?c77b88" alt="Kill! Maim! Burn!" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #4facfe; box-shadow: 0 0 10px rgba(0,150,255,0.5);">
+                        ⚔️ Ativa: Kill! Maim! Burn!
+                    </h4>
+                    <p>Kill! Maim! Burn!</p>
                 </div>
 
                 <div class="ability-card">
-                    <h4>🛡️ Habilidade Passiva: Fire of Absolution</h4>
-                    <p>Ao realizar um ataque à distância, também causa 3x X Dano de Chama a todas as unidades adjacentes ao alvo. Tem 30% de chance de incendiar cada hexágono adjacente também.</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Kharn_Ability_2_Icon.png?7b5732" alt="Upgrades marked with" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #ff3232; box-shadow: 0 0 10px rgba(255,50,50,0.5);">
+                        🛡️ Passiva: Upgrades marked with
+                    </h4>
+                    <p>The Betrayer</p>
                 </div>
             </div>
 
             <!-- Progressão de Status -->
             <div class="progression-section">
-                <h2>Evolução de Status (Nível 1 ao 50)</h2>
+                <h2>Evolução de Status (Base ao Lendário)</h2>
                 <table class="stats-table">
                     <thead>
                         <tr>
-                            <th>Nível</th>
+                            <th>Nível / Raridade</th>
                             <th>Vida (HP)</th>
                             <th>Dano Base</th>
                             <th>Armadura</th>
@@ -255,40 +255,34 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nvl 1</td>
-                            <td>120</td>
-                            <td>45</td>
-                            <td>15</td>
+                            <td>Nvl 1 (Base)</td>
+                            <td>90</td>
+                            <td>25</td>
+                            <td>20</td>
                         </tr>
                         <tr>
-                            <td>Nvl 10</td>
-                            <td>450</td>
-                            <td>120</td>
-                            <td>45</td>
+                            <td>Nvl 17 (Incomum)</td>
+                            <td>251</td>
+                            <td>67</td>
+                            <td>55</td>
                         </tr>
                         <tr>
-                            <td>Nvl 20</td>
-                            <td>1,200</td>
-                            <td>350</td>
-                            <td>110</td>
+                            <td>Nvl 26 (Raro)</td>
+                            <td>621</td>
+                            <td>170</td>
+                            <td>134</td>
                         </tr>
                         <tr>
-                            <td>Nvl 30</td>
-                            <td>2,800</td>
-                            <td>850</td>
-                            <td>250</td>
+                            <td>Nvl 35 (Épico)</td>
+                            <td>1314</td>
+                            <td>355</td>
+                            <td>285</td>
                         </tr>
                         <tr>
-                            <td>Nvl 40</td>
-                            <td>5,500</td>
-                            <td>1,800</td>
-                            <td>450</td>
-                        </tr>
-                        <tr>
-                            <td>Nvl 50 (Max)</td>
-                            <td>10,200</td>
-                            <td>3,500</td>
-                            <td>800</td>
+                            <td>Nvl 50 (Lendário)</td>
+                            <td>4608</td>
+                            <td>1245</td>
+                            <td>998</td>
                         </tr>
                     </tbody>
                 </table>
@@ -300,5 +294,3 @@
 
 </body>
 </html>
-
-<!-- TRADUZIDO -->

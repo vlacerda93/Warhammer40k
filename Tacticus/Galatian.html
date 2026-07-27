@@ -20,7 +20,6 @@
             box-shadow: 0 0 30px rgba(255, 165, 0, 0.2);
         }
 
-        /* Coluna Esquerda: Imagem e Atributos Básicos */
         .char-left {
             display: flex;
             flex-direction: column;
@@ -30,7 +29,7 @@
         .char-portrait {
             width: 100%;
             height: 400px;
-            background: url('../Images/fundo.png') center/cover; /* Placeholder */
+            background: url('https://tacticus.wiki.gg/images/Galatian_Icon_Large.png?8d87d4') center/cover;
             border: 2px solid #fff;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.8);
@@ -67,7 +66,6 @@
         }
         .char-stats-basic strong { color: #fff; }
 
-        /* Coluna Direita: Lore, Habilidades e Tabela de Evolução */
         .char-right {
             display: flex;
             flex-direction: column;
@@ -131,7 +129,6 @@
             font-size: 0.95rem;
         }
 
-        /* Tabela de Progressão */
         .stats-table {
             width: 100%;
             border-collapse: collapse;
@@ -202,16 +199,13 @@
             <div class="char-portrait"></div>
             
             <div class="char-tags">
-                <span class="tag">Unknown</span>
-                <span class="tag">Unknown</span>
-                <span class="tag">Act of Faith</span>
-                <span class="tag">Heavy Weapon</span>
+                <span class="tag">Tacticus</span>
             </div>
 
             <div class="char-stats-basic">
-                <p><strong>Ataque Corpo-a-Corpo:</strong> Physical</p>
-                <p><strong>Ataque à Distância:</strong> Flame</p>
-                <p><strong>Movimento:</strong> 3 Hexes</p>
+                <p><strong>Ataque Corpo-a-Corpo:</strong> Power / 5 hits</p>
+                <p><strong>Ataque à Distância:</strong> Projectile / 6 hits / Range 2</p>
+                <p><strong>Movimento:</strong> 0 Hexes</p>
             </div>
         </div>
 
@@ -219,11 +213,11 @@
         <div class="char-right">
             <div class="char-header">
                 <h1>Galatian</h1>
-                <h3>Purificadora - Fogo Sagrado</h3>
+                <h3>Rare • Tacticus</h3>
             </div>
 
             <div class="char-lore">
-                "Galatian, Redemptor Dreadnought is the Machine of War of the Ultramarines faction."
+                "Galatian, Redemptor Dreadnought is the Machine of War of the Ultramarines faction.&#10;Redemptor Dreadnoughts are some of the largest of their kind ever fielded by the Adeptus Astartes. Armed to the teeth, they can be equipped to utterly destroy any kind of battlefield target with hails of solid shot, super..."
             </div>
 
             <!-- Habilidades -->
@@ -231,23 +225,29 @@
                 <h2>Habilidades</h2>
                 
                 <div class="ability-card">
-                    <h4>🔥 Habilidade Ativa: Habilidade Ativa</h4>
-                    <p>Detalhes não encontrados.</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        ⚔️
+                        ⚔️ Ativa: Habilidade Ativa
+                    </h4>
+                    <p>Detalhes da habilidade ativa.</p>
                 </div>
 
                 <div class="ability-card">
-                    <h4>🛡️ Habilidade Passiva: Secondary Ability (Active)</h4>
-                    <p>Incinerador de Macro Plasma</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Galatian_Ability_3_Icon.png?8ad314" alt="Ancient Fury" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #ff3232; box-shadow: 0 0 10px rgba(255,50,50,0.5);">
+                        🛡️ Passiva: Ancient Fury
+                    </h4>
+                    <p>Ancient Fury</p>
                 </div>
             </div>
 
             <!-- Progressão de Status -->
             <div class="progression-section">
-                <h2>Evolução de Status (Nível 1 ao 50)</h2>
+                <h2>Evolução de Status (Base ao Lendário)</h2>
                 <table class="stats-table">
                     <thead>
                         <tr>
-                            <th>Nível</th>
+                            <th>Nível / Raridade</th>
                             <th>Vida (HP)</th>
                             <th>Dano Base</th>
                             <th>Armadura</th>
@@ -255,40 +255,34 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nvl 1</td>
-                            <td>120</td>
-                            <td>45</td>
-                            <td>15</td>
+                            <td>Nvl 1 (Base)</td>
+                            <td>200</td>
+                            <td>22</td>
+                            <td>40</td>
                         </tr>
                         <tr>
-                            <td>Nvl 10</td>
-                            <td>450</td>
-                            <td>120</td>
-                            <td>45</td>
-                        </tr>
-                        <tr>
-                            <td>Nvl 20</td>
-                            <td>1,200</td>
-                            <td>350</td>
+                            <td>Nvl 17 (Incomum)</td>
+                            <td>560</td>
+                            <td>59</td>
                             <td>110</td>
                         </tr>
                         <tr>
-                            <td>Nvl 30</td>
-                            <td>2,800</td>
-                            <td>850</td>
-                            <td>250</td>
+                            <td>Nvl 26 (Raro)</td>
+                            <td>1380</td>
+                            <td>149</td>
+                            <td>268</td>
                         </tr>
                         <tr>
-                            <td>Nvl 40</td>
-                            <td>5,500</td>
-                            <td>1,800</td>
-                            <td>450</td>
+                            <td>Nvl 35 (Épico)</td>
+                            <td>2920</td>
+                            <td>312</td>
+                            <td>570</td>
                         </tr>
                         <tr>
-                            <td>Nvl 50 (Max)</td>
-                            <td>10,200</td>
-                            <td>3,500</td>
-                            <td>800</td>
+                            <td>Nvl 50 (Lendário)</td>
+                            <td>10240</td>
+                            <td>1095</td>
+                            <td>1996</td>
                         </tr>
                     </tbody>
                 </table>
@@ -300,5 +294,3 @@
 
 </body>
 </html>
-
-<!-- TRADUZIDO -->

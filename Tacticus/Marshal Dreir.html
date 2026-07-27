@@ -20,7 +20,6 @@
             box-shadow: 0 0 30px rgba(255, 165, 0, 0.2);
         }
 
-        /* Coluna Esquerda: Imagem e Atributos Básicos */
         .char-left {
             display: flex;
             flex-direction: column;
@@ -30,7 +29,7 @@
         .char-portrait {
             width: 100%;
             height: 400px;
-            background: url('../Images/fundo.png') center/cover; /* Placeholder */
+            background: url('https://tacticus.wiki.gg/images/Marshal_Dreir_Icon_Large.png?272219') center/cover;
             border: 2px solid #fff;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.8);
@@ -67,7 +66,6 @@
         }
         .char-stats-basic strong { color: #fff; }
 
-        /* Coluna Direita: Lore, Habilidades e Tabela de Evolução */
         .char-right {
             display: flex;
             flex-direction: column;
@@ -131,7 +129,6 @@
             font-size: 0.95rem;
         }
 
-        /* Tabela de Progressão */
         .stats-table {
             width: 100%;
             border-collapse: collapse;
@@ -202,16 +199,13 @@
             <div class="char-portrait"></div>
             
             <div class="char-tags">
-                <span class="tag">Astra Militarum</span>
-                <span class="tag">Imperial</span>
-                <span class="tag">Act of Faith</span>
-                <span class="tag">Heavy Weapon</span>
+                <span class="tag">Tacticus</span>
             </div>
 
             <div class="char-stats-basic">
-                <p><strong>Ataque Corpo-a-Corpo:</strong> Physical</p>
-                <p><strong>Ataque à Distância:</strong> Flame</p>
-                <p><strong>Movimento:</strong> 3 Hexes</p>
+                <p><strong>Ataque Corpo-a-Corpo:</strong> Power / 3 hits</p>
+                <p><strong>Ataque à Distância:</strong> N/A</p>
+                <p><strong>Movimento:</strong> 4 Hexes</p>
             </div>
         </div>
 
@@ -219,11 +213,11 @@
         <div class="char-right">
             <div class="char-header">
                 <h1>Marshal Dreir</h1>
-                <h3>Purificadora - Fogo Sagrado</h3>
+                <h3>Epic • Tacticus</h3>
             </div>
 
             <div class="char-lore">
-                "Lord Marshal Dreir leads from the front, despite his lofty rank, and often to the horror of his superiors. That he and his loyal Krieg steed have emerged from so many battles alive and victorious speaks to his skill as both commander and cavalry soldier."
+                "Lord Marshal Varnan Dreir is a character of the Astra Militarum faction and the Death Korps of Krieg subfaction.&#10;Lord Marshal Dreir leads from the front, despite his lofty rank, and often to the horror of his superiors. That he and his loyal Krieg steed have emerged from so many battles alive and victorious..."
             </div>
 
             <!-- Habilidades -->
@@ -231,23 +225,29 @@
                 <h2>Habilidades</h2>
                 
                 <div class="ability-card">
-                    <h4>🔥 Habilidade Ativa: Passive Ability</h4>
-                    <p>Difícil de matar</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Marshal_Dreir_Ability_1_Icon.png?8b441f" alt="Leading the Charge" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #4facfe; box-shadow: 0 0 10px rgba(0,150,255,0.5);">
+                        ⚔️ Ativa: Leading the Charge
+                    </h4>
+                    <p>Leading the Charge</p>
                 </div>
 
                 <div class="ability-card">
-                    <h4>🛡️ Habilidade Passiva: Upgrades</h4>
-                    <p>Upgrades marked with C are crafted. See the individual items for details.</p>
+                    <h4 style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://tacticus.wiki.gg/images/Marshal_Dreir_Ability_2_Icon.png?e9e492" alt="Tough to Kill" style="width: 50px; height: 50px; border-radius: 8px; border: 2px solid #ff3232; box-shadow: 0 0 10px rgba(255,50,50,0.5);">
+                        🛡️ Passiva: Tough to Kill
+                    </h4>
+                    <p>Tough to Kill</p>
                 </div>
             </div>
 
             <!-- Progressão de Status -->
             <div class="progression-section">
-                <h2>Evolução de Status (Nível 1 ao 50)</h2>
+                <h2>Evolução de Status (Base ao Lendário)</h2>
                 <table class="stats-table">
                     <thead>
                         <tr>
-                            <th>Nível</th>
+                            <th>Nível / Raridade</th>
                             <th>Vida (HP)</th>
                             <th>Dano Base</th>
                             <th>Armadura</th>
@@ -255,40 +255,34 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nvl 1</td>
-                            <td>120</td>
-                            <td>45</td>
-                            <td>15</td>
+                            <td>Nvl 1 (Base)</td>
+                            <td>100</td>
+                            <td>28</td>
+                            <td>17</td>
                         </tr>
                         <tr>
-                            <td>Nvl 10</td>
-                            <td>450</td>
-                            <td>120</td>
-                            <td>45</td>
+                            <td>Nvl 17 (Incomum)</td>
+                            <td>280</td>
+                            <td>75</td>
+                            <td>46</td>
                         </tr>
                         <tr>
-                            <td>Nvl 20</td>
-                            <td>1,200</td>
-                            <td>350</td>
-                            <td>110</td>
+                            <td>Nvl 26 (Raro)</td>
+                            <td>690</td>
+                            <td>190</td>
+                            <td>113</td>
                         </tr>
                         <tr>
-                            <td>Nvl 30</td>
-                            <td>2,800</td>
-                            <td>850</td>
-                            <td>250</td>
+                            <td>Nvl 35 (Épico)</td>
+                            <td>1460</td>
+                            <td>397</td>
+                            <td>242</td>
                         </tr>
                         <tr>
-                            <td>Nvl 40</td>
-                            <td>5,500</td>
-                            <td>1,800</td>
-                            <td>450</td>
-                        </tr>
-                        <tr>
-                            <td>Nvl 50 (Max)</td>
-                            <td>10,200</td>
-                            <td>3,500</td>
-                            <td>800</td>
+                            <td>Nvl 50 (Lendário)</td>
+                            <td>5120</td>
+                            <td>1394</td>
+                            <td>848</td>
                         </tr>
                     </tbody>
                 </table>
@@ -300,5 +294,3 @@
 
 </body>
 </html>
-
-<!-- TRADUZIDO -->
