@@ -283,49 +283,123 @@ body {
 }
 
 .historia-panel {
-    background-image: url('../Index/fundotextoindex2.png');
-    background-size: 100% 100%;
+    background-image: linear-gradient(to bottom, rgba(5, 5, 8, 0.85), rgba(12, 10, 15, 0.94)), url('../Index/fundotextogrimdark.png');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 15px;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 1), inset 0 0 50px rgba(0,0,0,0.5);
-    /* PADDINGS ATUALIZADOS: Aumentado consideravelmente o topo para o texto não bater no "Só Existe a Guerra" da imagem */
-    padding: 420px 18% 220px; 
-    margin: 80px auto 120px;
-    max-width: 1400px;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(139, 0, 0, 0.4), inset 0 0 50px rgba(0, 0, 0, 0.8);
+    padding: 60px 50px;
+    margin: 80px auto 100px;
+    max-width: 1280px;
     text-align: center;
-    border: none;
-    min-height: 1800px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    gap: 20px;
+    border: 2px solid #8b1527;
+    position: relative;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.historia-panel::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px solid rgba(255, 170, 0, 0.35);
+    border-radius: 10px;
+    pointer-events: none;
+    box-shadow: inset 0 0 20px rgba(255, 165, 0, 0.1);
+}
+
+.historia-header-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #ffaa00;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 10px rgba(255, 170, 0, 0.8), 2px 2px 5px #000;
+}
+
+.header-divider {
+    height: 3px;
+    width: 280px;
+    margin: 0 auto 35px;
+    background: linear-gradient(90deg, transparent, #c41e3a, #ffaa00, #c41e3a, transparent);
+    box-shadow: 0 0 10px #ffaa00;
 }
 
 .historia-panel p {
     color: #e0e0e0;
-    /* Fonte mais marcante para maior legibilidade */
-    font-family: 'Arial Black', Gadget, sans-serif;
-    font-size: 15px; 
-    font-weight: 700;
-    line-height: 1.8;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.05rem; 
+    font-weight: 500;
+    line-height: 1.75;
     text-align: center;
     letter-spacing: 0.5px;
     margin: 18px 0;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
     max-width: 95%;
     margin-left: auto;
     margin-right: auto;
-    opacity: 0.95;
+}
+
+.factions-lore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 25px;
+    margin: 35px 0;
+    text-align: left;
+}
+
+.hist-block {
+    background: rgba(14, 14, 20, 0.88);
+    border: 1px solid #333;
+    border-left: 4px solid #ffa500;
+    border-radius: 8px;
+    padding: 24px 28px;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.hist-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(255, 165, 0, 0.25);
+    background: rgba(22, 22, 32, 0.95);
+}
+
+.hist-card-imperium { border-left-color: #FFD700; }
+.hist-card-chaos { border-left-color: #ff1a1a; }
+.hist-card-xenos { border-left-color: #32cd32; }
+.hist-card-aeldari { border-left-color: #d1b3ff; }
+
+.hist-block h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hist-block p {
+    color: #dcdcdc;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin: 0;
+    text-align: left;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
 }
 
 .subsection-title {
     font-family: 'Cinzel', serif;
-    font-size: 18px !important; 
+    font-size: 1.5rem !important; 
     font-weight: 900 !important;
-    /* Alterado para Prata/Cromado conforme solicitado */
     color: #e0e0e0;
-    margin: 45px 0 10px 0;
+    margin: 40px 0 15px 0;
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 2px 2px 5px #000;
@@ -333,14 +407,14 @@ body {
 
 /* Adições Visuais - Facções no Painel de História */
 .text-destaque {
-    font-size: 16px !important; /* +1 que o texto base */
-    font-weight: 900 !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
     color: #f5f5f5 !important;
 }
 
-/* Títulos de Facções com +1px que o texto base */
+/* Títulos de Facções */
 .title-imperium, .title-chaos, .title-xenos, .title-aeldari {
-    font-size: 16px !important;
+    font-size: 1.25rem !important;
 }
 
 /* O Império da Humanidade */
@@ -999,25 +1073,39 @@ footer p {
 
     /* AJUSTE CRÍTICO: Painel de História no Mobile */
     .historia-panel {
-        background-image: none !important;
-        background-color: rgba(10, 10, 15, 0.9);
-        border: 2px solid #c41e3a;
-        border-radius: 8px;
         padding: 40px 20px;
-        min-height: auto; 
         margin: 40px 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+    }
+
+    .historia-header-title {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .header-divider {
+        width: 180px;
+        margin-bottom: 25px;
+    }
+
+    .factions-lore-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 25px 0;
+    }
+
+    .hist-block {
+        padding: 18px 20px;
     }
 
     .historia-panel p {
-        font-size: 14px; /* Aumentado 1px para legibilidade */
+        font-size: 0.95rem;
         line-height: 1.6;
         margin: 15px 0;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 0, 0, 0.8); /* Sombra mais forte para leitura */
     }
 
     .subsection-title {
-        font-size: 16px !important;
+        font-size: 1.25rem !important;
         margin: 30px 0 15px 0;
     }
 
