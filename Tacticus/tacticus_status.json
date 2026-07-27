@@ -1,0 +1,159 @@
+{
+  "Ultramarines": [
+    "Bellator.html",
+    "Marneus Calgar.html",
+    "Varro Tigurius.html",
+    "Certus.html",
+    "Incisus.html",
+    "Demetrian Titus.html",
+    "Galatian.html"
+  ],
+  "Necrons": [
+    "Aleph-Null.html",
+    "Makhotep.html",
+    "Imospekh.html",
+    "Thutmose.html",
+    "Anuphet.html",
+    "Thothmek.html"
+  ],
+  "Black Legion": [
+    "Abaddon The Despoiler.html",
+    "Archimatos.html",
+    "Haarken.html",
+    "Angrax.html",
+    "Volk.html",
+    "Forgefiend.html"
+  ],
+  "Astra Militarum": [
+    "Yarrick.html",
+    "Creed.html",
+    "Thaddeus.html",
+    "Kut Skoden.html",
+    "Sibyll.html",
+    "Marshal Dreir.html",
+    "Malleus.html"
+  ],
+  "Orks": [
+    "Boss Gulgortz.html",
+    "Snotflogga.html",
+    "Snappawrecka.html",
+    "Gibbascrapz.html",
+    "Tanksmasha.html",
+    "Rukkatrukk.html"
+  ],
+  "Adepta Sororitas": [
+    "Celestine.html",
+    "Morvenn Vahl.html",
+    "Vindicta.html",
+    "Isabella.html",
+    "Roswitha.html",
+    "Exorcist.html"
+  ],
+  "Aeldari": [
+    "Eldryon.html",
+    "Maugan Ra.html",
+    "Calandis.html",
+    "Aethana.html",
+    "Jain Zar.html"
+  ],
+  "Dark Angels": [
+    "Azrael.html",
+    "Sarquael.html",
+    "Asmodai.html",
+    "Baraqiel.html",
+    "Forcas.html"
+  ],
+  "Adeptus Mechanicus": [
+    "Vitruvius.html",
+    "Actus.html",
+    "Exitor-Rho.html",
+    "Sy-Gex.html"
+  ],
+  "Black Templars": [
+    "Helbrecht.html",
+    "Godswyl.html",
+    "Burchard.html",
+    "Jaeger.html",
+    "Thoread.html"
+  ],
+  "Tyranids": [
+    "Neurothrope.html",
+    "Tyrant Guard.html",
+    "Winged Prime.html",
+    "Deathleaper.html",
+    "Parasite.html",
+    "Biovore.html"
+  ],
+  "World Eaters": [
+    "Khârn.html",
+    "Azkor.html",
+    "Macer.html",
+    "Wrask.html",
+    "Tarvakh.html"
+  ],
+  "Blood Angels": [
+    "Mephiston.html",
+    "Dante.html",
+    "Mataneo.html",
+    "Lucien.html",
+    "Nicodemus.html"
+  ],
+  "Ligas de Votann": [
+    "Ûthar.html",
+    "Âmmuk.html",
+    "Havyr.html",
+    "Vynn.html"
+  ],
+  "Guarda da Morte": [
+    "Typhus.html",
+    "Maladus.html",
+    "Nauseous.html",
+    "Pestillian.html",
+    "Corrodius.html"
+  ],
+  "Império T'au": [
+    "Shadowsun.html",
+    "Darkstrider.html"
+  ],
+  "Space Wolves": [
+    "Ragnar.html",
+    "Ulf.html",
+    "Arjac.html",
+    "Njal.html",
+    "Tjark.html"
+  ],
+  "Adeptus Arbites": [
+    "Aesoth.html",
+    "Atlacoya.html",
+    "Tyrith.html"
+  ],
+  "Thousand Sons": [
+    "Ahriman.html",
+    "Abraxas.html",
+    "Toth.html",
+    "Yazaghor.html",
+    "Thaumachus.html"
+  ],
+  "Culto Roubagene": [
+    "The Patermine.html",
+    "Isaak.html",
+    "Hollan.html",
+    "Xybia.html"
+  ],
+  "Filhos do Imperador": [
+    "Lucius.html",
+    "Shiron.html",
+    "Hascule.html",
+    "Laviscus.html"
+  ],
+  "Adeptus Astartes": [
+    "Cyrus.html"
+  ],
+  "Outras / Factions Adicionais": [
+    "Aun'Shi.html",
+    "Farsight.html",
+    "Re'vas.html",
+    "Sho'syl.html",
+    "Tan Gi'da.html"
+  ]
+}
