@@ -86,21 +86,20 @@ body {
 }
 
 .inner-content {
-    background: rgba(15, 0, 15, 0.4);
-    backdrop-filter: blur(8px);
-    border: 30px solid transparent;
-    border-image: url('bordachaos1editada.png') 100 stretch;
-    border-image-repeat: round;
-    padding: 60px 80px;
+    background: rgba(15, 0, 15, 0.75);
+    backdrop-filter: blur(10px);
+    border: 45px solid transparent;
+    border-image: url('bordachaos1editada.png') 240 / 45px / 12px round;
+    padding: 35px 45px;
     position: relative;
-    border-radius: 5px;
+    border-radius: 8px;
     background-clip: padding-box;
     background-image: 
-        linear-gradient(rgba(10, 0, 10, 0.5), rgba(0, 0, 0, 0.5)),
+        linear-gradient(rgba(10, 0, 10, 0.75), rgba(0, 0, 0, 0.75)),
         url('fundochaos.png');
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0 0 60px rgba(0,0,0,0.9);
+    box-shadow: 0 0 45px rgba(139, 0, 0, 0.7), inset 0 0 50px rgba(0, 0, 0, 0.9);
 }
 
 .lore-card .inner-content::-webkit-scrollbar {
@@ -121,89 +120,68 @@ body {
     bottom: -5px;
     left: 10%;
     width: 80%;
-    height: 5px;
-    background: #800000;
-    box-shadow: 0 5px 10px #ff0000;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #800000, #ff0000, #800000, transparent);
+    box-shadow: 0 0 15px #ff0000;
     border-radius: 5px;
     z-index: 5;
 }
 
-/* ========== INTENSE BLOOD DRIPS (CHAOS) ========== */
-.lore-card,
-.traitor-card,
-.warp-img-box {
+/* ========== ANIMATED REALISTIC BLOOD DRIPS (ACÚMULO E QUEDA) ========== */
+.blood-drip-container {
     position: relative;
 }
 
-/* Camada Principal de Gotas */
-.lore-card::after,
-.traitor-card::after,
-.warp-img-box::after {
-    content: '';
+.blood-drop {
     position: absolute;
-    top: 100%;
-    left: 10%;
-    width: 6px;
-    height: 12px;
-    background: linear-gradient(to bottom, #800000, #c41e3a);
-    border-radius: 0 0 10px 10px;
-    /* Gotas bem arredondadas */
-    animation: blood-drip 3s infinite ease-in;
+    top: -6px;
+    width: 10px;
+    height: 14px;
+    background: radial-gradient(circle at 35% 35%, #ff4d4d 0%, #a00000 60%, #4a0000 100%);
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.9), 0 3px 6px rgba(0, 0, 0, 0.9);
+    filter: drop-shadow(0 0 4px #8b0000);
     pointer-events: none;
-    z-index: 10;
-    /* Múltiplas gotas espalhadas pela largura do container */
-    box-shadow:
-        100px 5px 0 #800000,
-        250px -2px 0 #600000,
-        400px 3px 0 #c41e3a,
-        550px -1px 0 #800000,
-        700px 6px 0 #600000,
-        850px 2px 0 #c41e3a;
+    z-index: 20;
+    opacity: 0;
+    transform-origin: top center;
+    animation: realisticBloodDrip 4.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
-/* Camada Extra para Intensidade */
-.lore-card::before,
-.warp-img-box::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 40%;
-    width: 4px;
-    height: 10px;
-    background: #600000;
-    border-radius: 0 0 8px 8px;
-    animation: blood-drip 4.5s infinite ease-in;
-    animation-delay: 1.5s;
-    pointer-events: none;
-    z-index: 9;
-    box-shadow:
-        120px 2px 0 #800000,
-        -180px -3px 0 #c41e3a,
-        300px 5px 0 #800000,
-        -120px -1px 0 #600000;
-}
-
-@keyframes blood-drip {
+@keyframes realisticBloodDrip {
     0% {
-        height: 0;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    40% {
-        height: 18px;
-        opacity: 1;
-    }
-
-    80% {
-        height: 30px;
-        opacity: 0.8;
-    }
-
-    100% {
-        height: 40px;
         opacity: 0;
-        transform: translateY(15px);
+        transform: scale(0.2) translateY(0);
+        height: 8px;
+        border-radius: 50%;
+    }
+    20% {
+        opacity: 1;
+        transform: scale(0.9) translateY(0);
+        height: 14px;
+        border-radius: 50% 50% 60% 60%;
+    }
+    45% {
+        opacity: 1;
+        transform: scale(1.15) translateY(3px);
+        height: 24px;
+        border-radius: 40% 40% 60% 60% / 20% 20% 80% 80%;
+    }
+    65% {
+        opacity: 1;
+        transform: scale(1.25, 1.5) translateY(8px);
+        height: 32px;
+        border-radius: 30% 30% 70% 70% / 10% 10% 90% 90%;
+    }
+    88% {
+        opacity: 0.9;
+        transform: translateY(140px) scale(0.7, 1.4);
+        height: 26px;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(190px) scale(0.3, 0.5);
+        height: 10px;
     }
 }
 
@@ -219,14 +197,14 @@ body {
 
 .lore-text {
     font-family: 'Metal Mania', cursive;
-    font-size: 1.2rem; /* Reduzido para dar espaço à imagem do líder */
+    font-size: 1.2rem;
     line-height: 1.6;
     text-align: justify;
     color: #f1e1f1;
     letter-spacing: 0.8px;
 }
 
-/* Letra Capitular Chaos (Sangrenta e Profana) */
+/* Letra Capitular Chaos */
 .lore-text::first-letter {
     float: left;
     font-family: 'New Rocker', cursive;
@@ -251,24 +229,28 @@ body {
 /* ========== TRAITOR GALLERY ========== */
 .traitor-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 50px;
 }
 
 .traitor-card {
-    background: transparent;
+    background: rgba(10, 0, 10, 0.7);
     border: 25px solid transparent;
-    border-image: url('bordachaos2editada.png') 100 stretch;
-    border-image-repeat: round;
-    box-shadow: none;
+    border-image: url('bordachaos2editada.png') 220 / 25px / 6px round;
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
     padding: 0;
-    /* Zera para a imagem sangrar */
-    transition: 0.3s;
+    transition: all 0.35s ease;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+}
+
+.traitor-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 35px rgba(255, 0, 0, 0.75);
 }
 
 .traitor-card img {
@@ -276,8 +258,13 @@ body {
     margin: 0;
     height: 350px;
     object-fit: cover;
-    filter: sepia(0.3) contrast(1.1);
+    filter: sepia(0.2) contrast(1.1);
     display: block;
+    transition: transform 0.4s ease;
+}
+
+.traitor-card:hover img {
+    transform: scale(1.05);
 }
 
 .card-label {
@@ -286,10 +273,11 @@ body {
     text-align: center;
     padding: 10px 5px;
     margin: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.85);
     position: relative;
     z-index: 2;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    border-top: 1px solid rgba(139, 0, 0, 0.5);
 }
 
 /* ========== ARSENAL & DEFENSE ========== */
@@ -297,8 +285,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
-    margin: 150px auto;
+    gap: 40px;
+    margin: 100px auto;
     max-width: 1000px;
 }
 
@@ -309,15 +297,21 @@ body {
 .warp-img-box {
     width: 100%;
     max-width: 900px;
-    background: transparent;
-    border: 30px solid transparent;
-    border-image: url('bordachaos2editada.png') 100 stretch;
-    border-image-repeat: round;
+    background: rgba(10, 0, 10, 0.7);
+    border: 35px solid transparent;
+    border-image: url('bordachaos1editada.png') 240 / 35px / 10px round;
     padding: 0;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
-    box-shadow: 0 0 50px rgba(139, 0, 0, 0.6);
+    box-shadow: 0 0 40px rgba(139, 0, 0, 0.6);
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.warp-img-box:hover {
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.85);
+    transform: scale(1.02);
 }
 
 .warp-img-box img {
@@ -325,6 +319,11 @@ body {
     margin: 0;
     display: block;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.warp-img-box:hover img {
+    transform: scale(1.03);
 }
 
 .warp-info {
@@ -334,33 +333,87 @@ body {
 .warp-title {
     font-family: 'New Rocker', system-ui;
     color: var(--chaos-crimson);
-    font-size: 3rem;
-    margin-bottom: 30px;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
     text-align: center;
     text-shadow: 0 0 20px var(--chaos-crimson);
 }
 
-/* ========== THE DESPOILER (LEGACY) ========== */
+/* ========== HURON BLACKHEART (LEGACY) ========== */
 .legacy-block {
-    padding: 100px 20px;
+    padding: 60px 20px;
     text-align: center;
     background: transparent;
 }
 
 .legacy-content {
-    max-width: 1000px;
-    margin: 50px auto;
+    max-width: 1100px;
+    margin: 40px auto;
     background: transparent;
     padding: 0;
 }
 
-.legacy-content img {
-    border: 25px solid transparent;
-    border-image: url('bordachaos2editada.png') 100 stretch;
-    border-image-repeat: round;
-    box-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
-    display: block;
+.huron-content-layout {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    text-align: left;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.huron-text {
+    flex: 1 1 320px;
+}
+
+.huron-img-box {
+    flex: 1 1 350px;
+    max-width: 480px;
+    position: relative;
+    border: 35px solid transparent;
+    border-image: url('bordachaos1editada.png') 240 / 35px / 10px round;
+    box-shadow: 0 0 35px rgba(139, 0, 0, 0.7);
+    cursor: pointer;
+    transition: all 0.35s ease;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.huron-img-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 50px rgba(255, 0, 0, 0.85);
+}
+
+.huron-img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
     object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.huron-img-box:hover .huron-img {
+    transform: scale(1.05);
+}
+
+.huron-zoom-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.88);
+    border: 1px solid #c41e3a;
+    color: #ff3333;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(196, 30, 58, 0.8);
+    pointer-events: none;
+    white-space: nowrap;
 }
 
 /* ========== BUTTONS ========== */
