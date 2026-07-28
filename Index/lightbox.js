@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.warp-img-box img', '.tech-img-box img', '.gauss-img-box img', '.feature-img-box img', '.dakka-img-box img',
         '.legacy-block img', '.legacy-chamber img', '.legacy-banner img', '.legacy-container img', '.waaagh-box img',
         '.bio-img-box img', '.devourer-box img', '.hivemind-img-box img', 'img[alt="Hive Mind"]', '.lightbox-trigger',
-        'img[alt="Commander Shadowsun"]', 'img[alt="Huron Blackheart"]', 'img[alt="Szarekh"]', 'img[alt="Guilliman"]', '.personagem-img-original'
+        '.huron-img-box img', '.huron-img', 'img[alt="Commander Shadowsun"]', 'img[alt="Huron Blackheart"]', 'img[alt="Szarekh"]', 'img[alt="Guilliman"]', '.personagem-img-original'
     ];
 
     document.addEventListener('click', (e) => {
