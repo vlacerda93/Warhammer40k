@@ -86,3 +86,37 @@ document.addEventListener("DOMContentLoaded", () => {
         if (hero) hero.classList.add('active');
     }, 500);
 });
+
+// ====================================
+// CONTROLE DOS CARDS DE HISTÓRIA / CODEX
+// ====================================
+function toggleLoreCard(cardElement) {
+    if (!cardElement) return;
+    cardElement.classList.toggle('expanded');
+}
+
+// ====================================
+// TRANSIÇÃO DO LOGO / NOME DA MARCA
+// ====================================
+function toggleBrandName() {
+    const brand = document.getElementById('brandLogo');
+    if (!brand) return;
+    if (brand.classList.contains('expanded')) {
+        brand.classList.remove('expanded');
+        brand.classList.add('condensed');
+    } else {
+        brand.classList.remove('condensed');
+        brand.classList.add('expanded');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Transição automática: inicia mostrando WARHAMMER 40,000 BRASIL e após 2.8s condensa para WH40K BRASIL com a bandeira
+    setTimeout(() => {
+        const brand = document.getElementById('brandLogo');
+        if (brand && brand.classList.contains('expanded')) {
+            brand.classList.remove('expanded');
+            brand.classList.add('condensed');
+        }
+    }, 2800);
+});

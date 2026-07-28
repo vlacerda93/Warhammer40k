@@ -26,18 +26,51 @@
     <!-- IMPERIAL BEAMS EFFECT (SCREEN-WIDE) -->
     <div class="beams-overlay"></div>
 
-    <header>
+    <header class="imperial-header">
         <nav class="navbar">
-            <div class="logo">WH40K BRASIL</div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#faccao">Facções</a></li>
-                <li><a href="#personagens">Personagens</a></li>
-                <li><a href="#mapa">Mapa</a></li>
-                <li><a href="Pages/chat.html">Canal Vox</a></li>
-                <li><a href="Tacticus/tacticus.html">Área Tacticus</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-            </ul>
+            <!-- LOGO DA MARCA COM BANDEIRA DO BRASIL ANIMADA E TRANSIÇÃO -->
+            <div class="logo-container expanded" id="brandLogo" onclick="toggleBrandName()" title="Clique para alternar nome completo / abreviação">
+                <div class="brazil-flag-box">
+                    <svg class="brazil-flag-svg" viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="720" height="500" fill="#009b3a" rx="30"/>
+                        <polygon points="360,70 650,250 360,430 70,250" fill="#fedf00"/>
+                        <circle cx="360" cy="250" r="120" fill="#002776"/>
+                        <path d="M 242,260 A 122,122 0 0 1 478,240 Q 478,255 478,255 A 125,125 0 0 0 242,275 Z" fill="#ffffff"/>
+                    </svg>
+                    <div class="flag-scanline"></div>
+                </div>
+                <div class="brand-text-box">
+                    <span class="brand-text-full">WARHAMMER 40,000 BRASIL</span>
+                    <span class="brand-text-short">WH40K BRASIL</span>
+                </div>
+            </div>
+
+            <!-- NAVEGAÇÃO ELETRICIZANTE: CYBER DECK 2026 -->
+            <div class="cyber-nav-deck">
+                <ul class="nav-links">
+                    <li style="--i: 1;"><a href="#inicio" class="nav-item"><span class="nav-icon">🏰</span><span class="nav-label">Início</span></a></li>
+                    <li style="--i: 2;"><a href="#faccao" class="nav-item"><span class="nav-icon">🛡️</span><span class="nav-label">Facções</span></a></li>
+                    <li style="--i: 3;"><a href="#personagens" class="nav-item"><span class="nav-icon">⚔️</span><span class="nav-label">Personagens</span></a></li>
+                    <li style="--i: 4;"><a href="#mapa" class="nav-item"><span class="nav-icon">🌌</span><span class="nav-label">Mapa 3D</span></a></li>
+                    <li style="--i: 5;">
+                        <a href="Pages/chat.html" class="nav-item nav-vox-cyber">
+                            <span class="vox-eq"><i></i><i></i><i></i></span>
+                            <span class="nav-icon">📻</span>
+                            <span class="nav-label">Canal Vox</span>
+                            <span class="badge-live-plasma">LIVE</span>
+                        </a>
+                    </li>
+                    <li style="--i: 6;">
+                        <a href="Tacticus/tacticus.html" class="nav-item nav-tacticus-cyber">
+                            <span class="tacticus-reticle"></span>
+                            <span class="nav-icon">🎯</span>
+                            <span class="nav-label">Área Tacticus</span>
+                            <span class="badge-gold-electric">NEW</span>
+                        </a>
+                    </li>
+                    <li style="--i: 7;"><a href="#sobre" class="nav-item"><span class="nav-icon">📜</span><span class="nav-label">Sobre</span></a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -68,30 +101,86 @@
             <h3 class="subsection-title">As Forças em Conflito</h3>
 
             <div class="factions-lore-grid">
-                <div class="hist-block hist-card-imperium">
-                    <h4 class="title-imperium">O Império da Humanidade</h4>
-                    <p>Uma teocracia estagnada e militarizada com mais de um milhão de mundos, governada em nome do Deus-Imperador encarnado no Trono Dourado de Terra. Para proteger a raça humana da aniquilação total, bilhões de soldados da Astra Militarum marcham como bucha de canhão, enquanto os Astartes (Space Marines) — guerreiros geneticamente modificados de elite — operam como a lâmina suprema do Imperium, impulsionados pela fé fervorosa da Adepta Sororitas.</p>
+                <!-- IMPÉRIO -->
+                <div class="hist-block hist-card-imperium" onclick="toggleLoreCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') toggleLoreCard(this)">
+                    <div class="hist-card-bg" style="background-image: url('Images/card_imperium.png');"></div>
+                    <div class="hist-card-overlay"></div>
+                    <div class="hist-card-content">
+                        <h4 class="title-imperium">O Império da Humanidade</h4>
+                        <div class="hist-card-prompt">
+                            <span>📜 Clique para ler o Codex</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="hist-card-body">
+                            <p>Uma teocracia estagnada e militarizada com mais de um milhão de mundos, governada em nome do Deus-Imperador encarnado no Trono Dourado de Terra. Para proteger a raça humana da aniquilação total, bilhões de soldados da Astra Militarum marcham como bucha de canhão, enquanto os Astartes (Space Marines) — guerreiros geneticamente modificados de elite — operam como a lâmina suprema do Imperium, impulsionados pela fé fervorosa da Adepta Sororitas.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="hist-block hist-card-chaos">
-                    <h4 class="title-chaos">As Forças do Caos</h4>
-                    <p>O espelho distorcido das emoções mortais no espaço psíquico do Warp. Legiões Traidoras de Space Marines do Chaos, lideradas por Abaddon o Saqueador e os Primarcas Demônio, uniram-se a legiões de demônios devotados aos quatro Deuses Sombrios (Khorne, Nurgle, Tzeentch e Slaanesh). Seu objetivo supremo é derrubar o Trono Dourado, rasgar o tecido da realidade com a Cicatrix Maledictum e afundar a galáxia em uma insanidade eterna.</p>
+                <!-- CAOS -->
+                <div class="hist-block hist-card-chaos" onclick="toggleLoreCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') toggleLoreCard(this)">
+                    <div class="hist-card-bg" style="background-image: url('Images/card_chaos.png');"></div>
+                    <div class="hist-card-overlay"></div>
+                    <div class="hist-card-content">
+                        <h4 class="title-chaos">As Forças do Caos</h4>
+                        <div class="hist-card-prompt">
+                            <span>📜 Clique para ler o Codex</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="hist-card-body">
+                            <p>O espelho distorcido das emoções mortais no espaço psíquico do Warp. Legiões Traidoras de Space Marines do Chaos, lideradas por Abaddon o Saqueador e os Primarcas Demônio, uniram-se a legiões de demônios devotados aos quatro Deuses Sombrios (Khorne, Nurgle, Tzeentch e Slaanesh). Seu objetivo supremo é derrubar o Trono Dourado, rasgar o tecido da realidade com a Cicatrix Maledictum e afundar a galáxia em uma insanidade eterna.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="hist-block hist-card-xenos">
-                    <h4 class="title-xenos">As Ameaças Xenos</h4>
-                    <p>Espécies alienígenas mortais disputam o domínio da galáxia. Os Necrons, impérios imortais de metal vivo recém-despertados de seu sono de 60 milhões de anos, buscam reconquistar as estrelas com tecnologia arcaica devastadora; os Orks, uma horda biológica incalculável impulsionada pela busca por violência e pela energia do WAAAGH!; e o Império T'au, uma jovem civilização em ascensão tecnológica expandindo suas fronteiras sob o credo filosófico do "Bem Maior".</p>
+                <!-- XENOS -->
+                <div class="hist-block hist-card-xenos" onclick="toggleLoreCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') toggleLoreCard(this)">
+                    <div class="hist-card-bg" style="background-image: url('Images/card_xenos.png');"></div>
+                    <div class="hist-card-overlay"></div>
+                    <div class="hist-card-content">
+                        <h4 class="title-xenos">As Ameaças Xenos</h4>
+                        <div class="hist-card-prompt">
+                            <span>📜 Clique para ler o Codex</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="hist-card-body">
+                            <p>Espécies alienígenas mortais disputam o domínio da galáxia. Os Necrons, impérios imortais de metal vivo recém-despertados de seu sono de 60 milhões de anos, buscam reconquistar as estrelas com tecnologia arcaica devastadora; os Orks, uma horda biológica incalculável impulsionada pela busca por violência e pela energia do WAAAGH!; e o Império T'au, uma jovem civilização em ascensão tecnológica expandindo suas fronteiras sob o credo filosófico do "Bem Maior".</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="hist-block hist-card-aeldari">
-                    <h4 class="title-aeldari">O Legado Aeldari</h4>
-                    <p>Uma civilização alienígena outrora mística e dominante, cuja queda catastrófica deu origem a um Deus do Caos e rasgou a galáxia. Os sobreviventes encontram-se tragicamente divididos: os Aeldari dos Mundos-Ofício (Craftworlds), que navegam em cidadelas estelares tentando salvar suas almas através de pedras de espírito, e os nefastos Drukhari (Dark Aeldari), que habitam a cidade sombria de Commorragh e alimentam suas almas consumindo a dor e o sofrimento alheio.</p>
+                <!-- AELDARI -->
+                <div class="hist-block hist-card-aeldari" onclick="toggleLoreCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') toggleLoreCard(this)">
+                    <div class="hist-card-bg" style="background-image: url('Images/card_aeldari.png');"></div>
+                    <div class="hist-card-overlay"></div>
+                    <div class="hist-card-content">
+                        <h4 class="title-aeldari">O Legado Aeldari</h4>
+                        <div class="hist-card-prompt">
+                            <span>📜 Clique para ler o Codex</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="hist-card-body">
+                            <p>Uma civilização alienígena outrora mística e dominante, cuja queda catastrófica deu origem a um Deus do Caos e rasgou a galáxia. Os sobreviventes encontram-se tragicamente divididos: os Aeldari dos Mundos-Ofício (Craftworlds), que navegam em cidadelas estelares tentando salvar suas almas através de pedras de espírito, e os nefastos Drukhari (Dark Aeldari), que habitam a cidade sombria de Commorragh e alimentam suas almas consumindo a dor e o sofrimento alheio.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <h3 class="subsection-title title-silver">Um Destino Traçado por Sangue</h3>
-
-            <p class="hist-intro tyranid-text">Enquanto a sombra faminta dos Tyranids avança pelo vazio para consumir toda a biomassa existente, as outras raças da galáxia encontram-se presas em um ciclo eterno de violência. Divididas por ódio ancestral e ambição, elas lutam desesperadamente entre si e contra ameaças externas. No 41º milênio, não há espaço para a paz; apenas a vontade de prevalecer em uma galáxia em chamas.</p>
+            <!-- CARD DE HISTÓRIA: TYRANIDS / DESTINO TRAÇADO POR SANGUE -->
+            <div class="hist-block hist-card-tyranid" onclick="toggleLoreCard(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') toggleLoreCard(this)">
+                <div class="hist-card-bg" style="background-image: url('Images/card_tyranid.png');"></div>
+                <div class="hist-card-overlay"></div>
+                <div class="hist-card-content">
+                    <h3 class="subsection-title title-silver" style="margin: 0 0 6px 0;">Um Destino Traçado por Sangue</h3>
+                    <div class="hist-card-prompt">
+                        <span>📜 Clique para ler o Codex</span>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="hist-card-body">
+                        <p class="hist-intro tyranid-text">Enquanto a sombra faminta dos Tyranids avança pelo vazio para consumir toda a biomassa existente, as outras raças da galáxia encontram-se presas em um ciclo eterno de violência. Divididas por ódio ancestral e ambição, elas lutam desesperadamente entre si e contra ameaças externas. No 41º milênio, não há espaço para a paz; apenas a vontade de prevalecer em uma galáxia em chamas.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

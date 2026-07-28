@@ -362,6 +362,70 @@ body {
     }
 }
 
+/* ========== HIVEMIND CARD LAYOUT & ZOOM INTERACTIVITY ========== */
+.hivemind-content-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hivemind-text {
+    flex: 1.2;
+    min-width: 300px;
+}
+
+.hivemind-img-box {
+    flex: 1;
+    min-width: 320px;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.hivemind-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid var(--hive-magenta);
+    box-shadow: 0 0 30px rgba(224, 17, 95, 0.5), 0 0 60px rgba(75, 0, 130, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    cursor: zoom-in;
+}
+
+.hivemind-img-box:hover .hivemind-img {
+    transform: scale(1.03);
+    box-shadow: 0 0 45px rgba(224, 17, 95, 0.8), 0 0 80px rgba(180, 0, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+.hivemind-zoom-badge {
+    font-family: 'Cinzel', 'Exo 2', sans-serif;
+    font-size: 0.8rem;
+    color: #ffd0ec;
+    margin-top: 10px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(224, 17, 95, 0.25);
+    border: 1px solid rgba(224, 17, 95, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 8px rgba(224, 17, 95, 0.8);
+}
+
+.hivemind-img-box:hover .hivemind-zoom-badge {
+    background: rgba(224, 17, 95, 0.5);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(224, 17, 95, 0.7);
+}
+
 /* Efeitos Biológicos Antigos Removidos */
 
 /* ========== EFFECTS: SHADOW IN THE WARP (TYRANID BLACKOUT) ========== */

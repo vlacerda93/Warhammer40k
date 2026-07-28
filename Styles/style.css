@@ -154,40 +154,351 @@ body {
     z-index: -5;
 }
 
-/* ========== NAVBAR ========== */
+/* ========== NAVBAR & IMPERIAL HEADER (VISÃO 2026) ========== */
+.imperial-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background: rgba(8, 8, 14, 0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 2px solid rgba(196, 30, 58, 0.75);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.85);
+    transition: all 0.4s ease;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 50px;
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid #c41e3a;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
-.logo {
+/* LOGO / BANDEIRA DO BRASIL ANIMADA & TRANSIÇÃO DE NOME */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    padding: 4px 10px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    flex-shrink: 0;
+}
+
+.logo-container:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 0 20px rgba(0, 155, 58, 0.3), 0 0 30px rgba(254, 223, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+/* BANDEIRA DO BRASIL ANIMADA HOLOGRÁFICA */
+.brazil-flag-box {
+    position: relative;
+    width: 36px;
+    height: 25px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 155, 58, 0.6), 0 0 20px rgba(254, 223, 0, 0.4);
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+}
+
+.logo-container:hover .brazil-flag-box {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.brazil-flag-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.flag-scanline {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    animation: flagScan 2.5s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes flagScan {
+    0% { top: -60%; }
+    100% { top: 120%; }
+}
+
+/* NOME DA MARCA MORPHING */
+.brand-text-box {
+    display: flex;
+    align-items: center;
     font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 900;
-    color: #c41e3a;
     letter-spacing: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 28px;
+}
+
+.brand-text-full, .brand-text-short {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.brand-text-full {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.brand-text-short {
+    color: #c41e3a;
+    text-shadow: 0 0 10px rgba(196, 30, 58, 0.8), 0 0 20px rgba(255, 215, 0, 0.4);
+    position: absolute;
+    left: 0;
+}
+
+.logo-container.expanded .brand-text-full {
+    opacity: 1;
+    transform: translateY(0);
+}
+.logo-container.expanded .brand-text-short {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.logo-container.condensed .brand-text-full {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+.logo-container.condensed .brand-text-short {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NAVEGAÇÃO ELETRICIZANTE: CYBER NAV DECK 2026 (PADRONIZADO) */
+.cyber-nav-deck {
+    position: relative;
+    padding: 2px 4px;
+    border-radius: 30px;
+    background: rgba(12, 12, 20, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(196, 30, 58, 0.2);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+}
+
+.cyber-nav-deck:hover {
+    border-color: rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3), 0 0 15px rgba(196, 30, 58, 0.4);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
-.nav-links a {
-    color: #fff;
+.nav-links li {
+    opacity: 0;
+    animation: navCyberDrop 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: calc(var(--i) * 0.07s);
+    flex-shrink: 0;
+}
+
+@keyframes navCyberDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.9);
+        filter: blur(3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.nav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #e0e0ed;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s;
+    font-family: 'Cinzel', 'Exo 2', sans-serif;
+    font-size: 0.78rem !important; /* Tamanho ajustado para caber 100% no zoom normal */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 9px; /* Compacto e proporcional */
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 32px;
+    box-sizing: border-box;
 }
 
-.nav-links a:hover {
-    color: #c41e3a;
+.nav-icon {
+    font-size: 0.82rem;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.nav-label {
+    position: relative;
+    z-index: 2;
+}
+
+/* EFEITO DE ONDA DE CHOQUE ELÉTRICA AO PASSAR O MOUSE */
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.8), rgba(255, 255, 255, 0.9), transparent);
+    transform: skewX(-25deg);
+    transition: none;
+    z-index: 1;
+}
+
+.nav-item:hover::before {
+    animation: electricShockwave 0.6s ease-in-out;
+}
+
+@keyframes electricShockwave {
+    0% { left: -120%; }
+    100% { left: 180%; }
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.45) 0%, rgba(0, 240, 255, 0.25) 100%);
+    border-color: #00f0ff;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), 0 0 10px rgba(196, 30, 58, 0.7);
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+}
+
+.nav-item:hover .nav-icon {
+    transform: scale(1.2) rotate(8deg);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00f0ff, #c41e3a, #ffd700);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover::after {
+    transform: scaleX(1);
+}
+
+/* DESTAQUE ELETRICIZANTE: CANAL VOX */
+.nav-vox-cyber {
+    border-color: rgba(255, 0, 85, 0.4);
+    background: rgba(255, 0, 85, 0.08);
+}
+
+.vox-eq {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 1.5px;
+    height: 12px;
+    margin-right: 1px;
+    z-index: 2;
+}
+
+.vox-eq i {
+    width: 2.5px;
+    height: 3px;
+    background: #ff0055;
+    border-radius: 1px;
+    box-shadow: 0 0 4px #ff0055;
+    animation: voxEq 1.2s infinite ease-in-out alternate;
+}
+
+.vox-eq i:nth-child(1) { animation-delay: 0.1s; }
+.vox-eq i:nth-child(2) { animation-delay: 0.35s; }
+.vox-eq i:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes voxEq {
+    0% { height: 3px; }
+    100% { height: 11px; background: #00f0ff; box-shadow: 0 0 6px #00f0ff; }
+}
+
+.badge-live-plasma {
+    background: linear-gradient(135deg, #ff0055, #ff0000);
+    color: #ffffff;
+    font-size: 0.55rem;
+    font-weight: 900;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: 2px;
+    box-shadow: 0 0 8px #ff0055;
+    animation: livePlasmaPulse 1.2s infinite alternate ease-in-out;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+@keyframes livePlasmaPulse {
+    0% { opacity: 0.7; transform: scale(0.92); box-shadow: 0 0 4px #ff0055; }
+    100% { opacity: 1; transform: scale(1.05); box-shadow: 0 0 12px #ff0055, 0 0 18px #00f0ff; }
+}
+
+/* DESTAQUE ELETRICIZANTE: ÁREA TACTICUS */
+.nav-tacticus-cyber {
+    border-color: rgba(255, 215, 0, 0.4);
+    background: rgba(255, 215, 0, 0.08);
+}
+
+.badge-gold-electric {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    color: #000000;
+    font-size: 0.55rem;
+    font-weight: 900;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: 2px;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    animation: goldElectricGlow 2s infinite alternate ease-in-out;
+    z-index: 2;
+}
+
+@keyframes goldElectricGlow {
+    0% { transform: scale(0.95); box-shadow: 0 0 6px rgba(255, 215, 0, 0.5); }
+    100% { transform: scale(1.05); box-shadow: 0 0 14px rgba(255, 215, 0, 0.95); }
 }
 
 /* ========== HERO SECTION ========== */
@@ -348,50 +659,185 @@ body {
 
 .factions-lore-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     gap: 25px;
     margin: 35px 0;
-    text-align: left;
+    text-align: center;
 }
 
 .hist-block {
+    position: relative;
     background: rgba(14, 14, 20, 0.88);
     border: 1px solid #333;
-    border-left: 4px solid #ffa500;
-    border-radius: 8px;
+    border-left: 5px solid #ffa500;
+    border-radius: 12px;
     padding: 24px 28px;
-    transition: all 0.35s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .hist-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(255, 165, 0, 0.25);
-    background: rgba(22, 22, 32, 0.95);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.9);
 }
 
-.hist-card-imperium { border-left-color: #FFD700; }
-.hist-card-chaos { border-left-color: #ff1a1a; }
-.hist-card-xenos { border-left-color: #32cd32; }
-.hist-card-aeldari { border-left-color: #d1b3ff; }
+.hist-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease, filter 0.6s ease;
+    filter: brightness(0.85) contrast(1.15);
+    z-index: 1;
+}
+
+.hist-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(8, 8, 12, 0.3) 0%, rgba(12, 12, 18, 0.68) 100%);
+    z-index: 2;
+    transition: background 0.4s ease;
+}
+
+.hist-card-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hist-card-imperium { border-left-color: #FFD700; border-color: rgba(255, 215, 0, 0.3); }
+.hist-card-imperium:hover, .hist-card-imperium.expanded {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.35), 0 10px 30px rgba(0, 0, 0, 0.9);
+    border-color: #FFD700;
+}
+
+.hist-card-chaos { border-left-color: #ff1a1a; border-color: rgba(255, 26, 26, 0.3); }
+.hist-card-chaos:hover, .hist-card-chaos.expanded {
+    box-shadow: 0 0 25px rgba(255, 26, 26, 0.35), 0 10px 30px rgba(0, 0, 0, 0.9);
+    border-color: #ff1a1a;
+}
+
+.hist-card-xenos { border-left-color: #32cd32; border-color: rgba(50, 205, 50, 0.3); }
+.hist-card-xenos:hover, .hist-card-xenos.expanded {
+    box-shadow: 0 0 25px rgba(50, 205, 50, 0.35), 0 10px 30px rgba(0, 0, 0, 0.9);
+    border-color: #32cd32;
+}
+
+.hist-card-aeldari { border-left-color: #d1b3ff; border-color: rgba(209, 179, 255, 0.3); }
+.hist-card-aeldari .hist-card-bg { background-position: center 10%; }
+.hist-card-aeldari:hover, .hist-card-aeldari.expanded {
+    box-shadow: 0 0 25px rgba(209, 179, 255, 0.35), 0 10px 30px rgba(0, 0, 0, 0.9);
+    border-color: #d1b3ff;
+}
+
+.hist-card-tyranid {
+    border-left-color: #e6005c;
+    border-color: rgba(230, 0, 92, 0.4);
+    margin-top: 35px;
+    width: 100%;
+}
+.hist-card-tyranid .hist-card-bg {
+    background-position: center 25%;
+}
+.hist-card-tyranid:hover, .hist-card-tyranid.expanded {
+    box-shadow: 0 0 25px rgba(230, 0, 92, 0.45), 0 10px 30px rgba(0, 0, 0, 0.9);
+    border-color: #e6005c;
+}
 
 .hist-block h4 {
     font-family: 'Cinzel', serif;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin: 0 0 6px 0;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.hist-card-prompt {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    color: #c0c0d5;
+    margin-top: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hist-block:hover .hist-card-prompt {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+.hist-card-prompt .toggle-icon {
+    font-size: 0.75rem;
+    transition: transform 0.4s ease;
+}
+
+.hist-card-body {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin-top 0.4s ease;
+    margin-top: 0;
+    width: 100%;
+}
+
+.hist-block.expanded .hist-card-body {
+    max-height: 600px;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+.hist-block.expanded .hist-card-prompt .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.hist-block.expanded .hist-card-bg {
+    transform: scale(1.05);
+    filter: brightness(0.55) blur(1px);
+}
+
+.hist-block.expanded .hist-card-overlay {
+    background: linear-gradient(180deg, rgba(8, 8, 14, 0.55) 0%, rgba(12, 12, 18, 0.82) 100%);
 }
 
 .hist-block p {
-    color: #dcdcdc;
+    color: #e5e5eb;
     font-family: 'Exo 2', sans-serif;
     font-size: 0.98rem;
-    line-height: 1.65;
+    line-height: 1.7;
     margin: 0;
-    text-align: left;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.95);
 }
 
 .subsection-title {
@@ -1170,5 +1616,20 @@ footer p {
 
     .mapa-imagem {
         width: 95%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 12px 20px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .nav-item {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }
