@@ -26,9 +26,14 @@
     <div class="section-wrapper">
         <!-- LORE SECTION -->
         <section class="lore-card blood-drip-container">
-            <div class="blood-drop" style="left: 15%; animation-delay: 0s;"></div>
-            <div class="blood-drop" style="left: 45%; animation-delay: 1.5s;"></div>
-            <div class="blood-drop" style="left: 78%; animation-delay: 3s;"></div>
+            <!-- GOTAS TRILHO SUPERIOR -->
+            <div class="blood-drop top-drop" style="left: 15%; animation-delay: 0s;"></div>
+            <div class="blood-drop top-drop" style="left: 45%; animation-delay: 1.5s;"></div>
+            <div class="blood-drop top-drop" style="left: 78%; animation-delay: 3s;"></div>
+            <!-- GOTAS TRILHO INFERIOR -->
+            <div class="blood-drop bottom-drop" style="left: 25%; animation-delay: 0.8s;"></div>
+            <div class="blood-drop bottom-drop" style="left: 60%; animation-delay: 2.3s;"></div>
+            <div class="blood-drop bottom-drop" style="left: 85%; animation-delay: 3.9s;"></div>
             <div class="inner-content">
                 <h2 class="section-label">O SUSSURRO DOS DEUSES DO CAOS</h2>
                 <div class="lore-text">
@@ -80,9 +85,13 @@
             </div>
 
             <div class="lore-card blood-drip-container" style="width: 100%;">
-                <div class="blood-drop" style="left: 20%; animation-delay: 0.5s;"></div>
-                <div class="blood-drop" style="left: 55%; animation-delay: 2.2s;"></div>
-                <div class="blood-drop" style="left: 82%; animation-delay: 3.8s;"></div>
+                <!-- GOTAS TRILHO SUPERIOR -->
+                <div class="blood-drop top-drop" style="left: 20%; animation-delay: 0.5s;"></div>
+                <div class="blood-drop top-drop" style="left: 55%; animation-delay: 2.2s;"></div>
+                <div class="blood-drop top-drop" style="left: 82%; animation-delay: 3.8s;"></div>
+                <!-- GOTAS TRILHO INFERIOR -->
+                <div class="blood-drop bottom-drop" style="left: 30%; animation-delay: 1.1s;"></div>
+                <div class="blood-drop bottom-drop" style="left: 70%; animation-delay: 2.9s;"></div>
                 <div class="inner-content">
                     <p class="lore-text">
                         O armamento do Caos é uma distorção profana da tecnologia imperial, fundida com feitiçaria e
@@ -107,9 +116,13 @@
             </div>
 
             <div class="lore-card blood-drip-container" style="width: 100%;">
-                <div class="blood-drop" style="left: 15%; animation-delay: 1.2s;"></div>
-                <div class="blood-drop" style="left: 50%; animation-delay: 2.8s;"></div>
-                <div class="blood-drop" style="left: 85%; animation-delay: 0.3s;"></div>
+                <!-- GOTAS TRILHO SUPERIOR -->
+                <div class="blood-drop top-drop" style="left: 15%; animation-delay: 1.2s;"></div>
+                <div class="blood-drop top-drop" style="left: 50%; animation-delay: 2.8s;"></div>
+                <div class="blood-drop top-drop" style="left: 85%; animation-delay: 0.3s;"></div>
+                <!-- GOTAS TRILHO INFERIOR -->
+                <div class="blood-drop bottom-drop" style="left: 22%; animation-delay: 1.7s;"></div>
+                <div class="blood-drop bottom-drop" style="left: 68%; animation-delay: 3.4s;"></div>
                 <div class="inner-content">
                     <p class="lore-text">Uma Chaos Power Armor é uma relíquia de dez mil anos de guerra constante,
                         muitas vezes fundida permanentemente à carne do seu portador através de mutações grotescas.
@@ -127,9 +140,13 @@
     <!-- LEGACY SECTION -->
     <section class="legacy-block">
         <div class="legacy-content lore-card blood-drip-container">
-            <div class="blood-drop" style="left: 10%; animation-delay: 0.8s;"></div>
-            <div class="blood-drop" style="left: 40%; animation-delay: 2.5s;"></div>
-            <div class="blood-drop" style="left: 75%; animation-delay: 4.1s;"></div>
+            <!-- GOTAS TRILHO SUPERIOR -->
+            <div class="blood-drop top-drop" style="left: 10%; animation-delay: 0.8s;"></div>
+            <div class="blood-drop top-drop" style="left: 40%; animation-delay: 2.5s;"></div>
+            <div class="blood-drop top-drop" style="left: 75%; animation-delay: 4.1s;"></div>
+            <!-- GOTAS TRILHO INFERIOR -->
+            <div class="blood-drop bottom-drop" style="left: 18%; animation-delay: 1.4s;"></div>
+            <div class="blood-drop bottom-drop" style="left: 52%; animation-delay: 3.1s;"></div>
             <div class="inner-content">
                 <h2 class="warp-title">O Legado: O Despertar do Maelstrom</h2>
                 <div class="huron-content-layout">
@@ -159,11 +176,9 @@
         document.getElementById('toggleEffectsBtn').addEventListener('click', function() {
             const isOff = document.body.classList.toggle('no-effects');
             this.textContent = isOff ? 'Ligar Efeitos' : 'Desligar Efeitos';
-            const overlays = document.querySelectorAll('.embers-overlay, .imperial-beams, .dust-overlay, .chaos-storm, .warp-sparkles, .hud-overlay, #shadow-warp-overlay, .hex-grid');
-            overlays.forEach(el => el.style.display = isOff ? 'none' : 'block');
+            const overlays = document.querySelectorAll('.blood-drop, .embers-overlay, .imperial-beams, .dust-overlay, .chaos-storm, .warp-sparkles, .hud-overlay, #shadow-warp-overlay, .hex-grid, .flag-scanline');
+            overlays.forEach(el => el.style.display = isOff ? 'none' : '');
         });
     </script>
 </body>
-
-
 </html>
