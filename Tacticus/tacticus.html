@@ -11,13 +11,35 @@
 </head>
 
 <body>
-    <!-- Navbar simples -->
-    <header class="navbar">
-        <div class="logo">#40kBRASIL</div>
-        <ul class="nav-links">
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="tacticus.html">Área Tacticus</a></li>
-        </ul>
+    <!-- HEADER / NAVBAR 2026 -->
+    <header class="imperial-header">
+        <nav class="navbar">
+            <!-- LOGO DA MARCA COM BANDEIRA DO BRASIL ANIMADA -->
+            <div class="logo-container expanded" id="brandLogo" onclick="toggleBrandName()" title="Clique para alternar nome completo / abreviação">
+                <div class="brazil-flag-box">
+                    <svg class="brazil-flag-svg" viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="720" height="500" fill="#009b3a" rx="30"/>
+                        <polygon points="360,70 650,250 360,430 70,250" fill="#fedf00"/>
+                        <circle cx="360" cy="250" r="120" fill="#002776"/>
+                        <path d="M 242,260 A 122,122 0 0 1 478,240 Q 478,255 478,255 A 125,125 0 0 0 242,275 Z" fill="#ffffff"/>
+                    </svg>
+                    <div class="flag-scanline"></div>
+                </div>
+                <div class="brand-text-box">
+                    <span class="brand-text-full">WARHAMMER 40,000 BRASIL</span>
+                    <span class="brand-text-short">WH40K BRASIL</span>
+                </div>
+            </div>
+
+            <!-- NAVEGAÇÃO: RETORNAR AO CODEX GALÁCTICO -->
+            <div class="cyber-nav-deck">
+                <ul class="nav-links">
+                    <li style="--i: 1;">
+                        <a href="../index.html" class="nav-item"><span class="nav-icon">🏰</span><span class="nav-label">Início / Codex Galáctico</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <!-- Fundo de Hexágonos (Tacticus Style) -->
