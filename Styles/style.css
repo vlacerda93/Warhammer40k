@@ -240,23 +240,23 @@ body {
     100% { top: 120%; }
 }
 
-/* NOME DA MARCA MORPHING */
+/* NOME DA MARCA MORPHING DINÂMICO */
 .brand-text-box {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     font-family: 'Cinzel', serif;
-    font-size: 1.15rem;
+    font-size: 1.08rem;
     font-weight: 900;
-    letter-spacing: 2px;
-    overflow: hidden;
+    letter-spacing: 1.5px;
     white-space: nowrap;
     position: relative;
-    height: 28px;
+    height: 26px;
+    transition: all 0.4s ease;
 }
 
 .brand-text-full, .brand-text-short {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    white-space: nowrap;
 }
 
 .brand-text-full {
@@ -267,26 +267,28 @@ body {
 .brand-text-short {
     color: #c41e3a;
     text-shadow: 0 0 10px rgba(196, 30, 58, 0.8), 0 0 20px rgba(255, 215, 0, 0.4);
-    position: absolute;
-    left: 0;
 }
 
+/* ESTADO EXPANDIDO (NOME COMPLETO) */
 .logo-container.expanded .brand-text-full {
+    display: inline-block;
     opacity: 1;
     transform: translateY(0);
 }
 .logo-container.expanded .brand-text-short {
+    display: none;
     opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
+    transform: translateY(15px);
 }
 
+/* ESTADO CONDENSADO (ABREVIADO) */
 .logo-container.condensed .brand-text-full {
+    display: none;
     opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
+    transform: translateY(-15px);
 }
 .logo-container.condensed .brand-text-short {
+    display: inline-block;
     opacity: 1;
     transform: translateY(0);
 }
