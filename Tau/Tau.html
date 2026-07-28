@@ -15,6 +15,35 @@
     <!-- Background da galáxia -->
     <div class="galaxy-bg"></div>
 
+    <!-- HEADER / NAVBAR 2026 -->
+    <header class="imperial-header">
+        <nav class="navbar">
+            <div class="logo-container expanded" id="brandLogo" onclick="toggleBrandName()" title="Clique para alternar nome completo / abreviação">
+                <div class="brazil-flag-box">
+                    <svg class="brazil-flag-svg" viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="720" height="500" fill="#009b3a" rx="30"/>
+                        <polygon points="360,70 650,250 360,430 70,250" fill="#fedf00"/>
+                        <circle cx="360" cy="250" r="120" fill="#002776"/>
+                        <path d="M 242,260 A 122,122 0 0 1 478,240 Q 478,255 478,255 A 125,125 0 0 0 242,275 Z" fill="#ffffff"/>
+                    </svg>
+                    <div class="flag-scanline"></div>
+                </div>
+                <div class="brand-text-box">
+                    <span class="brand-text-full">WARHAMMER 40,000 BRASIL</span>
+                    <span class="brand-text-short">WH40K BRASIL</span>
+                </div>
+            </div>
+
+            <div class="cyber-nav-deck">
+                <ul class="nav-links">
+                    <li style="--i: 1;">
+                        <a href="../index.html" class="nav-item"><span class="nav-icon">🏰</span><span class="nav-label">Início / Codex Galáctico</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <!-- HERO SECTION -->
     <header class="faction-hero">
         <div class="hero-bg"></div>
@@ -184,9 +213,10 @@
         // Initialize immediately
         rotateBackground();
 
-        // Rotate every 1 minute (60000 ms)
-        setInterval(rotateBackground, 60000);
+        // Rotate every 10 seconds (10000 ms) for dynamic scenario changes
+        setInterval(rotateBackground, 10000);
     </script>
+    <script src="../Scripts/index.js"></script>
 
     <!-- EFEITOS TOGGLE -->
     <button id="toggleEffectsBtn" style="position: fixed; top: 20px; right: 20px; z-index: 10000; background: rgba(0,0,0,0.7); border: 1px solid #c41e3a; color: #fff; padding: 10px 15px; cursor: pointer; border-radius: 5px; font-family: 'Exo 2', sans-serif;">Desligar Efeitos</button>

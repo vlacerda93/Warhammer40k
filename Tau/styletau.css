@@ -22,7 +22,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    transition: background-image 1.5s ease-in-out;
+    transition: background-image 1.2s ease-in-out;
     cursor: url('../Index/tau.cur'), auto;
 }
 
@@ -30,12 +30,13 @@ body {
 .faction-hero {
     position: relative;
     width: 100%;
-    height: 85vh; /* Aumentado para mostrar mais da imagem verticalmente */
+    height: 46vh; /* Altura reduzida e compacta */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     border-bottom: 4px solid var(--tau-orange);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 .hero-bg {
@@ -44,18 +45,18 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(12, 18, 24, 0.9)), url('tau.jpg') center 30%/cover no-repeat;
+    background: linear-gradient(to bottom, transparent, rgba(12, 18, 24, 0.9)), url('tau.jpg') center 12%/cover no-repeat;
     z-index: -1;
-    filter: brightness(0.8);
+    filter: brightness(0.85);
 }
 
 .hero-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 5rem;
+    font-size: 3.8rem;
     color: var(--tau-orange);
     text-transform: uppercase;
     letter-spacing: 8px;
-    text-shadow: 0 0 20px rgba(243, 139, 33, 0.5);
+    text-shadow: 0 0 25px rgba(243, 139, 33, 0.7), 0 0 50px rgba(0, 0, 0, 0.9);
 }
 
 /* ========== HUD LORE SECTION ========== */
